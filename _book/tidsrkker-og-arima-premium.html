@@ -469,7 +469,7 @@ Please Wait…
 <!-- ``` -->
 <p>Vi kan nu plotte vore data i R.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot.ts</span>(ARIMA1, <span class="dt">xlab=</span><span class="st">&#39;Tid&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Kursdata&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
 <p>Det er svært at se nogen tydelig udvikling i kursen.</p>
 <p>Vi benytter auto.arima til at undersøge om der er en systematik i tidsserien, for at bruge denne funktion skal vi hente og loade pakken forecast med fx. pacman:</p>
 <p>Funktionen auto.arima i R er en fantastisk funktion, der automatisk finder den ARIMA model, der passer bedst på observationerne.</p>
@@ -539,7 +539,8 @@ aaa2</code></pre>
 ## Start = 51 
 ## End = 62 
 ## Frequency = 1 
-##  [1] 105.3673 104.0177 103.5232 103.3420 103.2756 103.2513 103.2424 103.2391 103.2379 103.2375 103.2373 103.2373</code></pre>
+##  [1] 105.3673 104.0177 103.5232 103.3420 103.2756 103.2513 103.2424
+##  [8] 103.2391 103.2379 103.2375 103.2373 103.2373</code></pre>
 <details>
 <summary>Spørgsmål ARIMA(1,0,0)</summary>
 Hent ARIMA22.xlsx Excel filen <a href="FILER/ARIMA22.xlsx" download>her</a>. Importer ARIMA22.xlsx til R via menuen File - Import Dataset - Excel. Bestem for den fremtidige aktiekurs 15 perioder frem, udregn direkte fx. vha. Excel og tjek dit resultat i R.
@@ -565,8 +566,9 @@ aaa22</code></pre>
 ## Start = 51 
 ## End = 65 
 ## Frequency = 1 
-##  [1] 216.7592 215.7779 215.5536 215.5023 215.4905 215.4878 215.4872 215.4871 215.4871 215.4871 215.4871 215.4871
-## [13] 215.4871 215.4871 215.4871</code></pre>
+##  [1] 216.7592 215.7779 215.5536 215.5023 215.4905 215.4878 215.4872
+##  [8] 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871
+## [15] 215.4871</code></pre>
 </details>
 <br>
 <details>
@@ -593,7 +595,7 @@ Dette betyder at Y stiger konstant med <span class="math inline">\(\mu\)</span> 
 <span class="math display">\[\hat{Y_t}-Y_{t-1}=10\Leftrightarrow \hat{Y_t}=Y_{t-1}+10\]</span></p>
 <p>Hent ARIMA3.xlsx Excel filen <a href="FILER/ARIMA3.xlsx" download>her</a>. Importer ARIMA3.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ts.plot</span>(ARIMA3)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">auto.arima</span>(ARIMA3)</code></pre>
 <pre><code>## Series: ARIMA3 
 ## ARIMA(0,1,0) with drift 
@@ -626,7 +628,7 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60\]</span></p>
 <p>Hent ARIMA4.xlsx Excel filen <a href="FILER/ARIMA4.xlsx" download>her</a>. Importer ARIMA4.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ts.plot</span>(ARIMA4)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">auto.arima</span>(ARIMA4)</code></pre>
 <pre><code>## Series: ARIMA4 
 ## ARIMA(0,0,1) with non-zero mean 
@@ -644,61 +646,61 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## Start = 51 
 ## End = 62 
 ## Frequency = 1 
-##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756
-## [11]  99.01756  99.01756</code></pre>
+##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756
+##  [8]  99.01756  99.01756  99.01756  99.01756  99.01756</code></pre>
 <p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en residual)</p>
 </div>
 <div id="plots-med-forskellige-modeller-premium" class="section level2">
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
 ## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
 ##           ma1
-##       -0.6653
+##       -0.6085
 ## s.e.   0.1177
 ## 
-## sigma^2 estimated as 99.78:  log likelihood=-185.81
-## AIC=375.62   AICc=375.87   BIC=379.44</code></pre>
+## sigma^2 estimated as 113.2:  log likelihood=-188.91
+## AIC=381.81   AICc=382.07   BIC=385.63</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(0,1,3) 
 ## 
 ## Coefficients:
-##          ar1
-##       0.5645
-## s.e.  0.1136
+##          ma1    ma2      ma3
+##       0.7734  0.151  -0.3102
+## s.e.  0.1345  0.156   0.1515
 ## 
-## sigma^2 estimated as 115.2:  log likelihood=-189.29
-## AIC=382.58   AICc=382.84   BIC=386.41</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+## sigma^2 estimated as 69.95:  log likelihood=-176.21
+## AIC=360.42   AICc=361.31   BIC=368.07</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,2) with non-zero mean 
+## ARIMA(0,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1     ma2      mean
-##       -0.8350  1.3911  0.4081  101.8104
-## s.e.   0.0925  0.1343  0.1223    1.1699
+##          ma1      ma2      mean
+##       0.3841  -0.2405  100.9234
+## s.e.  0.0698   0.0721    0.7992
 ## 
-## sigma^2 estimated as 120.4:  log likelihood=-761.44
-## AIC=1532.87   AICc=1533.18   BIC=1549.36</code></pre>
+## sigma^2 estimated as 99.06:  log likelihood=-742.06
+## AIC=1492.12   AICc=1492.32   BIC=1505.31</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</code></pre>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201       95.28902 81.22445 109.3536 73.77911 116.7989
-## 202      103.13499 87.04167 119.2283 78.52238 127.7476
-## 203      100.70440 84.59160 116.8172 76.06200 125.3468
-## 204      102.73391 86.60754 118.8603 78.07075 127.3971
-## 205      101.03930 84.90347 117.1751 76.36169 125.7169
-## 206      102.45427 86.31186 118.5967 77.76659 127.1420
-## 207      101.27279 85.12579 117.4198 76.57808 125.9675
-## 208      102.25931 86.10911 118.4095 77.55971 126.9589
-## 209      101.43558 85.28315 117.5880 76.73257 126.1386
-## 210      102.12338 85.96940 118.2774 77.41799 126.8288</code></pre>
+## 201       93.51051 80.75515 106.2659 74.00288 113.0181
+## 202      103.37259 89.70863 117.0365 82.47537 124.2698
+## 203      100.92343 86.91929 114.9276 79.50595 122.3409
+## 204      100.92343 86.91929 114.9276 79.50595 122.3409
+## 205      100.92343 86.91929 114.9276 79.50595 122.3409
+## 206      100.92343 86.91929 114.9276 79.50595 122.3409
+## 207      100.92343 86.91929 114.9276 79.50595 122.3409
+## 208      100.92343 86.91929 114.9276 79.50595 122.3409
+## 209      100.92343 86.91929 114.9276 79.50595 122.3409
+## 210      100.92343 86.91929 114.9276 79.50595 122.3409</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="arima-af-hjere-orden-premium" class="section level2">
 <h2><span class="header-section-number">22.6</span> <font color="red">ARIMA af højere orden<sup> Premium </font></sup></h2>
@@ -726,16 +728,16 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 data =<span class="st"> </span><span class="kw">ts</span>(data[,<span class="dv">2</span>],<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</code></pre>
 <p>Vi ser salget er voksende over tid, der er ligeledes en sæsonkomponent.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(data, <span class="dt">xlab=</span><span class="st">&#39;Years&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Tractor Sales&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
 <p>Differens tranformer data for at generere stationære data mht. middel (fjern trend)</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">diff</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Differenced Tractor Sales&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
 <p>log transformer data for at sikre stationaritet mht. varians.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">log10</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Log (Tractor Sales)&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
 <p>Eventuel Differens og log transformation af data for at sikre stationaritet både mht. middel og varians.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">diff</span>(<span class="kw">log10</span>(data)),<span class="dt">ylab=</span><span class="st">&#39;Differenced Log (Tractor Sales)&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <p>Find bedste model med auto.arima, når der er stationaritet.</p>
 <p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC), vælg ARIMA modellen med mindst AIC and BIC værdier. auto.arima finder den bedste model automatisk.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(forecast)
@@ -756,28 +758,28 @@ ARIMAfit</code></pre>
 pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)
 salg &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span>pred<span class="op">$</span>pred
 salg</code></pre>
-<pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct
-## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239  934.5120  703.5005  626.9879
-## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626 1029.1243  774.7246  690.4657
-## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233 1133.3154  853.1596  760.3701
-##            Nov       Dec
-## 2015  571.9988  668.5363
-## 2016  629.9094  736.2206
-## 2017  693.6830  810.7573</code></pre>
+<pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul
+## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239
+## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626
+## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233
+##            Aug       Sep       Oct       Nov       Dec
+## 2015  934.5120  703.5005  626.9879  571.9988  668.5363
+## 2016 1029.1243  774.7246  690.4657  629.9094  736.2206
+## 2017 1133.3154  853.1596  760.3701  693.6830  810.7573</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(data,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">2018</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1600</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Tractor Salg&#39;</span>)
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 </div>
 <div id="detail-debet-card-forbrug-pa-island-millioner-isk.-premium" class="section level3">
 <h3><span class="header-section-number">22.8.2</span> <font color="red">Detail debet card forbrug på Island (millioner ISK).<sup> Premium </font></sup></h3>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Hent fpp pakken og load den</span>
 <span class="kw">plot</span>(debitcards)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">dldebitcards &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">log10</span>(debitcards))
 <span class="kw">plot</span>(dldebitcards,<span class="dt">ylab=</span><span class="st">&quot;Differenced Log (debitcards)&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(forecast)
 ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(debitcards), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)
 ARIMAfit</code></pre>
@@ -798,13 +800,17 @@ pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span c
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)
 <span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
 <p>Forudsagt brug af debetkort bliver:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred)</code></pre>
-<pre><code>##           Jan      Feb      Mar      Apr      May      Jun      Jul      Aug      Sep      Oct      Nov      Dec
-## 2013 19717.77 19162.87 20436.29 20506.84 23262.14 23545.62 24292.86 25544.16 22267.47 22543.80 22081.63 29090.93
-## 2014 20701.39 20352.57 21886.85 21721.53 24745.18 25091.09 25806.49 27175.65 23697.15 23970.40 23490.36 30947.83
-## 2015 22017.60 21649.95 23281.85 23104.56 26321.98 26689.74 27450.29 28907.08 25206.87 25497.43 24986.92 32919.46</code></pre>
+<pre><code>##           Jan      Feb      Mar      Apr      May      Jun      Jul
+## 2013 19717.77 19162.87 20436.29 20506.84 23262.14 23545.62 24292.86
+## 2014 20701.39 20352.57 21886.85 21721.53 24745.18 25091.09 25806.49
+## 2015 22017.60 21649.95 23281.85 23104.56 26321.98 26689.74 27450.29
+##           Aug      Sep      Oct      Nov      Dec
+## 2013 25544.16 22267.47 22543.80 22081.63 29090.93
+## 2014 27175.65 23697.15 23970.40 23490.36 30947.83
+## 2015 28907.08 25206.87 25497.43 24986.92 32919.46</code></pre>
 </div>
 </div>
 <div id="forecast-aktiekurser-premium" class="section level2">
@@ -820,7 +826,7 @@ pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span c
 <span class="kw">getSymbols</span>(<span class="st">&quot;GOOG&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] &quot;GOOG&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(GOOG[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])
 agoog</code></pre>
 <pre><code>## Series: GOOG[, 6] 
@@ -847,7 +853,7 @@ fagoog</code></pre>
 ## 749       1344.684 1291.100 1398.268 1262.734 1426.633
 ## 750       1343.095 1287.393 1398.797 1257.906 1428.284</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
 <div id="eksporter-aktiekurser-til-excel-premium" class="section level3">
 <h3><span class="header-section-number">22.9.1</span> <font color="red">Eksporter Aktiekurser til Excel<sup> Premium </font></sup></h3>
 <p>Man kan eksportere data til fx Excel med pakken rio, herunder dannes en Excel fil med to ark med hhv. aktiedata og forudsigelser. Funktionen export(), benyttes, man angiver data til de enkelte ark en list() funktion, sidste argument er selve filnavnet. Filen gemmes i arbejdsbiblioteket. Herfra kan den kopieres eller exporteres.</p>
@@ -861,7 +867,7 @@ fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] &quot;GS&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(GS[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">ags &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GS[,<span class="dv">6</span>])
 ags</code></pre>
 <pre><code>## Series: GS[, 6] 
@@ -883,11 +889,11 @@ fags</code></pre>
 ## 749         221.88 209.7849 233.9751 203.3821 240.3779
 ## 750         221.88 209.1306 234.6294 202.3815 241.3785</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] &quot;DANSKE.CO&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(DANSKE.CO[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">addb &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(DANSKE.CO[,<span class="dv">6</span>])
 addb</code></pre>
 <pre><code>## Series: DANSKE.CO[, 6] 
@@ -914,11 +920,11 @@ faddb</code></pre>
 ## 745       95.49204 86.86721 104.11687 82.30150 108.6826
 ## 746       95.47494 86.40544 104.54443 81.60434 109.3455</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])
 aberkshire</code></pre>
 <pre><code>## Series: `BRK-A`[, 6] 
@@ -945,7 +951,7 @@ faberkshire</code></pre>
 ## 5026       332613.4 325606.0 339620.7 321896.5 343330.2
 ## 5027       332668.7 325284.6 340052.8 321375.7 343961.7</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-150-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
 </div>
 </div>
 <div id="aktieafkast-premium" class="section level2">
@@ -961,7 +967,7 @@ faberkshire</code></pre>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">apple &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">AAPL</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)  <span class="co"># Årligt Afkast 2003 til i dag</span>
 <span class="kw">plot</span>(apple, <span class="dt">main =</span> <span class="st">&quot;Apple årligt afkast siden 2007&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">auto.arima</span>(apple)</code></pre>
 <pre><code>## Series: apple 
 ## ARIMA(1,0,0) with non-zero mean 
@@ -977,7 +983,7 @@ faberkshire</code></pre>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)
 <span class="kw">plot</span>(berkshire, <span class="dt">main =</span> <span class="st">&quot;Berkshire årligt afkast siden 2007&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-152-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">auto.arima</span>(berkshire)</code></pre>
 <pre><code>## Series: berkshire 
 ## ARIMA(0,0,0) with non-zero mean 

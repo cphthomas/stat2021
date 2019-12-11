@@ -476,18 +476,18 @@ Please Wait…
 pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;ggplot2&quot;</span>)
 <span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="co">#Plot med kun punkter</span></code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl,<span class="dt">label=</span><span class="kw">rownames</span>(mtcars)))<span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">check_overlap =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-89-2.png" width="672" /></p>
 <p>Vi kan benytte t til at transponere data matricen, så kan vi tegne et corrplot, det er meget mørkt da alle bilerne er positivt korrelerede, men man kan ane nogle sammenhænge. t(mtcars) betyder vi transponerer (vender) matricen, så ser vi i stedet på grupper af respondenter, som vi netop analyserer i klyngeanalysen. Hvis ikke vi vender matricen ser vi på korrelationsmatricen mellem de 11 variable i stedet, ligesom vi tidligere har gjort med faktoranalysen.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#korrelationsmatricen for transponeret mtcars data, hclust betyder vi ordner efter variable der passer sammen</span>
 pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(<span class="kw">t</span>(mtcars)), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-91-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-90-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Her er korrelationsmatricen ikke transponeret, hvilket svarer til en matrice baseret på variable som ved faktoranalysen vi tidligere så på.</span>
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(mtcars), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 <div id="hierakisk-klyngeanalyse-hclust-kommandoen-premium" class="section level2">
 <h2><span class="header-section-number">21.1</span> <font color="red">Hierakisk klyngeanalyse hclust kommandoen<sup> Premium </font></sup></h2>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
@@ -499,34 +499,55 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)
 <p>Vi får nu R til at danne klynger vha. af hclust (hierarcical cluster) kommandoen, denne benytter default en metode der hedder complete til at finde ens klynger, der findes mange andre metoder. For at benytte hclust skal R først beregne afstandene mellem bilerne dette gøres med dist kommandoen. Algoritmen beregner afstandene mellem de forskellige bilmodeller vha. af den euklidiske metrik. Biler med kort afstand kommer i klynger sammen, biler med lang afstand kommer i forskellige klynger.</p>
 <p>Nedenfor ses et udsnit af afstandende mellem hver af de 32 biler, det er en meget stor 32 <span class="math inline">\(\times\)</span> 32 matrice, derfor har vi benyttet head for kun at vise noget af matricen. Fx er afstanden mellem to forskellige biler som en Mazda RX4 og en Lincoln Continental 318.05 hvilket er en stor afstand i forhold til fx. Mazda RX4 og Mazda RX4 Wag på kun 0.62. Bemærk hvordan supersportsvognen Maserati Bora har store afstande til de fleste af de øvrige biler, Maseratien var en komfortabel, rummeligere og kraftigere og tungere sportsvogn end fx. Ferrari Dino.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">as.matrix</span>(<span class="kw">dist</span>(mtcars)))</code></pre>
-<pre><code>##                     Mazda RX4 Mazda RX4 Wag Datsun 710 Hornet 4 Drive Hornet Sportabout   Valiant Duster 360
-## Mazda RX4           0.0000000     0.6153251   54.90861       98.11252          210.3374  65.47177  241.40765
-## Mazda RX4 Wag       0.6153251     0.0000000   54.89152       98.09589          210.3359  65.43922  241.40887
-## Datsun 710         54.9086059    54.8915169    0.00000      150.99352          265.0832 117.75470  294.47902
-## Hornet 4 Drive     98.1125212    98.0958939  150.99352        0.00000          121.0298  33.55087  169.42996
-## Hornet Sportabout 210.3374396   210.3358546  265.08316      121.02976            0.0000 152.12414   70.17673
-## Valiant            65.4717710    65.4392224  117.75470       33.55087          152.1241   0.00000  194.60945
-##                   Merc 240D  Merc 230  Merc 280 Merc 280C Merc 450SE Merc 450SL Merc 450SLC Cadillac Fleetwood
-## Mazda RX4          50.15327  25.46831  15.36419  15.67247  135.43070  135.40144   135.47947           326.3396
-## Mazda RX4 Wag      50.11461  25.32845  15.29569  15.58377  135.42548  135.39604   135.47232           326.3355
-## Datsun 710         49.65848  33.18038  66.93635  67.02614  189.19549  189.16317   189.23454           381.0926
-## Hornet 4 Drive    121.27397 118.24331  91.42240  91.46129   72.49643   72.43135    72.57185           234.4404
-## Hornet Sportabout 241.50697 233.49240 199.33450 199.34066   84.38885   84.36840    84.43324           116.2804
-## Valiant            89.59111  85.00796  60.29098  60.26557   90.69703   90.67697    90.70930           266.6281
-##                   Lincoln Continental Chrysler Imperial  Fiat 128 Honda Civic Toyota Corolla Toyota Corona
-## Mazda RX4                    318.0470         304.72034  93.26800   102.83076       100.6040      42.30752
-## Mazda RX4 Wag                318.0429         304.71692  93.25310   102.82387       100.5888      42.26592
-## Datsun 710                   372.8012         359.30149  40.99338    52.77046        47.6535      12.96547
-## Hornet 4 Drive               227.9726         218.15483 184.96897   191.55187       192.6714     138.53047
-## Hornet Sportabout            108.0624          97.20491 302.03772   310.03246       309.5582     252.33320
-## Valiant                      259.6304         248.77133 152.11533   158.96158       159.8303     105.28764
-##                   Dodge Challenger AMC Javelin Camaro Z28 Pontiac Firebird Fiat X1-9 Porsche 914-2 Lotus Europa
-## Mazda RX4                163.11508   149.60472  233.22288        248.67803  92.50484      44.40337     65.73284
-## Mazda RX4 Wag            163.11342   149.60145  233.22487        248.67620  92.49400      44.40736     65.73626
-## Datsun 710               217.77958   204.31889  286.00492        303.35839  39.88151      13.13571     25.09486
-## Hornet 4 Drive            72.44039    61.36019  163.66326        156.22403 184.44712     139.15795    163.23674
-## Hornet Sportabout         48.98389    61.42742   70.96653         40.00525 301.56695     254.14526    272.35824
-## Valiant                  103.43107    91.04443  187.84638        188.52721 151.43794     106.05858    130.82482
+<pre><code>##                     Mazda RX4 Mazda RX4 Wag Datsun 710 Hornet 4 Drive
+## Mazda RX4           0.0000000     0.6153251   54.90861       98.11252
+## Mazda RX4 Wag       0.6153251     0.0000000   54.89152       98.09589
+## Datsun 710         54.9086059    54.8915169    0.00000      150.99352
+## Hornet 4 Drive     98.1125212    98.0958939  150.99352        0.00000
+## Hornet Sportabout 210.3374396   210.3358546  265.08316      121.02976
+## Valiant            65.4717710    65.4392224  117.75470       33.55087
+##                   Hornet Sportabout   Valiant Duster 360 Merc 240D
+## Mazda RX4                  210.3374  65.47177  241.40765  50.15327
+## Mazda RX4 Wag              210.3359  65.43922  241.40887  50.11461
+## Datsun 710                 265.0832 117.75470  294.47902  49.65848
+## Hornet 4 Drive             121.0298  33.55087  169.42996 121.27397
+## Hornet Sportabout            0.0000 152.12414   70.17673 241.50697
+## Valiant                    152.1241   0.00000  194.60945  89.59111
+##                    Merc 230  Merc 280 Merc 280C Merc 450SE Merc 450SL
+## Mazda RX4          25.46831  15.36419  15.67247  135.43070  135.40144
+## Mazda RX4 Wag      25.32845  15.29569  15.58377  135.42548  135.39604
+## Datsun 710         33.18038  66.93635  67.02614  189.19549  189.16317
+## Hornet 4 Drive    118.24331  91.42240  91.46129   72.49643   72.43135
+## Hornet Sportabout 233.49240 199.33450 199.34066   84.38885   84.36840
+## Valiant            85.00796  60.29098  60.26557   90.69703   90.67697
+##                   Merc 450SLC Cadillac Fleetwood Lincoln Continental
+## Mazda RX4           135.47947           326.3396            318.0470
+## Mazda RX4 Wag       135.47232           326.3355            318.0429
+## Datsun 710          189.23454           381.0926            372.8012
+## Hornet 4 Drive       72.57185           234.4404            227.9726
+## Hornet Sportabout    84.43324           116.2804            108.0624
+## Valiant              90.70930           266.6281            259.6304
+##                   Chrysler Imperial  Fiat 128 Honda Civic Toyota Corolla
+## Mazda RX4                 304.72034  93.26800   102.83076       100.6040
+## Mazda RX4 Wag             304.71692  93.25310   102.82387       100.5888
+## Datsun 710                359.30149  40.99338    52.77046        47.6535
+## Hornet 4 Drive            218.15483 184.96897   191.55187       192.6714
+## Hornet Sportabout          97.20491 302.03772   310.03246       309.5582
+## Valiant                   248.77133 152.11533   158.96158       159.8303
+##                   Toyota Corona Dodge Challenger AMC Javelin Camaro Z28
+## Mazda RX4              42.30752        163.11508   149.60472  233.22288
+## Mazda RX4 Wag          42.26592        163.11342   149.60145  233.22487
+## Datsun 710             12.96547        217.77958   204.31889  286.00492
+## Hornet 4 Drive        138.53047         72.44039    61.36019  163.66326
+## Hornet Sportabout     252.33320         48.98389    61.42742   70.96653
+## Valiant               105.28764        103.43107    91.04443  187.84638
+##                   Pontiac Firebird Fiat X1-9 Porsche 914-2 Lotus Europa
+## Mazda RX4                248.67803  92.50484      44.40337     65.73284
+## Mazda RX4 Wag            248.67620  92.49400      44.40736     65.73626
+## Datsun 710               303.35839  39.88151      13.13571     25.09486
+## Hornet 4 Drive           156.22403 184.44712     139.15795    163.23674
+## Hornet Sportabout         40.00525 301.56695     254.14526    272.35824
+## Valiant                  188.52721 151.43794     106.05858    130.82482
 ##                   Ford Pantera L Ferrari Dino Maserati Bora Volvo 142E
 ## Mazda RX4               245.4247     66.76610      265.6454   39.18940
 ## Mazda RX4 Wag           245.4294     66.77642      265.6491   39.16260
@@ -540,30 +561,40 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;Dendogram af mtcars&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;Bilmodeller&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">190</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="co">#Tegn rød vandret linje h betyder horisontal</span>
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">230</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-93-1.svg" width="672" /></p>
 <p>Hvis vi ønsker at undersøge en indeling med et bestemt antal klynger, kan vi bruge cutree i R, til at undersøge klyngerne i en skæring med fx. 4 klynger nærmere. Her ser vi som nævnt, Maserati Bora skiller sig ud ved at have sin egen klynge. Nummeret ved hver af de 32 biler angiver hvilken klynge bilen tilhører.</p>
 <pre class="sourceCode r"><code class="sourceCode r">clusterCut &lt;-<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>) <span class="co">#Opdeling i 4 klynger.</span>
 clusterCut</code></pre>
-<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout 
-##                   1                   1                   1                   2                   3 
-##             Valiant          Duster 360           Merc 240D            Merc 230            Merc 280 
-##                   2                   3                   1                   1                   1 
-##           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
-##                   1                   2                   2                   2                   3 
-## Lincoln Continental   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
-##                   3                   3                   1                   1                   1 
-##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird 
-##                   1                   2                   2                   3                   3 
-##           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   1                   1                   1                   3                   1 
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
+##                   1                   1                   1 
+##      Hornet 4 Drive   Hornet Sportabout             Valiant 
+##                   2                   3                   2 
+##          Duster 360           Merc 240D            Merc 230 
+##                   3                   1                   1 
+##            Merc 280           Merc 280C          Merc 450SE 
+##                   1                   1                   2 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
+##                   2                   2                   3 
+## Lincoln Continental   Chrysler Imperial            Fiat 128 
+##                   3                   3                   1 
+##         Honda Civic      Toyota Corolla       Toyota Corona 
+##                   1                   1                   1 
+##    Dodge Challenger         AMC Javelin          Camaro Z28 
+##                   2                   2                   3 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
+##                   3                   1                   1 
+##        Lotus Europa      Ford Pantera L        Ferrari Dino 
+##                   1                   3                   1 
 ##       Maserati Bora          Volvo 142E 
 ##                   4                   1</code></pre>
 <p>Vi kan benytte subset kommandoen til at se på hvilke variable der er i hver klynge, herunder ser vi på klynge 3.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">subset</span>(clusterCut,clusterCut<span class="op">==</span><span class="dv">3</span>)</code></pre>
-<pre><code>##   Hornet Sportabout          Duster 360  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial 
-##                   3                   3                   3                   3                   3 
-##          Camaro Z28    Pontiac Firebird      Ford Pantera L 
-##                   3                   3                   3</code></pre>
+<pre><code>##   Hornet Sportabout          Duster 360  Cadillac Fleetwood 
+##                   3                   3                   3 
+## Lincoln Continental   Chrysler Imperial          Camaro Z28 
+##                   3                   3                   3 
+##    Pontiac Firebird      Ford Pantera L 
+##                   3                   3</code></pre>
 <p>Vi kan ligeledes sammenligne klyngeinddelingen med de enkelte variable og se om disse passer sammen. Fx. passer hp meget fint med inddelingen i klynger.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>cyl)</code></pre>
 <pre><code>##           
@@ -574,24 +605,30 @@ clusterCut</code></pre>
 ##          4  0  0  1</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>mpg)</code></pre>
 <pre><code>##           
-## clusterCut 10.4 13.3 14.3 14.7 15 15.2 15.5 15.8 16.4 17.3 17.8 18.1 18.7 19.2 19.7 21 21.4 21.5 22.8 24.4 26
-##          1    0    0    0    0  0    0    0    0    0    0    1    0    0    1    1  2    1    1    2    1  1
-##          2    0    0    0    0  0    2    1    0    1    1    0    1    0    0    0  0    1    0    0    0  0
-##          3    2    1    1    1  0    0    0    1    0    0    0    0    1    1    0  0    0    0    0    0  0
-##          4    0    0    0    0  1    0    0    0    0    0    0    0    0    0    0  0    0    0    0    0  0
+## clusterCut 10.4 13.3 14.3 14.7 15 15.2 15.5 15.8 16.4 17.3 17.8 18.1 18.7
+##          1    0    0    0    0  0    0    0    0    0    0    1    0    0
+##          2    0    0    0    0  0    2    1    0    1    1    0    1    0
+##          3    2    1    1    1  0    0    0    1    0    0    0    0    1
+##          4    0    0    0    0  1    0    0    0    0    0    0    0    0
 ##           
-## clusterCut 27.3 30.4 32.4 33.9
-##          1    1    2    1    1
-##          2    0    0    0    0
-##          3    0    0    0    0
-##          4    0    0    0    0</code></pre>
+## clusterCut 19.2 19.7 21 21.4 21.5 22.8 24.4 26 27.3 30.4 32.4 33.9
+##          1    1    1  2    1    1    2    1  1    1    2    1    1
+##          2    0    0  0    1    0    0    0  0    0    0    0    0
+##          3    1    0  0    0    0    0    0  0    0    0    0    0
+##          4    0    0  0    0    0    0    0  0    0    0    0    0</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>hp)</code></pre>
 <pre><code>##           
-## clusterCut 52 62 65 66 91 93 95 97 105 109 110 113 123 150 175 180 205 215 230 245 264 335
-##          1  1  1  1  2  1  1  1  1   0   1   2   1   2   0   1   0   0   0   0   0   0   0
-##          2  0  0  0  0  0  0  0  0   1   0   1   0   0   2   0   3   0   0   0   0   0   0
-##          3  0  0  0  0  0  0  0  0   0   0   0   0   0   0   2   0   1   1   1   2   1   0
-##          4  0  0  0  0  0  0  0  0   0   0   0   0   0   0   0   0   0   0   0   0   0   1</code></pre>
+## clusterCut 52 62 65 66 91 93 95 97 105 109 110 113 123 150 175 180 205 215
+##          1  1  1  1  2  1  1  1  1   0   1   2   1   2   0   1   0   0   0
+##          2  0  0  0  0  0  0  0  0   1   0   1   0   0   2   0   3   0   0
+##          3  0  0  0  0  0  0  0  0   0   0   0   0   0   0   2   0   1   1
+##          4  0  0  0  0  0  0  0  0   0   0   0   0   0   0   0   0   0   0
+##           
+## clusterCut 230 245 264 335
+##          1   0   0   0   0
+##          2   0   0   0   0
+##          3   1   2   1   0
+##          4   0   0   0   1</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>carb)</code></pre>
 <pre><code>##           
 ## clusterCut 1 2 3 4 6 8
@@ -601,17 +638,23 @@ clusterCut</code></pre>
 ##          4 0 0 0 0 0 1</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(clusterCut, mtcars<span class="op">$</span>wt)</code></pre>
 <pre><code>##           
-## clusterCut 1.513 1.615 1.835 1.935 2.14 2.2 2.32 2.465 2.62 2.77 2.78 2.875 3.15 3.17 3.19 3.215 3.435 3.44 3.46
-##          1     1     1     1     1    1   1    1     1    1    1    1     1    1    0    1     0     0    2    0
-##          2     0     0     0     0    0   0    0     0    0    0    0     0    0    0    0     1     1    0    1
-##          3     0     0     0     0    0   0    0     0    0    0    0     0    0    1    0     0     0    1    0
-##          4     0     0     0     0    0   0    0     0    0    0    0     0    0    0    0     0     0    0    0
+## clusterCut 1.513 1.615 1.835 1.935 2.14 2.2 2.32 2.465 2.62 2.77 2.78
+##          1     1     1     1     1    1   1    1     1    1    1    1
+##          2     0     0     0     0    0   0    0     0    0    0    0
+##          3     0     0     0     0    0   0    0     0    0    0    0
+##          4     0     0     0     0    0   0    0     0    0    0    0
 ##           
-## clusterCut 3.52 3.57 3.73 3.78 3.84 3.845 4.07 5.25 5.345 5.424
-##          1    0    0    0    0    0     0    0    0     0     0
-##          2    1    0    1    1    0     0    1    0     0     0
-##          3    0    1    0    0    1     1    0    1     1     1
-##          4    0    1    0    0    0     0    0    0     0     0</code></pre>
+## clusterCut 2.875 3.15 3.17 3.19 3.215 3.435 3.44 3.46 3.52 3.57 3.73 3.78
+##          1     1    1    0    1     0     0    2    0    0    0    0    0
+##          2     0    0    0    0     1     1    0    1    1    0    1    1
+##          3     0    0    1    0     0     0    1    0    0    1    0    0
+##          4     0    0    0    0     0     0    0    0    0    1    0    0
+##           
+## clusterCut 3.84 3.845 4.07 5.25 5.345 5.424
+##          1    0     0    0    0     0     0
+##          2    0     0    1    0     0     0
+##          3    1     1    0    1     1     1
+##          4    0     0    0    0     0     0</code></pre>
 <p>Hvis dendogrammet virker lidt uoverskueligt, kan man vælge ape pakken for at lave mere fancy plots, her er rigtig mange muligheder.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;ape&quot;)</span>
 <span class="kw">library</span>(<span class="st">&quot;ape&quot;</span>)
@@ -619,11 +662,11 @@ colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quo
 clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>)
 <span class="kw">plot</span>(<span class="kw">as.phylo</span>(clusters), <span class="dt">type =</span> <span class="st">&quot;fan&quot;</span>, <span class="dt">tip.color =</span> colors[clus4],
      <span class="dt">label.offset =</span> <span class="dv">0</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.svg" width="672" /></p>
 <p>Herunder er et plot, hvor farvekoden er baseret på klyngerne.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="fl">3.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">col =</span> clusterCut)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-99-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.svg" width="672" /></p>
 </div>
 <div id="ikke-hierakisk-klyngeanalyse-kmeans-kommandoen-premium" class="section level2">
 <h2><span class="header-section-number">21.2</span> <font color="red">Ikke hierakisk klyngeanalyse kmeans kommandoen<sup> Premium </font></sup></h2>
@@ -636,68 +679,82 @@ clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span c
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)
 mtcarsCluster4</code></pre>
-<pre><code>## K-means clustering with 4 clusters of sizes 6, 10, 9, 7
+<pre><code>## K-means clustering with 4 clusters of sizes 7, 4, 11, 10
 ## 
 ## Cluster means:
-##        mpg      cyl     disp       hp     drat       wt     qsec        vs        am     gear     carb
-## 1 16.83333 7.666667 284.5667 158.3333 3.033333 3.625000 17.76833 0.1666667 0.0000000 3.000000 2.333333
-## 2 27.05000 4.000000 101.5700  81.4000 4.086000 2.199300 18.76100 0.9000000 0.8000000 4.100000 1.500000
-## 3 14.64444 8.000000 388.2222 232.1111 3.343333 4.161556 16.40444 0.0000000 0.2222222 3.444444 4.000000
-## 4 19.94286 5.714286 166.5714 120.1429 3.705714 3.107857 18.47143 0.5714286 0.4285714 4.000000 3.571429
+##        mpg cyl     disp        hp     drat       wt     qsec        vs
+## 1 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286
+## 2 13.67500   8 443.0000 206.25000 3.060000 4.966000 17.56750 0.0000000
+## 3 26.66364   4 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909
+## 4 15.67000   8 317.1400 210.40000 3.297000 3.612500 16.45400 0.0000000
+##          am     gear     carb
+## 1 0.4285714 3.857143 3.428571
+## 2 0.0000000 3.000000 3.500000
+## 3 0.7272727 4.090909 1.545455
+## 4 0.2000000 3.400000 3.500000
 ## 
 ## Clustering vector:
-##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout 
-##                   4                   4                   2                   1                   3 
-##             Valiant          Duster 360           Merc 240D            Merc 230            Merc 280 
-##                   4                   3                   2                   4                   4 
-##           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
-##                   4                   1                   1                   1                   3 
-## Lincoln Continental   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
-##                   3                   3                   2                   2                   2 
-##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird 
-##                   2                   1                   1                   3                   3 
-##           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   2                   2                   2                   3                   4 
+##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
+##                   1                   1                   3 
+##      Hornet 4 Drive   Hornet Sportabout             Valiant 
+##                   1                   4                   1 
+##          Duster 360           Merc 240D            Merc 230 
+##                   4                   3                   3 
+##            Merc 280           Merc 280C          Merc 450SE 
+##                   1                   1                   4 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
+##                   4                   4                   2 
+## Lincoln Continental   Chrysler Imperial            Fiat 128 
+##                   2                   2                   3 
+##         Honda Civic      Toyota Corolla       Toyota Corona 
+##                   3                   3                   3 
+##    Dodge Challenger         AMC Javelin          Camaro Z28 
+##                   4                   4                   4 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
+##                   2                   3                   3 
+##        Lotus Europa      Ford Pantera L        Ferrari Dino 
+##                   3                   4                   1 
 ##       Maserati Bora          Volvo 142E 
-##                   3                   2 
+##                   4                   3 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1]  6355.581 10247.471 46659.317  8808.032
-##  (between_SS / total_SS =  88.4 %)
+## [1] 13954.336  4665.041 11848.370 43649.519
+##  (between_SS / total_SS =  88.1 %)
 ## 
 ## Available components:
 ## 
-## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;     &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;        
-## [8] &quot;iter&quot;         &quot;ifault&quot;</code></pre>
+## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
+## [5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
+## [9] &quot;ifault&quot;</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 4 klynger med de 32 biler, sorteret efter antallet af cylindre.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</code></pre>
 <pre><code>##    
 ##      4  6  8
-##   1  0  1  5
-##   2 10  0  0
-##   3  0  0  9
-##   4  1  6  0</code></pre>
+##   1  0  7  0
+##   2  0  0  4
+##   3 11  0  0
+##   4  0  0 10</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)
 <span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</code></pre>
 <pre><code>##    
 ##      4  6  8
-##   1  0  0 14
-##   2  0  7  0
-##   3 11  0  0</code></pre>
+##   1  0  2  5
+##   2 11  5  0
+##   3  0  0  9</code></pre>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 3 klynger. Bemærk vi skal hente pakken <strong>factoextra</strong>, der indeholder plotfunktionen fviz_cluster(). Vi har benyttet funktionen <strong>scale()</strong>, det er en rigtig god ide at benytte hvis, der er stor forskel på måleenhederne i en data.frame. Funktionen <strong>scale()</strong> bringer variablene i samme skale. Der er fx. stor forskel på enhederne i carb og disp, prøv at sammenligne nedenstående plot med et tilsvarende plot uden scale.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)
 <span class="kw">fviz_cluster</span>(km3.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 3 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-103-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-102-1.svg" width="672" /></p>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 4 klynger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km4.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 <span class="kw">fviz_cluster</span>(km4.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 4 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-104-1.svg" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-103-1.svg" width="672" />
 Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 5 klynger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km5.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">5</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 <span class="kw">fviz_cluster</span>(km5.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 5 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-105-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-104-1.svg" width="672" /></p>
 </div>
 <div id="validering-med-anova-premium" class="section level2">
 <h2><span class="header-section-number">21.3</span> <font color="red">Validering med ANOVA<sup> Premium </font></sup></h2>

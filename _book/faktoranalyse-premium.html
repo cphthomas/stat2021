@@ -509,13 +509,20 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</code></pr
 <p>For KMO skal Overall MSA = 0.49, fortæller om egnethed af data til faktoranalyse. Skal være større end kritisk grænse på ca. 0.5, dette er ikke helt tilfældet her, men vi gennemfører alligevel faktoranalysen.</p>
 <p>Vi kan se af korrelationsmatricen, at nogle variable er korrellerede og andre tilsyneladende ikke.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(data)</code></pre>
-<pre><code>##                 Pris   Software     Æstetik       Brand     Venner     Familie
-## Pris      1.00000000  0.1856123 -0.63202219 -0.58026680 0.03082006 -0.06183118
-## Software  0.18561230  1.0000000 -0.14621516 -0.11858645 0.10096774  0.17657236
-## Æstetik  -0.63202219 -0.1462152  1.00000000  0.85285436 0.03989799 -0.06977360
-## Brand    -0.58026680 -0.1185864  0.85285436  1.00000000 0.33316719  0.02662389
-## Venner    0.03082006  0.1009677  0.03989799  0.33316719 1.00000000  0.60727189
-## Familie  -0.06183118  0.1765724 -0.06977360  0.02662389 0.60727189  1.00000000</code></pre>
+<pre><code>##                 Pris   Software     Æstetik       Brand     Venner
+## Pris      1.00000000  0.1856123 -0.63202219 -0.58026680 0.03082006
+## Software  0.18561230  1.0000000 -0.14621516 -0.11858645 0.10096774
+## Æstetik  -0.63202219 -0.1462152  1.00000000  0.85285436 0.03989799
+## Brand    -0.58026680 -0.1185864  0.85285436  1.00000000 0.33316719
+## Venner    0.03082006  0.1009677  0.03989799  0.33316719 1.00000000
+## Familie  -0.06183118  0.1765724 -0.06977360  0.02662389 0.60727189
+##              Familie
+## Pris     -0.06183118
+## Software  0.17657236
+## Æstetik  -0.06977360
+## Brand     0.02662389
+## Venner    0.60727189
+## Familie   1.00000000</code></pre>
 <p>Så det ser ud til, at Pris har stærke negative sammenhænge med Æstetik og Brand.
 Venner har en stærk positiv sammenhæng med Familie.</p>
 <p>Det betyder, at vi kan forvente, at vi vil have to fælles faktorer, og en vil være relateret til pris, æstetik og brand, og den anden vil være relateret til ven og familie. Vi kan lave et corrplot, der grafisk illustrerer disse sammenhænge, store blå prikker er positiv korrelation, store røde negativ korrelation. Så vi skal installere corplott pakken, her bruger vi pacman til installationen.</p>
@@ -645,7 +652,7 @@ ev<span class="op">$</span>values</code></pre>
 <h3><span class="header-section-number">20.4.2</span> <font color="red">Eigenvalues metoden<sup> Premium </font></sup></h3>
 <p>Vi kan se på nedenstående screeplot, der hvor kurven flader ud, bibringer yderligere faktorer ikke synderlig megen yderligere forklaring til modellen. Man vil med screeplot kriteriet, vælge antallet af faktorer hvor kurven knækkker i tilfældet med 3 faktorer. Man vil ikke altid entydigt kunne afgøre hvor screeplot kurven knækker, her må man så afgøre dette bedst muligt.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-80-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-79-1.svg" width="672" /></p>
 <br>
 <details>
 <p><summary>Spørgsmål personality Stanford</summary>
@@ -677,24 +684,27 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## Call: KMO(r = personality)
 ## Overall MSA =  0.84
 ## MSA for each item = 
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
-##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79    0.86    0.75    0.87    0.89    0.87 
-## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
-##    0.84    0.85    0.86    0.87    0.81    0.86    0.83    0.90    0.89    0.83    0.87    0.78    0.87    0.81 
-## laidbck withdrw givinup easygon 
-##    0.73    0.90    0.89    0.78</code></pre>
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##    0.86    0.75    0.87    0.89    0.87    0.84    0.85    0.86    0.87 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##    0.81    0.86    0.83    0.90    0.89    0.83    0.87    0.78    0.87 
+##     lax laidbck withdrw givinup easygon 
+##    0.81    0.73    0.90    0.89    0.78</code></pre>
 <p>Vi gennemfører klart analysen viser begge tests.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span>
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-82-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-84-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))
 evp<span class="op">$</span>values</code></pre>
-<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636 0.8553802 0.7968460 0.7128793
-## [11] 0.6936229 0.6396893 0.6277046 0.5399600 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706
-## [21] 0.3906941 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649 0.2199461 0.2011492
-## [31] 0.1658493 0.1336176</code></pre>
+<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636
+##  [8] 0.8553802 0.7968460 0.7128793 0.6936229 0.6396893 0.6277046 0.5399600
+## [15] 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941
+## [22] 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649
+## [29] 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
 <p>Vi benytter her 7 faktorer:</p>
 <pre class="sourceCode r"><code class="sourceCode r">fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)
 fapers7</code></pre>
@@ -703,12 +713,14 @@ fapers7</code></pre>
 ## factanal(x = personality, factors = 7)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
-##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512   0.390   0.181   0.251   0.640   0.387 
-## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
-##   0.478   0.517   0.560   0.377   0.388   0.411   0.392   0.367   0.421   0.528   0.284   0.229   0.562   0.663 
-## laidbck withdrw givinup easygon 
-##   0.248   0.362   0.557   0.549 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##   0.390   0.181   0.251   0.640   0.387   0.478   0.517   0.560   0.377 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##   0.388   0.411   0.392   0.367   0.421   0.528   0.284   0.229   0.562 
+##     lax laidbck withdrw givinup easygon 
+##   0.663   0.248   0.362   0.557   0.549 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
@@ -761,12 +773,14 @@ fapers8</code></pre>
 ## factanal(x = personality, factors = 8)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
-##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533   0.417   0.170   0.257   0.649   0.364 
-## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
-##   0.490   0.468   0.497   0.333   0.347   0.420   0.391   0.365   0.420   0.502   0.276   0.236   0.565   0.682 
-## laidbck withdrw givinup easygon 
-##   0.005   0.367   0.550   0.580 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng 
+##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533 
+## relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl 
+##   0.417   0.170   0.257   0.649   0.364   0.490   0.468   0.497   0.333 
+## worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl 
+##   0.347   0.420   0.391   0.365   0.420   0.502   0.276   0.236   0.565 
+##     lax laidbck withdrw givinup easygon 
+##   0.682   0.005   0.367   0.550   0.580 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7 Factor8
@@ -803,10 +817,14 @@ fapers8</code></pre>
 ## givinup  0.337  -0.465   0.254  -0.106   0.161   0.108                 
 ## easygon -0.169  -0.117  -0.261   0.284                   0.467         
 ## 
-##                Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7 Factor8
-## SS loadings      4.549   3.181   2.531   2.325   2.287   2.052   1.583   0.539
-## Proportion Var   0.142   0.099   0.079   0.073   0.071   0.064   0.049   0.017
-## Cumulative Var   0.142   0.242   0.321   0.393   0.465   0.529   0.578   0.595
+##                Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
+## SS loadings      4.549   3.181   2.531   2.325   2.287   2.052   1.583
+## Proportion Var   0.142   0.099   0.079   0.073   0.071   0.064   0.049
+## Cumulative Var   0.142   0.242   0.321   0.393   0.465   0.529   0.578
+##                Factor8
+## SS loadings      0.539
+## Proportion Var   0.017
+## Cumulative Var   0.595
 ## 
 ## Test of the hypothesis that 8 factors are sufficient.
 ## The chi square statistic is 398.53 on 268 degrees of freedom.
