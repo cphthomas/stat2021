@@ -1,0 +1,49 @@
+--- 
+title: "Statistik"
+author: "Thomas Petersen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Statistik"
+favicon: "favicon.ico"
+---
+
+
+#    {-}
+					
+					
+```{r, echo=FALSE, results='asis'}
+cat(readLines('fp.html'))
+```
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  
+<h3>***Video sådan køber du adgang.***</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/354519447' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+  <br>
+  <br>
+  <br>
+  <br>
+<h3>***Video sådan afmelder du dit abonnement.***</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/354519512' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+

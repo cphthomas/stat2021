@@ -1,0 +1,97 @@
+# Materialer
+
+```{r, echo=FALSE, results='asis'}
+# cat(readLines('np.html'))
+```
+
+
+
+|MINDMAPS og Freestat|
+|-------------|
+|[Hent Freestat premium her](https://www.dropbox.com/s/a2jztexbxfzcli0/FREESTAT.xlsx?dl=1)|   
+|[Hent Freestat basis her](https://www.dropbox.com/s/jlug3bacgwqbka3/FREESTATfin.xlsx?dl=1)|   
+|[CPH Finansøkonom statistik mindmap](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQ1Zhdjh5WTJ4bnM)|
+
+***
+
+|Skabeloner|
+|-------------|
+|[Skabelon test af middelværdi](https://www.dropbox.com/s/xygqhfe6wmxzntf/Skabelon%20test%20af%20middelv%C3%A6rdi%20%CE%BC.docx?dl=1)|
+|[Skabelon test af standardafvigelse](https://www.dropbox.com/s/m3vmdo47f6ocza3/skabelon%20test%20af%20standardafvigelse.docx?dl=1)|
+|[Skabelon test af andel p](https://www.dropbox.com/s/vazc4t384xfw2vf/Skabelon%20test%20af%20andel%20p.docx?dl=1)|
+|[Skabelon test af 2 andele](https://www.dropbox.com/s/wbu8gaasar0i991/Skabelon%20test%20af%202%20andele.docx?dl=1)|
+|[Skabeloner test 2 middelværdier](https://www.dropbox.com/s/9qv7i2xlt2ioiut/Skabeloner%20test%202%20middelv%C3%A6rdier.docx?dl=1)|
+|[Skabelon Simpel lineær regression](https://www.dropbox.com/s/8ppxk89bapfh53p/Skabelon%20Simpel%20line%C3%A6r%20regression.docx?dl=1)|
+|[Skabelon Multipel lineær regression](https://www.dropbox.com/s/jghmkyl4ou66lim/Skabelon%20Multipel%20line%C3%A6r%20regression%20slutmodel.docx?dl=1)|
+|[Skabelon Goodness of fit test](https://www.dropbox.com/s/ectavp709wtmv6p/Skabelon%20Goodness%20of%20fit%20test.docx?dl=1)|
+|[Skabelon Chi i anden test](https://www.dropbox.com/s/gc0u8hdyrksa9jw/Skabelon%20Chi%20i%20anden%20test.docx?dl=1)|
+|[Skabelon ANOVA/ANAVA](https://www.dropbox.com/s/9q9joeo1gv8ywky/Skabelon%20ANOVA%3AANAVA.docx?dl=1)|  
+
+
+
+
+***
+
+
+|Datasæt|
+|-------------|
+|[2015-Januar-Data.xlsx](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldkt1OUx6LTEyMXM)|
+|[AFFAIRS.xls data vedr. utroskab](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U)|
+|[BANKDATA.xls data vedr. bankansattes uddannelse, køn og etnicitet ](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM)|
+|[Debt.xlsx](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlUGdpNXZjWm1sNk0)|
+|[Forbes 400 2014 RICH US](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYTRWVWozb09PRTQ)|
+|[Forbes-Global-2000 YEAR 2015](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlNEdtLUV3NFJTSkk)|
+|[FORD FOCUS](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlNTkzeVJlQV81OHM)|
+|[Fortune-Global-500](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQm51dXNjM3NmdE0)|
+|[GDP](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQUhPbEgxdmJhZTg)|
+|[GDP PER CAPITA USD](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSVkweHBpT19GZjg)|
+|[GDP2015](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlamdFSkk4SWU4eWM)|
+|[HELBRED](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlMTM1UUNMdzdoUm8)|
+|[Hjemmesidedesigns besøgstider i millisekunder](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlS3Y5ZUhROU9iNnM)|
+|[IMDB stikprøve på 759 film](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM)|
+|[KØNSROLLER](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlalR4TGdjSkV0RzA)|
+|[MEDIEFORBRUG](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSTFXM1pCMUtjc2M)|
+|[SOMMERHUSE LEJE RØMØ](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE)|
+|[Statkarakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ)|
+|[TITANIC](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYWJOOG5yamNoOTQ)|
+|[TYVERI](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlMFZJdm5QdXpGTGc)|
+|[usarrest](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRDhUYUk4R0NwVFk)|
+|[VIRKSOMHEDER-DK](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlVmxHTDltNk1VSG8)|
+|[Yahooinvestexcel](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYnFpbWp1YTBlLVE)|
+|[USA afkast pr md](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ)|
+|[Hjemmeopgave USA afkast](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlekM5eVRYZkdUZnc)|
+|[Hjemmeopgave USA afkast løsning](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSDNPZi1zSTlqNk0)|
+
+
+***
+
+|Finansøkonom valgfag statistik eksamensopgaver|
+|-------------|
+|[2017 December eksamensopgave valgfag statistik](https://www.dropbox.com/s/lpiglled5qdmtjh/2017%20December%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 December data valgfag statistik](https://www.dropbox.com/s/ki9mpbsn8jak84i/2017%20December%20-%20Data.xlsx?dl=1)|   
+|[2017 November eksamensopgave valgfag statistik](https://www.dropbox.com/s/3wwbnvyxdz5z04h/2017%20November%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 November data valgfag statistik](https://www.dropbox.com/s/nqqyc5puaqjuoo7/2017%20November%20valgfag%20statistik%20-%20Erstatninger.xlsx?dl=1)|   
+|[2017 Juni eksamensopgave valgfag statistik](https://www.dropbox.com/s/hc44wglho5tccgs/2017%20Juni%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 Juni data valgfag statistik](https://www.dropbox.com/s/73azkke4vnduzbk/2017%20Juni%20Data%20-%20Billeasing.xlsx?dl=1)|   
+|[2017 Maj eksamensopgave valgfag statistik](https://www.dropbox.com/s/psnsb67bw4v98a7/2017%20Maj%20eksamensopgave%20valgfag%20statistk.pdf?dl=1)|   
+|[2017 Maj data valgfag statistik](https://www.dropbox.com/s/7wpcnkdrjs9tetl/2017%20Maj%20Bank.xlsx?dl=1)|   
+|[2017 Maj løsningsforslag valgfag statistik](https://www.dropbox.com/s/4z84mj0mvx4xrql/2017%20Maj%20Valgfag%2C%20statistik%20-%20l%C3%B8sning.docx?dl=1)|   
+
+***
+
+|Finansøkonom statistik eksamensopgaver|
+|-------------|
+[Mappe med gamle eksamensopgaver](https://drive.google.com/drive/folders/0B1E7VnhxsDMlUTJXLWowYjFNTzg?usp=sharing)|
+
+
+***
+
+|Edutest|
+|-------------|
+|[www.edutest.dk](http://www.edutest.dk)|
+
+***
+
+|Hjemmeside af Benjamin Tejlbjerg med gymnasie matematik og statistik|
+|-------------|
+|[http://www.mathhx.dk](http://www.mathhx.dk/?q=node/117)|
