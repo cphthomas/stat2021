@@ -652,7 +652,7 @@ ev<span class="op">$</span>values</code></pre>
 <h3><span class="header-section-number">20.4.2</span> <font color="red">Eigenvalues metoden<sup> Premium </font></sup></h3>
 <p>Vi kan se på nedenstående screeplot, der hvor kurven flader ud, bibringer yderligere faktorer ikke synderlig megen yderligere forklaring til modellen. Man vil med screeplot kriteriet, vælge antallet af faktorer hvor kurven knækkker i tilfældet med 3 faktorer. Man vil ikke altid entydigt kunne afgøre hvor screeplot kurven knækker, her må man så afgøre dette bedst muligt.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-79-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.svg" width="672" /></p>
 <br>
 <details>
 <p><summary>Spørgsmål personality Stanford</summary>
@@ -695,9 +695,9 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 <p>Vi gennemfører klart analysen viser begge tests.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span>
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-82-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-87-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-88-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))
 evp<span class="op">$</span>values</code></pre>
 <pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636

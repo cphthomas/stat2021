@@ -4035,7 +4035,7 @@ Vi har i datasættet [US crime](https://drive.google.com/uc?export=download&id=0
 
 ```{r , echo=FALSE,message=FALSE,}
 usarrest <- USArrests[-c(2,11),]
-WriteXLS("usarrest", ExcelFileName = "usarrest.xls", 
+WriteXLS("usarrest", ExcelFileName = "FILER/usarrest.xls", 
          SheetNames = "usarrest",row.names = TRUE,AdjWidth = FALSE,
          BoldHeaderRow = TRUE, FreezeRow = 1, FreezeCol = 1)
 ```
@@ -7235,7 +7235,7 @@ legend("topright", legend=c("Middel=0","Middel=0.5","Middel=1"), col=c("blue", "
 
 
 ```{r sidedesign  ,echo=FALSE, include=FALSE}
-filnavn2 <- "Hjemmesidedesigns besøgstider i millisekunder" #Sæt filnavn her
+filnavn2 <- "FILER/Hjemmesidedesigns besøgstider i millisekunder" #Sæt filnavn her
 arknavn <- "Hjemmesidedesigns besøgstider" #Max 31 karakterer
 
 design1 <- c(82843,59394,81801,30489,13313,104223,102679,49202,114935,28259,51840,53022,69169,48950,54136,84444,15549,950,28508,62335,49793,112352,120032,131917,52765,29472,67888,72243,49088,23097,32963,82060,1872,86392,32508,54667,99172,58035,99169,14181,23643,24603,20709,108656,5819,46688,4681,46493,9198,20896,92070,26126,122101,80075,33937,62344,58861,39264,60197,67278,83674,39415,61348,65581,44362,54873,59795,66300,45057,23081,40615,25196,41284,83605,13350,14946,8339,62645,2913,41941,45155,32255,63727,35700,30684,31996,65102)
@@ -7268,7 +7268,7 @@ Et forsikringsselskab har udviklet 4 forskellige layouts til information om skad
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231384291' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 <br>
-Hent datasættet <a href="Hjemmesidedesigns besøgstider i millisekunder.xls" download>Hjemmesidedesigns besøgstider i millisekunder</a>, der viser de `r length(tider)` observede besøgstider på de 4 hjemmesider.
+Hent datasættet <a href="FILER/Hjemmesidedesigns besøgstider i millisekunder.xls" download>Hjemmesidedesigns besøgstider i millisekunder</a>, der viser de `r length(tider)` observede besøgstider på de 4 hjemmesider.
 
 Forsikringsselskabet ønsker at undersøge om der er forskel på besøgstiderne, vi opstiller hypoteserne:
 
@@ -7349,7 +7349,7 @@ afkast <- DKkurs*100
 uger <- length(afkast[,1])
 afkastdf <- data.frame(bank <- c(rep("Danske Bank",uger),rep("Jyske Bank",uger),rep("Sydbank",uger)),ugeafkast <- c(afkast[,1],afkast[,2],afkast[,3]),datodf <- rep(row.names(afkast),3))
 names(afkastdf) <- c("Bank","Ugeafkast","Dato")
-WriteXLS("afkastdf", ExcelFileName = "3 Danske Banker Ugeafkast i procent.xls", col.names = TRUE,row.names = F,AdjWidth = TRUE, BoldHeaderRow = TRUE, FreezeRow = 1, FreezeCol = 1)
+WriteXLS("afkastdf", ExcelFileName = "FILER/3 Danske Banker Ugeafkast i procent.xls", col.names = TRUE,row.names = F,AdjWidth = TRUE, BoldHeaderRow = TRUE, FreezeRow = 1, FreezeCol = 1)
 means <- c(mean(afkast[,1]),mean(afkast[,2]),mean(afkast[,3]))
 
 DDBJYSKE <- abs(means[1]-means[2])
@@ -7368,7 +7368,7 @@ SSW <- round(ano$`Sum Sq`[2],4)
 
 
 
-Hent datasættet <a href="3 Danske Banker Ugeafkast i procent.xls" download>3 Danske Banker Ugeafkast i procent</a>
+Hent datasættet <a href="FILER/3 Danske Banker Ugeafkast i procent.xls" download>3 Danske Banker Ugeafkast i procent</a>
 , i dette datasæt er de seneste `r uger` ugers afkast i procent for hhv. Danske Bank, Jyske Bank og Sydbank. Er der signifikant forskel på afkastene på de 3 bankaktier?
 
 </details>
