@@ -7430,7 +7430,7 @@ stat_summary(fun.y="mean", colour="orange", geom="point", shape=16, size=3)
 <details>
   <summary>Spørgsmål IMDB</summary>
 ```{r imdb  ,echo=FALSE, include=FALSE, warning=FALSE}
-imdb <- import("IMDB stikprøve på 759 film.xls",sheet=1)
+imdb <- import("FILER/IMDB stikprøve på 759 film.xls",sheet=1)
 attach(imdb)
 n <- nrow(imdb)
 ano <- anova(lm(imdb$Rating~imdb$Genre))
@@ -7794,7 +7794,7 @@ screeplot(princomp(data),type="line",npcs = 6, main="Screeplot Computereksempel"
   <summary>Spørgsmål personality Stanford</summary>
 Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor høj grad de mener at besidde 32 forskellige personlighedstræk. 1 til 8 hvor 1 er mindst og 8 er mest. Foretag hvis en test viser dette er fordelagtigt en faktoranalyse.
 
-Download personality fra filen <a href="personality.xlsx" download>her</a> og importer den i R via File - Import Dataset.
+Download personality fra filen <a href="FILER/personality.xlsx" download>her</a> og importer den i R via File - Import Dataset.
 
 
 </details>
@@ -7808,7 +7808,7 @@ Download personality fra filen <a href="personality.xlsx" download>her</a> og im
 
 ```{r echo=FALSE, warning=FALSE}
 pacman::p_load(readxl)
-personality <- read_excel("personality.xlsx")
+personality <- read_excel("FILER/personality.xlsx")
 ```
 
 ```{r}
@@ -7854,7 +7854,7 @@ fapers8
 <details>
   <summary>Spørgsmål Mediedata</summary>
 
-Download filen om mediedata <a href="mediedata.xlsx" download>her</a>. Importer denne i R, husk under importen at vælge det korrekte sheet, der indeholder data.
+Download filen om mediedata <a href="FILER/mediedata.xlsx" download>her</a>. Importer denne i R, husk under importen at vælge det korrekte sheet, der indeholder data.
 
 Datasættet omhandler danskernes medievaner, 324 danskere er blevet spurgt om deres medievaner. Datasættet indeholder følgende 11 variable.
 
@@ -7917,7 +7917,7 @@ Gennemfør en faktor analyse på datasættet.
 <details>
   <summary>Spørgsmål Genderroles</summary>
 
-Download filen genderroles <a href="genderroles.xlsx" download>her</a> og importer den i R via File - Import Dataset.
+Download filen genderroles <a href="FILER/genderroles.xlsx" download>her</a> og importer den i R via File - Import Dataset.
 Pas på variablene skal konverteres til dummy variable, hvor det giver mening. Man bør nok udelade  variablen Region, ellers skal den ændres til et passende antal dummy variable.
 
 Gennemfør en faktor analyse på datasættet.
@@ -8193,7 +8193,7 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <details>
   <summary>Spørgsmål Forbes 100 US</summary>
 
-Download filen om de 100 rigeste i USA  <a href="Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære kvalitative variable er kodet om til dummy variable.
+Download filen om de 100 rigeste i USA  <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære kvalitative variable er kodet om til dummy variable.
 
 Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.
 
@@ -8754,7 +8754,7 @@ pacman::p_load(quantmod, forecast, rio)
 # getSymbols("GOOG",from = "2017-01-01", to = Sys.Date(),getSymbols.warning4.0=FALSE)
 agoog <- auto.arima(GOOG[,6])
 fagoog <- forecast(agoog)
-export(list(GOOG,fagoog),"google.xlsx") #Skriver filen google.xlsx til arbejdsbiblioteket.
+export(list(GOOG,fagoog),"FILER/google.xlsx") #Skriver filen google.xlsx til arbejdsbiblioteket.
 ```
 
 
