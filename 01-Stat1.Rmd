@@ -234,7 +234,7 @@ DKdf <- round(100*((DKkurs[2:nrow(DKkurs),]-DKkurs[1:nrow(DKkurs)-1,])/DKkurs[1:
 names(DKdf) <- c("TRYG","DDB","FLS","GENMAB","TDC","ISS")
 DKdf[is.na(DKdf)] <- 0 #Replace NA with 0
 # DKdf <- as.matrix(DKdf)
-write.xlsx(DKdf, file = "DK aktiekurser.xlsx", sheetName = "Kurser",colNames = TRUE,rowNames = TRUE,firstActiveRow = 2,  firstActiveCol = 2)
+write.xlsx(DKdf, file = "FILER/DK aktiekurser.xlsx", sheetName = "Kurser",colNames = TRUE,rowNames = TRUE,firstActiveRow = 2,  firstActiveCol = 2)
 
 
 barx <- round(mean(DKdf[,1]),4)
@@ -267,7 +267,7 @@ Herunder kan man i tabellen se det procentvise daglige afkast for de 6 OMX20 akt
 
 ### Tryg aktien
 
-Data for <a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her</a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.  
+Data for <a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her</a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.  
 
 I figuren herunder kan vi se hvordan selve kursen på Trygaktien udvikler sig over året, altså ikke afkastet i procent:
 
@@ -408,7 +408,7 @@ Vi kan bestemme 1. kvartil, som den midterste observation, i den nedre del at da
     
 Der er mere end 8 forskellige definitioner på kvartiler og fraktiler alt efter kontinent og region, vi går ikke i deltaljer med beregnings metoderne, men softwareprogrammer kan beregne fraktiler for os, disse kan altså afvige en smule alt efter beregningsmetoden. 1. og 2. kvartil er fx. ikke helt de samme når vi regner disse ud i excel.
 
-Data for <a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.
+Data for <a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>, vi ønsker at beskrive det procentvise daglige afkast for Tryg vha. forskellige deskriptorer.
 
 Medianen for Tryg findes ved at sortere data `r sort(DKdf[,1])[1]`, `r sort(DKdf[,1])[2]`, `r sort(DKdf[,1])[3]`,...,`r sort(DKdf[,1])[length(DKdf[,1])]` vi finder at medianen bliver `r median(DKdf[,1])`.
 
@@ -841,7 +841,7 @@ plot(hc)
 
 
 
-Data for <a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her.</a>
+Data for <a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her.</a>
 
 Man siger ofte at kursfaldet ved en korrektion, er hurtigere og voldsommere end stigningen i et positivt marked. Kan man baseret på data for aktierne, konkludere at dette synes at være tilfældet?  
  
@@ -1608,7 +1608,7 @@ $$(1-\alpha)\ KI=\left[\bar{X} - z_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}
 ### Eksempler konfidensinterval middelværdi  
 
 #### Tryg aktien
-Hent seneste data for dagsafkastet i procent på trygaktien <a href="DK aktiekurser.xlsx" download>her.</a>
+Hent seneste data for dagsafkastet i procent på trygaktien <a href="FILER/DK aktiekurser.xlsx" download>her.</a>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 trygm <- mean(DKdf[,1])
@@ -2392,7 +2392,7 @@ Herunder ses det output man ville generere i Freestat Deskriptiv statistik.
 
 
 
-<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>
+<a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>
 
 Man siger ofte at kursfaldet ved en korrektion, er hurtigere og voldsommere end stigningen i et positivt marked. Kan man baseret på data for aktierne, konkludere at dette synes at være tilfældet?  
 
@@ -2653,7 +2653,7 @@ Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt int
 
 $$Parameterestimatet\  for\  p\ er\ \hat{p} = \frac{31}{100}=0.31$$  
 
-Vi betragter nu igen Tryg aktien i datasættet<a href="DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, `r length(which(DKdf[,1]>0))` dage ud af `r length(DKdf[,1])` dage var der et positivt afkast.
+Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, `r length(which(DKdf[,1]>0))` dage ud af `r length(DKdf[,1])` dage var der et positivt afkast.
 
 Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
 $$\hat{p}=\frac{x}{n}=\frac{`r length(which(DKdf[,1]>0))`}{`r length(DKdf[,1])`}=`r round(length(which(DKdf[,1]>0))/length(DKdf[,1]),2)`$$
