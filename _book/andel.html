@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-12" />
+<meta name="date" content="2019-12-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,6 +48,8 @@
 
 
 <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/tippyjs-2.5.2/tippy.all.min.js"></script>
+<script src="libs/tippy-binding-0.0.1/tippy.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
 <link href="libs/highcharts-7.0.1/css/motion.css" rel="stylesheet" />
 <link href="libs/highcharts-7.0.1/css/htmlwdgtgrid.css" rel="stylesheet" />
@@ -89,6 +91,31 @@
 <script src="libs/highcharts-7.0.1/custom/text-symbols.js"></script>
 <script src="libs/highchart-binding-0.7.0/highchart.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.6/datatables.js"></script>
+<link href="libs/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="libs/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-bootstrap-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="libs/dt-core-bootstrap-1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="libs/jszip-1.10.16/jszip.min.js"></script>
+<script src="libs/pdfmake-1.10.16/pdfmake.min.js"></script>
+<script src="libs/pdfmake-1.10.16/vfs_fonts.js"></script>
+<link href="libs/dt-ext-buttons-bootstrap-1.10.16/css/buttons.bootstrap.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.print.min.js"></script>
+<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.bootstrap.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.css" rel="stylesheet" />
+<script src="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.min.js"></script>
+<script src="libs/dt-plugin-searchhighlight-1.10.16/jquery.highlight.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -400,6 +427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="24.3" data-path="materialer.html"><a href="materialer.html#eksamensvideoer"><i class="fa fa-check"></i><b>24.3</b> Eksamensvideoer</a></li>
 <li class="chapter" data-level="24.4" data-path="materialer.html"><a href="materialer.html#eksamensvideoer-au-smartlearning"><i class="fa fa-check"></i><b>24.4</b> Eksamensvideoer AU Smartlearning</a></li>
 </ul></li>
+<li class="chapter" data-level="25" data-path="ordliste.html"><a href="ordliste.html"><i class="fa fa-check"></i><b>25</b> Ordliste</a></li>
 <li class="divider"></li>
 <li><a href="./">Login</a></li>
 
@@ -441,9 +469,9 @@ Please Wait…
 <h2><span class="header-section-number">7.1</span> Parameterestimat for andele</h2>
 <p>Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt interesseret i hvor mange af netop disse 100 personer, der benytter MobilePay. Vi har udtaget en stikprøve af en population (populationen er her alle danskere med en konto), som vi benytter til at udtale os om, hvor stor en andel i populationen, der kan antages at benytte MobilePay. Hvis 31 ud af 100 danskere bruger MobilePay, er vores bedste gæt på andelen i populationen der benytter MobilePay 0.31. Vi er imidlertid godt klar over, at det ville være højst besynderligt, at netop 31,000…% af alle danskere benytter MobilePay. Vi kalder <span class="math inline">\(\hat{p}\)</span> for vores estimat (vores bedste gæt) på populationsandelen <span class="math inline">\(p\)</span> “den sande ukendte andel af kontohavere der benytter MobilePay”.</p>
 <p><span class="math display">\[Parameterestimatet\  for\  p\ er\ \hat{p} = \frac{31}{100}=0.31\]</span></p>
-<p>Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 258 dage ud af 485 dage var der et positivt afkast.</p>
+<p>Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx" download> DK aktiekurser hentes her </a>. Vi vil nu se på andelen af dage hvor der var et positivt afkast, 259 dage ud af 487 dage var der et positivt afkast.</p>
 <p>Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
-<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{258}{485}=0.53\]</span></p>
+<span class="math display">\[\hat{p}=\frac{x}{n}=\frac{259}{487}=0.53\]</span></p>
 <p>Bemærk at den kvantitative kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.</p>
 </div>
 <div id="konfidensinterval-for-en-andel" class="section level2">
@@ -482,31 +510,31 @@ Please Wait…
 <div id="tryg-aktien-2" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Tryg aktien</h3>
 <p>Vi fandt tidligere parameterestimatet for p den sande andel af dage med overskud i Tryg aktien som:</p>
-<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{258}{485}=0.532 \]</span></p>
-<p>Vi kender antallet af succeser dvs gunstige udfald 258, ud af den totale stikprøvestørrelse <span class="math inline">\(n=485\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
+<p><span class="math display">\[\hat{p}=\frac{x}{n}=\frac{259}{487}=0.5318 \]</span></p>
+<p>Vi kender antallet af succeser dvs gunstige udfald 259, ud af den totale stikprøvestørrelse <span class="math inline">\(n=487\)</span>. Vi kan nu ved at indsætte i formlen for KI for andele bestemme et 95% KI (det betyder <span class="math inline">\(\alpha=5\%\)</span>).</p>
 <p>Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532-1.96\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.4876\]</span></p>
+<span class="math display">\[0.5318-1.96\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.4875\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532+1.96\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.5764\]</span></p>
-<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 48.76% og 57.64%</p>
+<span class="math display">\[0.5318+1.96\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.5761\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 48.75% og 57.61%</p>
 <p>Vi kan, hvis vi ønsker at finde 90% KI, blot ændre z-fraktilen fra 97.5% til 95%, dvs. fra 1.96 til 1.6448.
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532-1.6448\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.4947\]</span></p>
+<span class="math display">\[0.5318-1.6448\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.4946\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532+1.6448\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.5692\]</span></p>
-<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 49.47% og 56.92%</p>
+<span class="math display">\[0.5318+1.6448\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.569\]</span></p>
+<p>Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 49.46% og 56.9%</p>
 <p>99% KI findes ved at benytte 0.995 z-fraktilen der er 2.5758
 Den nedre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}-z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532-2.5758\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.4736\]</span></p>
+<span class="math display">\[0.5318-2.5758\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.4736\]</span></p>
 <p>Den øvre grænse bliver:</p>
 <p><span class="math display">\[\hat{p}+z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=\]</span>
-<span class="math display">\[0.532+2.5758\cdot\sqrt[]{\frac{0.532(1-0.532)}{100}}=0.5903\]</span></p>
-<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 47.36% og 59.03%</p>
+<span class="math display">\[0.5318+2.5758\cdot\sqrt[]{\frac{0.5318(1-0.5318)}{100}}=0.5901\]</span></p>
+<p>Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem 47.36% og 59.01%</p>
 </div>
 </div>
 <div id="sprgsmal-konfidensinterval-andele" class="section level2">

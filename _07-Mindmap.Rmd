@@ -5,7 +5,7 @@ cat(readLines('np.html'))
 ```
 
 ```{r domstolene,echo=FALSE, result=TRUE, fig.cap=("Oversigt over domstolene")}
-library("VisNetwork")
+library("visNetwork")
 nodes <- data.frame(id = 1:9, 
                     shape = c("box"), 
                     level = c(1,2,2,4,4,4,3,4,1),
