@@ -93,24 +93,18 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.6/datatables.js"></script>
-<link href="libs/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-<link href="libs/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-bootstrap-1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="libs/dt-core-bootstrap-1.10.16/js/dataTables.bootstrap.min.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="libs/jszip-1.10.16/jszip.min.js"></script>
 <script src="libs/pdfmake-1.10.16/pdfmake.min.js"></script>
 <script src="libs/pdfmake-1.10.16/vfs_fonts.js"></script>
-<link href="libs/dt-ext-buttons-bootstrap-1.10.16/css/buttons.bootstrap.min.css" rel="stylesheet" />
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/dataTables.buttons.min.js"></script>
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.flash.min.js"></script>
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.html5.min.js"></script>
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.colVis.min.js"></script>
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.print.min.js"></script>
-<script src="libs/dt-ext-buttons-bootstrap-1.10.16/js/buttons.bootstrap.min.js"></script>
-<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
-<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
 <link href="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.css" rel="stylesheet" />
 <script src="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.min.js"></script>
 <script src="libs/dt-plugin-searchhighlight-1.10.16/jquery.highlight.js"></script>
@@ -504,18 +498,18 @@ Please Wait…
 pacman<span class="op">::</span><span class="kw">p_load</span>(<span class="st">&quot;ggplot2&quot;</span>)
 <span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="co">#Plot med kun punkter</span></code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg, <span class="dt">color =</span> cyl,<span class="dt">label=</span><span class="kw">rownames</span>(mtcars)))<span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">check_overlap =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-91-2.png" width="672" /></p>
 <p>Vi kan benytte t til at transponere data matricen, så kan vi tegne et corrplot, det er meget mørkt da alle bilerne er positivt korrelerede, men man kan ane nogle sammenhænge. t(mtcars) betyder vi transponerer (vender) matricen, så ser vi i stedet på grupper af respondenter, som vi netop analyserer i klyngeanalysen. Hvis ikke vi vender matricen ser vi på korrelationsmatricen mellem de 11 variable i stedet, ligesom vi tidligere har gjort med faktoranalysen.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#korrelationsmatricen for transponeret mtcars data, hclust betyder vi ordner efter variable der passer sammen</span>
 pacman<span class="op">::</span><span class="kw">p_load</span>(corrplot)
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(<span class="kw">t</span>(mtcars)), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-91-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-92-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Her er korrelationsmatricen ikke transponeret, hvilket svarer til en matrice baseret på variable som ved faktoranalysen vi tidligere så på.</span>
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(mtcars), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
 <div id="hierakisk-klyngeanalyse-hclust-kommandoen-premium" class="section level2">
 <h2><span class="header-section-number">21.1</span> <font color="red">Hierakisk klyngeanalyse hclust kommandoen<sup> Premium </font></sup></h2>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
@@ -589,7 +583,7 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <span class="kw">plot</span>(clusters,<span class="dt">cex=</span><span class="fl">0.5</span>,<span class="dt">main =</span> <span class="st">&quot;Dendogram af mtcars&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;Klyngetræ&quot;</span>,<span class="dt">sub=</span><span class="st">&quot;Bilmodeller&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">190</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="co">#Tegn rød vandret linje h betyder horisontal</span>
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">230</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-95-1.svg" width="672" /></p>
 <p>Hvis vi ønsker at undersøge en indeling med et bestemt antal klynger, kan vi bruge cutree i R, til at undersøge klyngerne i en skæring med fx. 4 klynger nærmere. Her ser vi som nævnt, Maserati Bora skiller sig ud ved at have sin egen klynge. Nummeret ved hver af de 32 biler angiver hvilken klynge bilen tilhører.</p>
 <pre class="sourceCode r"><code class="sourceCode r">clusterCut &lt;-<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>) <span class="co">#Opdeling i 4 klynger.</span>
 clusterCut</code></pre>
@@ -690,11 +684,11 @@ colors =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quo
 clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>)
 <span class="kw">plot</span>(<span class="kw">as.phylo</span>(clusters), <span class="dt">type =</span> <span class="st">&quot;fan&quot;</span>, <span class="dt">tip.color =</span> colors[clus4],
      <span class="dt">label.offset =</span> <span class="dv">0</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.svg" width="672" /></p>
 <p>Herunder er et plot, hvor farvekoden er baseret på klyngerne.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(hp, mpg)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="fl">3.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">col =</span> clusterCut)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-99-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-100-1.svg" width="672" /></p>
 </div>
 <div id="ikke-hierakisk-klyngeanalyse-kmeans-kommandoen-premium" class="section level2">
 <h2><span class="header-section-number">21.2</span> <font color="red">Ikke hierakisk klyngeanalyse kmeans kommandoen<sup> Premium </font></sup></h2>
@@ -707,47 +701,47 @@ clus4 =<span class="st"> </span><span class="kw">cutree</span>(clusters, <span c
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)
 mtcarsCluster4</code></pre>
-<pre><code>## K-means clustering with 4 clusters of sizes 4, 16, 7, 5
+<pre><code>## K-means clustering with 4 clusters of sizes 11, 10, 4, 7
 ## 
 ## Cluster means:
-##        mpg      cyl     disp       hp     drat       wt     qsec        vs
-## 1 14.60000 8.000000 340.5000 272.2500 3.675000 3.537500 15.08750 0.0000000
-## 2 24.50000 4.625000 122.2937  96.8750 4.002500 2.518000 18.54312 0.7500000
-## 3 17.01429 7.428571 276.0571 150.7143 2.994286 3.601429 18.11857 0.2857143
-## 4 14.68000 8.000000 426.4000 200.0000 3.078000 4.660800 17.45800 0.0000000
-##       am  gear     carb
-## 1 0.5000 4.000 5.000000
-## 2 0.6875 4.125 2.437500
-## 3 0.0000 3.000 2.142857
-## 4 0.0000 3.000 3.200000
+##        mpg cyl     disp        hp     drat       wt     qsec        vs
+## 1 26.66364   4 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909
+## 2 15.67000   8 317.1400 210.40000 3.297000 3.612500 16.45400 0.0000000
+## 3 13.67500   8 443.0000 206.25000 3.060000 4.966000 17.56750 0.0000000
+## 4 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286
+##          am     gear     carb
+## 1 0.7272727 4.090909 1.545455
+## 2 0.2000000 3.400000 3.500000
+## 3 0.0000000 3.000000 3.500000
+## 4 0.4285714 3.857143 3.428571
 ## 
 ## Clustering vector:
 ##           Mazda RX4       Mazda RX4 Wag          Datsun 710 
-##                   2                   2                   2 
+##                   4                   4                   1 
 ##      Hornet 4 Drive   Hornet Sportabout             Valiant 
-##                   3                   4                   3 
+##                   4                   2                   4 
 ##          Duster 360           Merc 240D            Merc 230 
-##                   1                   2                   2 
+##                   2                   1                   1 
 ##            Merc 280           Merc 280C          Merc 450SE 
-##                   2                   2                   3 
-##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
-##                   3                   3                   4 
-## Lincoln Continental   Chrysler Imperial            Fiat 128 
 ##                   4                   4                   2 
-##         Honda Civic      Toyota Corolla       Toyota Corona 
-##                   2                   2                   2 
-##    Dodge Challenger         AMC Javelin          Camaro Z28 
+##          Merc 450SL         Merc 450SLC  Cadillac Fleetwood 
+##                   2                   2                   3 
+## Lincoln Continental   Chrysler Imperial            Fiat 128 
 ##                   3                   3                   1 
+##         Honda Civic      Toyota Corolla       Toyota Corona 
+##                   1                   1                   1 
+##    Dodge Challenger         AMC Javelin          Camaro Z28 
+##                   2                   2                   2 
 ##    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
-##                   4                   2                   2 
+##                   3                   1                   1 
 ##        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   2                   1                   2 
+##                   1                   2                   4 
 ##       Maserati Bora          Volvo 142E 
-##                   1                   2 
+##                   2                   1 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1]  7654.146 32837.997 11846.095 10981.601
-##  (between_SS / total_SS =  89.8 %)
+## [1] 11848.370 43649.519  4665.041 13954.336
+##  (between_SS / total_SS =  88.1 %)
 ## 
 ## Available components:
 ## 
@@ -758,31 +752,31 @@ mtcarsCluster4</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</code></pre>
 <pre><code>##    
 ##      4  6  8
-##   1  0  0  4
-##   2 11  5  0
-##   3  0  2  5
-##   4  0  0  5</code></pre>
+##   1 11  0  0
+##   2  0  0 10
+##   3  0  0  4
+##   4  0  7  0</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)
 <span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</code></pre>
 <pre><code>##    
 ##      4  6  8
-##   1  0  0 14
-##   2  0  7  0
-##   3 11  0  0</code></pre>
+##   1  0  1 10
+##   2 11  6  0
+##   3  0  0  4</code></pre>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 3 klynger. Bemærk vi skal hente pakken <strong>factoextra</strong>, der indeholder plotfunktionen fviz_cluster(). Vi har benyttet funktionen <strong>scale()</strong>, det er en rigtig god ide at benytte hvis, der er stor forskel på måleenhederne i en data.frame. Funktionen <strong>scale()</strong> bringer variablene i samme skale. Der er fx. stor forskel på enhederne i carb og disp, prøv at sammenligne nedenstående plot med et tilsvarende plot uden scale.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)
 <span class="kw">fviz_cluster</span>(km3.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 3 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-103-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-104-1.svg" width="672" /></p>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 4 klynger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km4.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 <span class="kw">fviz_cluster</span>(km4.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 4 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-104-1.svg" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-105-1.svg" width="672" />
 Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 5 klynger.</p>
 <pre class="sourceCode r"><code class="sourceCode r">km5.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">5</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)
 <span class="kw">fviz_cluster</span>(km5.res, <span class="dt">data =</span> mtcars, <span class="dt">main =</span> <span class="st">&quot;Klyngeplot biler opdelt i 5 klynger&quot;</span>,<span class="dt">repel =</span> <span class="ot">TRUE</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-105-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-106-1.svg" width="672" /></p>
 </div>
 <div id="validering-med-anova-premium" class="section level2">
 <h2><span class="header-section-number">21.3</span> <font color="red">Validering med ANOVA<sup> Premium </font></sup></h2>
