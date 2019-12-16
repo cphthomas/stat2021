@@ -35,12 +35,17 @@ forklaring <<- c(
   "Diskrete variable er variable, der har heltallige værdier fx.<br><i>
   Antal børn i familien<br>
   {0, 1, 0, 3, 2, 1,0,1,0,...}</i>",
-  "Kontinuerte variable er variable, der har kontinuerte værdier fx. <br><i>
-  Indholdet i Coca Cola dåser i ml.<br>
+
+
+  "Kontinuerte variable er variable der kan antage uendeligt mange værdier fx. <br><i>
+  Indholdet i Coca Cola dåser i ml. groft afrundet med 2 decimaler<br>
   {333,12, 333,08, 332,82, 332,73, 332,93,...}<br>
-  Mænds højde i cm.<br>
+  Mænds højde groft afrundet til hele cm.<br>
   {176, 188, 169, 177, 181, 182,...}<br>
-  Punktsandsynligheder for en kontinuert variabel 0. Har vi et perfekt målebånd findes der ikke en eneste person i hele versen, der præcis er 180,00000000000000.. cm høj. <br>Ligeledes findes ingen cola dåser der indeholder præcis 330,000000... ml. </i> ",
+  Punktsandsynligheder for en kontinuert variabel 0. Har vi et perfekt målebånd, findes der ikke en eneste person i hele verden, der præcis er 180,00000000000000... cm høj. <br>Ligeledes findes ingen cola dåser der indeholder præcis 330,000000... ml. </i> ",
+
+
+
   "Vi tester hypotesen
   <br>H<sub>0</sub>: &mu;=34
   <br>H<sub>1</sub>: &mu;&ne;34<br>

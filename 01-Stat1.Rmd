@@ -123,7 +123,7 @@ cat(readLines('np.html'))
   
 ### Kvalitative variable  
   
-  Kvalitative variable er data vi ikke kan måle eller tælle. De antager værdier i form af navne eller labels:
+  ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable er data vi ikke kan måle eller tælle. De antager værdier i form af navne eller labels:
   
 * Kæledyr: kat, hund, marsvin
 * Køn: mand, kvinde
@@ -131,7 +131,7 @@ cat(readLines('np.html'))
   
 ### Kvantitative variable
   
-  ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` er målbare numeriske variable, vi deler disse op i *kontinuerte* og *diskrete* variable
+  ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` er målbare numeriske variable, vi deler disse op i ``r tippy(" kontinuerte", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` og ``r tippy(" diskrete", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` variable
   
 #### Diskrete variable
   
@@ -156,7 +156,7 @@ Kontinuerte variable er fx.
 ### Skalatyper
   Vi kan ydermere inddele variable efter skalatype hvor lavere betyder mindst restriktiv.
   
-  1. Nominalskala, bruges til at måle kvalitative data (er der kun 2 mulige udfald kaldes variablen specielt binær eller dikotom), fx.
+  1. Nominalskala, bruges til at måle ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` data (er der kun 2 mulige udfald kaldes variablen specielt binær eller dikotom), fx.
       + Køn Mand Kvinde   
       + Styresystem: IOS Android Windows Symbian Andet
       + Race: Europæisk, Afrikansk, Asiatisk Andet
@@ -185,8 +185,8 @@ Kontinuerte variable er fx.
 - Vin Scully
 </div>
 
-  Interval- og ratioskalaer omtales som numeriske eller kontinuerte skalaer, disse er knyttet til ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))``.  
-  Nominal- og ordinalskalaer omtales ofte som kategorisk eller faktor, disse er knyttet til kvalitative variable.
+  Interval- og ratioskalaer omtales som numeriske eller ``r tippy(" kontinuerte", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` skalaer, disse er knyttet til ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))``.  
+  Nominal- og ordinalskalaer omtales ofte som kategorisk eller faktor, disse er knyttet til ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable.
   
   En stikprøve af skalatype ratio kan fx. reduceres til ordinal, eller nominal. Temperatur målt i celsius kan fx. omskrives til en ordinal variabel: koldt normalt varmt, eller en nominal variabel: ekstrem temperatur eller normal temperatur.
   
@@ -631,7 +631,7 @@ I linket her er filen [Forbes 400 2014 RICH US](https://drive.google.com/uc?expo
 <details> 
   <summary>Svar Forbes 400 rigeste i USA formue</summary>
 
-**1.** Variablen worth er en kvanitativ, kontinuert variabel, ratioskala.  
+**1.** Variablen worth er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala.  
 **2.** Den gennemsnitlige formue er `r base::round(meanworth,2)` mia. USD  
 **3.** Medianen for variablen worth er `r base::round(medianworth,2)` mia. USD  
 **4.** Fordelingens skævhed er `r base::round(worthskew,2)`, fordelingen er som vi vel ville forvente klart højreskæv. Der er velhavere med meget store formuer, dvs. outliers med høje værdier, vanvittigt rige mennesker, som fx Bill Gates, Warren Buffet etc. disse danner en hale mod højre.  
@@ -762,7 +762,7 @@ I linket her er filen [GDP2015](https://drive.google.com/uc?export=download&id=0
   <summary>Svar BNP 2015 for verden på lande i millioner USD.</summary>
 
 
-**1.** Variablen GDP er en kvanitativ, kontinuert variabel, ratioskala.  
+**1.** Variablen GDP er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala.  
 **2.** Hvad er det gennemsnitlige GDP for landene `r base::round(mean(gdp),2)` mio USD.  
 **3.** Medianen for variablen GDP er `r base::round(median(gdp),2)` mio USD.  
 **4.** Fordelingens skævhed er `r base::round(skewness(gdp,type=2), 2)`  
@@ -821,7 +821,7 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 <details> 
   <summary>Svar Danske virksomheder egenkapital.</summary>
 
-**1.** Variablen egenkapital er en kvanitativ, kontinuert variabel, ratioskala.  
+**1.** Variablen egenkapital er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala.  
 **2.** Hvad er det gennemsnitlige egenkapital for virksomhederne `r base::round(mean(dkvirk$Egenkapital),2)` DKK.  
 **3.** Medianen for variablen egenkapital er `r base::round(median(dkvirk$Egenkapital),2)` 1000 DKK.  
 **4.** Fordelingens skævhed er `r base::round(skewness(dkvirk$Egenkapital,type=2), 2)`  
@@ -899,7 +899,7 @@ cat(readLines('np.html'))
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337728' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- stikprøve og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er normalfordelingen essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er kontinuert symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien $\mu$ og standardafvigelsen $\sigma$.
+Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- stikprøve og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er normalfordelingen essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien $\mu$ og standardafvigelsen $\sigma$.
 
 
 
@@ -2042,7 +2042,7 @@ tsize <- function(x,mu0) (mean(x)-mu0)/sqrt(var(x)/length(x))
 ```
 
 I datasættet [Statkarakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ)   <img src="img/12-Ball-Real.pngc200.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> findes 54 statistik 2015 finansøkonom karakterer. Man kan med rette diskutere om karakterer for specifikke klasser/undervisere/lokationer etc. er repræsentative for populationen. 
-Her antager vi at stikprøven er respræsentativ. Det er ligeledes tvivlsomt om vi kan behandle karakterer som en kontinuert variabel, der er tale om en kvalitativ ordinal variabel. I uddannelsesmæssige sammenhænge behandles karakterer som en kontinuert variabel, der beregnes gennemsnit og standardafvigelser, derfor forudsætter vi her variablen er kontinuert.
+Her antager vi at stikprøven er respræsentativ. Det er ligeledes tvivlsomt om vi kan behandle karakterer som en ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, der er tale om en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` ordinal variabel. I uddannelsesmæssige sammenhænge behandles karakterer som en ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, der beregnes gennemsnit og standardafvigelser, derfor forudsætter vi her variablen er ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))``.
 
 Vi finder parameterestimatet ved stikprøvegennemsnittet som $\hat{\mu}=`r round(mean((kar$Grade)),2)`$ 
 
@@ -2488,7 +2488,7 @@ hc <- ggplot(data=dkvirk, aes(dkvirk$Omsætning)) +
   ggtitle("Histogram over omsætning i antal 1000 DKK.")
 plot(hc)
 ```
-1. Variablen Omsætning er en kvanitativ, kontinuert variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve i Freestat.  
+1. Variablen Omsætning er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve i Freestat.  
 2. Standardfejlen for middelværdien bliver $SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127$ DDK eller ca. 95 mio.  
 3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter signifikansniveauet i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
 <img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
@@ -2680,7 +2680,7 @@ Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx
 Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
 $$\hat{p}=\frac{x}{n}=\frac{`r length(which(DKdf[,1]>0))`}{`r length(DKdf[,1])`}=`r round(length(which(DKdf[,1]>0))/length(DKdf[,1]),2)`$$
 
-Bemærk at den ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
+Bemærk at den ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` ``r tippy(" kontinuerte", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel dagligt afkast for Trygaktien, blev omdannet til en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
 
 
 
@@ -4289,7 +4289,7 @@ cat(readLines('np.html'))
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226072242' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Korrelationskoefficienten viser hvordan 2 variable varierer sammen, korrelationskoefficienten er et tal mellem -1 og 1. Dagstemperaturen og dagssalget af is på Seven Eleven, har positiv samvarians, vi siger de er positivt korrelerede. Høj temperatur (varme) betyder højt salg af is, lav temperatur (kulde) betyder lavt salg af is. Korrelationskoefficienten vil derfor være et positivt tal.
+Korrelationskoefficienten viser hvordan 2 ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` variable varierer sammen, korrelationskoefficienten er et tal mellem -1 og 1. Dagstemperaturen og dagssalget af is på Seven Eleven, har positiv samvarians, vi siger de er positivt korrelerede. Høj temperatur (varme) betyder højt salg af is, lav temperatur (kulde) betyder lavt salg af is. Korrelationskoefficienten vil derfor være et positivt tal.
 
 Dagstemperaturen og dagssalget af varm kakao på Seven Eleven, har negativ samvarians, vi siger de er negativt korrelerede. Høj temperatur (varme) betyder lavt salg af kakao, lav temperatur (kulde) betyder højt salg af kakao. korrelationskoefficienten vil derfor være et negativt tal.
 
@@ -5654,7 +5654,7 @@ Den tilsynsførende spørger ham nysgerrigt. "Nu har du siddet i 2 timer og slå
 Den studerende svarer febrisk, mens han stadig slår plat og krone "Shhh! jeg er ved at tjekke svarene"
 
 </div>
-Binomialfordelingen er en diskret (heltallig) fordeling, der beskriver sandsynligheden for x succeser, ved n identiske Bernoulli forsøg. Sandsynlighedsfordelingen for krone ved ti kast, med en fair mønt, er således 10 uafhængige forsøg med samme sandsynlighedsparameter p = 0.5 antalsparameteren n er 10, hvilket er det samlede antal enkelt forsøg.
+Binomialfordelingen er en ``r tippy(" diskret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` (heltallig) fordeling, der beskriver sandsynligheden for x succeser, ved n identiske Bernoulli forsøg. Sandsynlighedsfordelingen for krone ved ti kast, med en fair mønt, er således 10 uafhængige forsøg med samme sandsynlighedsparameter p = 0.5 antalsparameteren n er 10, hvilket er det samlede antal enkelt forsøg.
 For at en stokastisk variabel X er binomialfordelt, skal følgende 3 forudsætninger være opfyldt:
 
 1. Den stokastiske variabel betegner antallet af succeser i n forsøg, som hver især kan antage to værdier kaldet succes og fiasko.
@@ -5984,7 +5984,7 @@ cat(readLines('npp.html'))
 ```
 
 
-Poisson fordelingen er en diskret sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer indenfor i tid eller rum. Fx.
+Poisson fordelingen er en ``r tippy(" diskret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer indenfor i tid eller rum. Fx.
 <img src="img/car.png" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 1. Antal cykelpunkteringer indenfor 1000 km.
 2. Antal mål i EM-finalen.
@@ -6468,7 +6468,7 @@ library(rdrop2)
 ```
 
 
-Goodnees of fit testen er en udvidelse af z-testet for en andel. <img src="img/bolig.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> Med test af andele kan man fx. undersøge om andelen af mænd er 60% og kvinder 40% i en population, vi tester altså fordelingen for en kvalitativ variabel med 2 mulige udfald. Med et goodness of fit test kan vi teste kvalitative variable med 2 eller flere mulige udfald, man kan fx. undersøge om fordelingen af boligform i en stikprøve kan antages at svare til fordelingen på regionsplan: 50% ejer, 20% andel og 30% leje.
+Goodnees of fit testen er en udvidelse af z-testet for en andel. <img src="img/bolig.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> Med test af andele kan man fx. undersøge om andelen af mænd er 60% og kvinder 40% i en population, vi tester altså fordelingen for en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variabel med 2 mulige udfald. Med et goodness of fit test kan vi teste ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable med 2 eller flere mulige udfald, man kan fx. undersøge om fordelingen af boligform i en stikprøve kan antages at svare til fordelingen på regionsplan: 50% ejer, 20% andel og 30% leje.
 
 Vi tester vha. Chi i anden fordelingen. Teststørrelsen vi finder, udtrykker forskellen mellem det vi observerer i stikprøven og det vi tester under nulhypotesen.
 
@@ -6492,7 +6492,7 @@ Teststørrelsen findes som:
 
 $$\chi^2=\sum^k_{j=1}\frac{(O-E)^2}{E}$$
 
-Hvor O er observerede værdier og E er forventede værdier det stammer fra expected på engelsk, k angiver antallet af mulige udfald for den kvalitative variabel.
+Hvor O er observerede værdier og E er forventede værdier det stammer fra expected på engelsk, k angiver antallet af mulige udfald for den ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variabel.
 
 For at beregne teststørrelsen bestemmer vi E, antallet af ejer, leje og andel vi ville forvente i en stikprøve på netop 150 boliger, der perfekt repræsenterede regionen.
 
@@ -6660,7 +6660,7 @@ Freestat output bliver:
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231074575' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 <br>
-Vi kan analysere kvalitative variable med 2 mulige udfald vha. test af 2 andele. Chi i anden testet er en udvidelse af test af 2 andele. Med chi i anden testen kan man sammenligne kvalitative variable med 2 eller flere mulige udfald. <img src="img/vandskade.jpg" align="right" width="45%" height="45%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>Vi kan benytte chi i anden testet til at undersøge om der er en sammenhæng mellem 2 inddelingskriterier som fx. køn og bestået/ikke bestået, køn og karakter, aldersgruppe og karakter.
+Vi kan analysere ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable med 2 mulige udfald vha. test af 2 andele. Chi i anden testet er en udvidelse af test af 2 andele. Med chi i anden testen kan man sammenligne ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable med 2 eller flere mulige udfald. <img src="img/vandskade.jpg" align="right" width="45%" height="45%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>Vi kan benytte chi i anden testet til at undersøge om der er en sammenhæng mellem 2 inddelingskriterier som fx. køn og bestået/ikke bestået, køn og karakter, aldersgruppe og karakter.
 
 Antag et forsikringsselskab har indsamlet data for kunders skadesanmeldelser fordelt på øst og vest for Storebælt. Forsikringsselskabet ønsker at undersøge om der er forskel i andelen af kunder der anmelder skader i Øst- og Vestdanmark. Følgende data er angivet
 
@@ -8215,7 +8215,7 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <details>
   <summary>Spørgsmål Forbes 100 US</summary>
 
-Download filen om de 100 rigeste i USA  <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære kvalitative variable er kodet om til dummy variable.
+Download filen om de 100 rigeste i USA  <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable er kodet om til dummy variable.
 
 Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.
 
