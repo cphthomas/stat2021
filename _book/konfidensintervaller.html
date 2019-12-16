@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-16" />
+<meta name="date" content="2019-12-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -471,8 +471,8 @@ Please Wait…
 </iframe>
 </div>
 <p>Konfidensintervallet også kaldet KI eller CI (engelsk), fortæller os, baseret på en simpelt tilfældigt udvalgt stikprøve, med en bestemt konfidens- eller sikkerhed, indenfor hvilken nedre og øvre grænse, en populationsparameter ligger.</p>
-<p>Vi taler om et 95% konfidensniveau, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller standardafvigelsen i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi <code><span id="htmlwidget-5bb753e3541b4bef4fc2" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-5bb753e3541b4bef4fc2">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Signifikansniveauet &alpha; typisk 1%, 5% eller 10%, fastsættes inden et test og sammenlignes med p-værdien.<br>\n  Er p-værdien mindre end signifikansniveauet forkastes nulhypotesen, ellers ikke.<br>\n  <i>Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl også kaldet en falsk positiv)<br>\n  Medicinal industrien arbejder ofte med 1% signifikansniveau, hvor et test kunne være:<br>\n  H<sub>0<\/sub>: Medicinen har ingen effekt<br>\n  H<sub>1<\/sub>: Medicinen har effekt<br>\n  Med 1% signifikansniveau, begås en type 1 fejl kun i et ud af 100 tests.<br>\n  En type 1 fejl vil her betyde, at man fejlagtigt konkluderer at et medicinal produkt uden effekt virker.<br>\n  Signifikansniveauet kan bruges til at bestemme konfidensniveauet 1-&alpha;, der angiver sandsynligheden for korrekt ikke at forkaste en sand nulhypotese <\/i><\/h4>","text":" signifikansniveauet"},"evals":[],"jsHooks":[]}</script></code> og betegner med <span class="math inline">\(\alpha\)</span>. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.</p>
+<p>Vi taler om et 95% konfidensniveau, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller standardafvigelsen i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi <code><span id="htmlwidget-98c61e46a5d0c928d67b" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-98c61e46a5d0c928d67b">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Signifikansniveauet &alpha; typisk 1%, 5% eller 10%, fastsættes inden et test og sammenlignes med p-værdien.<br>\n  Er p-værdien mindre end signifikansniveauet forkastes nulhypotesen, ellers ikke.<br>\n  <i>Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl også kaldet en falsk positiv)<br>\n  Medicinal industrien arbejder ofte med 1% signifikansniveau, hvor et test kunne være:<br>\n  H<sub>0<\/sub>: Medicinen har ingen effekt<br>\n  H<sub>1<\/sub>: Medicinen har effekt<br>\n  Med 1% signifikansniveau, begås en type 1 fejl kun i et ud af 100 tests.<br>\n  En type 1 fejl vil her betyde, at man fejlagtigt konkluderer at et medicinal produkt uden effekt virker.<br>\n  Signifikansniveauet kan bruges til at bestemme konfidensniveauet 1-&alpha;, der angiver sandsynligheden for korrekt ikke at forkaste en sand nulhypotese <\/i><\/h4>","text":" signifikansniveauet"},"evals":[],"jsHooks":[]}</script></code> og betegner med <span class="math inline">\(\alpha\)</span>. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.</p>
 <div id="konfidensinterval-for-middelvrdien" class="section level3">
 <h3><span class="header-section-number">5.0.1</span> Konfidensinterval for middelværdien</h3>
 <p>Vi bestemmer nedre og øvre grænse for konfidensintervallet, når vi ikke kender populationens standardafvigelse <span class="math inline">\(\sigma\)</span> og estimerer denne vha. S altså <span class="math inline">\(\hat{\sigma}\)</span>, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:</p>
@@ -525,18 +525,18 @@ stikprøve ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er
 <p>Hent seneste data for dagsafkastet i procent på trygaktien <a href="FILER/DK aktiekurser.xlsx" download>her.</a></p>
 <p>Vi bestemmer nedre grænse for 95% KI ved:</p>
 <p><span class="math display">\[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
-<span class="math display">\[0.0667503 - 1.9649\cdot \frac{1.0212626}{\sqrt[]{487}}=\]</span>
-<span class="math display">\[-0.0242\]</span></p>
-<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med 486 frihedsgrader denne er 1.9649, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 487</p>
+<span class="math display">\[0.0689326 - 1.9648\cdot \frac{1.0213518}{\sqrt[]{488}}=\]</span>
+<span class="math display">\[-0.0219\]</span></p>
+<p>Hvor vi har benyttet 97.5% fraktilen for t-fordelingen med 487 frihedsgrader denne er 1.9648, bemærk denne er ikke langt fra 97.5% fraktilen for z-fordelingen 1.96, når vi har en stikprøve på 488</p>
 <p>Vi bestemmer tilsvarende øvre grænse for 95% KI ved:</p>
 <p><span class="math display">\[\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=\]</span>
-<span class="math display">\[0.0667503 + 1.9649\cdot \frac{1.0212626}{\sqrt[]{487}}=\]</span>
-<span class="math display">\[0.1577\]</span></p>
-<p>Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0242% og 0.1577%.</p>
+<span class="math display">\[0.0689326 + 1.9648\cdot \frac{1.0213518}{\sqrt[]{488}}=\]</span>
+<span class="math display">\[0.1598\]</span></p>
+<p>Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0219% og 0.1598%.</p>
 <p>Tilsvarende bestemmer vi 90% KI for Tryg aktien:</p>
-<p>Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0095% og 0.143%.</p>
+<p>Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0073% og 0.1451%.</p>
 <p>99% KI for Tryg aktien bliver:</p>
-<p>Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0529% og 0.1864%.</p>
+<p>Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem -0.0506% og 0.1885%.</p>
 </div>
 </div>
 <div id="quiz-konfidensintervaller" class="section level2">

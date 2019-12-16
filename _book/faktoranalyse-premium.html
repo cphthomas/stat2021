@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-16" />
+<meta name="date" content="2019-12-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -519,8 +519,8 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(psych)</code></pr
 <p>Nulhypotesen i Bartletts test er at variablene ikke er korrelerede dvs. alle korrelationskoefficienter <span class="math inline">\(\rho=0\)</span>,</p>
 <p><span class="math display">\[H_0:Alle\ \rho=0\]</span>
 <span class="math display">\[H_1:Ikke\ alle\ \rho=0  \]</span></p>
-<p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille <code><span id="htmlwidget-fa88fcbe5021aeea483b" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-fa88fcbe5021aeea483b">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>p-værdien også kaldet signifikanssandsynligheden er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>\n  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br>\n  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>\n  Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0<\/sub>: &mu;=210<br>\n  H<sub>1<\/sub>: &mu;&ne;210<br>\n  Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>\n  Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.<\/i><\/h4>","text":" p-værdi"},"evals":[],"jsHooks":[]}</script></code> på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
+<p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille <code><span id="htmlwidget-2972e2f49918e1f3f606" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-2972e2f49918e1f3f606">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>p-værdien også kaldet signifikanssandsynligheden er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>\n  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br>\n  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>\n  Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0<\/sub>: &mu;=210<br>\n  H<sub>1<\/sub>: &mu;&ne;210<br>\n  Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>\n  Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.<\/i><\/h4>","text":" p-værdi"},"evals":[],"jsHooks":[]}</script></code> på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
 <p>Vi kan ligeledes køre Kaiser-Meyer-Olkin KMO testet fra pshych pakken:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">KMO</span>(data)</code></pre>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
@@ -675,7 +675,7 @@ ev<span class="op">$</span>values</code></pre>
 <h3><span class="header-section-number">20.4.2</span> <font color="red">Eigenvalues metoden<sup> Premium </font></sup></h3>
 <p>Vi kan se på nedenstående screeplot, der hvor kurven flader ud, bibringer yderligere faktorer ikke synderlig megen yderligere forklaring til modellen. Man vil med screeplot kriteriet, vælge antallet af faktorer hvor kurven knækkker i tilfældet med 3 faktorer. Man vil ikke altid entydigt kunne afgøre hvor screeplot kurven knækker, her må man så afgøre dette bedst muligt.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(data),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>,<span class="dt">npcs =</span> <span class="dv">6</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot Computereksempel&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-79-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-82-1.svg" width="672" /></p>
 <br>
 <details>
 <p><summary>Spørgsmål personality Stanford</summary>
@@ -718,9 +718,9 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 <p>Vi gennemfører klart analysen viser begge tests.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span>
 <span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-82-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">screeplot</span>(<span class="kw">princomp</span>(personality),<span class="dt">type=</span><span class="st">&quot;line&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Screeplot personality&quot;</span>)</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-86-1.svg" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))
 evp<span class="op">$</span>values</code></pre>
 <pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636

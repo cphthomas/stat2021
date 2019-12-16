@@ -17,16 +17,16 @@ BEGREB <<- c(
 )
 
 Kapitel <<- c(
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvantitative variable i online bogen tepedu.dk her.</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
-  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>"
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvantitative variable!</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvalitative variable!</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om diskrete variable!</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kontinuerte variable!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotese tests!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om p-værdier!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om signifikanssandsynligheder!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om teststørrelser!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om signifikansniveauet!</a>",
+  "<a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om konfidensniveauet!</a>"
 
 
   )
@@ -41,8 +41,9 @@ forklaring <<- c(
   {0, 1, 0, 3, 2, 1,0,1,0,...}<br>
   Nedbørsmængde i mm. i Dragør<br>
   {0,00, 0,02, 0,03, 0.12, 0.08, 1,12,1,43,1,21,0,03,...}<br>
-  Indholdet i Coca Cola dåser i ml.<br>
-  {333,12, 333,08, 332,82, 332,73, 332,93,...}</i>",
+  Indholdet i Coca Cola dåser i ml.<br><br>
+  {333,12, 333,08, 332,82, 332,73, 332,93,...}</i><br><br>
+  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvantitative variable!</a>",
 
   "En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>
   <i>Hvilket kæledyr har du?<br>
