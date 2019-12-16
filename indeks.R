@@ -5,7 +5,9 @@ BEGREB <<- c(
   "Kvalitative variable",
   "Diskrete variable",
   "Kontinuerte variable",
-  "Hypotese test"
+  "Hypotese test",
+  "p-værdi",
+  "signifikanssandsynlighed"
 
 
 
@@ -62,7 +64,10 @@ forklaring <<- c(
   H<sub>0</sub>: &mu;≥34<br>
   H<sub>1</sub>: &mu;<34<br>
   Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant mindre end 34<br><br>
-  "
+  ",
+
+  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). Jo lavere p-værdi des mindre tror vi på nulhypotesen",
+  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). Jo lavere p-værdi des mindre tror vi på nulhypotesen"
 
 
 )
