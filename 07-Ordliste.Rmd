@@ -2,6 +2,7 @@
 
 ```{r, echo=FALSE, results='asis'}
 # cat(readLines('np.html'))
+source("indeks.R")
 ```
 
 

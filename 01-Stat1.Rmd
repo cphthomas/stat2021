@@ -1872,15 +1872,15 @@ Man ville således kun i 1 ud af 100 tilfælde fejlagtigt konkludere at et produ
 Konfidensniveauet angiver sandsynligheden for at ikke forkaste en sand nulhypotese, summen af konfidensniveau og signifikansniveau er således 100%. 5% signifikansniveau svarer til 95% konfidensniveau, 1% signifikansniveau svarer til 99% konfidensniveau. De gængse signifikansniveauer er 1%, 5% og 10%. Er intet angivet, tester vi på 5% signifikansniveu, man beslutter sig inden testet for hvilket signifikansniveau man sætter.
 
 #### Teststørrelse
-Vi kalder hypoteseværdien $\mu_0=730$, vores teststørrelse bliver:
+Vi kalder hypoteseværdien $\mu_0=730$, vores ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver:
 
 $$\frac{\hat{\mu}-\mu_0}{SEM}=\frac{748-730}{\frac{\hat{\sigma}}{\sqrt{n}}}=\frac{18}{\frac{102}{\sqrt{200}}}=\frac{18}{7.2125}=`r round(18/7.2125,4)`$$
 
-Hvor vi fra stikprøven, har gennemsnittet $\hat{\mu}$ 748 meter, standardafvigelsen i stikprøven $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i stikprøven 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en teststørrelse så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i stikprøven, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og signifikansniveauet, når vi har en stor stikprøve på 5% signifikansniveau, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
+Hvor vi fra stikprøven, har gennemsnittet $\hat{\mu}$ 748 meter, standardafvigelsen i stikprøven $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i stikprøven 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i stikprøven, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og signifikansniveauet, når vi har en stor stikprøve på 5% signifikansniveau, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
 
 
 #### Signifikanssandsynlighed p-værdi
-Signifikanssandsynligheden også kaldet ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, angiver sandsynligheden for at få en mere ekstrem teststørrelse, hvis vi udtager en ny tilsvarende stikprøve, når nulhypotesen er sand. I mægler eksemplet er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` lille 0.0134, der kun 1.34% chance for at få en teststørrelse der numerisk er større end 2.4957, hvis vi udtog en ny stikprøve på 200, hvis nulhypotesen er sand. Da 1.34% er mindre end 5%, tror vi ikke på nulhypotesen om at der gennemsnitligt er 730 meter til nærmeste filial.Vi beregner ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` ved arealet af halen, der skæres af ved ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` eller teststørrelsen numerisk. Arealet ved højre hale, der skæres af 2.4957 er 0.0067, arealet ved venstre hale, der skæres af -2.4957 er ligeledes 0.0067. Når vi tester 2-sidet lægger vi begge halearealer sammen og får 0.0067+0.0067=0.0134, hvilket er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
+Signifikanssandsynligheden også kaldet ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, angiver sandsynligheden for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, hvis vi udtager en ny tilsvarende stikprøve, når nulhypotesen er sand. I mægler eksemplet er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` lille 0.0134, der kun 1.34% chance for at få en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` der numerisk er større end 2.4957, hvis vi udtog en ny stikprøve på 200, hvis nulhypotesen er sand. Da 1.34% er mindre end 5%, tror vi ikke på nulhypotesen om at der gennemsnitligt er 730 meter til nærmeste filial.Vi beregner ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` ved arealet af halen, der skæres af ved ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` eller teststørrelsen numerisk. Arealet ved højre hale, der skæres af 2.4957 er 0.0067, arealet ved venstre hale, der skæres af -2.4957 er ligeledes 0.0067. Når vi tester 2-sidet lægger vi begge halearealer sammen og får 0.0067+0.0067=0.0134, hvilket er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
 
 Nedenstående figurer viser ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0134. Vi forkaster altså nulhypotesen på 5% signifikansniveauet. 
 
@@ -1935,7 +1935,7 @@ axis(side = 1, at=c(-5,-1.97,1.97,2.5,5),cex.axis=0.7)
 ```
 
 
-Hvis vi ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er forskellig fra, skal vi se på både venstre og højre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end -2.4957 og større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end -2.4957, svarer oversat til meter at afstanden er mindre end 712 meter, sandsynligheden for en numerisk mere ekstrem teststørrelse bliver arealet af begge haler 0.0067+0.0067=0.0134.
+Hvis vi ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er forskellig fra, skal vi se på både venstre og højre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` mindre end -2.4957 og større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end -2.4957, svarer oversat til meter at afstanden er mindre end 712 meter, sandsynligheden for en numerisk mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver arealet af begge haler 0.0067+0.0067=0.0134.
 
 Vi kan benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``.
 <img src="img/freestatmiddelmaegler.png" alt="freestatmiddelmaegler" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
@@ -1978,7 +1978,7 @@ $$H_1:\mu > 730$$
 
 Hvilket betyder vi skal benytte den 2. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  0.67%, vi forkaster altså nulhypotesen. Vi konkluderer derfor at $\mu > 730$. Den gennemsnitlige afstand til nærmeste filial i populationen er altså større end 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den hvide højre hale.
 
-Hvis vi her ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er større end, skal vi se på højre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er større end 2.4957, svarer oversat til meter, til at afstanden er større end end 748 meter, sandsynligheden for en mere ekstrem teststørrelse bliver arealet højre hale  0.0067 altså ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
+Hvis vi her ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er større end, skal vi se på højre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er større end 2.4957, svarer oversat til meter, til at afstanden er større end end 748 meter, sandsynligheden for en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver arealet højre hale  0.0067 altså ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
 
 ```{r t-score3,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
@@ -2009,7 +2009,7 @@ $$H_1:\mu < 730$$
 
 Hvilket betyder vi skal benytte den 3. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  99.33%, vi forkaster altså IKKE nulhypotesen. Vi konkluderer derfor at $\mu \geq 730$. Den gennemsnitlige afstand til nærmeste filial i populationen er altså mindst 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den store grå venstre hale.
 
-Hvis vi ser på ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end 2.4957, når  nulhypotesen om at afstanden er mindst 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% signifikansniveauet og forkaster ikke nulhypotesen.
+Hvis vi ser på ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` mindre end 2.4957, når  nulhypotesen om at afstanden er mindst 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% signifikansniveauet og forkaster ikke nulhypotesen.
 
 ```{r t-score4,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
@@ -2516,7 +2516,7 @@ $$H_0:\mu=250\ mio.$$
 $$H_0:\mu\neq250\ mio.$$  
 Af nedenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket lige er større end 5% signifikansniveauet. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, signifikansniveau til 5% og Test middel af populationen til 250000 1000 DKK.  
 <img src="img/dkvirkomshyp5.png" alt="dkvirkomshyp5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
-10 Ja, da alternativhypotesen er tosidet skal ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` ligge mellem -1.9664 og 1.9664 svarende til 2.5% og 97.5% fraktilerne for t-fordelingen med 368 frihedsgrader. Man kan se den numeriske værdi af disse i Excel med kommandoen =TINV(5%;368). Teststørrelsen er angivet i Freestat til 1.8628 denne er således ikke så stor at det er kritisk for nulhypotesen, men ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er dog tæt på den øvre grænse, hvilket tydeligere illustreres af at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er tæt på 5%.  
+10 Ja, da alternativhypotesen er tosidet skal ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` ligge mellem -1.9664 og 1.9664 svarende til 2.5% og 97.5% fraktilerne for t-fordelingen med 368 frihedsgrader. Man kan se den numeriske værdi af disse i Excel med kommandoen =TINV(5%;368). ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er angivet i Freestat til 1.8628 denne er således ikke så stor at det er kritisk for nulhypotesen, men ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er dog tæt på den øvre grænse, hvilket tydeligere illustreres af at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er tæt på 5%.  
 11 Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
 $$H_0:\mu\neq250\ mio.$$  
@@ -2990,7 +2990,7 @@ Når vi bestemmer ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE
 
 Vi bemærker ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er negativ, da parameter estimatet $\hat{p}=0.31$ er mindre end $p_0=0.35$. z-teststørrelsen er tilpasset til standard normalfordelingen, det betyder vi kan sammenligne denne med nedre og øvre grænser for KI i z-fordelingen. Når vi tester på 5% signifikansniveau, er den nedre og øvre grænse for 95% KI i z-fordelingen -1.96 og 1.96, vi har derfor en kritiske værdier -1.96 og 1.96. Når vi tester på 1% signifikansniveau, vi har  kritiske værdier -2.58 og 2.58 og på 10% signifikansniveau -1.64 og 1.64.
 
-Teststørrelsen `r round(ptest(31,100,0.35)$z,4)`, ligger mellem -1.96 og  1.96, derfor vil vi ikke forkaste nulhypotesen på 5% signifikansniveau, i øvrigt heller ikke på 10% signifikansniveu. Det betyder vi kan ikke afvise, nulhypotesen.
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` `r round(ptest(31,100,0.35)$z,4)`, ligger mellem -1.96 og  1.96, derfor vil vi ikke forkaste nulhypotesen på 5% signifikansniveau, i øvrigt heller ikke på 10% signifikansniveu. Det betyder vi kan ikke afvise, nulhypotesen.
 
 I figuren nedenfor er indtegnet z-scoren, samt forkast ikke regionen samt forkast halerne når vi betragter 95% KI dvs. et 5% signifikansniveu.
 
@@ -3177,7 +3177,7 @@ I Freestat vil vi vælge den 2. hypotesetest i test af andele, hvilket ses på b
   <summary> Spørgsmål andelen af MobilePay brugere </summary>
 Vi benytter fortsat undersøgelsen med 31 MobilePay brugere ud af 100 adspurgte.  
 Kan man antage at andelen af MobilePay brugere er 25%?  
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.   
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.   
 
 </details>  
 <br>
@@ -3207,7 +3207,7 @@ Vi konkluderer altså andelen af MobilePay brugere er 25%.
   <summary> Spørgsmål andelen af MobilePay brugere </summary>
 
 Kan man antage at andelen af MobilePay brugere er 20%?  
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3241,7 +3241,7 @@ Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, ar
 
 
 Kan man antage at andelen af MobilePay brugere højst er 22%?   
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3288,7 +3288,7 @@ phat <- n1/n01
 Vi ser igen på datasættet [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM), her findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte.  
 
 Vi betragter nu andelen af kvinder i ledelse (manage). Er andelen af kvinder i ledelsen mindre end 50%?  Husk vi betrager kun ledelsen (manage).  
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3313,7 +3313,7 @@ Det er vigtigt at bemærke at stikprøven er så lille at approximationsbetingel
 
 
 Test om andelen af kvinder i ledelsen mindre end 15%, opstil hypoteser samt teknisk og let forståelig konklusion?  
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3344,7 +3344,7 @@ min <-  length(which(minority=="yes"))
 pval <- ptest(n1,n01,0.5)$pv*2
 ```
 Vi skal teste om halvdelen af medarbejdere i custodial tjeneste dvs. sikkerhedsmedarbejdere er minoriteter.  
-Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 
 </details>  
@@ -4162,7 +4162,7 @@ Vi finder stikprøvegennemsnittene. For mordrater i voldelige stater er stikprø
 Nedenfor er Freestat output for testen, vi ser testet for varianshomogenitet i blå ramme ,betyder vi bør benytte unpooled t-test:
 
 ![](img/freestatuscrimepooled.png)
-Teststørrelsen i pooled t-testen ovenfor bliver stor `r round(ust$statistic,4)`, der er altså meget stor forskel på mordraten. Vi får tilsvarende nedenfor en unpooled teststørrelse på `r round(uust$statistic,4)`. Begge teststørrelser er langt større end 2, hvilket giver os meget små p-værdier, så vi vil med sikkerhed forkaste nulhypotesen i begge analyser. I unpooled testen bliver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` et meget lille tal, tæt på 0%, dette kan ses i nedenstående Freestat output.
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` i pooled t-testen ovenfor bliver stor `r round(ust$statistic,4)`, der er altså meget stor forskel på mordraten. Vi får tilsvarende nedenfor en unpooled ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r round(uust$statistic,4)`. Begge teststørrelser er langt større end 2, hvilket giver os meget små p-værdier, så vi vil med sikkerhed forkaste nulhypotesen i begge analyser. I unpooled testen bliver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` et meget lille tal, tæt på 0%, dette kan ses i nedenstående Freestat output.
 
 Output fra Freestat når vi benytter unpooled t-test til analysen, ses herunder:
 
@@ -6470,7 +6470,7 @@ library(rdrop2)
 
 Goodnees of fit testen er en udvidelse af z-testet for en andel. <img src="img/bolig.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> Med test af andele kan man fx. undersøge om andelen af mænd er 60% og kvinder 40% i en population, vi tester altså fordelingen for en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variabel med 2 mulige udfald. Med et goodness of fit test kan vi teste ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable med 2 eller flere mulige udfald, man kan fx. undersøge om fordelingen af boligform i en stikprøve kan antages at svare til fordelingen på regionsplan: 50% ejer, 20% andel og 30% leje.
 
-Vi tester vha. Chi i anden fordelingen. Teststørrelsen vi finder, udtrykker forskellen mellem det vi observerer i stikprøven og det vi tester under nulhypotesen.
+Vi tester vha. Chi i anden fordelingen. ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` vi finder, udtrykker forskellen mellem det vi observerer i stikprøven og det vi tester under nulhypotesen.
 
 ```{r chi1 ,echo=FALSE, include=FALSE,warning=F}
 obs <- c(60,40,50)
@@ -6488,7 +6488,7 @@ Hvis vi vil undersøge undersøge om fordelingen af boligform i stikprøven, kan
 
 $$H_0:p_{ejer}=0.5\ p_{andel}=0.2\ p_{leje}=0.3$$$$H_1:Fordelingen\ af\ boliger\ følger\ ikke\ samme\ fordeling\ som\ i\ regionen$$
 
-Teststørrelsen findes som:
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` findes som:
 
 $$\chi^2=\sum^k_{j=1}\frac{(O-E)^2}{E}$$
 
@@ -6733,7 +6733,7 @@ $$\frac{(O-E)^2}{E}$$
 |Vestdanmark     |$\frac{(`r obs[2,1]`-`r (400*550)/1000`)^2}{`r (400*550)/1000`}=`r chibi[2,1]`$                    |$\frac{(`r obs[2,2]`-`r (400*450)/1000`)^2}{`r (400*450)/1000`}=`r chibi[2,2]`$                     ||
 |Total           |        |               | `r round2(sum(chibi),2)`|
 
-Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader for chi i anden fordelingen er antallet af rækkeinddelingskriterier Østdanmark og Vestdanmark minus 1, gange antallet af søjleinddelingskriterier 0 skader og flere end 0 skader minus 1, dvs. $$(r-1)\cdot(s-1)=(2-1)\cdot(2-1)=1\cdot1=1$$
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader for chi i anden fordelingen er antallet af rækkeinddelingskriterier Østdanmark og Vestdanmark minus 1, gange antallet af søjleinddelingskriterier 0 skader og flere end 0 skader minus 1, dvs. $$(r-1)\cdot(s-1)=(2-1)\cdot(2-1)=1\cdot1=1$$
 Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%, arealet er så lille vi ikke kan se det på figuren nedenfor. Vi forkaster altså nulhypotesen og konstaterer der er afhængighed mellem landsdel og anmeldte skader. Landsdelen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan nu se om der er chi i anden bidrag, der er meget store og dermed bidrager stæ til konklusionen om afhængighed. Der er ikke en voldsom forskel i størrelserne på chi i anden bidragene, men når vi ser på observeret mod forventet, ser vi at 150 anmelder skader, det var forventet at 180 personer fra Vestdanmark anmelder skader. Denne tendens er modsat for Østdanmark. Vestdanmark anmelder altså færre skader end Østdanmark.
 
 Ligesom for goodness of fit testet, skal de forventede værdier have en vis størrelse for at vore konklusioner er præcise. Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
@@ -6841,7 +6841,7 @@ $$\frac{(O-E)^2}{E}$$
 
 
 
-Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(5-1)\cdot(3-1)=4\cdot 2=8$$
 Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem region og antal anmeldte skader. Regionen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan  se, der er chi i anden bidrag, der er store for region København, disse bidrager kraftigt til konklusionen om afhængighed. Københavnerne anmelder flere skader end forventet, dermed er der færre københavnere end forventet, der ikke anmelder skader.
 
@@ -6972,7 +6972,7 @@ $$\frac{(O-E)^2}{E}$$
 
 
 
-Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
 Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem passagerklasse og overlevelse.
 
@@ -7062,7 +7062,7 @@ $$\frac{(O-E)^2}{E}$$
 
 
 
-Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
 Vi får en meeget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` afrundet til `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og køn.
 
@@ -7149,7 +7149,7 @@ $$\frac{(O-E)^2}{E}$$
 
 
 
-Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
 Vi får en lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og om man tilhører en minoritet.
 
@@ -7309,7 +7309,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Design 1}=\sigma_{Design 2}=\sigma_{Design 3}=\sigma_{Design 4}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 4\ designs.$$
 
 
-Vi får en teststørrelse på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(tider,design)[3]`, hvilket er større end signifikansniveauet på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
+Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(tider,design)[3]`, hvilket er større end signifikansniveauet på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
 
 Freestat output af Bartlett test for varianshomogenitet
 ![](img/Bartlett.png)
@@ -7416,7 +7416,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Danske Bank}=\sigma_{Jyske Bank}=\sigma_{Sydbank}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 3\ banker.$$
 
 
-Vi får en teststørrelse på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med signifikansniveauet på 0.05.
+Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med signifikansniveauet på 0.05.
 
 Normalitet
 
@@ -7490,7 +7490,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 
 $$H_0:\sigma_{action}=\sigma_{komedie}=\sigma_{drama}=\sigma_{documentar}=\sigma_{romance}=\sigma_{short}$$$$H_1:Ikke\ alle\ standardafvigelser\ er\ ens\ for\ de\ 5\ genrer.$$
 
-Vi får en teststørrelse på `r bartlett.test(imdb$Rating,imdb$Genre)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(imdb$Rating,imdb$Genre)[3]`.
+Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(imdb$Rating,imdb$Genre)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(imdb$Rating,imdb$Genre)[3]`.
 
 
 
