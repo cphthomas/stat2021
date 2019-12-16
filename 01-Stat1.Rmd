@@ -1569,7 +1569,7 @@ cat(readLines('np.html'))
 
 Konfidensintervallet også kaldet KI eller CI (engelsk), fortæller os, baseret på en simpelt tilfældigt udvalgt stikprøve, med en bestemt konfidens- eller sikkerhed, indenfor hvilken nedre og øvre grænse, en populationsparameter ligger.  
 
-Vi taler om et 95% konfidensniveau, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller standardafvigelsen i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi signifikansniveauet og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
+Vi taler om et 95% konfidensniveau, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller standardafvigelsen i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
 
 ### Konfidensinterval for middelværdien
 Vi bestemmer nedre og øvre grænse for konfidensintervallet, når vi ikke kender populationens standardafvigelse $\sigma$ og estimerer denne vha. S altså $\hat{\sigma}$, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:
@@ -1860,31 +1860,31 @@ Påstanden i nulhypotesen $H_0$ er vores udgangspunkt, noget vi på forhånd men
 
 
 #### Signifikansniveau
-Signifikansniveauet $\alpha$ angiver sandsynligheden for at forkaste en sand nulhypotese, ofte sættes dette til 5%. Det betyder at i 1 ud af 20 tilfælde, vil vi komme til at forkaste nulhypotesen, til trods for at denne var sand. Vi udtager stikprøver simpelt tilfældigt fra populationen, enkelte af disse vil give et forkert billede af virkeligheden. Ønsker man yderligere sikkerhed, for ikke at forkaste en sand nulhypotese, kan man sætte signifikansniveauet til 1%, så vil man kun i 1 ud af 100 tilfælde forkaste en korrekt nulhypotese.
+``r tippy(" Signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` $\alpha$ angiver sandsynligheden for at forkaste en sand nulhypotese, ofte sættes dette til 5%. Det betyder at i 1 ud af 20 tilfælde, vil vi komme til at forkaste nulhypotesen, til trods for at denne var sand. Vi udtager stikprøver simpelt tilfældigt fra populationen, enkelte af disse vil give et forkert billede af virkeligheden. Ønsker man yderligere sikkerhed, for ikke at forkaste en sand nulhypotese, kan man sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, så vil man kun i 1 ud af 100 tilfælde forkaste en korrekt nulhypotese.
 
 I medicinalindustrien bruger man typisk 1% signifikansniveu for at sikre at et produkt har en effekt. Hypoteserne ville da være.
 $$H_0\ produktet\ har\ ingen\ effekt$$
 $$H_1\ produktet\ har\ effekt$$
-Man ville således kun i 1 ud af 100 tilfælde fejlagtigt konkludere at et produkt har effekt. Signifikansniveauet $\alpha$, betegner sandsynligheden for at begå en type 1 fejl. En type 1 fejl, er alså sandsynligheden for at forkaste en nulhypotese der er sand.
+Man ville således kun i 1 ud af 100 tilfælde fejlagtigt konkludere at et produkt har effekt. ``r tippy(" Signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` $\alpha$, betegner sandsynligheden for at begå en type 1 fejl. En type 1 fejl, er alså sandsynligheden for at forkaste en nulhypotese der er sand.
    
    
 
-Konfidensniveauet angiver sandsynligheden for at ikke forkaste en sand nulhypotese, summen af konfidensniveau og signifikansniveau er således 100%. 5% signifikansniveau svarer til 95% konfidensniveau, 1% signifikansniveau svarer til 99% konfidensniveau. De gængse signifikansniveauer er 1%, 5% og 10%. Er intet angivet, tester vi på 5% signifikansniveu, man beslutter sig inden testet for hvilket signifikansniveau man sætter.
+Konfidensniveauet angiver sandsynligheden for at ikke forkaste en sand nulhypotese, summen af konfidensniveau og ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` er således 100%. 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` svarer til 95% konfidensniveau, 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` svarer til 99% konfidensniveau. De gængse signifikansniveauer er 1%, 5% og 10%. Er intet angivet, tester vi på 5% signifikansniveu, man beslutter sig inden testet for hvilket ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` man sætter.
 
 #### Teststørrelse
 Vi kalder hypoteseværdien $\mu_0=730$, vores ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver:
 
 $$\frac{\hat{\mu}-\mu_0}{SEM}=\frac{748-730}{\frac{\hat{\sigma}}{\sqrt{n}}}=\frac{18}{\frac{102}{\sqrt{200}}}=\frac{18}{7.2125}=`r round(18/7.2125,4)`$$
 
-Hvor vi fra stikprøven, har gennemsnittet $\hat{\mu}$ 748 meter, standardafvigelsen i stikprøven $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i stikprøven 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i stikprøven, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og signifikansniveauet, når vi har en stor stikprøve på 5% signifikansniveau, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
+Hvor vi fra stikprøven, har gennemsnittet $\hat{\mu}$ 748 meter, standardafvigelsen i stikprøven $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i stikprøven 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i stikprøven, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi har en stor stikprøve på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
 
 
 #### Signifikanssandsynlighed p-værdi
 Signifikanssandsynligheden også kaldet ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, angiver sandsynligheden for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, hvis vi udtager en ny tilsvarende stikprøve, når nulhypotesen er sand. I mægler eksemplet er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` lille 0.0134, der kun 1.34% chance for at få en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` der numerisk er større end 2.4957, hvis vi udtog en ny stikprøve på 200, hvis nulhypotesen er sand. Da 1.34% er mindre end 5%, tror vi ikke på nulhypotesen om at der gennemsnitligt er 730 meter til nærmeste filial.Vi beregner ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` ved arealet af halen, der skæres af ved ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` eller teststørrelsen numerisk. Arealet ved højre hale, der skæres af 2.4957 er 0.0067, arealet ved venstre hale, der skæres af -2.4957 er ligeledes 0.0067. Når vi tester 2-sidet lægger vi begge halearealer sammen og får 0.0067+0.0067=0.0134, hvilket er ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
 
-Nedenstående figurer viser ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0134. Vi forkaster altså nulhypotesen på 5% signifikansniveauet. 
+Nedenstående figurer viser ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0134. Vi forkaster altså nulhypotesen på 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. 
 
-Den sande afstand til nærmeste filial, er altså forskellig fra 730 meter. Afstanden er større end 730 meter kan vi af konstatere da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0067 er mindre end signifikansniveauet.
+Den sande afstand til nærmeste filial, er altså forskellig fra 730 meter. Afstanden er større end 730 meter kan vi af konstatere da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0067 er mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.
 
 
 
@@ -1941,12 +1941,12 @@ Vi kan benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRU
 <img src="img/freestatmiddelmaegler.png" alt="freestatmiddelmaegler" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
 
-Vi siger ovenstående konklusion er niveaufølsom, vi ville ikke have forkastet på 1% signifikansniveau, da 1% er mindre end ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` på 1.34%. At konklusionen er niveaufølsom, betyder altså at forskellige signifikansniveaer giver forskellige konklusioner.
+Vi siger ovenstående konklusion er niveaufølsom, vi ville ikke have forkastet på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, da 1% er mindre end ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` på 1.34%. At konklusionen er niveaufølsom, betyder altså at forskellige signifikansniveaer giver forskellige konklusioner.
 
 Hvis vi kender populationens standardafvigelse $\sigma$, eller vi har store stikprøver, kan vi benytte z-fordelingen, til beregning af signifikanssandsynligheder. Software benytter ofte konsekvent t-fordelingen, der approximerer z-fordelingen, når antallet af frihedsgrader vokser. Jo større stikprøven er jo mindre forskel vil der være mellem de to metoder. Vi kan for små stikprøver benytte t-fordelingen, hvis stikprøven stammer fra en normalfordelt population. I Freestat benyttes kun t-fordelingen da vi forudsætter at populationsvariansen er ukendt.
 
 ## Tosidet alternativ hypotese og konfidensintervallet.
-Når vi tester med tosidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, kan vi bruge konfidensintervallet svarende til signifikansniveauet til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Ud fra størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, kan vi afgøre hvor sikker hvor konklusion er.
+Når vi tester med tosidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, kan vi bruge konfidensintervallet svarende til ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Ud fra størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, kan vi afgøre hvor sikker hvor konklusion er.
 
 ## Ensidet alternativ hypotese
 Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er 730 meter mod alternativ hypotesen den sande afstand til nærmeste filial i gennemsnit er forskellig fra 730 meter. Vi kunne fx. være interesseret i:
@@ -2009,7 +2009,7 @@ $$H_1:\mu < 730$$
 
 Hvilket betyder vi skal benytte den 3. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  99.33%, vi forkaster altså IKKE nulhypotesen. Vi konkluderer derfor at $\mu \geq 730$. Den gennemsnitlige afstand til nærmeste filial i populationen er altså mindst 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den store grå venstre hale.
 
-Hvis vi ser på ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` mindre end 2.4957, når  nulhypotesen om at afstanden er mindst 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% signifikansniveauet og forkaster ikke nulhypotesen.
+Hvis vi ser på ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` mindre end 2.4957, når  nulhypotesen om at afstanden er mindst 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og forkaster ikke nulhypotesen.
 
 ```{r t-score4,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
@@ -2086,7 +2086,7 @@ Hvis man forkaster en sand nulhypotese, kaldes det en type 1 fejl, det betyder n
 8. Du er ikke gravid.
 9. Medicinen har ingen effekt
 
-Vi kan bestemme sandsynligheden for at forkaste en sand nulhypotese/en type 1 fejl/en falsk positiv, det er vores signifikansniveau $\alpha$, tilsvarende er sandsynligheden for ikke at forkaste en sand nulhypotese $1-\alpha$. Dvs. når vi tester på 5% signifikansniveu vil vi 1 ud af 20 gange (5%) begå en type 1 fejl. I medicinalindustrien skal man være helt sikker på et nyt produkt har en effekt, derfor tester man ofte på 1% signifikansnivaeu (100%-1% = 99% konfidensniveau). Dette betyder at man kun 1 ud af 100 gange begår en type 1 fejl og konkluderer et medicinalprodukt har en effekt selv om det i virkeligheden ingen effekt har. Type 1 fejl er ofte noget, vi meget gerne vil undgå. Vi kan for statistiske hypoteser styre hvor ofte der begås fejl vha. signifikansniveauet, men tankegangen gælder også når vi ikke statistisk kan måle ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Hvis nulhypotesen er en mand anklaget for mord er uskyldig, svarer en type 1 fejl til at begå justitsmord, derfor skal beviserne i straffesager være stærke for at sikre domsfældelse. Hvis omsætningen ikke er steget, men vi konkluderer den er steget er der tale om en type 1 fejl.
+Vi kan bestemme sandsynligheden for at forkaste en sand nulhypotese/en type 1 fejl/en falsk positiv, det er vores ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` $\alpha$, tilsvarende er sandsynligheden for ikke at forkaste en sand nulhypotese $1-\alpha$. Dvs. når vi tester på 5% signifikansniveu vil vi 1 ud af 20 gange (5%) begå en type 1 fejl. I medicinalindustrien skal man være helt sikker på et nyt produkt har en effekt, derfor tester man ofte på 1% signifikansnivaeu (100%-1% = 99% konfidensniveau). Dette betyder at man kun 1 ud af 100 gange begår en type 1 fejl og konkluderer et medicinalprodukt har en effekt selv om det i virkeligheden ingen effekt har. Type 1 fejl er ofte noget, vi meget gerne vil undgå. Vi kan for statistiske hypoteser styre hvor ofte der begås fejl vha. ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, men tankegangen gælder også når vi ikke statistisk kan måle ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Hvis nulhypotesen er en mand anklaget for mord er uskyldig, svarer en type 1 fejl til at begå justitsmord, derfor skal beviserne i straffesager være stærke for at sikre domsfældelse. Hvis omsætningen ikke er steget, men vi konkluderer den er steget er der tale om en type 1 fejl.
 
 <img src="img/docandpregnant.jpg" align="right" width="100%" height="100%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -2111,9 +2111,9 @@ $\ Forkast\ H_0$    |   Type 1 fejl falsk positiv  |Korrekt beslutning
   <summary> Spørgsmål hypotesetest dagsafkast </summary> 
 Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6%  
 
-**1.** Test på 5% signifikansniveau om det gennemsnitlige dagsafkast $\mu$ i populationen antages at være 0%?  
+**1.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om det gennemsnitlige dagsafkast $\mu$ i populationen antages at være 0%?  
 
-**2.** Test på 5% signifikansniveau om standardafvigelsen $\sigma$ i populationen antages at være mindre end 0.7% dvs. 0.007?  
+**2.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om standardafvigelsen $\sigma$ i populationen antages at være mindre end 0.7% dvs. 0.007?  
 
 </details>  
 <br>
@@ -2128,7 +2128,7 @@ $$H_0:\mu=0$$
 $$H_1:\mu\neq0$$
 <img src="img/mu0test.png" alt="mu0test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 45.83% er større end 5% signifikansniveauet, kan vi ikke forkaste nulhypotesen. Det betyder det gennemsnitlige dagsafkast kan antages at være 0% for denne aktie.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 45.83% er større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke forkaste nulhypotesen. Det betyder det gennemsnitlige dagsafkast kan antages at være 0% for denne aktie.  
 
 <br>
 <br>
@@ -2141,7 +2141,7 @@ $$H_0:\sigma\geq0.007$$
 $$H_1:\sigma<0.007$$
 <img src="img/sigma0.7test.png" alt="sigma0.7test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 3.68% er mindre end 5% signifikansniveauet, afviser vi nulhypotesen. Det betyder standardafvigelsen $\sigma$ for aktien er mindre end 0.7%  
+Da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 3.68% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, afviser vi nulhypotesen. Det betyder standardafvigelsen $\sigma$ for aktien er mindre end 0.7%  
 
 <br>
 <br>
@@ -2167,7 +2167,7 @@ $$H_0:\mu=13$$
 $$H_1:\mu\neq13$$
 <img src="img/mu13test.png" alt="mu13test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.02% er mindre end 5% signifikansniveauet, afviser vi nulhypotesen. Det gennemsnitlige antal års uddannelse i populationen altså ikke 13 år.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.02% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, afviser vi nulhypotesen. Det gennemsnitlige antal års uddannelse i populationen altså ikke 13 år.  
 	
 <br>
 <br>
@@ -2179,7 +2179,7 @@ $$H_0:\sigma\geq3$$
 $$H_1:\sigma<3$$
 <img src="img/sigma3test.png" alt="sigma3test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 12.17% er mindre end 5% signifikansniveauet, kan vi ikke afvise nulhypotesen, standardafvigelsen er altså mindst 3 i populationen.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 12.17% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke afvise nulhypotesen, standardafvigelsen er altså mindst 3 i populationen.  
 	
 <br>
 <br>
@@ -2457,14 +2457,14 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 6. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 700.000.000 DKK, på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
 7. Har de 3 tests ensidede eller tosidede alternativ hypoteser, eller et mix af disse?  
 8. Hvad bliver 90% konfidensintervallet for den gennemsnitlige omsætning i populationen? Er dette konfidensinterval smallere eller bredere end 95% konfidensintervallet?  
-9. En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% signifikansniveau, om denne påstand kan antages at være korrekt, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod signifikansniveauet.  
+9. En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om denne påstand kan antages at være korrekt, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 10. Kunne revisorteamet ud fra ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` afgøre at man ikke kunne forkaste nulhypotesen?
-11. Test på 10% signifikansniveau, om den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod signifikansniveauet.  
+11. Test på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 12. Er konklusionen niveaufølsom?  
 13. Test om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?  
-14. Test på 1% signifikansniveau om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?  
+14. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?  
 15. Test om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?  
-16. Test på 1% signifikansniveau om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?  
+16. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?  
 </details>  
 
 <br>
@@ -2490,7 +2490,7 @@ plot(hc)
 ```
 1. Variablen Omsætning er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve i Freestat.  
 2. Standardfejlen for middelværdien bliver $SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127$ DDK eller ca. 95 mio.  
-3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter signifikansniveauet i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
+3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
 <img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 4. Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 500 mio. DKK er indeholdt i dette interval. Kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 500 mio. DKK.  
 Hypoteserne ville være:  
@@ -2509,39 +2509,39 @@ $$H_1: \mu\neq700\ mio$$
 Vi forkaster nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen, ikke kan antages at være 700 mio.  
 7. Alle tre tests har tosidede alternativ hypoteser, alle tre indeholder forskellig fra operatoren $\neq$  
 8. Vi kan med 90% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 
-270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% konfidensintervallet, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at $\mu$ ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på konfidensniveauet. Herunder ses output fra Freestat, bemærk vi ændrer signifikansniveauet i den hvide celle til 10% for at ændre konfidensniveaet til 90%.  
+270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% konfidensintervallet, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at $\mu$ ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på konfidensniveauet. Herunder ses output fra Freestat, bemærk vi ændrer ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 10% for at ændre konfidensniveaet til 90%.  
 <img src="img/dkvirkoms10.png" alt="dkvirkoms10" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 9. Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
 $$H_0:\mu\neq250\ mio.$$  
-Af nedenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket lige er større end 5% signifikansniveauet. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, signifikansniveau til 5% og Test middel af populationen til 250000 1000 DKK.  
+Af nedenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket lige er større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 5% og Test middel af populationen til 250000 1000 DKK.  
 <img src="img/dkvirkomshyp5.png" alt="dkvirkomshyp5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 10 Ja, da alternativhypotesen er tosidet skal ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` ligge mellem -1.9664 og 1.9664 svarende til 2.5% og 97.5% fraktilerne for t-fordelingen med 368 frihedsgrader. Man kan se den numeriske værdi af disse i Excel med kommandoen =TINV(5%;368). ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er angivet i Freestat til 1.8628 denne er således ikke så stor at det er kritisk for nulhypotesen, men ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er dog tæt på den øvre grænse, hvilket tydeligere illustreres af at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er tæt på 5%.  
 11 Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
 $$H_0:\mu\neq250\ mio.$$  
-Af ovenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket er mindre end 10% signifikansniveauet. Vi må forkaste nulhypotesen. Vi afviser revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, signifikansniveau til 10% og Test middel af populationen til 250000 1000 DKK. 
-12 Ja konklusionen er niveaufølsom, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` betyder vi forkaster nulhypotesen på 10% signifikansniveau, men ikke på 5% signifikansniveau.  
-13. Vi kan oversætte højst til symbolet $\leq$, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da signifikansniveauet ikke er angivet tester vi på 5% signifikansniveau.  
+Af ovenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket er mindre end 10% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi må forkaste nulhypotesen. Vi afviser revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 10% og Test middel af populationen til 250000 1000 DKK. 
+12 Ja konklusionen er niveaufølsom, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` betyder vi forkaster nulhypotesen på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, men ikke på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
+13. Vi kan oversætte højst til symbolet $\leq$, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` ikke er angivet tester vi på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 Testet bliver:  
 $$H_0:\mu\leq 250\ mio.$$  
 $$H_1:\mu>250\ mio.$$  
-Af output fra Freestat under svar 11 test nr. 2, ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.16%, hvilket er mindre end 5% signifikansniveauet. Vi må forkaste nulhypotesen. Vi afviser nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er signifikant større end 250 mio. DKK.  
+Af output fra Freestat under svar 11 test nr. 2, ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.16%, hvilket er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi må forkaste nulhypotesen. Vi afviser nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er signifikant større end 250 mio. DKK.  
 14. Testet bliver ligesom i 13 igen:  
 $$H_0:\mu\leq 250\ mio.$$  
 $$H_1:\mu>250\ mio.$$  
-Af output fra Freestat ses som før at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.16%, hvilket er større end 1% signifikansniveauet. Vi kan ikke forkaste nulhypotesen. Vi kan ikke afvise nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er højst end 250 mio. DKK. Når vi har 1% signifikansniveau, skal her mere til at vi forkaster nulhypotesen, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` skal være mindre end 1% i modsætning til før hvor ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` skulle være mindre end 5%.  
-15. Vi kan oversætte mindst til symbolet $\geq$, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da signifikansniveauet ikke er angivet tester vi på 5% signifikansniveau.
+Af output fra Freestat ses som før at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.16%, hvilket er større end 1% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan ikke forkaste nulhypotesen. Vi kan ikke afvise nulhypotesen om at den gennemsnitlige omsætning er højst 250 mio. DKK. Vi konkluderer at den gennemsnitlige omsætning er højst end 250 mio. DKK. Når vi har 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, skal her mere til at vi forkaster nulhypotesen, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` skal være mindre end 1% i modsætning til før hvor ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` skulle være mindre end 5%.  
+15. Vi kan oversætte mindst til symbolet $\geq$, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` ikke er angivet tester vi på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.
 Testet bliver:  
 $$H_0:\mu\geq 600\ mio.$$  
 $$H_1:\mu<600\ mio.$$  
 Vi får følgende output fra Freestat:  
 <img src="img/freestat600hyp.png" alt="freestat600hyp" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 3.53%, hvilket er mindre end 5% signifikansniveauet. Vi kan altså afvise nulhypotesen om at den gennemsnitlige omsætning er mindst 600 mio. DKK.  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 3.53%, hvilket er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan altså afvise nulhypotesen om at den gennemsnitlige omsætning er mindst 600 mio. DKK.  
 16. Testet bliver ligesom i 15 igen:  
 $$H_0:\mu\geq 600\ mio.$$  
 $$H_1:\mu<600\ mio.$$  
-Af output fra Freestat under svar 15 test nr. 3, ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.53%, hvilket er større end 1% signifikansniveauet. Vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at den gennemsnitlige omsætning er mindst 600 mio. DKK. Når vi har 1% signifikansniveau, skal her mere til at vi forkaster nulhypotesen, halen bliver jo mindre. Konklusionen er niveaufølsom.  
+Af output fra Freestat under svar 15 test nr. 3, ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 3.53%, hvilket er større end 1% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at den gennemsnitlige omsætning er mindst 600 mio. DKK. Når vi har 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, skal her mere til at vi forkaster nulhypotesen, halen bliver jo mindre. Konklusionen er niveaufølsom.  
 
 </details>  
 
@@ -2565,7 +2565,7 @@ I bedømmelsen bliver der lagt vægt på, at du argumenterer for dine valg af l�
 Opgave 2  
 På ABC-Banks hjemmemarked har banken 4,9 ansatte pr. 1.000 kunder. Bestyrelsen vil gerne have undersøgt, om der virkelig er flere ansatte pr. 1.000 kunder i danske banker.  
 Spørgsmål 2.1 (10 %)  
-Du bedes teste på 5 % signifikansniveau om det gennemsnitlige antal ansatte pr. 1.000 kunder er over 4,9 i danske banker.  
+Du bedes teste på 5 % ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om det gennemsnitlige antal ansatte pr. 1.000 kunder er over 4,9 i danske banker.  
 Forskellen på kundesammensætningen i filialerne påvirker behovet for ansatte i forhold til antal kunder. Bestyrelsen i ABC-Bank vil gerne vide, hvor stor variation der er i antal ansatte pr. 1.000 kunder.  
 Spørgsmål 2.2 (10 %)  
 Du bedes derfor udarbejde et 95 % konfidensinterval for standardafvigelsen for antal ansatte pr. 1.000 kunder i de danske banker.  
@@ -2618,13 +2618,13 @@ I datasættet  <a href="https://drive.google.com/uc?export=download&id=0B1E7Vnhx
 
 5.	Test om det gennemsnitlige afkast for US porteføljen er mindst 1%?  
 
-6.	Undersøg om vi kan være sikre på (5% signifikansniveau), at det gennemsnitlige afkast for Bank of America er større end 0%?  
+6.	Undersøg om vi kan være sikre på (5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``), at det gennemsnitlige afkast for Bank of America er større end 0%?  
 
-7.	Undersøg om vi kan være sikre på (5% signifikansniveau), at det gennemsnitlige afkast for US porteføljen er større end 0%?  
+7.	Undersøg om vi kan være sikre på (5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``), at det gennemsnitlige afkast for US porteføljen er større end 0%?  
 
-8.	Test på 1% signifikansniveau om standardafvigelsen er højst 5% for Bank of America afkastet.    
+8.	Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om standardafvigelsen er højst 5% for Bank of America afkastet.    
 
-9.	Test på 1% signifikansniveau om standardafvigelsen er højst 5% for US portefølje afkastet.  
+9.	Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om standardafvigelsen er højst 5% for US portefølje afkastet.  
 
 Ville du helst investere i US porteføljen eller en af aktierne i dag? angiv en kort begrundelse.  
 
@@ -2690,7 +2690,7 @@ Konfidensinterval for en andel beregnes som:
 
 $$(1-\alpha)\  KI=\left[\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}};\hat{p} + z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}\right]$$
 
-Hvor $z_{1-\frac{\alpha}{2}}$ er $1-\frac{\alpha}{2}$ fraktilen for z-fordelingen altså standard normalfordelingen. Hvis vi betragter et 95% konfidensinterval, er $\alpha$ altså signifikansniveauet 5%, det betyder vi benytter $1-\frac{0.05}{2}=0.975$ fraktilen eller 97.5% fraktilen for z-fordelingen 
+Hvor $z_{1-\frac{\alpha}{2}}$ er $1-\frac{\alpha}{2}$ fraktilen for z-fordelingen altså standard normalfordelingen. Hvis vi betragter et 95% konfidensinterval, er $\alpha$ altså ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` 5%, det betyder vi benytter $1-\frac{0.05}{2}=0.975$ fraktilen eller 97.5% fraktilen for z-fordelingen 
 
 Vi ser igen på MobilePay eksemplet 31 ud af 100 brugte MobilePay $\hat{p}=0.31$. Hvis vi skal bestemme et 95% konfidensinterval af andelen af brugere af MobilePay i populationen, kan vi vha. formlen ovenfor udregne nedre grænse som:
 
@@ -2706,7 +2706,7 @@ Hvis vi skal tolke hvad dette betyder med menneskeord kan vi altså sige:
 
 *Vi kan med 95% sikkerhed sige at andelen af MobilePay brugere i populationen ligger mellem 21.94% og 40.06%.*
 
-Havde vi ønsket større sikkerhed/konfidens, kunne vi opnå dette på bekostning af præcisionen. Vi kunne sætte signifikansniveauet til 1% dvs. konfidensniveauet til 99%. Vi skulle da benytte 99.5% fraktilen for z-fordelingen denne er ca. 2.58, dette ville være den eneste ændring i udregningen af konfidensintervallet.
+Havde vi ønsket større sikkerhed/konfidens, kunne vi opnå dette på bekostning af præcisionen. Vi kunne sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1% dvs. konfidensniveauet til 99%. Vi skulle da benytte 99.5% fraktilen for z-fordelingen denne er ca. 2.58, dette ville være den eneste ændring i udregningen af konfidensintervallet.
 
 $$\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31-2.5758\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.1909$$
@@ -2870,7 +2870,7 @@ n1 <- length(which(bank[,5]=="yes"))
 n01 <- length(bank[[5]])
 phat <- n1/n01
 ```
-Vi betragter fortsat bankdata. Estimer for populationen andelen af ikke hvide dvs. minoriteter, på hhv. 0.1, 0.05 og 0.01 signifikansniveauet.  
+Vi betragter fortsat bankdata. Estimer for populationen andelen af ikke hvide dvs. minoriteter, på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 
 </details>  
 <br>
@@ -2898,7 +2898,7 @@ n1 <- length(which(bank[,2]=="manage"))
 n01 <- length(bank[[2]])
 phat <- n1/n01
 ```
-Vi betragter fortsat bankdata. Estimer for populationen andelen af ansatte i ledelsesfunktioner (dvs. manage), på hhv. 0.1, 0.05 og 0.01 signifikansniveauet.  
+Vi betragter fortsat bankdata. Estimer for populationen andelen af ansatte i ledelsesfunktioner (dvs. manage), på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 
 </details>  
 <br>
@@ -2988,9 +2988,9 @@ $$z-score=\frac{\hat{p}-p_0}{SE}=\frac{0.31-0.35}{0.0462}=`r round(ptest(31,100,
 
 Når vi bestemmer ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` ser vi på forskellen mellem $\hat{p}$ og $p_0$. Vi skalerer ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` til standard normalfordelingen ved at dividere med standardfejlen . Her bruges z-fordelingen dvs. standard normalfordelingen. Vi kalder ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` for z-teststørrelsen eller z-scoren. Andre tests hvor man benytter fx. t-fordelingen eller F-fordelingen, kaldes t-teststørrelsen og F-teststørrelsen.
 
-Vi bemærker ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er negativ, da parameter estimatet $\hat{p}=0.31$ er mindre end $p_0=0.35$. z-teststørrelsen er tilpasset til standard normalfordelingen, det betyder vi kan sammenligne denne med nedre og øvre grænser for KI i z-fordelingen. Når vi tester på 5% signifikansniveau, er den nedre og øvre grænse for 95% KI i z-fordelingen -1.96 og 1.96, vi har derfor en kritiske værdier -1.96 og 1.96. Når vi tester på 1% signifikansniveau, vi har  kritiske værdier -2.58 og 2.58 og på 10% signifikansniveau -1.64 og 1.64.
+Vi bemærker ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er negativ, da parameter estimatet $\hat{p}=0.31$ er mindre end $p_0=0.35$. z-teststørrelsen er tilpasset til standard normalfordelingen, det betyder vi kan sammenligne denne med nedre og øvre grænser for KI i z-fordelingen. Når vi tester på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, er den nedre og øvre grænse for 95% KI i z-fordelingen -1.96 og 1.96, vi har derfor en kritiske værdier -1.96 og 1.96. Når vi tester på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, vi har  kritiske værdier -2.58 og 2.58 og på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` -1.64 og 1.64.
 
-``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` `r round(ptest(31,100,0.35)$z,4)`, ligger mellem -1.96 og  1.96, derfor vil vi ikke forkaste nulhypotesen på 5% signifikansniveau, i øvrigt heller ikke på 10% signifikansniveu. Det betyder vi kan ikke afvise, nulhypotesen.
+``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` `r round(ptest(31,100,0.35)$z,4)`, ligger mellem -1.96 og  1.96, derfor vil vi ikke forkaste nulhypotesen på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, i øvrigt heller ikke på 10% signifikansniveu. Det betyder vi kan ikke afvise, nulhypotesen.
 
 I figuren nedenfor er indtegnet z-scoren, samt forkast ikke regionen samt forkast halerne når vi betragter 95% KI dvs. et 5% signifikansniveu.
 
@@ -3196,7 +3196,7 @@ z-teststørrelsen bliver her:
 ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` altså ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver:  
 `r round(2*(1-ptest(31,100,0.25)$pv),4)`
 
-Da der ikke er angivet et signifikansniveau sættes dette til 5%.  
+Da der ikke er angivet et ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` sættes dette til 5%.  
 
 Da `r round(2*(1-ptest(31,100,0.25)$pv),4)`>0.05 kan vi ikke afvise nulhypotesen. Det betyder vi kan ikke afvise nulhypotesen p=0.25.  
 
@@ -3226,13 +3226,13 @@ z-teststørrelsen bliver her:
 ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` altså ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver:  
 `r round(2*(1-ptest(31,100,0.2)$pv),4)` 
 
-Da der ikke er angivet et signifikansniveau sættes dette til 5%.  
+Da der ikke er angivet et ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` sættes dette til 5%.  
 
 Da `r round(2*(1-ptest(31,100,0.2)$pv),4)`<0.05 kan afviser vi nulhypotesen. Det betyder $p \neq0.2$.  
 
 Vi konkluderer altså andelen af MobilePay brugere ikke er 20%.  
 
-Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 1% ville vi også have nået samme konklusion selv med 1% signifikansniveau.  
+Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 1% ville vi også have nået samme konklusion selv med 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 
 </details>  
 <br>
@@ -3259,13 +3259,13 @@ z-teststørrelsen bliver her:
 ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` altså ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver:  
 `r round((1-ptest(31,100,0.22)$pv),4)`
 
-Da der ikke er angivet et signifikansniveau sættes dette til 5%.  
+Da der ikke er angivet et ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` sættes dette til 5%.  
 
 Da `r round((1-ptest(31,100,0.22)$pv),4)`<0.05 kan afviser vi nulhypotesen. Det betyder p>0.22.  
 
 Vi konkluderer altså andelen af MobilePay brugere er større end 22%.  
 
-Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er større end 1%, ville vi ikke have afvist nulhypotesen hvis vi havde testet på 1% signifikansniveau. Vi siger derfor at konklusionen er niveaufølsom.  
+Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er større end 1%, ville vi ikke have afvist nulhypotesen hvis vi havde testet på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi siger derfor at konklusionen er niveaufølsom.  
 
 </details>  
 <br>
@@ -3451,7 +3451,7 @@ Vi kan altså ikke konkludere, at der er forskel på andelen af MobilePay bruger
   <summary> Spørgsmål 2 andele utroskab.</summary>
 
 
-Vi ser igen på data om utroskab, [Fairs Affairs](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U). Er der forskel på andelen af utro mænd og kvinder, bestem konfidensintervaller på 90% og 95% signifikansniveau?  
+Vi ser igen på data om utroskab, [Fairs Affairs](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U). Er der forskel på andelen af utro mænd og kvinder, bestem konfidensintervaller på 90% og 95% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``?  
 
 </details>
 <br>
@@ -3562,7 +3562,7 @@ $$H_1:p_{nu}-p_{før}\neq D$$
 
 D står for difference, denne er som udgangspunkt 0. Hvis man skriver fx. 3 det gule felt, sættes D=3. Man tester så om en forskel er større end 3 procentpoint. Pas på husk altid at slette data i det gule felt, da man ellers kan nå den forkerte konklusion.
 
-Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``/``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(prop.test(c(31,45),c(100,200),correct=FALSE)$p.value,4)` er større end signifikansniveauet 5%, kan vi ikke forkaste nulhypotesen. 
+Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``/``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(prop.test(c(31,45),c(100,200),correct=FALSE)$p.value,4)` er større end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` 5%, kan vi ikke forkaste nulhypotesen. 
 
 Vi konkluderer andelen af MobilePay brugere før og nu ikke er forskellig.
 
@@ -3666,7 +3666,7 @@ Tidligere i `r as.numeric(substr(date(),21,24))-4` har man konstateret at i en s
 **1.** Er der forskel på andelen af anmeldte skader?  
 **2.** Er forudsætningerne for testet opfyldt?  
 **3.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`?  
-**4.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`, hvis vi tester på 10% signifikansniveau?  
+**4.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`, hvis vi tester på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``?  
 
 </details>  
 <br>
@@ -3680,7 +3680,7 @@ $$H_0:p_{`r as.numeric(substr(date(),21,24))`}\neq p_{`r as.numeric(substr(date(
 
 <img src="img/2andele1.png" alt="2andele1" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.1204 er større end 0.05 signifikansniveauet, kan vi ikke afvise nulhypotesen. Det vil sige andelen af anmeldte skader er ikke ændret fra 2014 til 2018. Bemærk vi tester to-sidet, da spørgsmålet er om andelen er **ændret**.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.1204 er større end 0.05 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke afvise nulhypotesen. Det vil sige andelen af anmeldte skader er ikke ændret fra 2014 til 2018. Bemærk vi tester to-sidet, da spørgsmålet er om andelen er **ændret**.  
 			
 
 
@@ -3699,16 +3699,16 @@ Vi skal teste med ensidet alternativ ``r tippy(" hypotese", size="large" ,intera
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}\leq p_{`r as.numeric(substr(date(),21,24))-4`}$$
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}>p_{`r as.numeric(substr(date(),21,24))-4`}$$
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0602 er større end 0.05 signifikansniveauet, kan vi ikke afvise nulhypotesen.	Andelen af anmeldte skader er alså ikke steget. Dog er konklusionen niveaufølsom.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0602 er større end 0.05 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke afvise nulhypotesen.	Andelen af anmeldte skader er alså ikke steget. Dog er konklusionen niveaufølsom.  
 			
 
-**4.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`, hvis vi tester på 10% signifikansniveau?  
+**4.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`, hvis vi tester på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``?  
 <img src="img/2andele4.png" alt="2andele4" align="right" width="40%" height="40%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Vi skal fortsat teste med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad dog med 10% signifikansniveau. Hypoteserne i testet bliver derfor:  
+Vi skal fortsat teste med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad dog med 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Hypoteserne i testet bliver derfor:  
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}\leq p_{`r as.numeric(substr(date(),21,24))-4`}$$
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}>p_{`r as.numeric(substr(date(),21,24))-4`}$$
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0602 er mindre end 0.1 signifikansniveauet, afviser vi nulhypotesen. Andelen af anmeldte skader er altså steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.0602 er mindre end 0.1 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, afviser vi nulhypotesen. Andelen af anmeldte skader er altså steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`  
 			
 </details>  
 
@@ -3919,7 +3919,7 @@ I Freestat kan man sætte de 2 stikprøver, ind analysen Pooled t-test variansho
 
 ![](img/freestatmaeglerpooled.png)
 
-Her har vi som ses af output fra Freestat, valgt mæglerens egen undersøgelse som 1. stikprøve, og konkurrentens som 2. stikprøve. Vi kan med 95% sikkerhed sige at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 11,9 og 80.1 meter (markeret med rødt). Da 0 ikke er indeholdt i konfidensintervallet kan vi konstatere at denne forskel er signifikant, der er altså forskel på afstanden til nærmeste filial i de 2 kæder. Vi kan undersøge om vi også er 99% sikre på konklusionen ved at ændre signifikansniveauet til 1%, jo et bredere konfidensinterval, da præcisionen falder, når sikkerheden stiger.
+Her har vi som ses af output fra Freestat, valgt mæglerens egen undersøgelse som 1. stikprøve, og konkurrentens som 2. stikprøve. Vi kan med 95% sikkerhed sige at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 11,9 og 80.1 meter (markeret med rødt). Da 0 ikke er indeholdt i konfidensintervallet kan vi konstatere at denne forskel er signifikant, der er altså forskel på afstanden til nærmeste filial i de 2 kæder. Vi kan undersøge om vi også er 99% sikre på konklusionen ved at ændre ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, jo et bredere konfidensinterval, da præcisionen falder, når sikkerheden stiger.
 
 Det er ikke så vigtigt hvilken stikprøve, der er 1. og 2. stikprøve, men det er væsentligt for tolkningen af konfidensintervallet. Bemærk konfidensintervallets øvre grænse, vil hvis man bytter rundt, blive den nedre grænse med fortegnsskift, og tilsvarende for den nedre grænse. Begge grænser i konfidensintervallet er positive, forskellen måles altid som 1. stikprøve minus 2. stikprøve, specielt i dette tilfælde altså kædens egen undersøgelse minus konkurrentens undersøgelse. Det er altid en MEGET god ide, at holde fuldstændig styr på hvilken stikprøve, der er 1. og 2., hvilket vi senere vil se i forbindelse med hypotestests med ensidet alternativhypotese.
 
@@ -4149,7 +4149,7 @@ Vi skal også undersøge om der er varianshomogenitet. Hvis vi tester varianshom
 $$H_0: \sigma_{voldelige}=\sigma_{ikke-voldelige}$$
 $$H_1: \sigma_{voldelige}=\sigma_{ikke-voldelige}$$
 
-Konstaterer vi at på 5% signifikansniveau, ville vi konkludere at der er forskel på varianserne da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er `r var.test(vm,nvm)$p.value`. Konklusionen er dog niveaufølsom, men vi benytter pooled t-test her.
+Konstaterer vi at på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, ville vi konkludere at der er forskel på varianserne da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er `r var.test(vm,nvm)$p.value`. Konklusionen er dog niveaufølsom, men vi benytter pooled t-test her.
 
 Vor hypotesetest for middelværdierne bliver:
 
@@ -5192,9 +5192,9 @@ Når man producerer en simpel lineær regression i Freestat fanen linreg, får m
 ##### Brugbarhed, signifikanssandsynlighed og R-kvadreret
 Modellen er signifikant ud fra ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` i cellen **E12** eller **E16**, dvs. størrelsen har klart en effekt på lejeprisen. Vi tester begge steder hypotesen
 $$H_0:\beta_{Kvm}=0\ variablen\ kvm\ har \ ingen\ effekt$$$$H_1:\beta_{Kvm}\neq 0\ variablen\ kvm\ har\ effekt$$
-Størrelsen har en effekt, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 0.0001 og dermed er klart under signifikansniveauet på 5%. Vi forkaster nulhypotesen, og konstaterer den forklarende variabel Kvm. har en effekt på responsvariablen Lejepris pr. uge. 
+Størrelsen har en effekt, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 0.0001 og dermed er klart under ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%. Vi forkaster nulhypotesen, og konstaterer den forklarende variabel Kvm. har en effekt på responsvariablen Lejepris pr. uge. 
 
-Estimatet for skæringen med y-aksen `r a` er ikke signifikant, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` i celle **E15** 15.61% er jo større end 5% signifikansniveauet, 
+Estimatet for skæringen med y-aksen `r a` er ikke signifikant, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` i celle **E15** 15.61% er jo større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, 
 $$H_0:\beta_{0}=0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ 0\ DKK$$$$H_1:\beta_{0}\neq 0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ forskellig\ fra\ 0\ DKK$$
 
 Skæringen kunne derfor være fx. 0. Normalt interesserer denne test os ikke, vi udelader derfor test af skæringen fra fremtidige analyser. For at sikre den optimale tilpasning af regressionslinjen (og dermed minimere residualerne), bibeholder vi altid skæringen i modellen. 
@@ -5297,7 +5297,7 @@ legend("topleft",
        bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet 5%. Dette betyder vi kan forkaste nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` 5%. Dette betyder vi kan forkaste nulhypotesen i testet:
 $$H_0:\beta_{Moderniseret}=0\ Moderniseret\ har\ ingen\ effekt$$$$H_1:\beta_{Moderniseret}\neq 0\ Moderniseret\ har\ effekt$$
 
 Vi kan altså afvise at hældningen $\beta_{Moderniseret}$ er nul, hvilket betyder moderniseringår seneste har signifikant effekt. Hvis moderniseringsåret er et år senere vokser lejeprisen med `r b` DKK., hvilket giver god mening. Her giver skæringen absolut ikke mening, skæringen svarer jo til at den forklarende variabel årstal er lig med nul, hvilket jo ville betyde at ugelejen for et sommerhus moderniseret det år Jesus blev født ville være `r a` DKK. Man får altså over kvart million om ugen, for at bo i det gamle skrammelhus ifølge modellen. Her er naturligvis tale em ekstrem ekstrapolation der ikke giver mening.
@@ -5331,7 +5331,7 @@ title(main = list("Sommerhuse Rømø", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså større end signifikansniveauet. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså større end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
 $$H_0:\beta_{Strandafstand}=0\ Strandafstand\ har\ ingen\ effekt$$$$H_1:\beta_{Strandafstand}\neq 0\ Strandafstand\ har\ effekt$$
 Vi kan altså ikke afvise at hældningen $\beta_{Strandafstand}$ er nul, hvilket betyder moderniseringår seneste ikke har signifikant effekt. Det betyder vi kan ikke bruge modellen. Bemærk det er muligt  variablen ville være signifikant, hvis den indgår i en multipel lineær regression, den er næsten signifikant i den simple lineære model. Når vi kontrollerer for andre forklarende variable i en multipel model, kan dette medføre den bliver signifikant. Bemærk hældningskoeficienten `r b` i modellen er negativ hvilket vi ville forvente jo større afstand til strand jo lavere lejepris.
 </details>  
@@ -5539,7 +5539,7 @@ title(main = list("Deutsche Bank i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi forkaster nulhypotesen i testet:
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank. Bemærk hældningskoeficienten $\beta=`r b`$ i modellen er positiv hvilket hvilket er forventeligt, jo bedre tyske aktier performer, des bedre performer Deutsche Bank. Er Beta større end 1, hvilket betyder aktien er cyklisk, dette ville vi typisk forvente for en bankaktie. Når DAX stiger med 1 procent point, stiger Deutsche Bank med `r b` procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden `r rownames(afkast)[1]` til `r rownames(afkast)[nrow(afkast)]`. Konjunkturer har stor betydning for resultatet, vi beregner afkast fra `r rownames(afkast)[1]`, finanskrisen vil således påvirke vores resultat.
 
@@ -5562,7 +5562,7 @@ title(main = list("Bayer AG i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$  
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at $\beta$ er mindre end 1 for en kemiaktie, hvilket betyder aktien er defensiv,  Når DAX stiger med 1 procent point, stiger Bayer AG med `r b` procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden `r rownames(afkast)[1]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -5587,7 +5587,7 @@ title(main = list("Deutsche Bank i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank, jo bedre/værre tyske aktier performer, des bedre/værre performer Deutsche Bank. Bemærk hældningskoeficienten $\beta=`r b`$ i modellen. Vi vil forvente at en bank aktie er cyklisk eller konjunkturfølsom dvs. $\beta$ er større end 1. Når DAX stiger med 1 procent point, stiger Deutsche Bank med `r b` procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra `r rownames(afkast)[(nrow(afkast)-39)]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -5611,7 +5611,7 @@ title(main = list("Bayer AG i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$  
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at en kemi aktie er defensiv dvs. $\beta$ er mindre end 1. Når DAX stiger med 1 procent point, stiger Bayer AG med `r b` procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra `r rownames(afkast)[(nrow(afkast)-39)]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -6504,7 +6504,7 @@ Vi kan nu udregne ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE
 
 $$\chi^2=\frac{(60-75)^2}{75}+\frac{(40-30)^2}{30}+\frac{(50-45)^2}{45}=3+3\frac{1}{3}+\frac{5}{9}=`r chi`$$
 
-Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` 6.89 er større end den kritiske værdi 5.99, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``, der er mindre end 5% signifikansniveauet. Vi tester her på 5% signifikansniveau, dvs. 100%-5%=95% konfidensniveau. Vi vælger 5% signifikansniveau, når vi ikke har signifikans- eller konfidensniveauet, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i populationen, er ikke identiske med fordelingen i regionen.
+Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` 6.89 er større end den kritiske værdi 5.99, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``, der er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi tester her på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, dvs. 100%-5%=95% konfidensniveau. Vi vælger 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi ikke har signifikans- eller konfidensniveauet, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i populationen, er ikke identiske med fordelingen i regionen.
 
 ```{r 68,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(0,15,length.out=200)
@@ -6618,7 +6618,7 @@ Bemærk forventede værdier er mindre end 5 men større end 3, der kan være pro
 
 `r round(chibi,4)[1]`+`r round(chibi,4)[2]`+`r round(chibi,4)[3]`+`r round(chibi,4)[4]`=`r chi`
 
-Hvilket fører til ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv` illustreret ved den gule hale herunder, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 5% signifikansniveauet forkaster vi nulhypotesen, og konkluderer at statistikkarakterer på Finansøkonom ikke følger den ønskede fordeling. Vi kan ud fra chi i anden bidragene se hvilke karakterer der giver de største afvigelser. Store bidrag betyder store afvigelser mellem det observede og ønskede. Det største bidrag `r round(max(chibi),4)` stammer fra 02 karakteren, her er den observerede karakter `r round(obs,4)[1]`, mens den forventede værdi er `r round(exp,4)[1]`. Der er altså flere studerende, end forventet der får 02. Bemærk for at vi kan udtale os om populationen finansøkonomer, fordres at stikprøven er repræsentativ for finansøkonomer. Stikprøven er ikke udtaget simpelt tilfældigt, da der er tale om 2 bestemte klasser, det kan derfor diskuteres om stikprøven er afspejler populationen korrekt.
+Hvilket fører til ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv` illustreret ved den gule hale herunder, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` forkaster vi nulhypotesen, og konkluderer at statistikkarakterer på Finansøkonom ikke følger den ønskede fordeling. Vi kan ud fra chi i anden bidragene se hvilke karakterer der giver de største afvigelser. Store bidrag betyder store afvigelser mellem det observede og ønskede. Det største bidrag `r round(max(chibi),4)` stammer fra 02 karakteren, her er den observerede karakter `r round(obs,4)[1]`, mens den forventede værdi er `r round(exp,4)[1]`. Der er altså flere studerende, end forventet der får 02. Bemærk for at vi kan udtale os om populationen finansøkonomer, fordres at stikprøven er repræsentativ for finansøkonomer. Stikprøven er ikke udtaget simpelt tilfældigt, da der er tale om 2 bestemte klasser, det kan derfor diskuteres om stikprøven er afspejler populationen korrekt.
 
 ```{r gofstatkar,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(0,25,length.out=200)
@@ -6734,7 +6734,7 @@ $$\frac{(O-E)^2}{E}$$
 |Total           |        |               | `r round2(sum(chibi),2)`|
 
 ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader for chi i anden fordelingen er antallet af rækkeinddelingskriterier Østdanmark og Vestdanmark minus 1, gange antallet af søjleinddelingskriterier 0 skader og flere end 0 skader minus 1, dvs. $$(r-1)\cdot(s-1)=(2-1)\cdot(2-1)=1\cdot1=1$$
-Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%, arealet er så lille vi ikke kan se det på figuren nedenfor. Vi forkaster altså nulhypotesen og konstaterer der er afhængighed mellem landsdel og anmeldte skader. Landsdelen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan nu se om der er chi i anden bidrag, der er meget store og dermed bidrager stæ til konklusionen om afhængighed. Der er ikke en voldsom forskel i størrelserne på chi i anden bidragene, men når vi ser på observeret mod forventet, ser vi at 150 anmelder skader, det var forventet at 180 personer fra Vestdanmark anmelder skader. Denne tendens er modsat for Østdanmark. Vestdanmark anmelder altså færre skader end Østdanmark.
+Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%, arealet er så lille vi ikke kan se det på figuren nedenfor. Vi forkaster altså nulhypotesen og konstaterer der er afhængighed mellem landsdel og anmeldte skader. Landsdelen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan nu se om der er chi i anden bidrag, der er meget store og dermed bidrager stæ til konklusionen om afhængighed. Der er ikke en voldsom forskel i størrelserne på chi i anden bidragene, men når vi ser på observeret mod forventet, ser vi at 150 anmelder skader, det var forventet at 180 personer fra Vestdanmark anmelder skader. Denne tendens er modsat for Østdanmark. Vestdanmark anmelder altså færre skader end Østdanmark.
 
 Ligesom for goodness of fit testet, skal de forventede værdier have en vis størrelse for at vore konklusioner er præcise. Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -6843,7 +6843,7 @@ $$\frac{(O-E)^2}{E}$$
 
 ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(5-1)\cdot(3-1)=4\cdot 2=8$$
-Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem region og antal anmeldte skader. Regionen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan  se, der er chi i anden bidrag, der er store for region København, disse bidrager kraftigt til konklusionen om afhængighed. Københavnerne anmelder flere skader end forventet, dermed er der færre københavnere end forventet, der ikke anmelder skader.
+Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem region og antal anmeldte skader. Regionen som kunden stammer fra, påvirker altså antallet af anmeldte skader. Vi kan  se, der er chi i anden bidrag, der er store for region København, disse bidrager kraftigt til konklusionen om afhængighed. Københavnerne anmelder flere skader end forventet, dermed er der færre københavnere end forventet, der ikke anmelder skader.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -6974,7 +6974,7 @@ $$\frac{(O-E)^2}{E}$$
 
 ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
-Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem passagerklasse og overlevelse.
+Vi får ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r round2(chipv,6)`, hvilket er klart mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem passagerklasse og overlevelse.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -7064,7 +7064,7 @@ $$\frac{(O-E)^2}{E}$$
 
 ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
-Vi får en meeget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` afrundet til `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og køn.
+Vi får en meeget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` afrundet til `r round2(chipv,6)`, hvilket er klart mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og køn.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -7151,7 +7151,7 @@ $$\frac{(O-E)^2}{E}$$
 
 ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
-Vi får en lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og om man tilhører en minoritet.
+Vi får en lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r round2(chipv,6)`, hvilket er klart mindre end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og om man tilhører en minoritet.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -7299,7 +7299,7 @@ $$H_0:\mu_{Design 1}=\mu_{Design 2}=\mu_{Design 3}=\mu_{Design 4}$$$$H_1:Ikke\ a
 Freestat output
 ![](img/anova1.png)
 
-Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
+Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er under ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
 
 Freestat output
 ![](img/anovaFtest.png)
@@ -7309,7 +7309,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Design 1}=\sigma_{Design 2}=\sigma_{Design 3}=\sigma_{Design 4}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 4\ designs.$$
 
 
-Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(tider,design)[3]`, hvilket er større end signifikansniveauet på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
+Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(tider,design)[3]`, hvilket er større end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
 
 Freestat output af Bartlett test for varianshomogenitet
 ![](img/Bartlett.png)
@@ -7416,7 +7416,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Danske Bank}=\sigma_{Jyske Bank}=\sigma_{Sydbank}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 3\ banker.$$
 
 
-Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med signifikansniveauet på 0.05.
+Vi får en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 0.05.
 
 Normalitet
 
@@ -7483,7 +7483,7 @@ Vi opstiller hypoteserne:
 $$H_0:\mu_{action}=\mu_{komedie}=\mu_{drama}=\mu_{documentar}=\mu_{romance}=\mu_{short}$$$$H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 5\ genrer.$$
 
 
-Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en meget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er klart under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
+Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en meget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er klart under ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
 
 
 Vi skal tjekke forudsætningen om varianshomogenitet
