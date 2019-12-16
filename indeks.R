@@ -7,7 +7,7 @@ BEGREB <<- c(
   "Kontinuerte variable",
   "Hypotese test",
   "p-værdi",
-  "signifikanssandsynlighed"
+  "Signifikanssandsynlighed"
 
 
 
@@ -25,7 +25,7 @@ forklaring <<- c(
   Indholdet i Coca Cola dåser i ml.<br>
   {333,12, 333,08, 332,82, 332,73, 332,93,...}</i>",
 
-  "En kvalitativ variabel, er en typisk ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>
+  "En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>
   <i>Hvilket kæledyr har du?<br>
   {hund, kat, hund, kat, hund, marsvinkat,...}<br>
   Hvilket parti vil du stemme på?<br>
@@ -69,12 +69,12 @@ forklaring <<- c(
   "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>
   Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br><br>
   <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0</sub>: &mu;=210<br>
-    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være næsten umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>",
+    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>",
 
   "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>
   Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br><br>
   <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0</sub>: &mu;=210<br>
-    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være næsten umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>"
+    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>"
 
 )
 

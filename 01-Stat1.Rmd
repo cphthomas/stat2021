@@ -1882,7 +1882,7 @@ Hvor vi fra stikprøven, har gennemsnittet $\hat{\mu}$ 748 meter, standardafvige
 #### Signifikanssandsynlighed p-værdi
 Signifikanssandsynligheden også kaldet p-værdien, angiver sandsynligheden for at få en mere ekstrem teststørrelse, hvis vi udtager en ny tilsvarende stikprøve, når nulhypotesen er sand. I mægler eksemplet er p-værdien lille 0.0134, der kun 1.34% chance for at få en teststørrelse der numerisk er større end 2.4957, hvis vi udtog en ny stikprøve på 200, hvis nulhypotesen er sand. Da 1.34% er mindre end 5%, tror vi ikke på nulhypotesen om at der gennemsnitligt er 730 meter til nærmeste filial.Vi beregner p-værdien ved arealet af halen, der skæres af ved teststørrelsen eller teststørrelsen numerisk. Arealet ved højre hale, der skæres af 2.4957 er 0.0067, arealet ved venstre hale, der skæres af -2.4957 er ligeledes 0.0067. Når vi tester 2-sidet lægger vi begge halearealer sammen og får 0.0067+0.0067=0.0134, hvilket er p-værdien.
 
-Nedenstående figurer viser p-værdi på 0.0134. Vi forkaster altså nulhypotesen på 5% signifikansniveauet. 
+Nedenstående figurer viser ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0134. Vi forkaster altså nulhypotesen på 5% signifikansniveauet. 
 
 Den sande afstand til nærmeste filial, er altså forskellig fra 730 meter. Afstanden er større end 730 meter kan vi af konstatere da p-værdien 0.0067 er mindre end signifikansniveauet.
 
@@ -2537,7 +2537,7 @@ $$H_0:\mu\geq 600\ mio.$$
 $$H_1:\mu<600\ mio.$$  
 Vi får følgende output fra Freestat:  
 <img src="img/freestat600hyp.png" alt="freestat600hyp" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
-Vi får en p-værdi på 3.53%, hvilket er mindre end 5% signifikansniveauet. Vi kan altså afvise nulhypotesen om at den gennemsnitlige omsætning er mindst 600 mio. DKK.  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 3.53%, hvilket er mindre end 5% signifikansniveauet. Vi kan altså afvise nulhypotesen om at den gennemsnitlige omsætning er mindst 600 mio. DKK.  
 16. Testet bliver ligesom i 15 igen:  
 $$H_0:\mu\geq 600\ mio.$$  
 $$H_1:\mu<600\ mio.$$  
@@ -3157,7 +3157,7 @@ axis(side = 1, at=c(-5,-1.96,-0.84,0.84,1.96,5),cex.axis=0.7)
 grid()
 ```
 
-Vi kan se der er stor forskel på teststørrelsen og den kritiske værdi, p-værdien det hvide areal er meget stort. Vi er her meget langt fra en p-værdi på 5%, så vi forkaster klart ikke nulhypotesen. Vi konkluderer at andelen af mobilepay brugere er højst 35%. 
+Vi kan se der er stor forskel på teststørrelsen og den kritiske værdi, p-værdien det hvide areal er meget stort. Vi er her meget langt fra en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 5%, så vi forkaster klart ikke nulhypotesen. Vi konkluderer at andelen af mobilepay brugere er højst 35%. 
 
 <img src="img/testandelemobilepay.png" alt="testandelemobilepay" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 I Freestat vil vi vælge den 2. hypotesetest i test af andele, hvilket ses på billedet ovenfor.  
@@ -3177,7 +3177,7 @@ I Freestat vil vi vælge den 2. hypotesetest i test af andele, hvilket ses på b
   <summary> Spørgsmål andelen af MobilePay brugere </summary>
 Vi benytter fortsat undersøgelsen med 31 MobilePay brugere ud af 100 adspurgte.  
 Kan man antage at andelen af MobilePay brugere er 25%?  
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.   
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.   
 
 </details>  
 <br>
@@ -3207,7 +3207,7 @@ Vi konkluderer altså andelen af MobilePay brugere er 25%.
   <summary> Spørgsmål andelen af MobilePay brugere </summary>
 
 Kan man antage at andelen af MobilePay brugere er 20%?  
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3241,7 +3241,7 @@ Da signifikanssandsynligheden er mindre end 1% ville vi også have nået samme k
 
 
 Kan man antage at andelen af MobilePay brugere højst er 22%?   
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3288,7 +3288,7 @@ phat <- n1/n01
 Vi ser igen på datasættet [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM), her findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte.  
 
 Vi betragter nu andelen af kvinder i ledelse (manage). Er andelen af kvinder i ledelsen mindre end 50%?  Husk vi betrager kun ledelsen (manage).  
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3313,7 +3313,7 @@ Det er vigtigt at bemærke at stikprøven er så lille at approximationsbetingel
 
 
 Test om andelen af kvinder i ledelsen mindre end 15%, opstil hypoteser samt teknisk og let forståelig konklusion?  
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 </details>  
 <br>
@@ -3344,7 +3344,7 @@ min <-  length(which(minority=="yes"))
 pval <- ptest(n1,n01,0.5)$pv*2
 ```
 Vi skal teste om halvdelen af medarbejdere i custodial tjeneste dvs. sikkerhedsmedarbejdere er minoriteter.  
-Angiv både hypoteser teststørrelse samt p-værdi. Angiv både en teknisk samt let forståelig konklusion.  
+Angiv både hypoteser teststørrelse samt ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``. Angiv både en teknisk samt let forståelig konklusion.  
 
 
 </details>  
@@ -3358,7 +3358,7 @@ Hypoteserne bliver:
 $$H_0:p=0.5$$  
 $$H_1:p\neq 0.5$$  
 
-`r n1` ud af `r n01` sikkerhedsmedarbejdere er minoriteter. Det giver en z-teststørrelse på `r ptest(n1,n01,0.5)$z` hvilket fører til en meget høj signifikanssandsynlighed på `r pval*100`%. Vi kan absolut ikke forkaste nulhypotesen.  
+`r n1` ud af `r n01` sikkerhedsmedarbejdere er minoriteter. Det giver en z-teststørrelse på `r ptest(n1,n01,0.5)$z` hvilket fører til en meget høj ``r tippy(" signifikanssandsynlighed", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` på `r pval*100`%. Vi kan absolut ikke forkaste nulhypotesen.  
 
 Vi konkluderer at 50% af bankens sikkerhedspersonale er minoriteter.  
 </details> 
@@ -3616,7 +3616,7 @@ Vi har altså sat
 $$p_{mand}=p_1$$
 $$p_{kvinde}=p_2$$
 
-P-værdien bliver `r round2(pv/2,4)`, hvilket er større end 5%, vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at mænd ikke er signifikant mere utro end kvinder i populationen. Vi har dog en p-værdi der er tæt på 10%, så det er ikke en meget sikker konklusion.
+P-værdien bliver `r round2(pv/2,4)`, hvilket er større end 5%, vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at mænd ikke er signifikant mere utro end kvinder i populationen. Vi har dog en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` der er tæt på 10%, så det er ikke en meget sikker konklusion.
 
 Nedenfor ses output fra Freestat:
 
@@ -3648,7 +3648,7 @@ Vor hypoteser bliver:
 $$H_0:p_{religioese}\geq p_{mindre-religioese}$$
 $$H_0:p_{religioese}< p_{mindre-religioese}$$
 
-Vi finder har en signifikanssandsynlighed på `r round2(pv/2,6)`, dette er en meget lille signifikanssandsynlighed, så vi forkaster klart nulhypotesen.
+Vi finder har en ``r tippy(" signifikanssandsynlighed", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` på `r round2(pv/2,6)`, dette er en meget lille ``r tippy(" signifikanssandsynlighed", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, så vi forkaster klart nulhypotesen.
 
 Mindre Religiøse personer er altså mere utro end religiøse.
 
@@ -4025,7 +4025,7 @@ Hvilket vi også kan skrive som
 $$H_0:\mu_{kvinder}-\mu_{mæ\ nd}\leq 0$$
 $$H_1:\mu_{kvinder}-\mu_{mæ\ nd}> 0$$
 
-Vi får en test-størrelse på `r round(t.test(as.vector(as.matrix(k)),as.vector(as.matrix(m)),var.equal = TRUE)$statistic,4)`, denne medfører en p-værdi på 29.71%. Vi kan ikke forkaste nulhypotesen. 
+Vi får en test-størrelse på `r round(t.test(as.vector(as.matrix(k)),as.vector(as.matrix(m)),var.equal = TRUE)$statistic,4)`, denne medfører en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 29.71%. Vi kan ikke forkaste nulhypotesen. 
 
 Vi kan altså ikke konkludere at kvinder får en højere karakter end mænd.
 
@@ -4671,7 +4671,7 @@ Nulhypotesen betyder at vi ikke kan afvise at hældningen på regressionslinjen 
 
 Alternativhypotesen siger derimod at den ene forklarende variabel er signifikant forskellig fra 0. Det vil altså sige at temperaturen har effekt på drinkssalg.  
 
-I cellen **D16** ses t-teststørrelsen for testet af $\beta_{temp}$, er teststørrelsen cirka mindre end -2 eller større end 2, får vi en p-værdi der er mindre end 0.05.  
+I cellen **D16** ses t-teststørrelsen for testet af $\beta_{temp}$, er teststørrelsen cirka mindre end -2 eller større end 2, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` der er mindre end 0.05.  
 I cellen **E16** ses p-værdien for testet, her er p-værdien større end 0.05, hvilket betyder, vi kan ikke forkaste nulhypotesen. Vi kan altså ikke afvise at $\beta_{temp}=0$, hvilket vil sige temperaturen påvirker ikke salget af drinks signifikant. Havde vi haft en større stikprøvestørrelse, er det muligt, vi havde kunnet konkludere at hældningen $\beta_{temp}$, var signifikant forskellig fra 0.  
 
 
@@ -5297,7 +5297,7 @@ legend("topleft",
        bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså mindre end signifikansniveauet 5%. Dette betyder vi kan forkaste nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet 5%. Dette betyder vi kan forkaste nulhypotesen i testet:
 $$H_0:\beta_{Moderniseret}=0\ Moderniseret\ har\ ingen\ effekt$$$$H_1:\beta_{Moderniseret}\neq 0\ Moderniseret\ har\ effekt$$
 
 Vi kan altså afvise at hældningen $\beta_{Moderniseret}$ er nul, hvilket betyder moderniseringår seneste har signifikant effekt. Hvis moderniseringsåret er et år senere vokser lejeprisen med `r b` DKK., hvilket giver god mening. Her giver skæringen absolut ikke mening, skæringen svarer jo til at den forklarende variabel årstal er lig med nul, hvilket jo ville betyde at ugelejen for et sommerhus moderniseret det år Jesus blev født ville være `r a` DKK. Man får altså over kvart million om ugen, for at bo i det gamle skrammelhus ifølge modellen. Her er naturligvis tale em ekstrem ekstrapolation der ikke giver mening.
@@ -5331,7 +5331,7 @@ title(main = list("Sommerhuse Rømø", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså større end signifikansniveauet. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså større end signifikansniveauet. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
 $$H_0:\beta_{Strandafstand}=0\ Strandafstand\ har\ ingen\ effekt$$$$H_1:\beta_{Strandafstand}\neq 0\ Strandafstand\ har\ effekt$$
 Vi kan altså ikke afvise at hældningen $\beta_{Strandafstand}$ er nul, hvilket betyder moderniseringår seneste ikke har signifikant effekt. Det betyder vi kan ikke bruge modellen. Bemærk det er muligt  variablen ville være signifikant, hvis den indgår i en multipel lineær regression, den er næsten signifikant i den simple lineære model. Når vi kontrollerer for andre forklarende variable i en multipel model, kan dette medføre den bliver signifikant. Bemærk hældningskoeficienten `r b` i modellen er negativ hvilket vi ville forvente jo større afstand til strand jo lavere lejepris.
 </details>  
@@ -5410,8 +5410,8 @@ I datasættet USA afkast er der månedsafkast i procent for udvalgte aktier fra 
 <details> 
   <summary> Svar korrelation USA afkast.</summary>
 
-1. Korrelationskoefficienten mellem Kellogs aktien og Microsoft aktien (MFST) er kun -0.001, får en p-værdi på 98.82 procent, aktierne er altså ikke korrelerede?  
-2. JP Morgan JPM og BOA Bank of America er mest korrelerede. Korrelationskoefficienten er 0.6944, ved test for om aktierne er positivt korrelerede får vi en p-værdi på 0.0000. JPM og BOA er altså klart positivt korrelerede. Dette giver god mening da begge selskaber tilhører den finansielle sektor.  
+1. Korrelationskoefficienten mellem Kellogs aktien og Microsoft aktien (MFST) er kun -0.001, får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 98.82 procent, aktierne er altså ikke korrelerede?  
+2. JP Morgan JPM og BOA Bank of America er mest korrelerede. Korrelationskoefficienten er 0.6944, ved test for om aktierne er positivt korrelerede får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0000. JPM og BOA er altså klart positivt korrelerede. Dette giver god mening da begge selskaber tilhører den finansielle sektor.  
 3. Korrelationerne overvejende positive, da alle aktier overordnet påvirkes af konjunkturer samt risikovilligheden.  
 4. Alle aktier er mere korrelerede med porteføljen, da porteføljen er opbygget af netop disse aktier.
 5. Den mest defensive aktie er Kellogs (fødevarer), denne aktie påvirkes ikke af konjunkturer i samme grad som de øvrige aktier, folk skal have mad uanset hvordan markedstemningen er.  
@@ -5539,7 +5539,7 @@ title(main = list("Deutsche Bank i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank. Bemærk hældningskoeficienten $\beta=`r b`$ i modellen er positiv hvilket hvilket er forventeligt, jo bedre tyske aktier performer, des bedre performer Deutsche Bank. Er Beta større end 1, hvilket betyder aktien er cyklisk, dette ville vi typisk forvente for en bankaktie. Når DAX stiger med 1 procent point, stiger Deutsche Bank med `r b` procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden `r rownames(afkast)[1]` til `r rownames(afkast)[nrow(afkast)]`. Konjunkturer har stor betydning for resultatet, vi beregner afkast fra `r rownames(afkast)[1]`, finanskrisen vil således påvirke vores resultat.
 
@@ -5562,7 +5562,7 @@ title(main = list("Bayer AG i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$  
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at $\beta$ er mindre end 1 for en kemiaktie, hvilket betyder aktien er defensiv,  Når DAX stiger med 1 procent point, stiger Bayer AG med `r b` procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om månedsafkast siden `r rownames(afkast)[1]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -5587,7 +5587,7 @@ title(main = list("Deutsche Bank i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Dette er ikke overraskende, da DAX indeholder Deutsche Bank, jo bedre/værre tyske aktier performer, des bedre/værre performer Deutsche Bank. Bemærk hældningskoeficienten $\beta=`r b`$ i modellen. Vi vil forvente at en bank aktie er cyklisk eller konjunkturfølsom dvs. $\beta$ er større end 1. Når DAX stiger med 1 procent point, stiger Deutsche Bank med `r b` procentpoint. Beta-værdien er behæftet med nogen usikkerhed den afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra `r rownames(afkast)[(nrow(afkast)-39)]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -5611,7 +5611,7 @@ title(main = list("Bayer AG i forhold til DAX", cex = 1.3,
 legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadreret",r2), paste("R kvadreret",r2), paste("P-værdi",pv), horiz=TRUE, bg="grey96")
 ```
 
-Vi får en p-værdi på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
+Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså mindre end signifikansniveauet. Dette betyder vi forkaster nulhypotesen i testet:  
 $$H_0:\beta=0\ DAX\ har\ ingen \ effekt$$$$H_1:\beta\neq 0\ DAX\ har\ effekt$$  
 
 Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet har signifikant effekt. Vi vil forvente at en kemi aktie er defensiv dvs. $\beta$ er mindre end 1. Når DAX stiger med 1 procent point, stiger Bayer AG med `r b` procentpoint. Beta-værdien afhænger af tidshorisonten, perioden og længden vi beregner afkastet på. I eksemplet her er der tale om 40 måneders afkast fra `r rownames(afkast)[(nrow(afkast)-39)]` til `r rownames(afkast)[nrow(afkast)]`.  
@@ -6504,7 +6504,7 @@ Vi kan nu udregne teststørrelsen som:
 
 $$\chi^2=\frac{(60-75)^2}{75}+\frac{(40-30)^2}{30}+\frac{(50-45)^2}{45}=3+3\frac{1}{3}+\frac{5}{9}=`r chi`$$
 
-Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver p-værdien `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da teststørrelsen 6.89 er større end den kritiske værdi 5.99, får vi en p-værdi, der er mindre end 5% signifikansniveauet. Vi tester her på 5% signifikansniveau, dvs. 100%-5%=95% konfidensniveau. Vi vælger 5% signifikansniveau, når vi ikke har signifikans- eller konfidensniveauet, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i populationen, er ikke identiske med fordelingen i regionen.
+Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver p-værdien `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da teststørrelsen 6.89 er større end den kritiske værdi 5.99, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``, der er mindre end 5% signifikansniveauet. Vi tester her på 5% signifikansniveau, dvs. 100%-5%=95% konfidensniveau. Vi vælger 5% signifikansniveau, når vi ikke har signifikans- eller konfidensniveauet, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i populationen, er ikke identiske med fordelingen i regionen.
 
 ```{r 68,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(0,15,length.out=200)
@@ -7064,7 +7064,7 @@ $$\frac{(O-E)^2}{E}$$
 
 Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne p-værdien for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
-Vi får en meeget lille p-værdi afrundet til `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og køn.
+Vi får en meeget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` afrundet til `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og køn.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -7151,7 +7151,7 @@ $$\frac{(O-E)^2}{E}$$
 
 Teststørrelsen bliver `r round2(sum(chibi),2)`, denne bruger vi til at beregne p-værdien for testet af uafhængighed. Antallet af frihedsgrader bliver
 $$(r-1)\cdot(s-1)=(3-1)\cdot(2-1)=2\cdot 1=2$$
-Vi får en lille p-værdi på `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og om man tilhører en minoritet.
+Vi får en lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r round2(chipv,6)`, hvilket er klart mindre end signifikansniveauet på 5%. Vi forkaster nulhypotesen og konstaterer, der er afhængighed mellem jobfunktion og om man tilhører en minoritet.
 
 Forudsætningen om forventede værdier større end 5 er opfyldt for alle celler.
 
@@ -7299,7 +7299,7 @@ $$H_0:\mu_{Design 1}=\mu_{Design 2}=\mu_{Design 3}=\mu_{Design 4}$$$$H_1:Ikke\ a
 Freestat output
 ![](img/anova1.png)
 
-Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en p-værdi på `r pv`, hvilket er under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
+Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
 
 Freestat output
 ![](img/anovaFtest.png)
@@ -7309,7 +7309,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Design 1}=\sigma_{Design 2}=\sigma_{Design 3}=\sigma_{Design 4}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 4\ designs.$$
 
 
-Vi får en teststørrelse på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en p-værdi på `r bartlett.test(tider,design)[3]`, hvilket er større end signifikanssandsynligheden på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
+Vi får en teststørrelse på `r bartlett.test(tider,design)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(tider,design)[3]`, hvilket er større end signifikanssandsynligheden på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.
 
 Freestat output af Bartlett test for varianshomogenitet
 ![](img/Bartlett.png)
@@ -7400,7 +7400,7 @@ Hent datasættet <a href="FILER/3 Danske Banker Ugeafkast i procent.xls" downloa
 Vi opstiller hypoteserne for test af om middelværdierne er identiske:
 $$H_0:\mu_{Danske Bank}=\mu_{Jyske Bank}=\mu_{Sydbank}$$$$H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 3\ banker$$
 
-Vi får variationen i grupperne SSW til `r SSW` og variationen mellem grupperne SSA til `r SSA`. Dette giver en F-teststørrelse på `r Ftest[1]` der resulterer i p-værdi på `r pv`. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.
+Vi får variationen i grupperne SSW til `r SSW` og variationen mellem grupperne SSA til `r SSA`. Dette giver en F-teststørrelse på `r Ftest[1]` der resulterer i ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.
 
 Vi kan da se at de absolutte forskelle mellem stikprøvegennemsnittene er relativt små:
 
@@ -7416,7 +7416,7 @@ Vi skal tjekke forudsætningen om varianshomogenitet
 $$H_0:\sigma_{Danske Bank}=\sigma_{Jyske Bank}=\sigma_{Sydbank}$$$$H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 3\ banker.$$
 
 
-Vi får en teststørrelse på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en p-værdi på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med signifikanssandsynligheden på 0.05.
+Vi får en teststørrelse på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(Ugeafkast~Bank,data=afkastdf)[3]`, hvilket vi skal sammenholde med signifikanssandsynligheden på 0.05.
 
 Normalitet
 
@@ -7483,14 +7483,14 @@ Vi opstiller hypoteserne:
 $$H_0:\mu_{action}=\mu_{komedie}=\mu_{drama}=\mu_{documentar}=\mu_{romance}=\mu_{short}$$$$H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 5\ genrer.$$
 
 
-Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en meget lille p-værdi på `r pv`, hvilket er klart under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
+Vi får en F-teststørrelse på `r Ftest[1]`, der resulterer i en meget lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv`, hvilket er klart under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.
 
 
 Vi skal tjekke forudsætningen om varianshomogenitet
 
 $$H_0:\sigma_{action}=\sigma_{komedie}=\sigma_{drama}=\sigma_{documentar}=\sigma_{romance}=\sigma_{short}$$$$H_1:Ikke\ alle\ standardafvigelser\ er\ ens\ for\ de\ 5\ genrer.$$
 
-Vi får en teststørrelse på `r bartlett.test(imdb$Rating,imdb$Genre)[1]`. Chi i anden testet giver os en p-værdi på `r bartlett.test(imdb$Rating,imdb$Genre)[3]`.
+Vi får en teststørrelse på `r bartlett.test(imdb$Rating,imdb$Genre)[1]`. Chi i anden testet giver os en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r bartlett.test(imdb$Rating,imdb$Genre)[3]`.
 
 
 
@@ -7713,7 +7713,7 @@ Nulhypotesen i Bartletts test er at variablene ikke er korrelerede dvs. alle kor
 $$H_0:Alle\ \rho=0$$
 $$H_1:Ikke\ alle\ \rho=0  $$
 
-Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille p-værdi på 0.00167791, betyder vi gennemfører faktoranalysen.
+Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.00167791, betyder vi gennemfører faktoranalysen.
 
 Vi kan ligeledes køre Kaiser-Meyer-Olkin KMO testet fra pshych pakken:
 
