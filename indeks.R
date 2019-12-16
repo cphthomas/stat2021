@@ -55,20 +55,26 @@ forklaring <<- c(
   Hypotese test med to-sidet alternativ hypotese:<br>
   H<sub>0</sub>: &mu;=34<br>
   H<sub>1</sub>: &mu;&ne;34<br>
-  Vi forkaster H<sub>0</sub> både hvis &mu; er signifikant større eller mindre end 34<br><br>
+  <i>Vi forkaster H<sub>0</sub> både hvis &mu; er signifikant større eller mindre end 34<i><br><br>
   Hypotese test med et-sidet alternativ hypotese opad:<br>
   H<sub>0</sub>: &mu;≤34<br>
   H<sub>1</sub>: &mu;>34<br>
-  Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant større end 34<br><br>
+  <i>Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant større end 34</i><br><br>
   Hypotese test med et-sidet alternativ hypotese nedad:<br>
   H<sub>0</sub>: &mu;≥34<br>
   H<sub>1</sub>: &mu;<34<br>
-  Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant mindre end 34<br><br>
+  <i>Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant mindre end 34</i><br><br>
   ",
 
-  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). Jo lavere p-værdi des mindre tror vi på nulhypotesen",
-  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). Jo lavere p-værdi des mindre tror vi på nulhypotesen"
+  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>
+  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br><br>
+  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0</sub>: &mu;=210<br>
+    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være næsten umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>",
 
+  "Signifikanssandsynligheden også kaldet p-værdien er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>
+  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br><br>
+  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0</sub>: &mu;=210<br>
+    H<sub>1</sub>: &mu;&ne;210<br><br>Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>Det vil være næsten umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.</i>"
 
 )
 
