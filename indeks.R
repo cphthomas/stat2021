@@ -98,9 +98,14 @@ forklaring <<- c(
   Ønskede at teste om middel højden i populationen, kunne antages at være 150 cm ud fra samme stikprøve ville vi få et meget positiv teststørrelse, 176.32-150 divideret med standardfejlen for middelværdienSEM</i>",
 
 
-  "Signifikansniveauet typisk 1%, 5% eller 10%, fastsættes inden et test og sammenlignes med p-værdien.<br>
+  "Signifikansniveauet &alpha; typisk 1%, 5% eller 10%, fastsættes inden et test og sammenlignes med p-værdien.<br>
   Er p-værdien mindre end signifikansniveauet forkastes nulhypotesen, ellers ikke.<br>
-  Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl) "
+  Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl)<br>
+  Medicinal industrien arbejder ofte med 1% signifikansniveau, hvor et test kunne være:<br>
+  H<sub>0</sub>: Medicinen har ingen effekt<br>
+  H<sub>1</sub>: Medicinen har effekt<br>
+  Med 1% signifikansniveau, begås en type 1 fejl kun i et ud af 100 tests.<br>
+  En type 1 fejl vil her betyde, at man fejlagtigt konkluderer at et medicinal produkt uden effekt virker."
 
 )
 
