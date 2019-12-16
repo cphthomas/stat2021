@@ -9,11 +9,28 @@ BEGREB <<- c(
   "p-værdi",
   "Signifikanssandsynlighed",
   "Teststørrelse",
-  "Signifikansniveau"
+  "Signifikansniveau",
+  "Konfidensniveau"
 
 
 
 )
+
+Kapitel <<- c(
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvantitative variable i online bogen tepedu.dk her.</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>",
+  "<a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Læs mere om kvalitative variable i online bogen tepedu.dk</a>"
+
+
+  )
+
 forklaring <<- c(
   "En kvantitativ variabel, er populært sagt en numerisk variabel man kan \"regne med \" fx. finde gennemsnit, median, standardafvigelse, fraktiler osv. Eksempler på kvantitative variable er:<i><br>
   Mænds højde i cm.<br>
@@ -31,7 +48,7 @@ forklaring <<- c(
   <i>Hvilket kæledyr har du?<br>
   {hund, kat, hund, kat, hund, marsvinkat,...}<br>
   Hvilket parti vil du stemme på?<br>
-  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikal,... etc.}<br>
+  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikale,... etc.}<br>
   Hvad er din primære bankforbindelse?<br>
   {Danske Bank, Nordea, Jyske Bank,...}</i>",
 
@@ -100,17 +117,22 @@ forklaring <<- c(
 
   "Signifikansniveauet &alpha; typisk 1%, 5% eller 10%, fastsættes inden et test og sammenlignes med p-værdien.<br>
   Er p-værdien mindre end signifikansniveauet forkastes nulhypotesen, ellers ikke.<br>
-  <i>Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl)<br>
+  <i>Signifikansniveauet angiver sandsynligheden for at forkaste en sand nulhypotese (en type 1 fejl også kaldet en falsk positiv)<br>
   Medicinal industrien arbejder ofte med 1% signifikansniveau, hvor et test kunne være:<br>
   H<sub>0</sub>: Medicinen har ingen effekt<br>
   H<sub>1</sub>: Medicinen har effekt<br>
   Med 1% signifikansniveau, begås en type 1 fejl kun i et ud af 100 tests.<br>
-  En type 1 fejl vil her betyde, at man fejlagtigt konkluderer at et medicinal produkt uden effekt virker.</i>"
+  En type 1 fejl vil her betyde, at man fejlagtigt konkluderer at et medicinal produkt uden effekt virker.<br>
+  Signifikansniveauet kan bruges til at bestemme konfidensniveauet 1-&alpha;, der angiver sandsynligheden for korrekt ikke at forkaste en sand nulhypotese </i>",
+
+  "Konfidensniveauet 1-&alpha; angiver sandsynligheden for ikke at forkaste en sand nulhypotese dvs. korrekt beslutning.<br>
+  Man kan bestemme konfidensniveauet som 1-&alpha; dvs. 1 minus signifikansniveauet.<br>
+  Dvs. summen af signifikansniveauet og konfidensniveauet giver altid 1 eller 100%<br>"
 
 )
 
 
 
-indeks <<- data.frame(BEGREB,forklaring)
+indeks <<- data.frame(BEGREB,forklaring,Kapitel)
 
 # <a href=\"https://www.retsinformation.dk/Forms/R0710.aspx?id=142900\" style=\"color:#3088fc\" target=\"_blank\">Tinglysningsloven</a>

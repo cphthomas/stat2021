@@ -15,10 +15,10 @@ library(dplyr)
 
 
 
-skema <- tibble(indeks[,1],indeks[,2])
+skema <- tibble(indeks[,1],indeks[,2],indeks[,3])
 
 
-colnames(skema) = c('Begreb', "Forklaring")
+colnames(skema) = c('Begreb', "Forklaring","Kapitel")
 
 
 datatable(skema, rownames = FALSE, extensions = 'Buttons',class = 'cell-border hover compact', escape = FALSE,  options = list(searchHighlight = TRUE,pageLength = 18,dom = 'Bfrt',language = list(url = '////cdn.datatables.net/plug-ins/1.10.20/i18n/Danish.json'),
