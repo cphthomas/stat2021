@@ -1937,7 +1937,7 @@ axis(side = 1, at=c(-5,-1.97,1.97,2.5,5),cex.axis=0.7)
 
 Hvis vi ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er forskellig fra, skal vi se på både venstre og højre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end -2.4957 og større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At teststørrelsen er mindre end -2.4957, svarer oversat til meter at afstanden er mindre end 712 meter, sandsynligheden for en numerisk mere ekstrem teststørrelse bliver arealet af begge haler 0.0067+0.0067=0.0134.
 
-Vi kan benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ hypotese.
+Vi kan benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``.
 <img src="img/freestatmiddelmaegler.png" alt="freestatmiddelmaegler" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
 
@@ -1946,7 +1946,7 @@ Vi siger ovenstående konklusion er niveaufølsom, vi ville ikke have forkastet 
 Hvis vi kender populationens standardafvigelse $\sigma$, eller vi har store stikprøver, kan vi benytte z-fordelingen, til beregning af signifikanssandsynligheder. Software benytter ofte konsekvent t-fordelingen, der approximerer z-fordelingen, når antallet af frihedsgrader vokser. Jo større stikprøven er jo mindre forskel vil der være mellem de to metoder. Vi kan for små stikprøver benytte t-fordelingen, hvis stikprøven stammer fra en normalfordelt population. I Freestat benyttes kun t-fordelingen da vi forudsætter at populationsvariansen er ukendt.
 
 ## Tosidet alternativ hypotese og konfidensintervallet.
-Når vi tester med tosidet alternativ hypotese, kan vi bruge konfidensintervallet svarende til signifikansniveauet til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af p-værdien. Ud fra størrelsen af p-værdien, kan vi afgøre hvor sikker hvor konklusion er.
+Når vi tester med tosidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, kan vi bruge konfidensintervallet svarende til signifikansniveauet til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af p-værdien. Ud fra størrelsen af p-værdien, kan vi afgøre hvor sikker hvor konklusion er.
 
 ## Ensidet alternativ hypotese
 Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er 730 meter mod alternativ hypotesen den sande afstand til nærmeste filial i gennemsnit er forskellig fra 730 meter. Vi kunne fx. være interesseret i:
@@ -1954,7 +1954,7 @@ Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er
 1. Afstanden til nærmeste filial er mindst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er mindre end 730 meter.  
 2. Afstanden til nærmeste filial er højst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er større end 730 meter. 
 
-I formuleringen af spørgsmålet der stilles ligger nøglen til hvilken type test vi bruger, nedenfor er et skema over de ord man oplever i en formuleringen af et spørgsmål, disse skal benyttes til at afgøre om det er den ene eller anden hypotese vi skal benytte. Bemærk når man opstiller en konkret hypotese vil $\mu_0$ blive skiftet ud med den mulige middelværdi i populationen man ønsker at teste:
+I formuleringen af spørgsmålet der stilles ligger nøglen til hvilken type test vi bruger, nedenfor er et skema over de ord man oplever i en formuleringen af et spørgsmål, disse skal benyttes til at afgøre om det er den ene eller anden ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vi skal benytte. Bemærk når man opstiller en konkret ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vil $\mu_0$ blive skiftet ud med den mulige middelværdi i populationen man ønsker at teste:
 
 |Ord              | Operator             |Hypotese                       |Passer med
 |:-------------   |:------------         |:------------                 |:---------
@@ -1997,7 +1997,7 @@ axis(side = 1, at=c(-5,-1.97,1.97,2.5,5),cex.axis=0.7)
 ```
 
 ### Ensidet alternativ hypotese nedad
-Vi viser her testet for ensidet alternativ hypotese nedad. Der er ingen grund til at teste her, vi ved der skal meget til at forkaste nulhypotesen, og vi har et stikprøvegennemsnit, der er større end 730. Vi vil derfor helt sikkert finde, at nulhypotesen om at afstanden til nærmeste filial er mindst 730 meter, ikke kan forkastes. Vi viser alligevel eksemplet med samme værdier, for at man kan se hvorledes sammenhængen er mellem de 3 typer af tests.
+Vi viser her testet for ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` nedad. Der er ingen grund til at teste her, vi ved der skal meget til at forkaste nulhypotesen, og vi har et stikprøvegennemsnit, der er større end 730. Vi vil derfor helt sikkert finde, at nulhypotesen om at afstanden til nærmeste filial er mindst 730 meter, ikke kan forkastes. Vi viser alligevel eksemplet med samme værdier, for at man kan se hvorledes sammenhængen er mellem de 3 typer af tests.
 
 1. Afstanden til nærmeste filial er mindst 730 meter
 2. Afstanden til nærmeste filial er mindre end 730 meter
@@ -2919,7 +2919,7 @@ Vi kan med 99% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i popul
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/225968110' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>  
 
-Når vi tester en hypotese, undersøger vi om en egenskab ved en populationsparameter (eller flere parametre) er opfyldt. Vi siger i udgangspunktet at nulhypotesen er sand, så der skal vægtige grunde til at vi forkaster (afviser) denne. Nulhypotesen kan fx. være:  
+Når vi tester en ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, undersøger vi om en egenskab ved en populationsparameter (eller flere parametre) er opfyldt. Vi siger i udgangspunktet at nulhypotesen er sand, så der skal vægtige grunde til at vi forkaster (afviser) denne. Nulhypotesen kan fx. være:  
 
 Andelen p er lig med 50%, dette skriver vi som: 
 
@@ -2931,7 +2931,7 @@ Alternativ hypotesen er altid det modsatte udsagn, det vil altså sige:
 
 Andelen er ikke lig med 50% 
 
-Vores alternativ hypotese skrives som:
+Vores alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` skrives som:
 
 $$H_1: p \neq 0.5$$
 
@@ -2939,7 +2939,7 @@ eller
 
 $$H_a: p \neq 0.5$$
 
-Husk når vi tester en hypotese, er det altid parameteren vi skriver i hypoteserne, ALDRIG parameterestimaterne. Vi ved jo præcis hvad andelen i stikprøven er, derfor ved vi præcis hvad $\hat{p}$ er, derfor giver det ingen mening at teste dette.
+Husk når vi tester en ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, er det altid parameteren vi skriver i hypoteserne, ALDRIG parameterestimaterne. Vi ved jo præcis hvad andelen i stikprøven er, derfor ved vi præcis hvad $\hat{p}$ er, derfor giver det ingen mening at teste dette.
 
 ## Hypotesetest en andel, tosidet alternativ hypotese
 
@@ -3034,12 +3034,12 @@ Hvis vi baseret på MobilePay stikprøven i stedet havde spurgt:
 Er andelen af MobilePay brugere i populationen mindre end 35%? 
 Er andelen af MobilePay brugere i populationen mindst 35%? 
 
-Begge disse udsagn leder hver sin vej til samme hypotese test. 
+Begge disse udsagn leder hver sin vej til samme ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` test. 
 
 Andelen af MobilePay brugere i populationen er mindre end 35%?  
-Kan omskrives til en alternativ hypotese
+Kan omskrives til en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``
 $$H_1:p<0.35$$
-Bemærk da operatoren mindre end $<$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ hypotese. Det komplementære udsagn er altså nulhypotesen:
+Bemærk da operatoren mindre end $<$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``. Det komplementære udsagn er altså nulhypotesen:
 $$H_0:p\geq 0.35$$
 
 Andelen af MobilePay brugere i populationen er mindst 35%? 
@@ -3048,7 +3048,7 @@ $$H_0:p\geq 0.35$$
 Det komplementære udsagn bliver:
 $$H_1:p<0.35$$
 
-Vi siger, vi har en ensidet alternativ hypotese, da kun stikprøveandele signifikant mindre end 0.35 ($H_1:p<0.35$), vil være kritiske for nulhypotesen. Det betyder at kun venstre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.
+Vi siger, vi har en ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, da kun stikprøveandele signifikant mindre end 0.35 ($H_1:p<0.35$), vil være kritiske for nulhypotesen. Det betyder at kun venstre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.
 
 Vi får, som tidligere samme z-teststørrelse `r round(ptest(31,100,0.35)$z,4)`. Men som det ses af standard normalfordelingen i figuren nedenfor interesserer vi os kun for venstre hale.
 
@@ -3102,11 +3102,11 @@ Hvis vi baseret på MobilePay stikprøven i stedet havde spurgt:
 Er andelen af MobilePay brugere i populationen større end 35%? 
 Er andelen af MobilePay brugere i populationen højst 35%? 
 
-Begge disse udsagn leder hver sin vej til samme hypotese test.  
+Begge disse udsagn leder hver sin vej til samme ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` test.  
 Andelen af MobilePay brugere i populationen er større end 35%?  
-Kan omskrives til en alternativ hypotese
+Kan omskrives til en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``
 $$H_1:p>0.35$$
-Bemærk da operatoren større end $>$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ hypotese. Det komplementære udsagn er altså nulhypotesen:
+Bemærk da operatoren større end $>$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``. Det komplementære udsagn er altså nulhypotesen:
 $$H_0:p\leq 0.35$$
 
 Andelen af MobilePay brugere i populationen er højst 35%? 
@@ -3115,8 +3115,8 @@ $$H_0:p\leq 0.35$$
 Det komplementære udsagn bliver:
 $$H_1:p>0.35$$
 
-Så begge udsagn fører altså til samme hypotesetest med ensidet alternativ hypotese opad
-Vi siger, vi har en ensidet alternativ hypotese opad, da kun stikprøveandele signifikant større end 0.35 ($H_1:p>0.35$), vil være kritiske for nulhypotesen. Det betyder at kun højre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.
+Så begge udsagn fører altså til samme hypotesetest med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad
+Vi siger, vi har en ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad, da kun stikprøveandele signifikant større end 0.35 ($H_1:p>0.35$), vil være kritiske for nulhypotesen. Det betyder at kun højre hale i z-fordelingen vil medføre at vi forkaster nulhypotesen.
 
 Vi får, igen samme z-teststørrelse `r round(ptest(31,100,0.35)$z,4)`. Men som det ses af standard normalfordelingen i figuren nedenfor interesserer vi os nu kun for højre hale.
 
@@ -3566,12 +3566,12 @@ Da signifikanssandsynligheden/p-værdien `r round2(prop.test(c(31,45),c(100,200)
 
 Vi konkluderer andelen af MobilePay brugere før og nu ikke er forskellig.
 
-I nedenstående output fra Freestat når vi samme konklusion, her benytter vi testet med den tosidede alternativ hypotese hvor:
+I nedenstående output fra Freestat når vi samme konklusion, her benytter vi testet med den tosidede alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` hvor:
 $$p_{nu}=p_1$$
 $$p_{tidligere}=p_2$$
 
 
-Bemærk ved tests af 2 andele, med ensidet alternativ hypotese, er det vigtigt at holde styr på, hvad man vælger som stikprøve 1 og stikprøve 2. 
+Bemærk ved tests af 2 andele, med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, er det vigtigt at holde styr på, hvad man vælger som stikprøve 1 og stikprøve 2. 
 
 ![](img/freestattest2andeleMobilepay.png)
 
@@ -3693,9 +3693,9 @@ Da $n\cdot\hat{p}\cdot(1-\hat{p})$ klart er større end 9 for begge stikprøver,
 **3.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`?  
 <img src="img/2andele3.png" alt="2andele3" align="right" width="40%" height="40%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Bemærk vi tester med en-sidet alternativ hypotese, da spørgsmålet er om andelen er **steget**. Da vi vælger at sætte `r as.numeric(substr(date(),21,24))` stikprøven som stikprøve 1 og `r as.numeric(substr(date(),21,24))-4` stikprøven som stikprøve 2, bliver testet ensidet opad. Vi skal jo undersøge om $p_{`r as.numeric(substr(date(),21,24))`}$ er større end $p_{`r as.numeric(substr(date(),21,24))-4`}$.  
+Bemærk vi tester med en-sidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, da spørgsmålet er om andelen er **steget**. Da vi vælger at sætte `r as.numeric(substr(date(),21,24))` stikprøven som stikprøve 1 og `r as.numeric(substr(date(),21,24))-4` stikprøven som stikprøve 2, bliver testet ensidet opad. Vi skal jo undersøge om $p_{`r as.numeric(substr(date(),21,24))`}$ er større end $p_{`r as.numeric(substr(date(),21,24))-4`}$.  
 
-Vi skal teste med ensidet alternativ hypotese opad. Hypoteserne i testet bliver derfor:  
+Vi skal teste med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad. Hypoteserne i testet bliver derfor:  
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}\leq p_{`r as.numeric(substr(date(),21,24))-4`}$$
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}>p_{`r as.numeric(substr(date(),21,24))-4`}$$
 
@@ -3705,7 +3705,7 @@ Da p værdien/signifikanssandsynligheden 0.0602 er større end 0.05 signifikansn
 **4.** Er antallet af anmeldte skader steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`, hvis vi tester på 10% signifikansniveau?  
 <img src="img/2andele4.png" alt="2andele4" align="right" width="40%" height="40%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Vi skal fortsat teste med ensidet alternativ hypotese opad dog med 10% signifikansniveau. Hypoteserne i testet bliver derfor:  
+Vi skal fortsat teste med ensidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` opad dog med 10% signifikansniveau. Hypoteserne i testet bliver derfor:  
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}\leq p_{`r as.numeric(substr(date(),21,24))-4`}$$
 $$H_0:p_{`r as.numeric(substr(date(),21,24))`}>p_{`r as.numeric(substr(date(),21,24))-4`}$$
 Da p værdien/signifikanssandsynligheden 0.0602 er mindre end 0.1 signifikansniveauet, afviser vi nulhypotesen. Andelen af anmeldte skader er altså steget fra `r as.numeric(substr(date(),21,24))-4` til `r as.numeric(substr(date(),21,24))`  

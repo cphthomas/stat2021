@@ -5,7 +5,7 @@ BEGREB <<- c(
   "Kvalitative variable",
   "Diskrete variable",
   "Kontinuerte variable",
-  "hypotese test"
+  "Hypotese test"
 
 
 
@@ -46,16 +46,29 @@ forklaring <<- c(
 
 
 
-  "Vi tester hypotesen
-  <br>H<sub>0</sub>: &mu;=34
-  <br>H<sub>1</sub>: &mu;&ne;34<br>
-<br>H<sub>0</sub>: &mu;≤34
-  <br>H<sub>1</sub>: &mu;>34<br>
-  <a href=\"https://www.retsinformation.dk/Forms/R0710.aspx?id=142900\" style=\"color:#3088fc\" target=\"_blank\">Tinglysningsloven</a>"
+
+
+
+  "Et hypotese test, tester om en nulhypotese H<sub>0</sub> (grundtroen) mod en alternativ hypotese H<sub>1</sub> (det modsatte udsagn af nulhypotesen), kan forkastes eller ikke forkastes. Da nulhypotesen er udgangspunktet (grundtroen), skal der en del beviser til, for at vi forkaster/afviser denne. Vi har 3 kategorier af hypotese test, se eksemplerne herunder:<br>
+  Hypotese test med to-sidet alternativ hypotese:<br>
+  H<sub>0</sub>: &mu;=34<br>
+  H<sub>1</sub>: &mu;&ne;34<br>
+  Vi forkaster H<sub>0</sub> både hvis &mu; er signifikant større eller mindre end 34<br><br>
+  Hypotese test med et-sidet alternativ hypotese opad:<br>
+  H<sub>0</sub>: &mu;≤34<br>
+  H<sub>1</sub>: &mu;>34<br>
+  Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant større end 34<br><br>
+  Hypotese test med et-sidet alternativ hypotese nedad:<br>
+  H<sub>0</sub>: &mu;≥34<br>
+  H<sub>1</sub>: &mu;<34<br>
+  Vi forkaster kun H<sub>0</sub> hvis &mu; er signifikant mindre end 34<br><br>
+  "
 
 
 )
 
+
+
 indeks <<- data.frame(BEGREB,forklaring)
 
-# assign("indeks", indeks, envir = .GlobalEnv)
+# <a href=\"https://www.retsinformation.dk/Forms/R0710.aspx?id=142900\" style=\"color:#3088fc\" target=\"_blank\">Tinglysningsloven</a>
