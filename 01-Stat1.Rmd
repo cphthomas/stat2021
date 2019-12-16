@@ -17,66 +17,11 @@ pacman::p_load(timeDate, DT,plotly,rio,exams,e1071,WriteXLS,readxl,maps,knitr,ka
 		
 ```{r, echo=FALSE, results='asis'}
 # cat(readLines('np.html'))
+source("indeks.R")
 ```
 			
 
-```{r echo=FALSE}
 
-BEGREB <<- c(
-          "Kvantitative variable",
-          "Kvalitative variable",
-          "Diskrete variable",
-          "Kontinuerte variable",
-          "hypotese test"
-          
-          
-          
-          )
-forklaring <<- c(
-  "En kvantitativ variabel, er populært sagt en numerisk variabel man kan \"regne med \" fx. finde gennemsnit, median, standardafvigelse, fraktiler osv. Eksempler på kvantitative variable er:<i><br>
-  Mænds højde i cm.<br>
-  {176, 188, 169, 177, 181, 182,...}<br>
-  Aktiekurs<br>
-  {437.39, 437.78, 432.12, 431.03, 433.83, 433.81}<br>
-  Antal børn i familien<br>
-  {0, 1, 0, 3, 2, 1,0,1,0,...}<br>
-  Nedbørsmængde i mm. i Dragør<br>
-  {0,00, 0,02, 0,03, 0.12, 0.08, 1,12,1,43,1,21,0,03,...}<br>
-  Indholdet i Coca Cola dåser i ml.<br>
-  {333,12, 333,08, 332,82, 332,73, 332,93,...}</i>",
-  
-  "En kvalitativ variabel, er en typisk ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br> 
-  <i>Hvilket kæledyr har du?<br>
-  {hund, kat, hund, kat, hund, marsvinkat,...}<br>
-  Hvilket parti vil du stemme på?<br>
-  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikal,... etc.}<br>
-  Hvad er din primære bankforbindelse?<br>
-  {Danske Bank, Nordea, Jyske Bank,...}</i>",
-  
-  
-  "Diskrete variable er variable, der har heltallige værdier fx.<br><i>
-  Antal børn i familien<br>
-  {0, 1, 0, 3, 2, 1,0,1,0,...}</i>",
-  "Kontinuerte variable er variable, der har kontinuerte værdier fx. <br><i>
-  Indholdet i Coca Cola dåser i ml.<br>
-  {333,12, 333,08, 332,82, 332,73, 332,93,...}<br>
-  Mænds højde i cm.<br>
-  {176, 188, 169, 177, 181, 182,...}<br>
-  Punktsandsynligheder for en kontinuert variabel 0. Har vi et perfekt målebånd findes der ikke en eneste person i hele versen, der præcis er 180,00000000000000.. cm høj. <br>Ligeledes findes ingen cola dåser der indeholder præcis 330,000000... ml. </i> ",
-  "Vi tester hypotesen
-  <br>H<sub>0</sub>: &mu;=34
-  <br>H<sub>1</sub>: &mu;&ne;34<br>
-<br>H<sub>0</sub>: &mu;≤34
-  <br>H<sub>1</sub>: &mu;>34<br>
-  <a href=\"https://www.retsinformation.dk/Forms/R0710.aspx?id=142900\" style=\"color:#3088fc\" target=\"_blank\">Tinglysningsloven</a>"
-
-  
-  )
-  
-indeks <<- data.frame(BEGREB,forklaring)
-  
-assign("indeks", indeks, envir = .GlobalEnv)
-```
 
 
 
@@ -186,7 +131,7 @@ cat(readLines('np.html'))
   
 ### Kvantitative variable
   
-  Kvantitative variable er målbare numeriske variable, vi deler disse op i *kontinuerte* og *diskrete* variable
+  ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` er målbare numeriske variable, vi deler disse op i *kontinuerte* og *diskrete* variable
   
 #### Diskrete variable
   
@@ -240,7 +185,7 @@ Kontinuerte variable er fx.
 - Vin Scully
 </div>
 
-  Interval- og ratioskalaer omtales som numeriske eller kontinuerte skalaer, disse er knyttet til kvantitative variable.  
+  Interval- og ratioskalaer omtales som numeriske eller kontinuerte skalaer, disse er knyttet til ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))``.  
   Nominal- og ordinalskalaer omtales ofte som kategorisk eller faktor, disse er knyttet til kvalitative variable.
   
   En stikprøve af skalatype ratio kan fx. reduceres til ordinal, eller nominal. Temperatur målt i celsius kan fx. omskrives til en ordinal variabel: koldt normalt varmt, eller en nominal variabel: ekstrem temperatur eller normal temperatur.
@@ -1280,7 +1225,9 @@ grid()
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337668' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Hvis vi har mindre stikprøver, skal vi sikre os at data stammer fra normalfordelte populationer. Dette kan vi gøre vha. normalfraktildiagrammer, disse skal ligge pænt omkring den rette linje. Har man en lille stikprøve og ønsker at sikre sig data stammer fra en normalfordelt population, kan man i Freestat indsætte stikprøven i 1 kvantitativ stikprøve og sikre sig at punkterne ligger pænt omkring den rette linje. En stikprøve er lille, når den er mindre end 30 observationer. Det kan ofte være svært at se om data stammer en normalfordeling. Som det fremgår af nedenstående normalfraktildiagrammer er kun 4 af de 18 normalfordelte, specielt ved de mindre stikprøver er det svært at se præcis om data er normalfordelte. Man kan generelt sige at afvigelser fra den rette linje i enderne, er mindre kritiske en afvigelser omkring midten. Hvis man i forbindelse med analyse fx. konfidensinterval eller hypotesetest, konstaterer data ikke er normalfordelte, bør man bemærke dette og illustrere vha. normalfraktildiagrammet. Når man har rapporteret problemet gennemfører man herefter analysen. 
+
+
+Hvis vi har mindre stikprøver, skal vi sikre os at data stammer fra normalfordelte populationer. Dette kan vi gøre vha. normalfraktildiagrammer, disse skal ligge pænt omkring den rette linje. Har man en lille stikprøve og ønsker at sikre sig data stammer fra en normalfordelt population, kan man i Freestat indsætte stikprøven i 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve og sikre sig at punkterne ligger pænt omkring den rette linje. En stikprøve er lille, når den er mindre end 30 observationer. Det kan ofte være svært at se om data stammer en normalfordeling. Som det fremgår af nedenstående normalfraktildiagrammer er kun 4 af de 18 normalfordelte, specielt ved de mindre stikprøver er det svært at se præcis om data er normalfordelte. Man kan generelt sige at afvigelser fra den rette linje i enderne, er mindre kritiske en afvigelser omkring midten. Hvis man i forbindelse med analyse fx. konfidensinterval eller hypotesetest, konstaterer data ikke er normalfordelte, bør man bemærke dette og illustrere vha. normalfraktildiagrammet. Når man har rapporteret problemet gennemfører man herefter analysen. 
 
 ```{r,echo=FALSE,message=FALSE}
 list.of.packages <- c("gridExtra", "exams")
@@ -1990,7 +1937,7 @@ axis(side = 1, at=c(-5,-1.97,1.97,2.5,5),cex.axis=0.7)
 
 Hvis vi ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er forskellig fra, skal vi se på både venstre og højre hale. Vi skal beregne sandsynligheden (p-værdien) for at få en mere ekstrem teststørrelse, det betyder her en teststørrelse mindre end -2.4957 og større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At teststørrelsen er mindre end -2.4957, svarer oversat til meter at afstanden er mindre end 712 meter, sandsynligheden for en numerisk mere ekstrem teststørrelse bliver arealet af begge haler 0.0067+0.0067=0.0134.
 
-Vi kan benytte fanen 1 kvantitativ stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ hypotese.
+Vi kan benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve beregnede data i venstre side. Her skal vi benytte testen med to-sidet alternativ hypotese.
 <img src="img/freestatmiddelmaegler.png" alt="freestatmiddelmaegler" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
 
@@ -2541,7 +2488,7 @@ hc <- ggplot(data=dkvirk, aes(dkvirk$Omsætning)) +
   ggtitle("Histogram over omsætning i antal 1000 DKK.")
 plot(hc)
 ```
-1. Variablen Omsætning er en kvanitativ, kontinuert variabel, ratioskala, vi kan således benytte fanen 1 Kvantitativ stikprøve i Freestat.  
+1. Variablen Omsætning er en kvanitativ, kontinuert variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve i Freestat.  
 2. Standardfejlen for middelværdien bliver $SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127$ DDK eller ca. 95 mio.  
 3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter signifikansniveauet i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
 <img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
@@ -2632,7 +2579,7 @@ Opgave 2.1
 Bemærk da antallet af observationer i stikprøven er mindre end 30 skal vi sikre os at data er approximativt normalfordelte. Dette afgøres vha. QQ plot, hvor vi ser at observationerne ligger nogenlunde på en ret linje.  
 <img src="img/freestatjan2015qq.png" alt="freestatjan2015qq" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Vi indsætter data i Freestat i fanen 1 kvantitativ stikprøve:  
+Vi indsætter data i Freestat i fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve:  
 
 Af teksten ses:  
 
@@ -2733,7 +2680,7 @@ Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx
 Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
 $$\hat{p}=\frac{x}{n}=\frac{`r length(which(DKdf[,1]>0))`}{`r length(DKdf[,1])`}=`r round(length(which(DKdf[,1]>0))/length(DKdf[,1]),2)`$$
 
-Bemærk at den kvantitative kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
+Bemærk at den ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` kontinuerte variabel dagligt afkast for Trygaktien, blev omdannet til en kvalitativ binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores stikprøve fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores stikprøve stammer jo fra en bestemt periode, en repræsentativ stikprøve, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
 
 
 
@@ -3962,7 +3909,7 @@ cat(readLines('np.html'))
 
 ### Pooled og unpooled t-test
 
-Vi kan ofte være interesseret i at i at sammenligne middelværdier, til dette kan vi benytte en af flere tests. Hvis vi har 2 kvantitative stikprøver, kan vi undersøge om forskellen i middelværdierne er signifikant forskellig. Det er muligt at bruge en pooled t-test, hvis vi har ens standardafvigelser og dermed ens varianser for de 2 stikprøver. Man bruger en unpooled t-test, hvis varianserne ikke er ens. Vi kan teste om varianserne er ens, en sådan test for varianshomogenitet, findes i det meste software incl. freestat. Hvis man ikke har mulighed for at teste, kan man bruge tommelfingerreglen: Hvis den største af de 2 stikprøvers standardafvigelse, er mere end dobbelt så stor, som den lille stikprøves standardafvigelse, benyttes unpooled t-test. 
+Vi kan ofte være interesseret i at i at sammenligne middelværdier, til dette kan vi benytte en af flere tests. Hvis vi har 2 ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøver, kan vi undersøge om forskellen i middelværdierne er signifikant forskellig. Det er muligt at bruge en pooled t-test, hvis vi har ens standardafvigelser og dermed ens varianser for de 2 stikprøver. Man bruger en unpooled t-test, hvis varianserne ikke er ens. Vi kan teste om varianserne er ens, en sådan test for varianshomogenitet, findes i det meste software incl. freestat. Hvis man ikke har mulighed for at teste, kan man bruge tommelfingerreglen: Hvis den største af de 2 stikprøvers standardafvigelse, er mere end dobbelt så stor, som den lille stikprøves standardafvigelse, benyttes unpooled t-test. 
 
 Vi ser igen på eksemplet med ejendomsmægleren der undersøgte kundernes afstand til filialerne. Den gennemsnitlige afstand til nærmeste filial var, 748 meter i stikprøven med 200 respondenter. Standardafvigelsen er 102 meter. 
 
@@ -4054,7 +4001,7 @@ m <- as.vector(as.matrix(kar[which(kar$Gender=="mand"),1]))
 ```
 
 Vi ser igen på datasættet for [statistik karakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ).
-Vi kunne være interesseret i, at teste om kvinder får højere karakterer end mænd. Der er `r nk` kvinder i og `r nm` mænd i stikprøven. Da begge stikprøver er mindre end 30, skal vi undersøge om stikprøven kan antages at stamme fra en normalfordelt population. Dette efterprøves i 2 normalfraktildiagrammer. I Freestat kan man enkeltvis paste begge fordelinger ind i en kvantitativ stikprøve, og indsætte de 2 normalfraktildiagrammer, nedenfor er indsat Freestat normalfraktildiagrammet for kvinder.
+Vi kunne være interesseret i, at teste om kvinder får højere karakterer end mænd. Der er `r nk` kvinder i og `r nm` mænd i stikprøven. Da begge stikprøver er mindre end 30, skal vi undersøge om stikprøven kan antages at stamme fra en normalfordelt population. Dette efterprøves i 2 normalfraktildiagrammer. I Freestat kan man enkeltvis paste begge fordelinger ind i en ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve, og indsætte de 2 normalfraktildiagrammer, nedenfor er indsat Freestat normalfraktildiagrammet for kvinder.
 
 ![](img/freestatqqplotkarakterer.png)
 
@@ -4088,7 +4035,7 @@ Bemærk i Freestat, står der D for difference, dette skyldes man kan undersøge
 
 ## Sammenligning af 2 middelværdier uens varians Unpooled t-test.
 
-Skal vi undersøge 2 kvantitative stikprøver, der stammer fra populationer med uens varians, benytter vi unpooled t-test. Det er samme fremgangsmåde som ved pooled t-test, men unpooled testen er ikke så præcis som pooled. Derfor starter vi i pooled t-test og gennemfører kun unpooled t-test hvis varianserne ikke er ens.
+Skal vi undersøge 2 ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøver, der stammer fra populationer med uens varians, benytter vi unpooled t-test. Det er samme fremgangsmåde som ved pooled t-test, men unpooled testen er ikke så præcis som pooled. Derfor starter vi i pooled t-test og gennemfører kun unpooled t-test hvis varianserne ikke er ens.
 
 ```{r echo=FALSE,warning=FALSE,results='hide'}
 # list.of.packages <- c("maps", "ggmap")
@@ -5481,7 +5428,7 @@ Vi kan indsætte aktieafkastene i Freestat i corrm arket, vi får følgende outp
 
   
 Opgave 1 (30 %)
-Nykøbing Bank ønsker opstille en model der kan forklare, hvilken risikogruppe en given kunde vil tilhøre. Banken antager, at variablen risikogruppe er kvantitativ.  
+Nykøbing Bank ønsker opstille en model der kan forklare, hvilken risikogruppe en given kunde vil tilhøre. Banken antager, at variablen risikogruppe er ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))``.  
 Som udgangspunkt forventer Nykøbing Bank, at følgende variable kan bruges til at forklare kundernes placering i risikogruppe:  
 Alder målt som kundens alder i år  
 Bruttoindkomst pr. år målt i kr.  
@@ -7251,7 +7198,7 @@ cat(readLines('npp.html'))
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231386150' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 <br>
 
-ANOVA er en metode til at sammenligne middelværdierne for mere end to kvantitative variable. Skal man sammenligne to middelværdier med varianshomogenitet, benytter man pooled t-test, er der mere end 2 middelværdier benyttes ANOVA F-test . Forudsætningerne for at benytte testen er at populationerne er normalfordelte og har samme varians.
+ANOVA er en metode til at sammenligne middelværdierne for mere end to ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))``. Skal man sammenligne to middelværdier med varianshomogenitet, benytter man pooled t-test, er der mere end 2 middelværdier benyttes ANOVA F-test . Forudsætningerne for at benytte testen er at populationerne er normalfordelte og har samme varians.
 
 ANOVA er en forkortelse af analysis of variances, man tester om middelværdierne er ens vha. varianserne.
 Vi undersøger om k populationer har samme middelværdi, hypoteserne bliver:

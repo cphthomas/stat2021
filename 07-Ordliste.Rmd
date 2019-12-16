@@ -20,12 +20,8 @@ skema <- tibble(indeks[,1],indeks[,2])
 colnames(skema) = c('Begreb', "Forklaring")
 
 
-datatable(skema, rownames = FALSE, extensions = 'Buttons',class = 'cell-border hover compact', escape = FALSE,  options = list(initComplete = JS(
-    "function(settings, json) {",
-    "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
-    "}"),searchHighlight = TRUE,pageLength = 18,dom = 'Bfrt',language = list(url = '////cdn.datatables.net/plug-ins/1.10.20/i18n/Danish.json'),
-    buttons = c('pdf', 'excel','copy', 'csv',  'colvis'),autoWidth = TRUE, columnDefs = list(list(className = 'dt-left', targets = 0:0)))
-    )%>%
+datatable(skema, rownames = FALSE, extensions = 'Buttons',class = 'cell-border hover compact', escape = FALSE,  options = list(searchHighlight = TRUE,pageLength = 18,dom = 'Bfrt',language = list(url = '////cdn.datatables.net/plug-ins/1.10.20/i18n/Danish.json'),
+    buttons = c('pdf', 'excel','copy', 'csv',  'colvis'),autoWidth = TRUE, columnDefs = list(list(className = 'dt-left', targets = 0:0))))%>%
   formatStyle('Begreb',  fontWeight = 'bold')%>%
   formatStyle(
   'Forklaring',
