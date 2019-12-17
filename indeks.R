@@ -157,4 +157,4 @@ forklaring <<- c(
 
 indeks <<- data.frame(BEGREB,forklaring)
 
-# <a href=\"https://www.retsinformation.dk/Forms/R0710.aspx?id=142900\" style=\"color:#3088fc\" target=\"_blank\">Tinglysningsloven</a>
+
