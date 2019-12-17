@@ -150,7 +150,7 @@ forklaring <<- c(
   "Standardafvigelsen fortæller hvor meget en variabel typisk varierer omkring middelværdien.<br>
   Standardafvigelsen også kaldet spredningen, findes som kvadratroden af variansen, i modsætning til variansen er standardafvigelsen i samme enhed som variablen hvilket gør tolkning nemmere.<br><br>
   <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#standardafvigelsen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om standardafvigelsen!</a>
-
+"
 )
 
 
