@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 24 Materialer | Statistik</title>
   <meta name="description" content="Kapitel 24 Materialer | Statistik" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 24 Materialer | Statistik" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-17" />
+<meta name="date" content="2019-12-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="podcasts.html">
-<link rel="next" href="ordliste.html">
+<link rel="prev" href="podcasts.html"/>
+<link rel="next" href="ordliste.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,7 +48,9 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/tippyjs-2.5.2/tippy.all.min.js"></script>
 <script src="libs/tippy-binding-0.0.1/tippy.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
@@ -92,22 +95,22 @@
 <script src="libs/highchart-binding-0.7.0/highchart.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.6/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="libs/jszip-1.10.16/jszip.min.js"></script>
-<script src="libs/pdfmake-1.10.16/pdfmake.min.js"></script>
-<script src="libs/pdfmake-1.10.16/vfs_fonts.js"></script>
-<link href="libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
-<script src="libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
-<link href="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.css" rel="stylesheet" />
-<script src="libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.min.js"></script>
-<script src="libs/dt-plugin-searchhighlight-1.10.16/jquery.highlight.js"></script>
+<script src="libs/datatables-binding-0.11/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="libs/jszip-1.10.19/jszip.min.js"></script>
+<script src="libs/pdfmake-1.10.19/pdfmake.min.js"></script>
+<script src="libs/pdfmake-1.10.19/vfs_fonts.js"></script>
+<link href="libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
+<link href="libs/dt-plugin-searchhighlight-1.10.19/source.css" rel="stylesheet" />
+<script src="libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
+<script src="libs/dt-plugin-searchhighlight-1.10.19/source.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
@@ -118,7 +121,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -197,24 +199,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="indledning.html"><a href="indledning.html#freestat-basisversion"><i class="fa fa-check"></i><b>1.1</b> Freestat basisversion</a></li>
 <li class="chapter" data-level="1.2" data-path="indledning.html"><a href="indledning.html#freestat-fuld-version"><i class="fa fa-check"></i><b>1.2</b> Freestat fuld version</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="datast-og-data.html"><a href="datast-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="datast-og-data.html"><a href="datast-og-data.html#uni--bi--og-multivariate-datast"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
-<li class="chapter" data-level="2.0.2" data-path="datast-og-data.html"><a href="datast-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
-<li class="chapter" data-level="2.0.3" data-path="datast-og-data.html"><a href="datast-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
-<li class="chapter" data-level="2.0.4" data-path="datast-og-data.html"><a href="datast-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
+<li class="chapter" data-level="2" data-path="datasæt-og-data.html"><a href="datasæt-og-data.html"><i class="fa fa-check"></i><b>2</b> Datasæt og data</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="datasæt-og-data.html"><a href="datasæt-og-data.html#uni--bi--og-multivariate-datasæt"><i class="fa fa-check"></i><b>2.0.1</b> Uni- bi- og multivariate datasæt</a></li>
+<li class="chapter" data-level="2.0.2" data-path="datasæt-og-data.html"><a href="datasæt-og-data.html#kvalitative-variable"><i class="fa fa-check"></i><b>2.0.2</b> Kvalitative variable</a></li>
+<li class="chapter" data-level="2.0.3" data-path="datasæt-og-data.html"><a href="datasæt-og-data.html#kvantitative-variable"><i class="fa fa-check"></i><b>2.0.3</b> Kvantitative variable</a></li>
+<li class="chapter" data-level="2.0.4" data-path="datasæt-og-data.html"><a href="datasæt-og-data.html#skalatyper"><i class="fa fa-check"></i><b>2.0.4</b> Skalatyper</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptiv statistik</a><ul>
 <li class="chapter" data-level="3.0.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#tryg-aktien"><i class="fa fa-check"></i><b>3.0.1</b> Tryg aktien</a></li>
-<li class="chapter" data-level="3.0.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelvrdien"><i class="fa fa-check"></i><b>3.0.2</b> Middelværdien</a></li>
+<li class="chapter" data-level="3.0.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#middelværdien"><i class="fa fa-check"></i><b>3.0.2</b> Middelværdien</a></li>
 <li class="chapter" data-level="3.0.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#variansen"><i class="fa fa-check"></i><b>3.0.3</b> Variansen</a></li>
 <li class="chapter" data-level="3.0.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#standardafvigelsen"><i class="fa fa-check"></i><b>3.0.4</b> Standardafvigelsen</a></li>
 <li class="chapter" data-level="3.0.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#modus"><i class="fa fa-check"></i><b>3.0.5</b> Modus</a></li>
 <li class="chapter" data-level="3.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen"><i class="fa fa-check"></i><b>3.1</b> Medianen, kvartiler og fraktilen</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#fraktiler"><i class="fa fa-check"></i><b>3.1.1</b> Fraktiler</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skvhed"><i class="fa fa-check"></i><b>3.2</b> Skævhed</a></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#skævhed"><i class="fa fa-check"></i><b>3.2</b> Skævhed</a></li>
 <li class="chapter" data-level="3.3" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#kurtosis"><i class="fa fa-check"></i><b>3.3</b> Kurtosis</a></li>
-<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#sprgsmal-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.4</b> Spørgsmål deskriptiv statistik</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#spørgsmål-deskriptiv-statistik"><i class="fa fa-check"></i><b>3.4</b> Spørgsmål deskriptiv statistik</a></li>
 <li class="chapter" data-level="3.5" data-path="deskriptiv-statistik.html"><a href="deskriptiv-statistik.html#selvtest"><i class="fa fa-check"></i><b>3.5</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="normalfordelingen.html"><a href="normalfordelingen.html"><i class="fa fa-check"></i><b>4</b> Normalfordelingen</a><ul>
@@ -230,38 +232,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#normalfraktildiagram"><i class="fa fa-check"></i><b>4.2</b> Normalfraktildiagram</a></li>
 <li class="chapter" data-level="4.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parametre-og-parameter-estimater"><i class="fa fa-check"></i><b>4.3</b> Parametre og parameter-estimater</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelvrdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
+<li class="chapter" data-level="4.3.1" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-middelværdi"><i class="fa fa-check"></i><b>4.3.1</b> Parameter-estimat for middelværdi</a></li>
 <li class="chapter" data-level="4.3.2" data-path="normalfordelingen.html"><a href="normalfordelingen.html#parameter-estimat-for-standardafvigelsen"><i class="fa fa-check"></i><b>4.3.2</b> Parameter-estimat for standardafvigelsen</a></li>
-<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
-<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grnsevrdistning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
+<li class="chapter" data-level="4.3.3" data-path="normalfordelingen.html"><a href="normalfordelingen.html#data--stikprøve--og-populationsfordelingen"><i class="fa fa-check"></i><b>4.3.3</b> Data- stikprøve- og populationsfordelingen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#den-centrale-grænseværdisætning-clt"><i class="fa fa-check"></i><b>4.3.4</b> Den centrale grænseværdisætning CLT</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="normalfordelingen.html"><a href="normalfordelingen.html#frihedsgrader"><i class="fa fa-check"></i><b>4.4</b> Frihedsgrader</a></li>
 <li class="chapter" data-level="4.5" data-path="normalfordelingen.html"><a href="normalfordelingen.html#t-fordelingen"><i class="fa fa-check"></i><b>4.5</b> t-fordelingen</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html"><i class="fa fa-check"></i><b>5</b> Konfidensintervaller</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelvrdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
-<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelvrdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
+<li class="chapter" data-level="5.0.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-middelværdien"><i class="fa fa-check"></i><b>5.0.1</b> Konfidensinterval for middelværdien</a></li>
+<li class="chapter" data-level="5.0.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#eksempler-konfidensinterval-middelværdi"><i class="fa fa-check"></i><b>5.0.2</b> Eksempler konfidensinterval middelværdi</a></li>
 <li class="chapter" data-level="5.1" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#quiz-konfidensintervaller"><i class="fa fa-check"></i><b>5.1</b> Quiz konfidensintervaller</a></li>
-<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.2</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
+<li class="chapter" data-level="5.2" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#spørgsmål-konfidensinterval-og-fejlmargin"><i class="fa fa-check"></i><b>5.2</b> Spørgsmål konfidensinterval og fejlmargin</a></li>
 <li class="chapter" data-level="5.3" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.3</b> Konfidensinterval for standardafvigelsen</a></li>
-<li class="chapter" data-level="5.4" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#sprgsmal-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.4</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
+<li class="chapter" data-level="5.4" data-path="konfidensintervaller.html"><a href="konfidensintervaller.html#spørgsmål-konfidensinterval-for-standardafvigelsen"><i class="fa fa-check"></i><b>5.4</b> Spørgsmål konfidensinterval for standardafvigelsen</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
-<li class="chapter" data-level="6.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
-<li class="chapter" data-level="6.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
-<li class="chapter" data-level="6.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
-<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>6.3.2</b> Ensidet alternativ hypotese nedad</a></li>
-<li class="chapter" data-level="6.3.3" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.3</b> Eksempel</a></li>
+<li class="chapter" data-level="6" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html"><i class="fa fa-check"></i><b>6</b> Hypotesetests middelværdi</a><ul>
+<li class="chapter" data-level="6.1" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#hypotesetest-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.1</b> Hypotesetest tosidet alternativ hypotese</a></li>
+<li class="chapter" data-level="6.2" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#tosidet-alternativ-hypotese-og-konfidensintervallet."><i class="fa fa-check"></i><b>6.2</b> Tosidet alternativ hypotese og konfidensintervallet.</a></li>
+<li class="chapter" data-level="6.3" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#ensidet-alternativ-hypotese"><i class="fa fa-check"></i><b>6.3</b> Ensidet alternativ hypotese</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>6.3.1</b> Ensidet alternativ hypotese opad</a></li>
+<li class="chapter" data-level="6.3.2" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>6.3.2</b> Ensidet alternativ hypotese nedad</a></li>
+<li class="chapter" data-level="6.3.3" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#eksempel"><i class="fa fa-check"></i><b>6.3.3</b> Eksempel</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
-<li class="chapter" data-level="6.5" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
-<li class="chapter" data-level="6.6" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#sprgsmal-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
-<li class="chapter" data-level="6.7" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#quiz-hypoteser"><i class="fa fa-check"></i><b>6.7</b> Quiz hypoteser</a></li>
-<li class="chapter" data-level="6.8" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#quiz-hypotesetests"><i class="fa fa-check"></i><b>6.8</b> Quiz hypotesetests</a></li>
-<li class="chapter" data-level="6.9" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
-<li class="chapter" data-level="6.10" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.10</b> Selvtest</a></li>
-<li class="chapter" data-level="6.11" data-path="hypotesetests-middelvrdi.html"><a href="hypotesetests-middelvrdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.11</b> Selvtest</a></li>
+<li class="chapter" data-level="6.4" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#standardafvigelse-test"><i class="fa fa-check"></i><b>6.4</b> Standardafvigelse test</a></li>
+<li class="chapter" data-level="6.5" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#spørgsmål-hypotesetests"><i class="fa fa-check"></i><b>6.5</b> Spørgsmål hypotesetests</a></li>
+<li class="chapter" data-level="6.6" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#spørgsmål-hypotesetests-og-normalfordeling"><i class="fa fa-check"></i><b>6.6</b> Spørgsmål hypotesetests og normalfordeling</a></li>
+<li class="chapter" data-level="6.7" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#quiz-hypoteser"><i class="fa fa-check"></i><b>6.7</b> Quiz hypoteser</a></li>
+<li class="chapter" data-level="6.8" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#quiz-hypotesetests"><i class="fa fa-check"></i><b>6.8</b> Quiz hypotesetests</a></li>
+<li class="chapter" data-level="6.9" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#selvtest-1"><i class="fa fa-check"></i><b>6.9</b> Selvtest</a></li>
+<li class="chapter" data-level="6.10" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#selvtest-2"><i class="fa fa-check"></i><b>6.10</b> Selvtest</a></li>
+<li class="chapter" data-level="6.11" data-path="hypotesetests-middelværdi.html"><a href="hypotesetests-middelværdi.html#selvtest-3"><i class="fa fa-check"></i><b>6.11</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="andel.html"><a href="andel.html"><i class="fa fa-check"></i><b>7</b> 1 Andel</a><ul>
 <li class="chapter" data-level="7.1" data-path="andel.html"><a href="andel.html#parameterestimat-for-andele"><i class="fa fa-check"></i><b>7.1</b> Parameterestimat for andele</a></li>
@@ -271,65 +273,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="andel.html"><a href="andel.html#eksempler-konfidensinterval-for-andele"><i class="fa fa-check"></i><b>7.3</b> Eksempler, konfidensinterval for andele</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="andel.html"><a href="andel.html#tryg-aktien-2"><i class="fa fa-check"></i><b>7.3.1</b> Tryg aktien</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#sprgsmal-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
+<li class="chapter" data-level="7.4" data-path="andel.html"><a href="andel.html#spørgsmål-konfidensinterval-andele"><i class="fa fa-check"></i><b>7.4</b> Spørgsmål konfidensinterval andele</a></li>
 <li class="chapter" data-level="7.5" data-path="andel.html"><a href="andel.html#hypotesetest-1-andel"><i class="fa fa-check"></i><b>7.5</b> Hypotesetest 1 andel</a></li>
 <li class="chapter" data-level="7.6" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-tosidet-alternativ-hypotese"><i class="fa fa-check"></i><b>7.6</b> Hypotesetest en andel, tosidet alternativ hypotese</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststrrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
+<li class="chapter" data-level="7.6.1" data-path="andel.html"><a href="andel.html#z-teststørrelsen"><i class="fa fa-check"></i><b>7.6.1</b> z-teststørrelsen</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-nedad"><i class="fa fa-check"></i><b>7.7</b> Hypotesetest en andel, ensidet alternativ hypotese nedad</a></li>
 <li class="chapter" data-level="7.8" data-path="andel.html"><a href="andel.html#hypotesetest-en-andel-ensidet-alternativ-hypotese-opad"><i class="fa fa-check"></i><b>7.8</b> Hypotesetest en andel, ensidet alternativ hypotese opad</a></li>
-<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#sprgsmal-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
+<li class="chapter" data-level="7.9" data-path="andel.html"><a href="andel.html#spørgsmål-hypotesetests-1-andel."><i class="fa fa-check"></i><b>7.9</b> Spørgsmål hypotesetests 1 andel.</a></li>
 <li class="chapter" data-level="7.10" data-path="andel.html"><a href="andel.html#selvtest-4"><i class="fa fa-check"></i><b>7.10</b> Selvtest</a></li>
 <li class="chapter" data-level="7.11" data-path="andel.html"><a href="andel.html#selvtest-5"><i class="fa fa-check"></i><b>7.11</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="andele.html"><a href="andele.html"><i class="fa fa-check"></i><b>8</b> 2 andele</a><ul>
 <li class="chapter" data-level="8.1" data-path="andele.html"><a href="andele.html#konfidensinterval-for-2-andele"><i class="fa fa-check"></i><b>8.1</b> Konfidensinterval for 2 andele</a></li>
-<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
+<li class="chapter" data-level="8.2" data-path="andele.html"><a href="andele.html#spørgsmål-2-andele-konfidensintervaller"><i class="fa fa-check"></i><b>8.2</b> Spørgsmål 2 andele konfidensintervaller</a></li>
 <li class="chapter" data-level="8.3" data-path="andele.html"><a href="andele.html#hypotesetests-2-andele"><i class="fa fa-check"></i><b>8.3</b> Hypotesetests 2 andele</a><ul>
 <li class="chapter" data-level="8.3.1" data-path="andele.html"><a href="andele.html#eksempler"><i class="fa fa-check"></i><b>8.3.1</b> Eksempler</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#sprgsmal-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
+<li class="chapter" data-level="8.4" data-path="andele.html"><a href="andele.html#spørgsmål-2-andele"><i class="fa fa-check"></i><b>8.4</b> Spørgsmål 2 andele</a></li>
 <li class="chapter" data-level="8.5" data-path="andele.html"><a href="andele.html#selvtest-6"><i class="fa fa-check"></i><b>8.5</b> Selvtest</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="middelvrdier.html"><a href="middelvrdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
-<li class="chapter" data-level="9.1" data-path="middelvrdier.html"><a href="middelvrdier.html#konfidensinterval-for-2-middelvrdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="middelvrdier.html"><a href="middelvrdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
+<li class="chapter" data-level="9" data-path="middelværdier.html"><a href="middelværdier.html"><i class="fa fa-check"></i><b>9</b> 2 Middelværdier</a><ul>
+<li class="chapter" data-level="9.1" data-path="middelværdier.html"><a href="middelværdier.html#konfidensinterval-for-2-middelværdier"><i class="fa fa-check"></i><b>9.1</b> Konfidensinterval for 2 middelværdier</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="middelværdier.html"><a href="middelværdier.html#pooled-og-unpooled-t-test"><i class="fa fa-check"></i><b>9.1.1</b> Pooled og unpooled t-test</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="middelvrdier.html"><a href="middelvrdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="middelvrdier.html"><a href="middelvrdier.html#forudstninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
+<li class="chapter" data-level="9.2" data-path="middelværdier.html"><a href="middelværdier.html#varianshomogenitet"><i class="fa fa-check"></i><b>9.2</b> Varianshomogenitet</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="middelværdier.html"><a href="middelværdier.html#forudsætninger"><i class="fa fa-check"></i><b>9.2.1</b> Forudsætninger</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
-<li class="chapter" data-level="9.4" data-path="middelvrdier.html"><a href="middelvrdier.html#sammenligning-af-2-middelvrdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
-<li class="chapter" data-level="9.5" data-path="middelvrdier.html"><a href="middelvrdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
-<li class="chapter" data-level="9.6" data-path="middelvrdier.html"><a href="middelvrdier.html#sprgsmal-2-middelvrdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
-<li class="chapter" data-level="9.7" data-path="middelvrdier.html"><a href="middelvrdier.html#selvtest-7"><i class="fa fa-check"></i><b>9.7</b> Selvtest</a></li>
+<li class="chapter" data-level="9.3" data-path="middelværdier.html"><a href="middelværdier.html#sammenligning-af-2-middelværdier-ens-varians-pooled-t-test"><i class="fa fa-check"></i><b>9.3</b> Sammenligning af 2 middelværdier ens varians Pooled t-test</a></li>
+<li class="chapter" data-level="9.4" data-path="middelværdier.html"><a href="middelværdier.html#sammenligning-af-2-middelværdier-uens-varians-unpooled-t-test."><i class="fa fa-check"></i><b>9.4</b> Sammenligning af 2 middelværdier uens varians Unpooled t-test.</a></li>
+<li class="chapter" data-level="9.5" data-path="middelværdier.html"><a href="middelværdier.html#parret-t-test"><i class="fa fa-check"></i><b>9.5</b> Parret t-test</a></li>
+<li class="chapter" data-level="9.6" data-path="middelværdier.html"><a href="middelværdier.html#spørgsmål-2-middelværdier"><i class="fa fa-check"></i><b>9.6</b> Spørgsmål 2 middelværdier</a></li>
+<li class="chapter" data-level="9.7" data-path="middelværdier.html"><a href="middelværdier.html#selvtest-7"><i class="fa fa-check"></i><b>9.7</b> Selvtest</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="korrelation.html"><a href="korrelation.html"><i class="fa fa-check"></i><b>10</b> Korrelation</a><ul>
-<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spurise-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
+<li class="chapter" data-level="10.0.1" data-path="korrelation.html"><a href="korrelation.html#spuriøse-korrelationer"><i class="fa fa-check"></i><b>10.0.1</b> Spuriøse korrelationer</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
-<li class="chapter" data-level="11.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
-<li class="chapter" data-level="11.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#freestat-output-liner-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
-<li class="chapter" data-level="11.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstninger-liner-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
-<li class="chapter" data-level="11.3.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
-<li class="chapter" data-level="11.3.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#uafhngighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
-<li class="chapter" data-level="11.3.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
+<li class="chapter" data-level="11" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html"><i class="fa fa-check"></i><b>11</b> Lineær regressionsanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#joe-and-the-juice"><i class="fa fa-check"></i><b>11.1</b> Joe and The Juice</a></li>
+<li class="chapter" data-level="11.2" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#freestat-output-lineær-regression-joe-and-the-juice"><i class="fa fa-check"></i><b>11.2</b> Freestat output lineær regression Joe and The Juice</a></li>
+<li class="chapter" data-level="11.3" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#forudsætninger-lineær-regression."><i class="fa fa-check"></i><b>11.3</b> Forudsætninger lineær regression.</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#linearitet"><i class="fa fa-check"></i><b>11.3.1</b> Linearitet</a></li>
+<li class="chapter" data-level="11.3.2" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#varianshomogenitet-1"><i class="fa fa-check"></i><b>11.3.2</b> Varianshomogenitet</a></li>
+<li class="chapter" data-level="11.3.3" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#uafhængighed-residualer"><i class="fa fa-check"></i><b>11.3.3</b> Uafhængighed residualer</a></li>
+<li class="chapter" data-level="11.3.4" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#normalitet-residualer"><i class="fa fa-check"></i><b>11.3.4</b> Normalitet residualer</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#simpel-liner-regression-rm"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
-<li class="chapter" data-level="11.4.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
-<li class="chapter" data-level="11.4.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#video-simpel-liner-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#simpel-lineær-regression-rømø"><i class="fa fa-check"></i><b>11.4</b> Simpel lineær regression Rømø</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#video-simpel-lineær-regression-pi-og-ki"><i class="fa fa-check"></i><b>11.4.1</b> Video simpel lineær regression PI og KI</a></li>
+<li class="chapter" data-level="11.4.2" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#video-simpel-lineær-regression-pi-og-ki-1"><i class="fa fa-check"></i><b>11.4.2</b> Video simpel lineær regression PI og KI</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
-<li class="chapter" data-level="11.5.1" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
-<li class="chapter" data-level="11.5.2" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#forudstning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
-<li class="chapter" data-level="11.5.3" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#multipel-liner-regression-forudsagt-vrdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
+<li class="chapter" data-level="11.5" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#multipel-lineær-regression"><i class="fa fa-check"></i><b>11.5</b> Multipel lineær regression</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#dummy-variable"><i class="fa fa-check"></i><b>11.5.1</b> Dummy variable</a></li>
+<li class="chapter" data-level="11.5.2" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#forudsætning-multikollinaritet"><i class="fa fa-check"></i><b>11.5.2</b> Forudsætning multikollinaritet</a></li>
+<li class="chapter" data-level="11.5.3" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#multipel-lineær-regression-forudsagt-værdi"><i class="fa fa-check"></i><b>11.5.3</b> Multipel lineær regression forudsagt værdi</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#sprgsmal-liner-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
-<li class="chapter" data-level="11.7" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-8"><i class="fa fa-check"></i><b>11.7</b> Selvtest</a></li>
-<li class="chapter" data-level="11.8" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-9"><i class="fa fa-check"></i><b>11.8</b> Selvtest</a></li>
-<li class="chapter" data-level="11.9" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#selvtest-10"><i class="fa fa-check"></i><b>11.9</b> Selvtest</a></li>
-<li class="chapter" data-level="11.10" data-path="liner-regressionsanalyse.html"><a href="liner-regressionsanalyse.html#quiz"><i class="fa fa-check"></i><b>11.10</b> Quiz</a></li>
+<li class="chapter" data-level="11.6" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#spørgsmål-lineær-regression"><i class="fa fa-check"></i><b>11.6</b> Spørgsmål lineær regression</a></li>
+<li class="chapter" data-level="11.7" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#selvtest-8"><i class="fa fa-check"></i><b>11.7</b> Selvtest</a></li>
+<li class="chapter" data-level="11.8" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#selvtest-9"><i class="fa fa-check"></i><b>11.8</b> Selvtest</a></li>
+<li class="chapter" data-level="11.9" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#selvtest-10"><i class="fa fa-check"></i><b>11.9</b> Selvtest</a></li>
+<li class="chapter" data-level="11.10" data-path="lineær-regressionsanalyse.html"><a href="lineær-regressionsanalyse.html#quiz"><i class="fa fa-check"></i><b>11.10</b> Quiz</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="binomialfordelingen-premium.html"><a href="binomialfordelingen-premium.html"><i class="fa fa-check"></i><b>12</b> <font color="red">Binomialfordelingen<sup> Premium </font></sup></a><ul>
 <li class="chapter" data-level="12.1" data-path="binomialfordelingen-premium.html"><a href="binomialfordelingen-premium.html#selvtest-premium"><i class="fa fa-check"></i><b>12.1</b> <font color="red">Selvtest<sup> Premium </font></sup></a></li>
@@ -340,32 +342,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14" data-path="poisson-fordelingen-premium.html"><a href="poisson-fordelingen-premium.html"><i class="fa fa-check"></i><b>14</b> <font color="red">Poisson fordelingen<sup> Premium </font></sup></a><ul>
 <li class="chapter" data-level="14.1" data-path="poisson-fordelingen-premium.html"><a href="poisson-fordelingen-premium.html#selvtest-premium-2"><i class="fa fa-check"></i><b>14.1</b> <font color="red">Selvtest<sup> Premium </font></sup></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html"><i class="fa fa-check"></i><b>15</b> <font color="red">Stikprøveteori<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="15.1" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#bekvemmelighedsudvlgelse-premium"><i class="fa fa-check"></i><b>15.1</b> <font color="red">Bekvemmelighedsudvælgelse<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.2" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#snowballing-premium"><i class="fa fa-check"></i><b>15.2</b> <font color="red">Snowballing<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.3" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#simpel-tilfldig-udvlgelse-premium"><i class="fa fa-check"></i><b>15.3</b> <font color="red">Simpel tilfældig udvælgelse<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.4" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#systematisk-udvlgelse-premium"><i class="fa fa-check"></i><b>15.4</b> <font color="red">Systematisk udvælgelse<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.5" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#stratificeret-udvlgelse-premium"><i class="fa fa-check"></i><b>15.5</b> <font color="red">Stratificeret udvælgelse<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="15.5.1" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#proportional-allokering-premium"><i class="fa fa-check"></i><b>15.5.1</b> <font color="red">Proportional allokering<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.5.2" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#optimal-allokering-premium"><i class="fa fa-check"></i><b>15.5.2</b> <font color="red">Optimal allokering<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="15.5.3" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#poststratifikation-premium"><i class="fa fa-check"></i><b>15.5.3</b> <font color="red">Poststratifikation<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html"><i class="fa fa-check"></i><b>15</b> <font color="red">Stikprøveteori<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="15.1" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#bekvemmelighedsudvælgelse-premium"><i class="fa fa-check"></i><b>15.1</b> <font color="red">Bekvemmelighedsudvælgelse<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.2" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#snowballing-premium"><i class="fa fa-check"></i><b>15.2</b> <font color="red">Snowballing<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.3" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#simpel-tilfældig-udvælgelse-premium"><i class="fa fa-check"></i><b>15.3</b> <font color="red">Simpel tilfældig udvælgelse<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.4" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#systematisk-udvælgelse-premium"><i class="fa fa-check"></i><b>15.4</b> <font color="red">Systematisk udvælgelse<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.5" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#stratificeret-udvælgelse-premium"><i class="fa fa-check"></i><b>15.5</b> <font color="red">Stratificeret udvælgelse<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="15.5.1" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#proportional-allokering-premium"><i class="fa fa-check"></i><b>15.5.1</b> <font color="red">Proportional allokering<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.5.2" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#optimal-allokering-premium"><i class="fa fa-check"></i><b>15.5.2</b> <font color="red">Optimal allokering<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.5.3" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#poststratifikation-premium"><i class="fa fa-check"></i><b>15.5.3</b> <font color="red">Poststratifikation<sup> Premium </font></sup></a></li>
 </ul></li>
-<li class="chapter" data-level="15.6" data-path="stikprveteori-premium.html"><a href="stikprveteori-premium.html#klyngeudvlgelse-eller-cluster-udvlgelse-premium"><i class="fa fa-check"></i><b>15.6</b> <font color="red">Klyngeudvælgelse eller cluster udvælgelse<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="15.6" data-path="stikprøveteori-premium.html"><a href="stikprøveteori-premium.html#klyngeudvælgelse-eller-cluster-udvælgelse-premium"><i class="fa fa-check"></i><b>15.6</b> <font color="red">Klyngeudvælgelse eller cluster udvælgelse<sup> Premium </font></sup></a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="sandsynligheder.html"><a href="sandsynligheder.html"><i class="fa fa-check"></i><b>16</b> Sandsynligheder</a><ul>
-<li class="chapter" data-level="16.0.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#forenings--og-flleshndelser"><i class="fa fa-check"></i><b>16.0.1</b> Forenings- og fælleshændelser</a></li>
+<li class="chapter" data-level="16.0.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#forenings--og-fælleshændelser"><i class="fa fa-check"></i><b>16.0.1</b> Forenings- og fælleshændelser</a></li>
 <li class="chapter" data-level="16.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#betingede-sandsynligheder"><i class="fa fa-check"></i><b>16.1</b> Betingede sandsynligheder</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#race-og-ddsdom-eksempel"><i class="fa fa-check"></i><b>16.1.1</b> Race og dødsdom eksempel</a></li>
+<li class="chapter" data-level="16.1.1" data-path="sandsynligheder.html"><a href="sandsynligheder.html#race-og-dødsdom-eksempel"><i class="fa fa-check"></i><b>16.1.1</b> Race og dødsdom eksempel</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="sandsynligheder.html"><a href="sandsynligheder.html#uafhngighed"><i class="fa fa-check"></i><b>16.2</b> Uafhængighed</a></li>
+<li class="chapter" data-level="16.2" data-path="sandsynligheder.html"><a href="sandsynligheder.html#uafhængighed"><i class="fa fa-check"></i><b>16.2</b> Uafhængighed</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html"><i class="fa fa-check"></i><b>17</b> Chi i anden tests</a><ul>
 <li class="chapter" data-level="17.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>17.1</b> Goodness of fit test</a></li>
-<li class="chapter" data-level="17.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#forudstning"><i class="fa fa-check"></i><b>17.2</b> Forudsætning</a></li>
+<li class="chapter" data-level="17.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#forudsætning"><i class="fa fa-check"></i><b>17.2</b> Forudsætning</a></li>
 <li class="chapter" data-level="17.3" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#chi-i-anden-test"><i class="fa fa-check"></i><b>17.3</b> Chi i anden test</a></li>
 <li class="chapter" data-level="17.4" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#chi-i-anden-test-2"><i class="fa fa-check"></i><b>17.4</b> Chi i anden test 2</a><ul>
-<li class="chapter" data-level="17.4.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#uafhngighed-1"><i class="fa fa-check"></i><b>17.4.1</b> Uafhængighed</a></li>
-<li class="chapter" data-level="17.4.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-pa-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.4.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
+<li class="chapter" data-level="17.4.1" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#uafhængighed-1"><i class="fa fa-check"></i><b>17.4.1</b> Uafhængighed</a></li>
+<li class="chapter" data-level="17.4.2" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#anmeldte-skader-fordelt-på-regioner-og-antal-skader"><i class="fa fa-check"></i><b>17.4.2</b> Anmeldte skader fordelt på regioner og antal skader</a></li>
 </ul></li>
 <li class="chapter" data-level="17.5" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-11"><i class="fa fa-check"></i><b>17.5</b> Selvtest</a></li>
 <li class="chapter" data-level="17.6" data-path="chi-i-anden-tests.html"><a href="chi-i-anden-tests.html#selvtest-12"><i class="fa fa-check"></i><b>17.6</b> Selvtest</a></li>
@@ -380,10 +382,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.1" data-path="cran-r-premium.html"><a href="cran-r-premium.html#r-video-tutorials-premium"><i class="fa fa-check"></i><b>19.1</b> <font color="red">R video-tutorials<sup> Premium </font></sup></a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html"><i class="fa fa-check"></i><b>20</b> <font color="red">Faktoranalyse<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="20.1" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#hvilke-faktorer-er-vigtige-nar-man-kber-en-ny-computer-premium"><i class="fa fa-check"></i><b>20.1</b> <font color="red">Hvilke faktorer er vigtige når man køber en ny computer:<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="20.2" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#forudstninger-for-faktoranalysen-premium"><i class="fa fa-check"></i><b>20.2</b> <font color="red">Forudsætninger for faktoranalysen<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="20.1" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#hvilke-faktorer-er-vigtige-når-man-køber-en-ny-computer-premium"><i class="fa fa-check"></i><b>20.1</b> <font color="red">Hvilke faktorer er vigtige når man køber en ny computer:<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="20.2" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#forudsætninger-for-faktoranalysen-premium"><i class="fa fa-check"></i><b>20.2</b> <font color="red">Forudsætninger for faktoranalysen<sup> Premium </font></sup></a></li>
 <li class="chapter" data-level="20.3" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#selve-faktoranalysen-premium"><i class="fa fa-check"></i><b>20.3</b> <font color="red">Selve Faktoranalysen<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="20.4" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#hvor-mange-faktorer-br-benyttes-premium"><i class="fa fa-check"></i><b>20.4</b> <font color="red">Hvor mange faktorer bør benyttes?<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="20.4" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#hvor-mange-faktorer-bør-benyttes-premium"><i class="fa fa-check"></i><b>20.4</b> <font color="red">Hvor mange faktorer bør benyttes?<sup> Premium </font></sup></a><ul>
 <li class="chapter" data-level="20.4.1" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#eigenvalues-metoden-premium"><i class="fa fa-check"></i><b>20.4.1</b> <font color="red">Eigenvalues metoden<sup> Premium </font></sup></a></li>
 <li class="chapter" data-level="20.4.2" data-path="faktoranalyse-premium.html"><a href="faktoranalyse-premium.html#eigenvalues-metoden-premium-1"><i class="fa fa-check"></i><b>20.4.2</b> <font color="red">Eigenvalues metoden<sup> Premium </font></sup></a></li>
 </ul></li>
@@ -393,22 +395,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.2" data-path="klyngeanalyse-premium.html"><a href="klyngeanalyse-premium.html#ikke-hierakisk-klyngeanalyse-kmeans-kommandoen-premium"><i class="fa fa-check"></i><b>21.2</b> <font color="red">Ikke hierakisk klyngeanalyse kmeans kommandoen<sup> Premium </font></sup></a></li>
 <li class="chapter" data-level="21.3" data-path="klyngeanalyse-premium.html"><a href="klyngeanalyse-premium.html#validering-med-anova-premium"><i class="fa fa-check"></i><b>21.3</b> <font color="red">Validering med ANOVA<sup> Premium </font></sup></a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html"><i class="fa fa-check"></i><b>22</b> <font color="red">Tidsrækker og ARIMA<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="22.1" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima000-premium"><i class="fa fa-check"></i><b>22.1</b> <font color="red">ARIMA(0,0,0)<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.2" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima100-eller-ar1-autoregression-premium"><i class="fa fa-check"></i><b>22.2</b> <font color="red">ARIMA(1,0,0) eller AR(1) autoregression<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.3" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima010-eller-i1-integrated-premium"><i class="fa fa-check"></i><b>22.3</b> <font color="red">ARIMA(0,1,0) eller I(1) Integrated<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.4" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima001-eller-ma1-moving-average-premium"><i class="fa fa-check"></i><b>22.4</b> <font color="red">ARIMA(0,0,1) eller MA(1) Moving average<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.5" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#plots-med-forskellige-modeller-premium"><i class="fa fa-check"></i><b>22.5</b> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.6" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima-af-hjere-orden-premium"><i class="fa fa-check"></i><b>22.6</b> <font color="red">ARIMA af højere orden<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.7" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima-og-ssonalitet-premium"><i class="fa fa-check"></i><b>22.7</b> <font color="red">ARIMA og sæsonalitet<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.8" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#arima-eksempler-premium"><i class="fa fa-check"></i><b>22.8</b> <font color="red">ARIMA eksempler<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="22.8.1" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#traktorer-premium"><i class="fa fa-check"></i><b>22.8.1</b> <font color="red">Traktorer<sup> Premium </font></sup></a></li>
-<li class="chapter" data-level="22.8.2" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#detail-debet-card-forbrug-pa-island-millioner-isk.-premium"><i class="fa fa-check"></i><b>22.8.2</b> <font color="red">Detail debet card forbrug på Island (millioner ISK).<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html"><i class="fa fa-check"></i><b>22</b> <font color="red">Tidsrækker og ARIMA<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="22.1" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima000-premium"><i class="fa fa-check"></i><b>22.1</b> <font color="red">ARIMA(0,0,0)<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.2" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima100-eller-ar1-autoregression-premium"><i class="fa fa-check"></i><b>22.2</b> <font color="red">ARIMA(1,0,0) eller AR(1) autoregression<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.3" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima010-eller-i1-integrated-premium"><i class="fa fa-check"></i><b>22.3</b> <font color="red">ARIMA(0,1,0) eller I(1) Integrated<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.4" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima001-eller-ma1-moving-average-premium"><i class="fa fa-check"></i><b>22.4</b> <font color="red">ARIMA(0,0,1) eller MA(1) Moving average<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.5" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#plots-med-forskellige-modeller-premium"><i class="fa fa-check"></i><b>22.5</b> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.6" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima-af-højere-orden-premium"><i class="fa fa-check"></i><b>22.6</b> <font color="red">ARIMA af højere orden<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.7" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima-og-sæsonalitet-premium"><i class="fa fa-check"></i><b>22.7</b> <font color="red">ARIMA og sæsonalitet<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.8" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#arima-eksempler-premium"><i class="fa fa-check"></i><b>22.8</b> <font color="red">ARIMA eksempler<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="22.8.1" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#traktorer-premium"><i class="fa fa-check"></i><b>22.8.1</b> <font color="red">Traktorer<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.8.2" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#detail-debet-card-forbrug-på-island-millioner-isk.-premium"><i class="fa fa-check"></i><b>22.8.2</b> <font color="red">Detail debet card forbrug på Island (millioner ISK).<sup> Premium </font></sup></a></li>
 </ul></li>
-<li class="chapter" data-level="22.9" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#forecast-aktiekurser-premium"><i class="fa fa-check"></i><b>22.9</b> <font color="red">Forecast Aktiekurser<sup> Premium </font></sup></a><ul>
-<li class="chapter" data-level="22.9.1" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#eksporter-aktiekurser-til-excel-premium"><i class="fa fa-check"></i><b>22.9.1</b> <font color="red">Eksporter Aktiekurser til Excel<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.9" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#forecast-aktiekurser-premium"><i class="fa fa-check"></i><b>22.9</b> <font color="red">Forecast Aktiekurser<sup> Premium </font></sup></a><ul>
+<li class="chapter" data-level="22.9.1" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#eksporter-aktiekurser-til-excel-premium"><i class="fa fa-check"></i><b>22.9.1</b> <font color="red">Eksporter Aktiekurser til Excel<sup> Premium </font></sup></a></li>
 </ul></li>
-<li class="chapter" data-level="22.10" data-path="tidsrkker-og-arima-premium.html"><a href="tidsrkker-og-arima-premium.html#aktieafkast-premium"><i class="fa fa-check"></i><b>22.10</b> <font color="red">Aktieafkast<sup> Premium </font></sup></a></li>
+<li class="chapter" data-level="22.10" data-path="tidsrækker-og-arima-premium.html"><a href="tidsrækker-og-arima-premium.html#aktieafkast-premium"><i class="fa fa-check"></i><b>22.10</b> <font color="red">Aktieafkast<sup> Premium </font></sup></a></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="podcasts.html"><a href="podcasts.html"><i class="fa fa-check"></i><b>23</b> Podcasts</a></li>
 <li class="chapter" data-level="24" data-path="materialer.html"><a href="materialer.html"><i class="fa fa-check"></i><b>24</b> Materialer</a><ul>
@@ -701,7 +703,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="skvhed-1" class="section level4">
+<div id="skævhed-1" class="section level4">
 <h4><span class="header-section-number">24.1.0.5</span> Skævhed</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -749,7 +751,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="stikprvefordelingen-1" class="section level4">
+<div id="stikprøvefordelingen-1" class="section level4">
 <h4><span class="header-section-number">24.1.0.11</span> Stikprøvefordelingen</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -757,7 +759,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="stikprvefordelingen-2-1" class="section level4">
+<div id="stikprøvefordelingen-2-1" class="section level4">
 <h4><span class="header-section-number">24.1.0.12</span> Stikprøvefordelingen 2</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -781,7 +783,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="konfidensinterval-middelvrdien" class="section level4">
+<div id="konfidensinterval-middelværdien" class="section level4">
 <h4><span class="header-section-number">24.1.0.15</span> Konfidensinterval middelværdien</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -797,7 +799,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="hypotesetest-middelvrdi" class="section level4">
+<div id="hypotesetest-middelværdi" class="section level4">
 <h4><span class="header-section-number">24.1.0.17</span> Hypotesetest middelværdi</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -805,7 +807,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="liner-regression" class="section level4">
+<div id="lineær-regression" class="section level4">
 <h4><span class="header-section-number">24.1.0.18</span> Lineær regression</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -813,7 +815,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="liner-regression-forudstninger" class="section level4">
+<div id="lineær-regression-forudsætninger" class="section level4">
 <h4><span class="header-section-number">24.1.0.19</span> Lineær regression forudsætninger</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -873,7 +875,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="middelvrdi-standardafvigelse-ki" class="section level4">
+<div id="middelværdi-standardafvigelse-ki" class="section level4">
 <h4><span class="header-section-number">24.2.0.3</span> Middelværdi standardafvigelse KI</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -881,7 +883,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="middelvrdi-test" class="section level4">
+<div id="middelværdi-test" class="section level4">
 <h4><span class="header-section-number">24.2.0.4</span> Middelværdi test</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -889,7 +891,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="middelvrdi-fejlmargin" class="section level4">
+<div id="middelværdi-fejlmargin" class="section level4">
 <h4><span class="header-section-number">24.2.0.5</span> Middelværdi fejlmargin</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -953,7 +955,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="middelvrdier-1" class="section level4">
+<div id="middelværdier-1" class="section level4">
 <h4><span class="header-section-number">24.2.0.13</span> 2 Middelværdier</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -977,7 +979,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="simpel-liner-regression" class="section level4">
+<div id="simpel-lineær-regression" class="section level4">
 <h4><span class="header-section-number">24.2.0.16</span> Simpel lineær regression</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -985,7 +987,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="simpel-liner-regression-pi-og-ki" class="section level4">
+<div id="simpel-lineær-regression-pi-og-ki" class="section level4">
 <h4><span class="header-section-number">24.2.0.17</span> Simpel lineær regression PI og KI</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -993,7 +995,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="multipel-liner-regression-1" class="section level4">
+<div id="multipel-lineær-regression-1" class="section level4">
 <h4><span class="header-section-number">24.2.0.18</span> Multipel lineær regression</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1009,7 +1011,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="multipel-liner-regression-forudsagt-vrdi-1" class="section level4">
+<div id="multipel-lineær-regression-forudsagt-værdi-1" class="section level4">
 <h4><span class="header-section-number">24.2.0.20</span> Multipel lineær regression forudsagt værdi</h4>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1062,7 +1064,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-1-4-test-af-2-middelvrdier" class="section level5">
+<div id="opgave-1-4-test-af-2-middelværdier" class="section level5">
 <h5><span class="header-section-number">24.3.0.1.4</span> Opgave 1 4 Test af 2 middelværdier</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1070,7 +1072,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-1-5-konfidensinterval-for-forskellen-af-middelvrdier" class="section level5">
+<div id="opgave-1-5-konfidensinterval-for-forskellen-af-middelværdier" class="section level5">
 <h5><span class="header-section-number">24.3.0.1.5</span> Opgave 1 5 Konfidensinterval for forskellen af middelværdier</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1086,7 +1088,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-3-2-konfidensinterval-for-middelvrdi" class="section level5">
+<div id="opgave-3-2-konfidensinterval-for-middelværdi" class="section level5">
 <h5><span class="header-section-number">24.3.0.1.7</span> Opgave 3 2 Konfidensinterval for middelværdi</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1107,7 +1109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlTy1NVjFBMDRLZFk">2016 8 10 Opgave</a>
 <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlcVdQUVFjUEp2SUE">2016 8 10 Data</a>
 <a href="https://drive.google.com/uc?export=download&amp;id=0B1E7VnhxsDMlQnNjMk9XZDZKWUU">2016 8 10 Løsningsforslag</a></p>
-<div id="opgave-1-liner-regression" class="section level5">
+<div id="opgave-1-lineær-regression" class="section level5">
 <h5><span class="header-section-number">24.3.0.2.1</span> Opgave 1 Lineær regression</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1123,7 +1125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-3-middelvrdier" class="section level5">
+<div id="opgave-3-middelværdier" class="section level5">
 <h5><span class="header-section-number">24.3.0.2.3</span> Opgave 3 Middelværdier</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1246,7 +1248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://drive.google.com/file/d/0B1E7VnhxsDMlLVBMek5kWEhRZlU/view?usp=sharing">2015 3 4 Opgave</a>
 <a href="https://drive.google.com/file/d/0B1E7VnhxsDMlX0p3Qk8wWlNxM28/view?usp=sharing">2015 3 4 Data</a>
 <a href="https://drive.google.com/file/d/0B1E7VnhxsDMlWXNWTW55Sk94RDA/view?usp=sharing">2015 3 4 Løsningsforslag</a></p>
-<div id="opgave-1-liner-regression-1" class="section level5">
+<div id="opgave-1-lineær-regression-1" class="section level5">
 <h5><span class="header-section-number">24.3.0.4.1</span> Opgave 1 lineær regression</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1254,7 +1256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-2-test-af-2-middelvrdier" class="section level5">
+<div id="opgave-2-test-af-2-middelværdier" class="section level5">
 <h5><span class="header-section-number">24.3.0.4.2</span> Opgave 2 Test af 2 middelværdier</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1334,7 +1336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 </div>
 </div>
-<div id="opgave-2.5-test-to-middelvrdier" class="section level5">
+<div id="opgave-2.5-test-to-middelværdier" class="section level5">
 <h5><span class="header-section-number">24.4.0.2.5</span> Opgave 2.5 Test to middelværdier</h5>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
@@ -1599,11 +1601,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1611,12 +1615,12 @@ gitbook.start({
 "github": false,
 "facebook": false,
 "twitter": false,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
 "all": false,
+"google": false,
 "instapper": false
 },
 "fontsettings": {
@@ -1629,6 +1633,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1647,8 +1655,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
