@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-20" />
+<meta name="date" content="2019-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -626,28 +626,28 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb62-2" data-line-number="2">mtcarsCluster4</a></code></pre></div>
-<pre><code>## K-means clustering with 4 clusters of sizes 10, 7, 9, 6
+<pre><code>## K-means clustering with 4 clusters of sizes 7, 14, 7, 4
 ## 
 ## Cluster means:
-##        mpg      cyl     disp        hp     drat       wt     qsec        vs        am     gear     carb
-## 1 21.48000 5.000000 144.9100 109.50000 3.911000 2.887000 18.43900 0.6000000 0.5000000 4.100000 3.100000
-## 2 17.01429 7.428571 276.0571 150.71429 2.994286 3.601429 18.11857 0.2857143 0.0000000 3.000000 2.142857
-## 3 14.64444 8.000000 388.2222 232.11111 3.343333 4.161556 16.40444 0.0000000 0.2222222 3.444444 4.000000
-## 4 29.53333 4.000000  84.6000  75.83333 4.155000 1.903000 18.71667 1.0000000 1.0000000 4.166667 1.333333
+##        mpg cyl     disp        hp     drat       wt     qsec        vs        am     gear     carb
+## 1 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286 0.4285714 3.857143 3.428571
+## 2 15.10000   8 353.1000 209.21429 3.229286 3.999214 16.77214 0.0000000 0.1428571 3.285714 3.500000
+## 3 24.18571   4 121.7143  94.28571 3.924286 2.508286 19.10286 0.8571429 0.5714286 4.142857 1.714286
+## 4 31.00000   4  76.1250  62.25000 4.327500 1.896250 19.19750 1.0000000 1.0000000 4.000000 1.250000
 ## 
 ## Clustering vector:
 ##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout             Valiant          Duster 360           Merc 240D            Merc 230 
-##                   1                   1                   4                   2                   3                   2                   3                   1                   1 
+##                   1                   1                   3                   1                   2                   1                   2                   3                   3 
 ##            Merc 280           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial            Fiat 128 
-##                   1                   1                   2                   2                   2                   3                   3                   3                   4 
+##                   1                   1                   2                   2                   2                   2                   2                   2                   4 
 ##         Honda Civic      Toyota Corolla       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird           Fiat X1-9       Porsche 914-2 
-##                   4                   4                   1                   2                   2                   3                   3                   4                   1 
+##                   4                   4                   3                   2                   2                   2                   2                   4                   3 
 ##        Lotus Europa      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
-##                   4                   3                   1                   3                   1 
+##                   3                   2                   1                   2                   3 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1] 11055.093 11846.095 46659.317  3628.265
-##  (between_SS / total_SS =  88.3 %)
+## [1] 13954.3363 93643.9039  3616.8297   208.0365
+##  (between_SS / total_SS =  82.1 %)
 ## 
 ## Available components:
 ## 
@@ -655,11 +655,11 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <p>Nedenfor ser vi på en tabel inddeling med 4 klynger med de 32 biler, sorteret efter antallet af cylindre.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
 <pre><code>##    
-##     4 6 8
-##   1 5 5 0
-##   2 0 2 5
-##   3 0 0 9
-##   4 6 0 0</code></pre>
+##      4  6  8
+##   1  0  7  0
+##   2  0  0 14
+##   3  7  0  0
+##   4  4  0  0</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</a></code></pre></div>
@@ -746,8 +746,8 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <br>
 <details>
 <p><summary>Spørgsmål Forbes 100 US</summary></p>
-<p>Download filen om de 100 rigeste i USA <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære <code><span id="htmlwidget-72935cd2ae42d126fc4c" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-72935cd2ae42d126fc4c">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>\n  <i>Hvilket kæledyr har du?<br>\n  {hund, kat, hund, kat, hund, marsvinkat,...}<br>\n  Hvilket parti vil du stemme på?<br>\n  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikale,... etc.}<br>\n  Hvad er din primære bankforbindelse?<br>\n  {Danske Bank, Nordea, Jyske Bank,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvalitative variable!<\/a><\/h4>","text":" kvalitative"},"evals":[],"jsHooks":[]}</script></code> variable er kodet om til dummy variable.</p>
+<p>Download filen om de 100 rigeste i USA <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære <code><span id="htmlwidget-684ac19007203bc1e630" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-684ac19007203bc1e630">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>\n  <i>Hvilket kæledyr har du?<br>\n  {hund, kat, hund, kat, hund, marsvinkat,...}<br>\n  Hvilket parti vil du stemme på?<br>\n  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikale,... etc.}<br>\n  Hvad er din primære bankforbindelse?<br>\n  {Danske Bank, Nordea, Jyske Bank,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvalitative variable!<\/a><\/h4>","text":" kvalitative"},"evals":[],"jsHooks":[]}</script></code> variable er kodet om til dummy variable.</p>
 <p>Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.</p>
 <p>Bemærk det er godt at sætte navnene på de velhavende som rækkenavne i din data.frame, for at det er nemmere at få et overblik i klyngetræ diagrammet, dette kan du fx. gøre som nedenfor:</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">row.names</span>(Forbes100) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Forbes100[,<span class="dv">1</span>])</a>

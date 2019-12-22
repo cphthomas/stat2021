@@ -25,22 +25,8 @@ source("indeks.R")
 
 
 
-<!-- ``r tippy(paste0("   ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla``r tippy("  kvanti kun tekst", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,1],"</h4>"))`` bla bla bla -->
 
 
-
-<!-- bla bla bla bla bla bla bla bla bla ``r tippy(paste0(" ",indeks[1,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` -->
-
-<!-- ``r tippy(paste0(" ",indeks[2,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` -->
-
-<!-- ``r tippy(paste0(" ",indeks[3,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` -->
-
-<!-- ``r tippy(paste0(" ",indeks[4,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` -->
-
-<!-- ``r tippy(paste0(" ",indeks[5,1]), size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` -->
-
-
-<!-- ``r tippy(indeks[4,1], size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` -->
 
 
 
@@ -1100,7 +1086,7 @@ grid()
 
 ### 95% Normalfordelingen
 
-Hvis man trækker 1.96 gange ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ fra $\mu$ og lægger 1.96 gange ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` til $\mu$, får man i normalfordelingen altid 95% af sandsynlighedsmassen. Denne z-score 0.975 fraktilen i standard normalfordelingen, er meget vigtig, vi bruger den fx. når vi beregner 95% konfidensinterval for middelværdien. Vi har alså følgende resultat:
+Hvis man trækker 1.96 gange ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ fra $\mu$ og lægger 1.96 gange ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` til $\mu$, får man i normalfordelingen altid 95% af sandsynlighedsmassen. Denne z-score 0.975 fraktilen i standard normalfordelingen, er meget vigtig, vi bruger den fx. når vi beregner 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien. Vi har alså følgende resultat:
 
 $$P(\mu-1.96\cdot \sigma \leq X \leq \mu+1.96\cdot \sigma)\approx 0.95$$
 
@@ -1227,7 +1213,7 @@ grid()
 
 
 
-Hvis vi har mindre stikprøver, skal vi sikre os at data stammer fra normalfordelte populationer. Dette kan vi gøre vha. normalfraktildiagrammer, disse skal ligge pænt omkring den rette linje. Har man en lille stikprøve og ønsker at sikre sig data stammer fra en normalfordelt population, kan man i Freestat indsætte stikprøven i 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve og sikre sig at punkterne ligger pænt omkring den rette linje. En stikprøve er lille, når den er mindre end 30 observationer. Det kan ofte være svært at se om data stammer en normalfordeling. Som det fremgår af nedenstående normalfraktildiagrammer er kun 4 af de 18 normalfordelte, specielt ved de mindre stikprøver er det svært at se præcis om data er normalfordelte. Man kan generelt sige at afvigelser fra den rette linje i enderne, er mindre kritiske en afvigelser omkring midten. Hvis man i forbindelse med analyse fx. konfidensinterval eller hypotesetest, konstaterer data ikke er normalfordelte, bør man bemærke dette og illustrere vha. normalfraktildiagrammet. Når man har rapporteret problemet gennemfører man herefter analysen. 
+Hvis vi har mindre stikprøver, skal vi sikre os at data stammer fra normalfordelte populationer. Dette kan vi gøre vha. normalfraktildiagrammer, disse skal ligge pænt omkring den rette linje. Har man en lille stikprøve og ønsker at sikre sig data stammer fra en normalfordelt population, kan man i Freestat indsætte stikprøven i 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve og sikre sig at punkterne ligger pænt omkring den rette linje. En stikprøve er lille, når den er mindre end 30 observationer. Det kan ofte være svært at se om data stammer en normalfordeling. Som det fremgår af nedenstående normalfraktildiagrammer er kun 4 af de 18 normalfordelte, specielt ved de mindre stikprøver er det svært at se præcis om data er normalfordelte. Man kan generelt sige at afvigelser fra den rette linje i enderne, er mindre kritiske en afvigelser omkring midten. Hvis man i forbindelse med analyse fx. ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` eller hypotesetest, konstaterer data ikke er normalfordelte, bør man bemærke dette og illustrere vha. normalfraktildiagrammet. Når man har rapporteret problemet gennemfører man herefter analysen. 
 
 ```{r,echo=FALSE,message=FALSE}
 list.of.packages <- c("gridExtra", "exams")
@@ -1369,7 +1355,7 @@ Standardafvigelsen for stikprøvefordelingen kaldes standardfejlen for middelvæ
 
 $$SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}$$
 
-Vi bruger standardfejlen for middelværdien SEM til at beregne konfidensintervaller som vi ser på senere. Der gælder jo mindre SEM jo smallere konfidensinterval, og når stikprøvestørrelsen bliver større bliver SEM mindre. Det giver jo god mening, større stikprøve giver mindre SEM og dermed smallere konfidensinterval dvs. større præcision.
+Vi bruger standardfejlen for middelværdien SEM til at beregne konfidensintervaller som vi ser på senere. Der gælder jo mindre SEM jo smallere ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, og når stikprøvestørrelsen bliver større bliver SEM mindre. Det giver jo god mening, større stikprøve giver mindre SEM og dermed smallere ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` dvs. større præcision.
 
 På figurerne er udtaget 3 gange 100 stikprøver af størrelse n hhv. 30, 100 og 1000. På hver figur er gennemsnittene af de 100 stikprøver angivet. Der er altså 100 pinde i hvert diagram. Bemærk CLT siger at for alle tre stikprøvefordelinger er $\mu=8$, det ses af figurerne at gennemsnittene i stikprøverne er centreret omkring middelværdien i populationen $\mu=8$.
 
@@ -1510,7 +1496,7 @@ Frihedsgrader eller degrees of freedom df betyder, hvor mange observationer kan 
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337473' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Useendet af t-fordelinger bestemmes af parameteren antal frihedsgrader. Samtlige t-fordelinger har middelværdi $\mu=0$ og approximerer/tilnærmer sig standard normalfordelingen, når antallet af frihedsgrader vokser. Vi benytter populært sagt t-fordelinger i stedet for z-fordelinger, når populations variansen $\sigma^2$ er ukendt. Antallet af frihedsgrader for t-fordelingen, ved konfidensinterval for middelværdi, svarer til antallet af observationer i stikprøven n minus 1.
+Useendet af t-fordelinger bestemmes af parameteren antal frihedsgrader. Samtlige t-fordelinger har middelværdi $\mu=0$ og approximerer/tilnærmer sig standard normalfordelingen, når antallet af frihedsgrader vokser. Vi benytter populært sagt t-fordelinger i stedet for z-fordelinger, når populations variansen $\sigma^2$ er ukendt. Antallet af frihedsgrader for t-fordelingen, ved ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdi, svarer til antallet af observationer i stikprøven n minus 1.
 
 I figuren er indtegnet 3 t-fordelinger med hhv. 5, 10 og 100 frihedsgrader (df degrees of fredom). Vi kan se fordelingerne har tykkere haler end normalfordelingen og når antallet at frihedsgrader er 100 ser z- og t-fordelingen næsten identiske ud.  
 
@@ -1569,10 +1555,10 @@ cat(readLines('np.html'))
 
 Konfidensintervallet også kaldet KI eller CI (engelsk), fortæller os, baseret på en simpelt tilfældigt udvalgt stikprøve, med en bestemt konfidens- eller sikkerhed, indenfor hvilken nedre og øvre grænse, en populationsparameter ligger.  
 
-Vi taler om et 95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i konfidensintervallet (populationsparameteren kan fx. være andelen, middelværdien eller ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen). Sandsynligheden for at populationens parameter, ikke ligger i konfidensintervallet er 5%, dette kalder vi ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores konfidensinterval. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
+Vi taler om et 95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` (populationsparameteren kan fx. være andelen, middelværdien eller ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen). Sandsynligheden for at populationens parameter, ikke ligger i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er 5%, dette kalder vi ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
 
 ### Konfidensinterval for middelværdien
-Vi bestemmer nedre og øvre grænse for konfidensintervallet, når vi ikke kender populationens standardafvigelse $\sigma$ og estimerer denne vha. S altså $\hat{\sigma}$, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:
+Vi bestemmer nedre og øvre grænse for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, når vi ikke kender populationens standardafvigelse $\sigma$ og estimerer denne vha. S altså $\hat{\sigma}$, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:
 
 $$(1-\alpha)\ KI=\left[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{s}{\sqrt[]{n}};\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}\right]$$
 
@@ -1583,9 +1569,9 @@ Hvor $t_{1-\frac{\alpha}{2}}$ er $1-\alpha$ fraktilen for t-fordelingen. En foru
 
 
 En ejendomsmægler, der ønsker at vide, hvor langt kunderne har til nærmeste filial, indsamler en repræsentativ
-stikprøve ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er 748 meter i stikprøven. Hvis mægleren ønsker at vide hvor lang den gennemsnitlige afstand i populationen til nærmeste filial er med en bestemt sikkerhed, kan han beregne et konfidensinterval. Det er klart man ikke kan få en sikkerhed på 100%, man har jo kun en stikprøve, men man beregner ofte et 95% konfidensinterval. Hvis standard afvigelsen er 102 meter, kan han nu ved ovenstående formel bestemme et 95% konfidensinterval.
+stikprøve ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er 748 meter i stikprøven. Hvis mægleren ønsker at vide hvor lang den gennemsnitlige afstand i populationen til nærmeste filial er med en bestemt sikkerhed, kan han beregne et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Det er klart man ikke kan få en sikkerhed på 100%, man har jo kun en stikprøve, men man beregner ofte et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Hvis standard afvigelsen er 102 meter, kan han nu ved ovenstående formel bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 
-Han ved at når han har beregnet formlen kan han sætte de nedre og øvre grænser for konfidensintervallet ind i nedenstående sætning: 
+Han ved at når han har beregnet formlen kan han sætte de nedre og øvre grænser for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` ind i nedenstående sætning: 
 
 *Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i populationen ligger mellem nedre bla bla og øvre bla bla meter*
 
@@ -1613,7 +1599,7 @@ $$748+`r round(qt(0.975,199),4)`\cdot \frac{102}{\sqrt[]{200}}=`r round(748+qt(0
 
 #### Fejlmargin ved middelværdi
 
-Fejlmarginen er den halve længde af konfidensintervallet, denne kan altså i forrige eksempel beregnes som:
+Fejlmarginen er den halve længde af ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, denne kan altså i forrige eksempel beregnes som:
 
 $$\frac{`r round(748+qt(0.975,199)*((102)/200^0.5),4)`-`r round(748-qt(0.975,199)*((102)/200^0.5),4)`}{2}=`r round(((748+qt(0.975,199)*((102)/200^0.5))- (748-qt(0.975,199)*((102)/200^0.5)))/2,4)`$$
 
@@ -1684,7 +1670,7 @@ Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populati
   
 Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% eller 0.0005 og en standardafvigelse på 0.6% eller 0.0006. 
 
-**1.** Hvad bliver 95% konfidensintervallet for middelværdien i populationen, som er alle handelsdage for aktien?  
+**1.** Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, som er alle handelsdage for aktien?  
 
 **2.** Hvor stor skal stikprøven være for at fejlmarginen er 0.001 procentpoint?  
 
@@ -1701,7 +1687,7 @@ Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregn
 
 <img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Vi kan se Freestat beregner konfidensintervallet KI i celle U6 og U7, ligeledes står en kort sætning i celle T18, der beskriver konfidensintervallet.  
+Vi kan se Freestat beregner ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` KI i celle U6 og U7, ligeledes står en kort sætning i celle T18, der beskriver ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
 
 **2.** Stikprøven skal mindst være 139 handelsdage for at fejlmarginen bliver 0.001 procentpoint eller derunder. Bemærk for at finde stikprøvestørrelsen skrives ønsket fejlmargin i celle U12 i Freestat.  
 
@@ -1748,7 +1734,7 @@ Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt an
 
 ## Konfidensinterval for standardafvigelsen
 
-Ligesom vi kan sige at middelværdien for populationen med en vis sikkerhed ligger i et bestemt interval, kan vi beregne konfidensintervaller for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen. Freetat beregner konfidensintervallet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for os, beregningen er lidt indviklet denne er angivet herunder for en ordens skyld, men vi vil blot benytte Freestat.
+Ligesom vi kan sige at middelværdien for populationen med en vis sikkerhed ligger i et bestemt interval, kan vi beregne konfidensintervaller for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen. Freetat beregner ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for os, beregningen er lidt indviklet denne er angivet herunder for en ordens skyld, men vi vil blot benytte Freestat.
 
 $$(1-\alpha)\  KI=\left[\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}};\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}}\right]$$
 
@@ -1756,7 +1742,7 @@ Hvor $\chi^2_{1-\frac{\alpha}{2},df_{n-1}}$ er $1-\frac{\alpha}{2}$ fraktilen fo
 
 
 
-Husk at chekke for normalitet fx. i et normalfraktildiagram. Det er en forudsætning for at benytte formlen ved konfidensintervallet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))``, at stikprøven stammer fra en normalfordelt population. 
+Husk at chekke for normalitet fx. i et normalfraktildiagram. Det er en forudsætning for at benytte formlen ved ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))``, at stikprøven stammer fra en normalfordelt population. 
 
 
 ```{r ,include=FALSE}
@@ -1786,7 +1772,7 @@ Vi kan af Freestat se, at den sande standard afvigelse i populationen med 95% si
 <br>
 <details> 
   <summary>Spørgsmål konfidensinterval for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))``</summary>
-Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6% Bestem 95% konfidensintervallet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen, som er alle handelsdage for aktien.
+Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6% Bestem 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen, som er alle handelsdage for aktien.
 </details>
 <br>
 <details> 
@@ -1797,7 +1783,7 @@ Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,
 
 <img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Vi kan se Freestat beregner konfidensintervallet KI i celle U8 og U9, ligeledes står en kort sætning i celle T20 der beskriver konfidensintervallet.
+Vi kan se Freestat beregner ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` KI i celle U8 og U9, ligeledes står en kort sætning i celle T20 der beskriver ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 
 </details>
 <br>
@@ -1946,7 +1932,7 @@ Vi siger ovenstående konklusion er niveaufølsom, vi ville ikke have forkastet 
 Hvis vi kender populationens standardafvigelse $\sigma$, eller vi har store stikprøver, kan vi benytte z-fordelingen, til beregning af signifikanssandsynligheder. Software benytter ofte konsekvent t-fordelingen, der approximerer z-fordelingen, når antallet af frihedsgrader vokser. Jo større stikprøven er jo mindre forskel vil der være mellem de to metoder. Vi kan for små stikprøver benytte t-fordelingen, hvis stikprøven stammer fra en normalfordelt population. I Freestat benyttes kun t-fordelingen da vi forudsætter at populationsvariansen er ukendt.
 
 ## Tosidet alternativ hypotese og konfidensintervallet.
-Når vi tester med tosidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, kan vi bruge konfidensintervallet svarende til ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Ud fra størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, kan vi afgøre hvor sikker hvor konklusion er.
+Når vi tester med tosidet alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``, kan vi bruge ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` svarende til ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til at afgøre om en nulhypotese forkastes. Ligger parameter estimatet $\hat\mu$ indenfor konfidensintervallets nedre og øvre grænse, kan vi ikke forkaste nulhypotesen, ligger det udenfor forkaster vi nulhypotesen. Denne metode er dog ikke så præcis som testet, hvor vi finder størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``. Ud fra størrelsen af ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, kan vi afgøre hvor sikker hvor konklusion er.
 
 ## Ensidet alternativ hypotese
 Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er 730 meter mod alternativ hypotesen den sande afstand til nærmeste filial i gennemsnit er forskellig fra 730 meter. Vi kunne fx. være interesseret i:
@@ -2196,9 +2182,9 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
   <summary> Spørgsmål Standard normalfordelingen </summary>  
 
 1. Hvad er parametrene for z-fordelingen og hvad kalder man også denne fordeling?  
-2. Hvad er nedre og øvre grænse for 95% konfidensintervallet for standard normalfordelingen?  
-3. Hvad er nedre og øvre grænse for 90% konfidensintervallet for standard normalfordelingen?  
-4. Hvad er nedre og øvre grænse for 99% konfidensintervallet for standard normalfordelingen?  
+2. Hvad er nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen?  
+3. Hvad er nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen?  
+4. Hvad er nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen?  
 5. Hvad er 0.025 fraktilen for standard normalfordelingen (hint brug Excelfunktionen NORM.INV, angiv fraktil, middelværdi og standardafvigelse som argumenter)?  
 6. Hvad er 0.975 fraktilen for standard normalfordelingen?   
 7. Hvorfor er de 2 fraktiler numerisk identiske?  
@@ -2212,10 +2198,10 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
   <summary> Svar Standard normalfordelingen </summary>  
   
 1. Parametrene for z-fordelingen $\mu=0$ og $\sigma=1$, z-fordelingen kaldes også standard normalfordelingen  
-2. Nedre og øvre grænse for 95% konfidensintervallet for standard normalfordelingen er -1.96 og 1.96  
-3. Nedre og øvre grænse for 90% konfidensintervallet for standard normalfordelingen er -1.64 og 1.64  
-4. Nedre og øvre grænse for 99% konfidensintervallet for standard normalfordelingen er -2.58 og 2.58  
-5. 0.025 fraktilen for standard normalfordelingen, findes i excel som =NORM.INV(0.025;0;1) resultatet bliver -1.96, hvilket netop er nedre grænse i 95% konfidensintervallet for standard normalfordelingen.  
+2. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen er -1.96 og 1.96  
+3. Nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen er -1.64 og 1.64  
+4. Nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen er -2.58 og 2.58  
+5. 0.025 fraktilen for standard normalfordelingen, findes i excel som =NORM.INV(0.025;0;1) resultatet bliver -1.96, hvilket netop er nedre grænse i 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard normalfordelingen.  
 6. 0.975 fraktilen for standard normalfordelingen er 1.96  
 7. De 2 fraktiler numerisk identiske, da normalfordelinger er symmetriske og standard normalfordelingen har middelværdi 0.  
 8. 0.05 fraktilen for standard normalfordelingen er -1.64  
@@ -2228,24 +2214,24 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
 <details> 
   <summary> Spørgsmål Konfidensintervaller for normalfordelinger </summary>  
 
-1. Hvad er nedre og øvre grænse for 95% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=1)$?  
-2. Hvad er nedre og øvre grænse for 90% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=1)$?  
-3. Hvad er nedre og øvre grænse for 99% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=2)$?  
-4. Hvad er nedre og øvre grænse for 95% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=100,\sigma=20)$?  
-5. Hvad er nedre og øvre grænse for 90% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=100,\sigma=20)$?  
-6. Hvad er nedre og øvre grænse for 99% konfidensintervallet for en normalfordelt stokastisk variabel $X\sim N(\mu=1000,\sigma=100)$?  
+1. Hvad er nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=1)$?  
+2. Hvad er nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=1)$?  
+3. Hvad er nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=4,\sigma=2)$?  
+4. Hvad er nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=100,\sigma=20)$?  
+5. Hvad er nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=100,\sigma=20)$?  
+6. Hvad er nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en normalfordelt stokastisk variabel $X\sim N(\mu=1000,\sigma=100)$?  
 </details>  
 
 <br>
 <details> 
   <summary> Svar Konfidensintervaller for normalfordelinger </summary>  
 
-1. Nedre og øvre grænse for 95% konfidensintervallet for $X\sim N(\mu=4,\sigma=1)$ er $\mu-1.96\cdot\sigma=4-1.96\cdot1=`r 4-1.96*1`$ og $\mu+1.96\cdot\sigma=4+1.96\cdot1=`r 4+1.96*1`$  
-2. Nedre og øvre grænse for 90% konfidensintervallet for $X\sim N(\mu=4,\sigma=1)$ er $\mu-1.64\cdot\sigma=4-1.64\cdot1=`r 4-1.64*1`$ og $\mu+1.64\cdot\sigma=4+1.64\cdot1=`r 4+1.64*1`$  
-3. Nedre og øvre grænse for 99% konfidensintervallet for $X\sim N(\mu=4,\sigma=2)$ er $\mu-2.58\cdot\sigma=4-2.58\cdot2=`r 4-2.58*2`$ og $\mu+2.58\cdot\sigma=4+2.58\cdot2=`r 4+2.58*2`$  
-4. Nedre og øvre grænse for 95% konfidensintervallet for $X\sim N(\mu=100,\sigma=20)$ er $\mu-1.96\cdot\sigma=100-1.96\cdot20=`r 100-1.96*20`$ og $\mu+1.96\cdot\sigma=100+1.96\cdot20=`r 100+1.96*20`$  
-5. Nedre og øvre grænse for 90% konfidensintervallet for $X\sim N(\mu=100,\sigma=20)$ er $\mu-1.64\cdot\sigma=100-1.64\cdot20=`r 100-1.64*20`$ og $\mu+1.64\cdot\sigma=100+1.64\cdot20=`r 100+1.64*20`$  
-6. Nedre og øvre grænse for 99% konfidensintervallet for $X\sim N(\mu=1000,\sigma=100)$ er $\mu-2.58\cdot\sigma=1000-2.58\cdot100=`r 1000-2.58*100`$ og $\mu+2.58\cdot\sigma=1000+2.58\cdot100=`r 1000+2.58*100`$  
+1. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=4,\sigma=1)$ er $\mu-1.96\cdot\sigma=4-1.96\cdot1=`r 4-1.96*1`$ og $\mu+1.96\cdot\sigma=4+1.96\cdot1=`r 4+1.96*1`$  
+2. Nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=4,\sigma=1)$ er $\mu-1.64\cdot\sigma=4-1.64\cdot1=`r 4-1.64*1`$ og $\mu+1.64\cdot\sigma=4+1.64\cdot1=`r 4+1.64*1`$  
+3. Nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=4,\sigma=2)$ er $\mu-2.58\cdot\sigma=4-2.58\cdot2=`r 4-2.58*2`$ og $\mu+2.58\cdot\sigma=4+2.58\cdot2=`r 4+2.58*2`$  
+4. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=100,\sigma=20)$ er $\mu-1.96\cdot\sigma=100-1.96\cdot20=`r 100-1.96*20`$ og $\mu+1.96\cdot\sigma=100+1.96\cdot20=`r 100+1.96*20`$  
+5. Nedre og øvre grænse for 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=100,\sigma=20)$ er $\mu-1.64\cdot\sigma=100-1.64\cdot20=`r 100-1.64*20`$ og $\mu+1.64\cdot\sigma=100+1.64\cdot20=`r 100+1.64*20`$  
+6. Nedre og øvre grænse for 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for $X\sim N(\mu=1000,\sigma=100)$ er $\mu-2.58\cdot\sigma=1000-2.58\cdot100=`r 1000-2.58*100`$ og $\mu+2.58\cdot\sigma=1000+2.58\cdot100=`r 1000+2.58*100`$  
 </details>  
 
 <br>
@@ -2269,17 +2255,17 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
 
 <br>
 <details> 
-  <summary> Spørgsmål Standardfejlen for middelværdien, og konfidensinterval for middelværdien. </summary>  
+  <summary> Spørgsmål standardfejlen for middelværdien, og konfidensinterval for middelværdien. </summary>  
 
 1. Der er udtaget en stikprøve på 100, fra en population med kendt standardafvigelse $\sigma=10$, hvad bliver standardfejlen for middelværdien?  
 2. Der er udtaget en stikprøve på 900, fra en population med kendt standardafvigelse $\sigma=15$, hvad bliver SEM?  
 3. Der er udtaget en stikprøve på 81, fra en population med kendt standardafvigelse $\sigma=36$, hvad bliver standardfejlen for middelværdien?  
-4. Der er udtaget en stikprøve på 100, fra en population med kendt standardafvigelse $\sigma=10$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?  
-5. Der er udtaget en stikprøve på 900, fra en population med kendt standardafvigelse $\sigma=15$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?  
-6. Der er udtaget en stikprøve på 81, fra en population med kendt standardafvigelse $\sigma=36$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=100$, hvad bliver nedre og øvre grænser 95% konfidensintervallet for middelværdien?  
-7. Hvad ville 95% konfidensintervallet blive i 4. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=10$?  
-8. Hvad ville 95% konfidensintervallet blive i 5. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=15$?  
-9. Hvad ville 95% konfidensintervallet blive i 6. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=36$?  
+4. Der er udtaget en stikprøve på 100, fra en population med kendt standardafvigelse $\sigma=10$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+5. Der er udtaget en stikprøve på 900, fra en population med kendt standardafvigelse $\sigma=15$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+6. Der er udtaget en stikprøve på 81, fra en population med kendt standardafvigelse $\sigma=36$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=100$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+7. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 4. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=10$?  
+8. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 5. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=15$?  
+9. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 6. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=36$?  
 </details>  
 <br>
 <details> 
@@ -2287,19 +2273,19 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
 1. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{10}{\sqrt{100}}=1$  
 2. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{15}{\sqrt{900}}=0.5$  
 3. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{36}{\sqrt{81}}=4$  
-4. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 1. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=20-1.96\cdot1=18.04$, øvre grænse for 95% konfidensintervallet for middelværdien bliver $\hat\mu+1.96\cdot1=20+1.96=21.96$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.04 og 21.96"  
-5. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 2. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=\hat\mu-1.96\cdot0.5=20-0.98=19.02$, øvre grænse for 95% konfidensintervallet for middelværdien bliver $\hat\mu+1.96\cdot0.5=20+0.98=20.98$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98"  
-6. 95% konfidensintervallet for middelværdien udregnes vha. standardfejlen vi fandt i 3. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=100-1.96\cdot4=100-7.84=92.16$, øvre grænse for 95% konfidensintervallet for middelværdien bliver $\hat\mu+1.96\cdot4=100+7.84=107.84$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.16 og 107.84"  
-7. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=10$, benytter vi t-fordelingen med 100-1=99 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;99) hvilket giver 1.9842. 95% konfidensintervallet for middelværdien bliver:  
+4. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 1. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=20-1.96\cdot1=18.04$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot1=20+1.96=21.96$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.04 og 21.96"  
+5. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 2. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=\hat\mu-1.96\cdot0.5=20-0.98=19.02$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot0.5=20+0.98=20.98$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98"  
+6. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 3. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=100-1.96\cdot4=100-7.84=92.16$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot4=100+7.84=107.84$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.16 og 107.84"  
+7. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=10$, benytter vi t-fordelingen med 100-1=99 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;99) hvilket giver 1.9842. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $20-1.9842\cdot1=18.02$  
 Øvre grænse $20+1.9842\cdot1=21.98$  
 "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.02 og 21.98"  
 8. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=15$, benytter vi t-fordelingen med 900-1=899 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;899) hvilket giver 1.9626.  
-95% konfidensintervallet for middelværdien bliver:  
+95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $20-1.9626\cdot0.5=19.02$  
 Øvre grænse $20+1.9626\cdot0.5=20.98$  
 "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98"  
-9. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=36$, benytter vi t-fordelingen med 81-1=80 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;80), hvilket giver 1.9901. 95% konfidensintervallet for middelværdien bliver:  
+9. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra stikprøven til $\hat\sigma=36$, benytter vi t-fordelingen med 81-1=80 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;80), hvilket giver 1.9901. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $100-1.9901\cdot4=92.04$  
 Øvre grænse $100+1.9901\cdot4=107.96$  
 "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.04 og 107.96"  
@@ -2327,9 +2313,9 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 1. Hvad bliver parameterestimatet for middelværdien for variablen egenkapital?  
 2. Hvad bliver parameterestimatet for standard afvigelsen for variablen egenkapital?  
 3. Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen egenkapital?  
-4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% konfidensintervallet, for den gennemsnitlige egenkapital for virksomheder i populationen?  
+4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i populationen?  
 5. Hvad bliver parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ for variablen egenkapital?  
-6. Hvad bliver nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen for variablen egenkapital?  
+6. Hvad bliver nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen for variablen egenkapital?  
 </details>  
 
 <br>
@@ -2340,11 +2326,11 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 $\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=$$`r round(mean(Egenkapital),2)`$. Resultatet står som stikprøve gennemsnit i output fra Freestat herunder.  
 2. Parameterestimatet for standard afvigelsen for variablen egenkapital findes som $\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=$$`r round(sd(Egenkapital),2)`$. Resultatet står som standard afvigelse spredning i Freestat herunder.round(sd(Egenkapital),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.  
 3. Standardfejlen for middelværdien kan udregnes som   $SEM=\sigma_\bar{X}=\frac{\hat\sigma}{\sqrt{n}}=$$\frac{`r round(sd(Egenkapital),2)`}{\sqrt{369}}=`r semek`$. Resultatet står som standard fejl middel i Freestat herunder.  
-4. Grænserne for 95% konfidensintervallet for middelværdien i populationen, kan udregnes til:  
+4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, kan udregnes til:  
   $\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanek`-1.966431\cdot`r semek`$$=`r round(meanek-1.966431*semek,2)`$ og
 $\hat\mu+1.966431\cdot \sigma_\bar{X}=$$`r meanek`+1.966431\cdot `r semek`$$=`r round(meanek+1.966431*semek,2)`$  
   5. Parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ bliver $676727.53$  
-  6. Nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen bliver hhv. $631170.46$ og $729427.12$  
+  6. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen bliver hhv. $631170.46$ og $729427.12$  
   
   Herunder ses det output man ville generere i Freestat Deskriptiv statistik.  
 
@@ -2374,9 +2360,9 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 1. Hvad bliver parameterestimatet for middelværdien for variablen årets resultat?  
 2. Hvad bliver parameterestimatet for standard afvigelsen for variablen årets resultat?  
 3. Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen årets resultat?  
-4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% konfidensintervallet, for den gennemsnitlige egenkapital for virksomheder i populationen?  
+4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i populationen?  
 5. Hvad bliver parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ for variablen årets resultat?  
-6. Hvad bliver nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen?  
+6. Hvad bliver nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen?  
 
 
  </details>  
@@ -2389,9 +2375,9 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 $\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=`r round(mean(ar),2)`$. Resultatet står som stikprøve gennemsnit i output fra Freestat herunder.  
 2. Parameterestimatet for standard afvigelsen for variablen årets resultat findes som $\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=`r round(sd(ar),2)`$. Resultatet står som standard afvigelse spredning i Freestat   herunder.round(sd(ar),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.  
 3. Standardfejlen for middelværdien kan udregnes som $SEM=\sigma_\bar{X}=\frac{\sigma}{\sqrt{n}}=\frac{`r round(sd(ar),2)`}{\sqrt{369}}=`r semar`$. Resultatet står som standard fejl middel i Freestat herunder.  
-4. Grænserne for 95% konfidensintervallet for middelværdien i populationen, kan udregnes til:$\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanar`-1.966431\cdot`r semar`=`r round(meanar-1.96643126706281*semar,2)`$ og $\hat\mu+1.966431\cdot\sigma_\bar{X}=`r meanar`+1.966431\cdot`r semar`=`r round(meanar+1.96643126706281*semar,2)`$  
+4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, kan udregnes til:$\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanar`-1.966431\cdot`r semar`=`r round(meanar-1.96643126706281*semar,2)`$ og $\hat\mu+1.966431\cdot\sigma_\bar{X}=`r meanar`+1.966431\cdot`r semar`=`r round(meanar+1.96643126706281*semar,2)`$  
   5. Parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ bliver 374398.75  
-6. Nedre og øvre grænse for 95% konfidensintervallet for standard afvigelsen bliver hhv. 349194.35 og 403554.74 i antal 1000 DKK.  
+6. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen bliver hhv. 349194.35 og 403554.74 i antal 1000 DKK.  
 
 Herunder ses det output man ville generere i Freestat Deskriptiv statistik.  
 
@@ -2451,12 +2437,12 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 
 1. Hvilken type variabel er variablen Omsætning?  
 2. Hvad bliver standardfejlen?  
-3. Hvad bliver 95% konfidensintervallet for den gennemsnitlige omsætning i populationen?  
+3. Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i populationen?  
 4. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 500.000.000 DKK, dvs. en halv mia. DKK, på et 5% signifikans niveau? Hvorledes ville hypoteserne for et test af denne påstand se ud?  
 5. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 600.000.000 DKK på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
 6. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 700.000.000 DKK, på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
 7. Har de 3 tests ensidede eller tosidede alternativ hypoteser, eller et mix af disse?  
-8. Hvad bliver 90% konfidensintervallet for den gennemsnitlige omsætning i populationen? Er dette konfidensinterval smallere eller bredere end 95% konfidensintervallet?  
+8. Hvad bliver 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i populationen? Er dette konfidensinterval smallere eller bredere end 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``?  
 9. En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om denne påstand kan antages at være korrekt, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 10. Kunne revisorteamet ud fra ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` afgøre at man ikke kunne forkaste nulhypotesen?
 11. Test på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
@@ -2490,7 +2476,7 @@ plot(hc)
 ```
 1. Variablen Omsætning er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` stikprøve i Freestat.  
 2. Standardfejlen for middelværdien bliver $SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127$ DDK eller ca. 95 mio.  
-3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i konfidensintervallet. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
+3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
 <img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 4. Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 500 mio. DKK er indeholdt i dette interval. Kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 500 mio. DKK.  
 Hypoteserne ville være:  
@@ -2509,7 +2495,7 @@ $$H_1: \mu\neq700\ mio$$
 Vi forkaster nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen, ikke kan antages at være 700 mio.  
 7. Alle tre tests har tosidede alternativ hypoteser, alle tre indeholder forskellig fra operatoren $\neq$  
 8. Vi kan med 90% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 
-270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% konfidensintervallet, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at $\mu$ ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``. Herunder ses output fra Freestat, bemærk vi ændrer ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 10% for at ændre konfidensniveaet til 90%.  
+270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at $\mu$ ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``. Herunder ses output fra Freestat, bemærk vi ændrer ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 10% for at ændre konfidensniveaet til 90%.  
 <img src="img/dkvirkoms10.png" alt="dkvirkoms10" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 9. Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
@@ -2608,9 +2594,9 @@ Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,
 
 I datasættet  <a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ" target="_blank">USA aktier</a> findes månedlige aktieafkast i %, fra 5 store amerikanske virksomheder siden år 2000. Virksomhederne er Coca Cola, Bank of America, JP Morgan Chase, Microsoft og Kellogs den sidste variabel US portefølje er en portefølje bestående at 20% af hver af disse 5 aktier. Vi forudsætter at stikprøven er repræsentativ for populationen. Angiv korte præcise svar, angiv hypoteser, p-værdier teknisk og ikke-teknisk konklusion hvor det er relevant.  
 
-1.	Angiv 95% konfidensintervallet for middelværdien for Bank of America og for US porteføljen.  
+1.	Angiv 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien for Bank of America og for US porteføljen.  
 
-2.	Angiv 95% konfidensintervallet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for Bank of America og for US porteføljen.  
+2.	Angiv 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for Bank of America og for US porteføljen.  
 
 3.	Angiv mindste og største månedlige afkast for Bank of America og for US porteføljen.  
 
@@ -2692,12 +2678,12 @@ $$(1-\alpha)\  KI=\left[\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat
 
 Hvor $z_{1-\frac{\alpha}{2}}$ er $1-\frac{\alpha}{2}$ fraktilen for z-fordelingen altså standard normalfordelingen. Hvis vi betragter et 95% konfidensinterval, er $\alpha$ altså ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` 5%, det betyder vi benytter $1-\frac{0.05}{2}=0.975$ fraktilen eller 97.5% fraktilen for z-fordelingen 
 
-Vi ser igen på MobilePay eksemplet 31 ud af 100 brugte MobilePay $\hat{p}=0.31$. Hvis vi skal bestemme et 95% konfidensinterval af andelen af brugere af MobilePay i populationen, kan vi vha. formlen ovenfor udregne nedre grænse som:
+Vi ser igen på MobilePay eksemplet 31 ud af 100 brugte MobilePay $\hat{p}=0.31$. Hvis vi skal bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` af andelen af brugere af MobilePay i populationen, kan vi vha. formlen ovenfor udregne nedre grænse som:
 
 $$\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31-1.96\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.2194$$
 
-På samme måde kan vi beregne vi øvre grænse vha. formlen for konfidensinterval for en andel.
+På samme måde kan vi beregne vi øvre grænse vha. formlen for ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en andel.
 
 $$\hat{p} + z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31+1.96\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.4006$$
@@ -2706,12 +2692,12 @@ Hvis vi skal tolke hvad dette betyder med menneskeord kan vi altså sige:
 
 *Vi kan med 95% sikkerhed sige at andelen af MobilePay brugere i populationen ligger mellem 21.94% og 40.06%.*
 
-Havde vi ønsket større sikkerhed/konfidens, kunne vi opnå dette på bekostning af præcisionen. Vi kunne sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1% dvs. ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))`` til 99%. Vi skulle da benytte 99.5% fraktilen for z-fordelingen denne er ca. 2.58, dette ville være den eneste ændring i udregningen af konfidensintervallet.
+Havde vi ønsket større sikkerhed/konfidens, kunne vi opnå dette på bekostning af præcisionen. Vi kunne sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1% dvs. ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))`` til 99%. Vi skulle da benytte 99.5% fraktilen for z-fordelingen denne er ca. 2.58, dette ville være den eneste ændring i udregningen af ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 
 $$\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31-2.5758\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.1909$$
 
-På samme måde kan vi beregne vi øvre grænse vha. formlen for konfidensinterval for en andel.
+På samme måde kan vi beregne vi øvre grænse vha. formlen for ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for en andel.
 
 $$\hat{p} + z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31+2.5758\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.4291$$
@@ -2720,11 +2706,11 @@ Tolkningen ville være:
 
 *Vi kan med 99% sikkerhed sige at andelen af MobilePay brugere i populationen ligger mellem 19.09% og 42.91%.*
 
-Vi mister altså præcision (konfidensintervallet blev jo bredere), når vi får større sikkerhed (99% i stedet for 95%). Hvis man ønsker at øge sikkerheden uden at konfidensintervallet bliver bredere, kan man se på formlen at vi også kan øge stikprøve størrelsen n. Stikprøve størrelsen er jo i nævneren i formlen for konfidensintervallet, så hvis vi øger n bliver faktoren mindre, og dermed bliver konfidens intervallet smallere.
+Vi mister altså præcision (``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blev jo bredere), når vi får større sikkerhed (99% i stedet for 95%). Hvis man ønsker at øge sikkerheden uden at ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` bliver bredere, kan man se på formlen at vi også kan øge stikprøve størrelsen n. Stikprøve størrelsen er jo i nævneren i formlen for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, så hvis vi øger n bliver faktoren mindre, og dermed bliver konfidens intervallet smallere.
 
 ### Fejlmargin ved andele
 
-Fejlmarginen er den halve længde af konfidensintervallet, denne kan altså i sidste eksempel beregnes som:
+Fejlmarginen er den halve længde af ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, denne kan altså i sidste eksempel beregnes som:
 
 $$\frac{0.4291-0.1909}{2}=0.1191$$
 
@@ -3419,17 +3405,17 @@ text(prop.test(31,100,correct = F)$conf.int[1],2,"Ny \n undersøgelse",pos=2,fon
 
 ```
 
-Hvis vi ønsker at undersøge om der er en signifikant forskel i andelen af brugere, kan vi se på konfidensintervallet for forskellen mellem andelene. Vi kan med 95% sikkerhed sige at forskellen i populationens andele er mellem `r round2(prop.test(c(31,45),c(100,200),correct = F)$conf.int[1],2)`% og `r round2(prop.test(c(31,45),c(100,200),correct = F)$conf.int[2],2)`% 
+Hvis vi ønsker at undersøge om der er en signifikant forskel i andelen af brugere, kan vi se på ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for forskellen mellem andelene. Vi kan med 95% sikkerhed sige at forskellen i populationens andele er mellem `r round2(prop.test(c(31,45),c(100,200),correct = F)$conf.int[1],2)`% og `r round2(prop.test(c(31,45),c(100,200),correct = F)$conf.int[2],2)`% 
 
 Vi kan i software beregne dette, vi undlader formlen og udregningen her
 
 
-Output fra fanen andele i FreestatDK er vist herunder, bemærk vi skriver kun i de hvide felter. Nederst til højre ses konfidensintervallet for forskelle i andele:
+Output fra fanen andele i FreestatDK er vist herunder, bemærk vi skriver kun i de hvide felter. Nederst til højre ses ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for forskelle i andele:
 
 <img src="img/freestat2andelemobilepay.png"  width="70%" height="70%"/><br>
 
 
-Vi sammenligner altså de 2 andele og betragter et konfidensinterval for differencen mellem disse. Hvis 0 er indeholdt i dette interval som her, er der ikke signifikant forskel på andelene. Det er altså en mulighed, at forskellen mellem MobilePay brugere før og nu er 0, hvilket er det samme som ingen forskel på andelene.
+Vi sammenligner altså de 2 andele og betragter et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for differencen mellem disse. Hvis 0 er indeholdt i dette interval som her, er der ikke signifikant forskel på andelene. Det er altså en mulighed, at forskellen mellem MobilePay brugere før og nu er 0, hvilket er det samme som ingen forskel på andelene.
 
 ```{r echo=FALSE,fig.width=9, fig.height=3, dev='svg'}
 plot(x=NULL, y=NULL, xlim=c(2*(prop.test(c(31,45),c(100,200),correct = F)$conf.int[1]), 1.05*prop.test(c(31,45),c(100,200),correct = F)$conf.int[2]), xlab="",ylim=c(-1, 1),bty="n",yaxt='n', ann=FALSE)
@@ -3729,7 +3715,7 @@ Opgave 2 (30 %)
 Nykøbing Bank er bekymret for kundernes overtræk. I 2015 foretog banken en analyse, hvor man i en stikprøve på 75 kunder registrerede 26 kunder med overtræk.  
 
 Spørgsmål 2.1 (10 %)  
-Du bedes beregne et punktestimat og et 95 % konfidensinterval for andelen af bankens kunder, der havde overtræk i 2015.  
+Du bedes beregne et punktestimat og et 95 % ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for andelen af bankens kunder, der havde overtræk i 2015.  
 Spørgsmål 2.2 (10 %)  
 Ved hjælp at en test på 5 % testniveau bedes du undersøge, om andelen af kunder med overtræk var større end 25 % i 2015.  
 Spørgsmål 2.3 (10 %)  
@@ -3764,7 +3750,7 @@ frameborder="0">
 Opgave 4 (10 %)
 Det er mange år siden bankens markedschef har beskæftiget sig med statistik. Han beder dig derfor forklare nogle begreber.
 Spørgsmål 4.1 (5 %)
-Forklar forskellen på et punktestimat og et konfidensinterval. Forklar endvidere formålet med at beregne et konfidensinterval.
+Forklar forskellen på et punktestimat og et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Forklar endvidere formålet med at beregne et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 Spørgsmål 4.2 (5 %)
 Hvilken betydning har testniveauet for konklusionen i en hypotesetest?
 Hvilken betydning har stikprøvens størrelse for ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, når der udarbejdes en hypotesetest?
@@ -3803,15 +3789,15 @@ Undersøg om forsikringspræmierne for år 2016 er normalfordelte.
 Test på 5% niveau, hvorvidt Safe Car lever op til målet om at den gennemsnitlige forsikringspræmie er lavere end kr. 6.000.  
 Hvor sikre kan vi være på din konklusion?  
 1.3 (10%)  
-Beregn et 99% konfidensinterval for den gennemsnitlige forsikringspræmie for år 2016. Hvor anvendeligt er dette interval?  
+Beregn et 99% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige forsikringspræmie for år 2016. Hvor anvendeligt er dette interval?  
 1.4 (5%)  
-Hvor stor skal stikprøven være, for at der maksimalt er kr. 100 mellem nedre og øvre grænse i 99% konfidensintervallet for den gennemsnitlige forsikringspræmie beregnet i 1.3?  
+Hvor stor skal stikprøven være, for at der maksimalt er kr. 100 mellem nedre og øvre grænse i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige forsikringspræmie beregnet i 1.3?  
 Foruden kravet om lave forsikringspræmier har Safe Car har en politik om, at variansen for præmierne ikke må blive for stor. Der er således en målsætning om, at variansen for forsikringspræmierne skal være kr. 250.000.  
 1.5 (10%)  
 Test på 5% niveau hvorvidt den sande varians for forsikringspræmierne er lig med kr. 250.000. - Hvor sikre kan vi være på din konklusion?  
 Safe Car har også interne regler der siger, at andelen af kunder der har en forsikringspræmie over kr. 5800 maksimalt må udgøre en tredjedel.  
 1.6 (10%)  
-Beregn et 95% konfidensinterval for andelen af kunder der betaler mere end kr. 5800 i forsikringspræmie.  
+Beregn et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for andelen af kunder der betaler mere end kr. 5800 i forsikringspræmie.  
 Hvor anvendeligt er dette interval?  
 
 
@@ -3919,13 +3905,13 @@ I Freestat kan man sætte de 2 stikprøver, ind analysen Pooled t-test variansho
 
 ![](img/freestatmaeglerpooled.png)
 
-Her har vi som ses af output fra Freestat, valgt mæglerens egen undersøgelse som 1. stikprøve, og konkurrentens som 2. stikprøve. Vi kan med 95% sikkerhed sige at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 11,9 og 80.1 meter (markeret med rødt). Da 0 ikke er indeholdt i konfidensintervallet kan vi konstatere at denne forskel er signifikant, der er altså forskel på afstanden til nærmeste filial i de 2 kæder. Vi kan undersøge om vi også er 99% sikre på konklusionen ved at ændre ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, jo et bredere konfidensinterval, da præcisionen falder, når sikkerheden stiger.
+Her har vi som ses af output fra Freestat, valgt mæglerens egen undersøgelse som 1. stikprøve, og konkurrentens som 2. stikprøve. Vi kan med 95% sikkerhed sige at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 11,9 og 80.1 meter (markeret med rødt). Da 0 ikke er indeholdt i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` kan vi konstatere at denne forskel er signifikant, der er altså forskel på afstanden til nærmeste filial i de 2 kæder. Vi kan undersøge om vi også er 99% sikre på konklusionen ved at ændre ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, jo et bredere ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, da præcisionen falder, når sikkerheden stiger.
 
-Det er ikke så vigtigt hvilken stikprøve, der er 1. og 2. stikprøve, men det er væsentligt for tolkningen af konfidensintervallet. Bemærk konfidensintervallets øvre grænse, vil hvis man bytter rundt, blive den nedre grænse med fortegnsskift, og tilsvarende for den nedre grænse. Begge grænser i konfidensintervallet er positive, forskellen måles altid som 1. stikprøve minus 2. stikprøve, specielt i dette tilfælde altså kædens egen undersøgelse minus konkurrentens undersøgelse. Det er altid en MEGET god ide, at holde fuldstændig styr på hvilken stikprøve, der er 1. og 2., hvilket vi senere vil se i forbindelse med hypotestests med ensidet alternativhypotese.
+Det er ikke så vigtigt hvilken stikprøve, der er 1. og 2. stikprøve, men det er væsentligt for tolkningen af ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Bemærk konfidensintervallets øvre grænse, vil hvis man bytter rundt, blive den nedre grænse med fortegnsskift, og tilsvarende for den nedre grænse. Begge grænser i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er positive, forskellen måles altid som 1. stikprøve minus 2. stikprøve, specielt i dette tilfælde altså kædens egen undersøgelse minus konkurrentens undersøgelse. Det er altid en MEGET god ide, at holde fuldstændig styr på hvilken stikprøve, der er 1. og 2., hvilket vi senere vil se i forbindelse med hypotestests med ensidet alternativhypotese.
 
 Vi skal undersøge om varianserne er ens, tommelfingerreglen er overholdt, da ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for den store stikprøve $\hat{\sigma}_1=102$, ikke er mere end dobbelt så stor, som ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for den lille stikprøve $\hat{\sigma}_2=89$. Vi har dog en mere præcis metode, nederst til højre markeret med blåt testes varianshomogenitet automatisk. Vi har endnu ikke gennemgået hvorledes hypotesetests opstilles og aflæses, men vi kan godt forstå sidste del i konklusionen af hypotesetesten, "varianserne er ens".
 
-Vi kan som nævnt, ændre signifinkansniveauet til 1% se om konfidensintervallet nu indeholder 0.
+Vi kan som nævnt, ændre signifinkansniveauet til 1% se om ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` nu indeholder 0.
 
 Vi kan med 99% sikkerhed sige, at forskellen mellem mæglerens og konkurrentens kunders gennemsnitlige afstand til filial ligger mellem 1,1 og 90.9 meter. Vi er altså relativt sikre på vor konklusion, om forskel i afstande til nærmeste filial for de 2 kæder.
 
@@ -3935,7 +3921,7 @@ Vi kan med 99% sikkerhed sige, at forskellen mellem mæglerens og konkurrentens 
 ### Forudsætninger
 En forudsætning for at benytte pooled t-test, til at undersøge om 2 middelværdier kan antages at være identiske, er at der er varianshomogenitet. For at vi må undersøge om populations varianserne er ens, skal vi først undersøge om populationerne kan antages normalfordelte. Det nemmeste er at undersøge forudsætningen om normalfordelte populationer ved at se på normalfraktildiagrammerne.
 
-I filen [huspriser](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlUklCZWNocEIyVnM), er indsamlet stikprøver af 22 huspriser fra 2016 og 20 huspriser fra 2007. Hvis vi vil undersøge om der er signifikant forskel i prisen vha. konfidensintervallet, skal vi tjekke at begge stikprøver stammer fra normalfordelinger. Vi kan til dette benytte normalfraktildiagrammer for de 2 stikprøver.
+I filen [huspriser](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlUklCZWNocEIyVnM), er indsamlet stikprøver af 22 huspriser fra 2016 og 20 huspriser fra 2007. Hvis vi vil undersøge om der er signifikant forskel i prisen vha. ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, skal vi tjekke at begge stikprøver stammer fra normalfordelinger. Vi kan til dette benytte normalfraktildiagrammer for de 2 stikprøver.
 
 
 ```{r qqplots, echo=FALSE, fig.height=6, fig.width=9, dev='svg'}
@@ -4216,16 +4202,16 @@ mandat <- as.numeric(as.vector(subset(BANKDATA,(BANKDATA[,2]=="manage"),select =
 **1.** Bemærk der er uens varianser, vi skal således benyttet Unpooled t-test til at bestemme konfidensintervaller.  
 Der er `r round(length(fdat),2)` kvinder, deres gennemsnitlige uddanelseslængde er `r round(mean(fdat),2)`, Der er `r round(length(mdat),2)` mænd, deres gennemsnitlige uddanelseslængde er `r round(mean(mdat),2)`  
 Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =F)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F)$conf.int[2],2)` år.  
-Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% konfidensintervallet.  
+Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
 
 Havde vi i stedet benyttet pooled t-test havde vi nået samme konklusion, der er ikke meget forskel på grænserne:  
 Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[2],2)` år.  
-Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% konfidensintervallet.  
+Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
 
 **2.** Bemærk der er uens varianser, vi skal således benyttet Unpooled t-test til at bestemme konfidensintervaller. Der er `r round(length(adat),2)` personer i administative stillinger, deres gennemsnitlige uddanelseslængde er `r round(mean(adat),2)`, Der er `r round(length(mandat),2)` i ledelsen, deres gennemsnitlige uddanelseslængde er `r round2(mean(mandat),2)`  
 Vi kan med 95% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[2],2)` år.  
 
-Vi kan med 99% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i populationen, ligger mellem `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på at der er forskel på uddannelseslængden for ledere og administrativt personale, da 0 ikke engang er indeholdt i 99% konfidensintervallet.
+Vi kan med 99% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i populationen, ligger mellem `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på at der er forskel på uddannelseslængden for ledere og administrativt personale, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 </details> 
 <br>
 <details> 
@@ -5226,7 +5212,7 @@ For den simple lineære regression, kan vi forudsige, i hvilket interval respons
 
 #### Konfidensinterval
 
-For den simple lineære regression, kan vi forudsige, i hvilket interval den gennemsnitlige lejepris pr. uge vil ligge med 95% sandsynlighed for en bestemt størrelse sommerhus.I celle **E4**, kan vi indtaste en vilkårlig x-værdi og bestemme et konfidensinterval. I Freestat output er indsat 100, hvilket svarer til at den gennemsnitlige lejepris pr. uge vil med 95% sikkerhed ligge mellem **E6** 6514 DKK og **E8** 7169 DKK. for et 100 Kvm. sommerhus. Bemærk konfidensintervallet er smallere end prædiktionsintervallet, da vi udtaler os om gennemsnittet og ikke et enkelt sommerhus.
+For den simple lineære regression, kan vi forudsige, i hvilket interval den gennemsnitlige lejepris pr. uge vil ligge med 95% sandsynlighed for en bestemt størrelse sommerhus.I celle **E4**, kan vi indtaste en vilkårlig x-værdi og bestemme et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. I Freestat output er indsat 100, hvilket svarer til at den gennemsnitlige lejepris pr. uge vil med 95% sikkerhed ligge mellem **E6** 6514 DKK og **E8** 7169 DKK. for et 100 Kvm. sommerhus. Bemærk ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er smallere end prædiktionsintervallet, da vi udtaler os om gennemsnittet og ikke et enkelt sommerhus.
 
 #### Forudsætninger
 
@@ -6179,11 +6165,11 @@ Mellem                  | 15.000               |300   |32                       
 Stor                    |30.000              |450            |39          |7
 Total                   |55.000             |1000           |       |
 
-1. Beregn det gennemsnitlige salg af luftfriskere pr. forretning samt et 95% konfidensinterval
+1. Beregn det gennemsnitlige salg af luftfriskere pr. forretning samt et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``
 for det gennemsnitlige salg af luftfriskere pr forretning.
 2. Hvordan burde stikprøven have være udtaget for hvis man benytter proportional allokering?
 3. Hvordan burde stikprøven have være udtaget for hvis man benytter optimal allokering, hvis vi forudsætter stikprøve ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` svarer til populationsstandardafvigelsen?
-4. Vi forestiller os nu virksomheden, havde benyttet optimal allokering til at bestemme stikprøvestørrelserne i de 3 strata. Hvis man havde fået samme gennemsnitlig omsætning i 1000 kr. og samme stikprøve standardafvigelse, hvad ville konfidensintervallet da have været?
+4. Vi forestiller os nu virksomheden, havde benyttet optimal allokering til at bestemme stikprøvestørrelserne i de 3 strata. Hvis man havde fået samme gennemsnitlig omsætning i 1000 kr. og samme stikprøve standardafvigelse, hvad ville ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` da have været?
 
 Man sælger også hårvoks i samme distributionsnet, her ønsker man på forhånd at bestemme den optimale indsamling af en stikprøve, man kender ikke standard afvigelsen fra de 3 strata, men vurderer ud fra tidligere analyser at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` kan antages at være 10, 15 og 12 for hhv. lille, mellem og stor. Man ønsker at indsamle en samlet stikprøve på 5000 fra de 3 strata.
 
