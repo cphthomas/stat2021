@@ -1287,12 +1287,12 @@ grid.arrange(qq1,qq2,qq3,qq4,qq5,qq6,qq7,qq8,qq9,nrow=3, ncol=3)
 
 
 
-Når man indsamler en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fx 100 studerendes højde, kan vi bruge denne ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til at sige noget om alle studerendes højde. I dette tilfælde er alle studerende, det vi kalder populationen, det er dem vi ønsker at vide noget om. Den gennemsnitlige højde i populationen er den ukendte parameter $\mu$. Den gennemsnitlige højde på de studerende i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` kalder vi parameterestimatet, estimatet betyder vores gæt på den ukendte sande gennemsnitlige højde på alle studerende, altså parameteren $\mu$. Vi bruger betegnelsen $\hat{\mu}$, når vi taler om paramterestimater, så vores gæt angiver vi  med en hat $\hat{}$. Da paramterestimatet er et gæt, er vi interesserede i kvaliteten af vort gæt. Vi ser nedenfor på stikprøvefordelingen, som vi kan bruge til at måle præcision af estimatet ved hjælp af konfidensintervaller.
+Når man indsamler en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fx 100 studerendes højde, kan vi bruge denne ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til at sige noget om alle studerendes højde. I dette tilfælde er alle studerende, det vi kalder ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, det er dem vi ønsker at vide noget om. Den gennemsnitlige højde i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er den ukendte parameter $\mu$. Den gennemsnitlige højde på de studerende i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` kalder vi parameterestimatet, estimatet betyder vores gæt på den ukendte sande gennemsnitlige højde på alle studerende, altså parameteren $\mu$. Vi bruger betegnelsen $\hat{\mu}$, når vi taler om paramterestimater, så vores gæt angiver vi  med en hat $\hat{}$. Da paramterestimatet er et gæt, er vi interesserede i kvaliteten af vort gæt. Vi ser nedenfor på stikprøvefordelingen, som vi kan bruge til at måle præcision af estimatet ved hjælp af konfidensintervaller.
 
 
 
 ### Parameter-estimat for middelværdi
- Hvis vi ønsker at udtale os om det gennemsnitlige daglige afkast af Tryg aktien den sande middelværdi $\mu$, kan vi estimere det gennemsnitlige afkast i populationen, ved gennemsnittet i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` $\bar{x}$.
+ Hvis vi ønsker at udtale os om det gennemsnitlige daglige afkast af Tryg aktien den sande middelværdi $\mu$, kan vi estimere det gennemsnitlige afkast i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ved gennemsnittet i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` $\bar{x}$.
 
 
 $$\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{`r sum(DKdf[,1])`}{`r length(DKdf[,1])`}=`r round(mean(DKdf[,1]),4)`$$
@@ -1301,7 +1301,7 @@ $$\hat{\mu}=\bar{x}=\frac{\sum_1^n (x_i)}{n}=\frac{`r sum(DKdf[,1])`}{`r length(
 
 
 ### Parameter-estimat for standardafvigelsen
-Vi har nævnt at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` af afkastet, er en vigtig faktor, når en investor skal bestemme volatiliteten i en aktie. Vi kan estimere den sande standardafvigelse i populationen $\sigma$, ud fra estimatet af ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat{\sigma}$ vha. ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. For Tryg aktien regnes dette ud som:
+Vi har nævnt at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` af afkastet, er en vigtig faktor, når en investor skal bestemme volatiliteten i en aktie. Vi kan estimere den sande standardafvigelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\sigma$, ud fra estimatet af ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat{\sigma}$ vha. ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. For Tryg aktien regnes dette ud som:
 
 $$Parameteren\  \sigma\  estimeres\ ved\ \hat{\sigma}=S=\sqrt[]{\frac{\sum_1^n (x_i-\bar{x})^2}{n-1}}=\sqrt[]{\frac{`r round(sum((DKdf[,1]-mean(DKdf[,1]))^2),4)`}{`r length(DKdf[,1])`-1}}=`r round(sd(DKdf[,1]),2) `$$
 
@@ -1323,16 +1323,16 @@ Vi sondrer mellem flere forskellige typer af fordelinger.
 
 * Datafordeligen er fordelingen af den ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` af størrelse n, vi har indsamlet.
 
-* Stikprøve fordelingen fremkommer, hvis man fra populationen, udtager alle stikprøver, af størrelse n. Fordelingen af parameter estimaterne kaldes stikprøve fordelingen.
+* Stikprøve fordelingen fremkommer, hvis man fra ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, udtager alle stikprøver, af størrelse n. Fordelingen af parameter estimaterne kaldes stikprøve fordelingen.
 
 
 <div class="Keatswide">
 <img src="img/finanstilsynet.jpg" align="right" width="50%" height="50%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
-Vi forestiller os nu at Finanstilsynet, ønsker at estimere det gennemsnitlige indestående på danskernes nem konti. Den ukendte populations parameter Finanstilsynet er interesseret er altså $\mu$. Her er populationen samtlige nem konti, hvis der er fx. er 3 mio konti er N altså 3 mio. Vi ved at der i populationen, vil være personer med meget store indståender på deres konti, nok flere mio. DKK. og nogle konti med negativt indestående. Sandsynligvis vil standard afvigelsen $\sigma$ være stor. Vi kan formode at fordelingen vil være højreskæv, i en eller anden grad, da der vil være enkelte ekstremt store indeståender der danner en lang hale mod højre.
+Vi forestiller os nu at Finanstilsynet, ønsker at estimere det gennemsnitlige indestående på danskernes nem konti. Den ukendte populations parameter Finanstilsynet er interesseret er altså $\mu$. Her er ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` samtlige nem konti, hvis der er fx. er 3 mio konti er N altså 3 mio. Vi ved at der i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, vil være personer med meget store indståender på deres konti, nok flere mio. DKK. og nogle konti med negativt indestående. Sandsynligvis vil standard afvigelsen $\sigma$ være stor. Vi kan formode at fordelingen vil være højreskæv, i en eller anden grad, da der vil være enkelte ekstremt store indeståender der danner en lang hale mod højre.
 
 Hvis vi simpelt tilfældigt udvælger en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på n=10000, vil gennemsnittet $\bar{x}$ (som jo er parameterestimatet $\hat{\mu}$) i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` udviske outliers.
 
-Hvis man udtog alle mulige stikprøver af populationen og beregnede samtlige gennemsnit, ville disse gennemsnit ligge ganske tæt omkring den sande parameter $\mu$. Denne sandsynlighedsfordeling af ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` gennemsnit er stikprøvefordelingen Vi kan med den centrale grænseværdisætning vise at stikprøvefordelingen vil være approximativt normal med middelværdi $\mu$ og standardafvigelse $\frac{\sigma}{\sqrt[]{10000}}$. Standardafvigelsen for stikprøvefordelingen vil være 100 gange mindre, end ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for  populationen. Bemærk havde ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` været på n=100 i stedet, ville standard afvigelsen for stikprøvefordelingen kun være $\sqrt[]{100}=10$ gange mindre end standard afvigelsen for populationen.
+Hvis man udtog alle mulige stikprøver af ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` og beregnede samtlige gennemsnit, ville disse gennemsnit ligge ganske tæt omkring den sande parameter $\mu$. Denne sandsynlighedsfordeling af ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` gennemsnit er stikprøvefordelingen Vi kan med den centrale grænseværdisætning vise at stikprøvefordelingen vil være approximativt normal med middelværdi $\mu$ og standardafvigelse $\frac{\sigma}{\sqrt[]{10000}}$. Standardafvigelsen for stikprøvefordelingen vil være 100 gange mindre, end ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for  ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Bemærk havde ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` været på n=100 i stedet, ville standard afvigelsen for stikprøvefordelingen kun være $\sqrt[]{100}=10$ gange mindre end standard afvigelsen for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.
 </div>
 
 ### Den centrale grænseværdisætning CLT
@@ -1357,7 +1357,7 @@ $$SEM=\sigma_{\bar{X}}=\frac{\sigma}{\sqrt[]{n}}$$
 
 Vi bruger standardfejlen for middelværdien SEM til at beregne konfidensintervaller som vi ser på senere. Der gælder jo mindre SEM jo smallere ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, og når stikprøvestørrelsen bliver større bliver SEM mindre. Det giver jo god mening, større ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` giver mindre SEM og dermed smallere ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` dvs. større præcision.
 
-På figurerne er udtaget 3 gange 100 stikprøver af størrelse n hhv. 30, 100 og 1000. På hver figur er gennemsnittene af de 100 stikprøver angivet. Der er altså 100 pinde i hvert diagram. Bemærk CLT siger at for alle tre stikprøvefordelinger er $\mu=8$, det ses af figurerne at gennemsnittene i stikprøverne er centreret omkring middelværdien i populationen $\mu=8$.
+På figurerne er udtaget 3 gange 100 stikprøver af størrelse n hhv. 30, 100 og 1000. På hver figur er gennemsnittene af de 100 stikprøver angivet. Der er altså 100 pinde i hvert diagram. Bemærk CLT siger at for alle tre stikprøvefordelinger er $\mu=8$, det ses af figurerne at gennemsnittene i stikprøverne er centreret omkring middelværdien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\mu=8$.
 
 Vi kan ligeledes se at variationen falder (stikprøvegennemsnittene ligger mere snævert), når stikprøvestørrelsen vokser.
 
@@ -1489,7 +1489,7 @@ text((8+1.96*4/1000^0.5)*1.038+.2,0.2,"2.5%",pos=4,cex=.8)
 
 
 ## Frihedsgrader
-Frihedsgrader eller degrees of freedom df betyder, hvor mange observationer kan variere frit. Hvis man fx. har en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` med 4 observationer ${1,2,2,3}$ og ønsker at estimere (gætte på) gennemsnittet i populationen $\mu$, så bliver vores bedste estimat for (gæt på) gennemsnittet $\hat{\mu}=\bar{x}=\frac{1+2+2+3}{4}=\frac{8}{4}=2$. Her er antallet af observationer, der kan variere frit, når gennemsnittet $\bar{x}=2$ er givet $4-1=3$, hvilket er antallet af frihedsgrader. Hvis de 3 første observationer er ${1,2,2}$, vil den sidste observation være givet som 3, for at gennemsnittet bliver 2. Havde vi haft de 3 første observationer var ${1,1,1}$ ville den sidste observation være givet som 5 for at gennemsnittet var 2. Ved 4 observationer, er der således $4-1=3$ frihedsgrader, ved 10 observationer, er der således $10-1=9$ frihedsgrader osv. Antallet af frihedsgrader når vi estimerer middelværdien, svarer til antallet af observationer i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` n minus 1.
+Frihedsgrader eller degrees of freedom df betyder, hvor mange observationer kan variere frit. Hvis man fx. har en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` med 4 observationer ${1,2,2,3}$ og ønsker at estimere (gætte på) gennemsnittet i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\mu$, så bliver vores bedste estimat for (gæt på) gennemsnittet $\hat{\mu}=\bar{x}=\frac{1+2+2+3}{4}=\frac{8}{4}=2$. Her er antallet af observationer, der kan variere frit, når gennemsnittet $\bar{x}=2$ er givet $4-1=3$, hvilket er antallet af frihedsgrader. Hvis de 3 første observationer er ${1,2,2}$, vil den sidste observation være givet som 3, for at gennemsnittet bliver 2. Havde vi haft de 3 første observationer var ${1,1,1}$ ville den sidste observation være givet som 5 for at gennemsnittet var 2. Ved 4 observationer, er der således $4-1=3$ frihedsgrader, ved 10 observationer, er der således $10-1=9$ frihedsgrader osv. Antallet af frihedsgrader når vi estimerer middelværdien, svarer til antallet af observationer i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` n minus 1.
 
 
 ## t-fordelingen
@@ -1555,25 +1555,25 @@ cat(readLines('np.html'))
 
 Konfidensintervallet også kaldet KI eller CI (engelsk), fortæller os, baseret på en simpelt tilfældigt udvalgt ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, med en bestemt konfidens- eller sikkerhed, indenfor hvilken nedre og øvre grænse, en populationsparameter ligger.  
 
-Vi taler om et 95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` (populationsparameteren kan fx. være andelen, middelværdien eller ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen). Sandsynligheden for at populationens parameter, ikke ligger i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er 5%, dette kalder vi ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
+Vi taler om et 95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, det betyder at i 19 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` (populationsparameteren kan fx. være andelen, middelværdien eller ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``). Sandsynligheden for at populationens parameter, ikke ligger i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er 5%, dette kalder vi ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og betegner med $\alpha$. I 1 ud af 20 simpelt tilfældigt udtrukne stikprøver af samme størrelse, ligger populationsparameteren, altså ikke i vores ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Typiske konfidensniveauer er 90%, 95% og 99%, med tilhørende signifikansniveauer på 10%, 5% og 1%, disse må nødvendigvis summere til 1 eller 100%.
 
 ### Konfidensinterval for middelværdien
 Vi bestemmer nedre og øvre grænse for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, når vi ikke kender populationens standardafvigelse $\sigma$ og estimerer denne vha. S altså $\hat{\sigma}$, ved hjælp af følgende (bliv ikke bange software beregner grænserne for os) formel:
 
 $$(1-\alpha)\ KI=\left[\bar{X} - t_{1-\frac{\alpha}{2}}\cdot \frac{s}{\sqrt[]{n}};\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}\right]$$
 
-Hvor $t_{1-\frac{\alpha}{2}}$ er $1-\alpha$ fraktilen for t-fordelingen. En forudsætning for at benytte ovennævnte fordeling, ved små stikprøver (n ca. mindre end 30), er at populationen er appoximativt (tilnærmelsesvist) normalfordelt. Man kan fx. teste normaliteten af populationen, ved at undersøge om observationerne fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` ligger pænt i et normalfraktildiagram. Er populationen ikke normal, kan man altså benytte en større ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``.
+Hvor $t_{1-\frac{\alpha}{2}}$ er $1-\alpha$ fraktilen for t-fordelingen. En forudsætning for at benytte ovennævnte fordeling, ved små stikprøver (n ca. mindre end 30), er at ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er appoximativt (tilnærmelsesvist) normalfordelt. Man kan fx. teste normaliteten af ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ved at undersøge om observationerne fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` ligger pænt i et normalfraktildiagram. Er ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke normal, kan man altså benytte en større ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``.
 
 <img src="img/crop-realty-graph-diagram.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 
 
 
 En ejendomsmægler, der ønsker at vide, hvor langt kunderne har til nærmeste filial, indsamler en repræsentativ
-``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er 748 meter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. Hvis mægleren ønsker at vide hvor lang den gennemsnitlige afstand i populationen til nærmeste filial er med en bestemt sikkerhed, kan han beregne et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Det er klart man ikke kan få en sikkerhed på 100%, man har jo kun en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, men man beregner ofte et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Hvis standard afvigelsen er 102 meter, kan han nu ved ovenstående formel bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
+``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` ved 200 respondender. Det viser sig, at den gennemsnitlige afstand er 748 meter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. Hvis mægleren ønsker at vide hvor lang den gennemsnitlige afstand i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` til nærmeste filial er med en bestemt sikkerhed, kan han beregne et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Det er klart man ikke kan få en sikkerhed på 100%, man har jo kun en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, men man beregner ofte et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Hvis standard afvigelsen er 102 meter, kan han nu ved ovenstående formel bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 
 Han ved at når han har beregnet formlen kan han sætte de nedre og øvre grænser for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` ind i nedenstående sætning: 
 
-*Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i populationen ligger mellem nedre bla bla og øvre bla bla meter*
+*Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem nedre bla bla og øvre bla bla meter*
 
 Vi bestemmer nedre grænse for 95% KI ved:  
 
@@ -1587,7 +1587,7 @@ Vi bestemmer tilsvarende øvre grænse for 95% KI ved:
 $$\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=$$
 $$748+`r round(qt(0.975,199),4)`\cdot \frac{102}{\sqrt[]{200}}=`r round(748+qt(0.975,199)*((102)/200^0.5),4)`$$
 
-*Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i populationen ligger mellem `r round(748-qt(0.975,199)*((102)/200^0.5),4)` og `r round(748+qt(0.975,199)*((102)/200^0.5),4)` meter*
+*Vi kan med 95% sikkerhed sige at den gennemsnitlige afstand til filialen, for kunderne i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r round(748-qt(0.975,199)*((102)/200^0.5),4)` og `r round(748+qt(0.975,199)*((102)/200^0.5),4)` meter*
 
 #### Middelværdi standardafvigelse KI Freestat
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226077779' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
@@ -1607,7 +1607,7 @@ Vi kan også udregne fejlmarginen ved formlen:
 
 $$`r round(qt(0.975,199),4)`\cdot \frac{102}{\sqrt[]{200}}=`r round(qt(0.975,199)*((102)/200^0.5),4)`$$
 
-Vi bruger t-fordelingen når vi ikke kender ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ for populationen. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ for populationen er kendt bruger vi standard normalfordelingen vi kalder også denne z-fordelingen. Er ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` stor kan vi ligeledes bruge z-fordelingen. Forskellen på z-fordelingen og t-fordelingen er at t-fordelingen har federe haler i forhold til z-fordelingens klokkeform. I Figuren til venstre er forskellen mellem disse indtegnet.  
+Vi bruger t-fordelingen når vi ikke kender ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er kendt bruger vi standard normalfordelingen vi kalder også denne z-fordelingen. Er ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` stor kan vi ligeledes bruge z-fordelingen. Forskellen på z-fordelingen og t-fordelingen er at t-fordelingen har federe haler i forhold til z-fordelingens klokkeform. I Figuren til venstre er forskellen mellem disse indtegnet.  
 
 KI beregnes ved z-fordelingen som:
 
@@ -1647,15 +1647,15 @@ $$\bar{X} + t_{1-\frac{\alpha}{2}}\cdot \frac{S}{\sqrt[]{n}}=$$
 $$`r trygm` + `r round(qt(0.975,trygn-1),4)`\cdot \frac{`r trygsd`}{\sqrt[]{`r trygn`}}=$$
 $$`r CImup(trygm,trygn,5,trygsd)`$$
 
-Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem `r CImlow(trygm,trygn,5,trygsd)`% og `r CImup(trygm,trygn,5,trygsd)`%.  
+Vi kan altså med 95% sikkerhed sige at det gennemsnitlige dagsafkast i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CImlow(trygm,trygn,5,trygsd)`% og `r CImup(trygm,trygn,5,trygsd)`%.  
 
 Tilsvarende bestemmer vi 90% KI for Tryg aktien:  
 
-Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem `r CImlow(trygm,trygn,10,trygsd)`% og `r CImup(trygm,trygn,10,trygsd)`%.  
+Vi kan altså med 90% sikkerhed sige at det gennemsnitlige dagsafkast i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CImlow(trygm,trygn,10,trygsd)`% og `r CImup(trygm,trygn,10,trygsd)`%.  
 
 99% KI for Tryg aktien bliver:  
 
-Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populationen ligger mellem `r CImlow(trygm,trygn,1,trygsd)`% og `r CImup(trygm,trygn,1,trygsd)`%.  
+Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CImlow(trygm,trygn,1,trygsd)`% og `r CImup(trygm,trygn,1,trygsd)`%.  
 
 
 ## Quiz konfidensintervaller
@@ -1670,11 +1670,11 @@ Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i populati
   
 Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% eller 0.0005 og en standardafvigelse på 0.6% eller 0.0006. 
 
-**1.** Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, som er alle handelsdage for aktien?  
+**1.** Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, som er alle handelsdage for aktien?  
 
 **2.** Hvor stor skal ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` være for at fejlmarginen er 0.001 procentpoint?  
 
-**3.** Hvor stor skal ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` være for at fejlmarginen er 0.001 procentpoint, hvis vi kender populationen, og denne er 500 handelsdage?  
+**3.** Hvor stor skal ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` være for at fejlmarginen er 0.001 procentpoint, hvis vi kender ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, og denne er 500 handelsdage?  
 </details>
 <br>
 <details> 
@@ -1683,7 +1683,7 @@ Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårl
 
 Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregnede data i Freestat fanen Middelværdi standardafvigelse.
 
-**1.** Vi kan med 95% sikkerhed sige at middelværdien i populationen $\mu$ ligger mellem -0.08% og 0.18%. Eller sagt på en anden måde, den ukendte middelværdi blandt alle handelsdage ligger med 95% sikkerhed mellem -0.08% og 0.18%.   
+**1.** Vi kan med 95% sikkerhed sige at middelværdien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\mu$ ligger mellem -0.08% og 0.18%. Eller sagt på en anden måde, den ukendte middelværdi blandt alle handelsdage ligger med 95% sikkerhed mellem -0.08% og 0.18%.   
 
 <img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -1693,7 +1693,7 @@ Vi kan se Freestat beregner ``r tippy(" konfidensintervallet", size="large" ,int
 
 <img src="img/kimargin.png" alt="kimargin" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-**3.** Stikprøven skal mindst være 127 handelsdage for at fejlmarginen bliver 0.001 procentpoint eller derunder, når populationen er kendt og mindre end 500 handelsdage. Pas meget på hvis du skriver i gule felter fx. celle V6, slet tallene bagefter ellers korrigeres for den mindre populationen i alle følgende beregninger.  
+**3.** Stikprøven skal mindst være 127 handelsdage for at fejlmarginen bliver 0.001 procentpoint eller derunder, når ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er kendt og mindre end 500 handelsdage. Pas meget på hvis du skriver i gule felter fx. celle V6, slet tallene bagefter ellers korrigeres for den mindre ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` i alle følgende beregninger.  
 
   <img src="img/kimarginkendt.png" alt="kimarginkendt" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -1713,18 +1713,18 @@ Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt an
 <details> 
   <summary>Svar konfidensinterval</summary>
   
-**1.** Antal års uddannelse i populationen ligger med 90% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),10,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),10,sd(bank$education)),2)` år  
+**1.** Antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger med 90% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),10,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),10,sd(bank$education)),2)` år  
   
 
 <img src="img/stdKI90.png" alt="stdKI90" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
   
 
-**2.** Antal års uddannelse i populationen ligger med 95% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),5,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),5,sd(bank$education)),2)` år  
+**2.** Antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger med 95% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),5,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),5,sd(bank$education)),2)` år  
 
 <img src="img/stdKI95.png" alt="stdKI95" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
 
-**3.** Antal års uddannelse i populationen ligger med 99% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),1,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),1,sd(bank$education)),2)` år  
+**3.** Antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger med 99% sikkerhed mellem `r round(CImlow(mean(bank$education),length(bank$education),1,sd(bank$education)),2)` og `r round(CImup(mean(bank$education),length(bank$education),1,sd(bank$education)),2)` år  
 
 
 <img src="img/stdKI99.png" alt="stdKI99" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
@@ -1734,7 +1734,7 @@ Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt an
 
 ## Konfidensinterval for standardafvigelsen
 
-Ligesom vi kan sige at middelværdien for populationen med en vis sikkerhed ligger i et bestemt interval, kan vi beregne konfidensintervaller for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen. Freetat beregner ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for os, beregningen er lidt indviklet denne er angivet herunder for en ordens skyld, men vi vil blot benytte Freestat.
+Ligesom vi kan sige at middelværdien for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med en vis sikkerhed ligger i et bestemt interval, kan vi beregne konfidensintervaller for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Freetat beregner ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for os, beregningen er lidt indviklet denne er angivet herunder for en ordens skyld, men vi vil blot benytte Freestat.
 
 $$(1-\alpha)\  KI=\left[\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}};\sqrt[]{\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2},df_{n-1}}}}\right]$$
 
@@ -1754,16 +1754,16 @@ sdek <- round(sd(Rating),4)
 
 #### IMDB ratings datasæt
 
-I datasættet [IMDB data](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM), findes oplysninger om 759 film inklusiv ratings for disse. Hvis vi betragter datasættet som en simpelt tilfældigt udtrukket ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, kan vi udtale os om populationen. Vi undersøger vha. Freestat normalfraktildiagram, om ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` kan antages at stamme fra en normalfordelt population. Af nedenstående plot ses denne forudsætning at være opfyldt.
+I datasættet [IMDB data](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM), findes oplysninger om 759 film inklusiv ratings for disse. Hvis vi betragter datasættet som en simpelt tilfældigt udtrukket ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, kan vi udtale os om ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Vi undersøger vha. Freestat normalfraktildiagram, om ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` kan antages at stamme fra en normalfordelt population. Af nedenstående plot ses denne forudsætning at være opfyldt.
 
 
 <img src="img/imdbratingqq.png" alt="freestatvirkdksem" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Vores bedste gæt på ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen er $\hat\sigma=1.5414$, dvs. en films rating typisk afviger 1.54 point fra gennemsnittet 5.96. 
+Vores bedste gæt på ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er $\hat\sigma=1.5414$, dvs. en films rating typisk afviger 1.54 point fra gennemsnittet 5.96. 
 
 <img src="img/imdbratingdescr.png" alt="freestatvirkdksem" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Vi kan af Freestat se, at den sande standard afvigelse i populationen med 95% sikkerhed ligger mellem 1.4676 og 1.6231 point.  
+Vi kan af Freestat se, at den sande standard afvigelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sikkerhed ligger mellem 1.4676 og 1.6231 point.  
 
 
 ## Spørgsmål konfidensinterval for standardafvigelsen  
@@ -1772,14 +1772,14 @@ Vi kan af Freestat se, at den sande standard afvigelse i populationen med 95% si
 <br>
 <details> 
   <summary>Spørgsmål konfidensinterval for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))``</summary>
-Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6% Bestem 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen, som er alle handelsdage for aktien.
+Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6% Bestem 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, som er alle handelsdage for aktien.
 </details>
 <br>
 <details> 
   <summary>Svar konfidensinterval for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))``</summary> 
 Vi har ikke rådata for de 80 handelsdage, derfor må vi i stedet benytte beregnede data i Freestat fanen Middelværdi standardafvigelse.
 
-Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen $\sigma$ ligger mellem 0.52% og 0.71%. Den ukendte typiske afvigelse fra gennemsnittet blandt alle handelsdage ligger med 95% sikkerhed mellem 0.52% og 0.71%.
+Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\sigma$ ligger mellem 0.52% og 0.71%. Den ukendte typiske afvigelse fra gennemsnittet blandt alle handelsdage ligger med 95% sikkerhed mellem 0.52% og 0.71%.
 
 <img src="img/stdafvKI.png" alt="stdafvKI" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -1798,15 +1798,15 @@ Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt an
 <br>
 <details> 
   <summary>Svar konfidensinterval for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` bankansatte USA</summary>  
-**1.** Vi kan med 90% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i populationen σ ligger mellem 2.74 år og 3.05 år.  
+**1.** Vi kan med 90% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` σ ligger mellem 2.74 år og 3.05 år.  
 
 <img src="img/stdKI90.png" alt="stdKI90" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-**2.** Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i populationen σ ligger mellem 2.71 år og 3.08 år.  
+**2.** Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` σ ligger mellem 2.71 år og 3.08 år.  
 
 <img src="img/stdKI95.png" alt="stdKI95" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-**3.** Vi kan med 99% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i populationen σ ligger mellem 2.66 år og 3.15 år.  
+**3.** Vi kan med 99% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` for antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` σ ligger mellem 2.66 år og 3.15 år.  
 
 <img src="img/stdKI99.png" alt="stdKI99" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
@@ -1832,7 +1832,7 @@ cat(readLines('np.html'))
 
 
 ## Hypotesetest tosidet alternativ hypotese
-Vi kan ud fra en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` udtale os om, hvad den sande middelværdi $\mu$ i populationen er. 
+Vi kan ud fra en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` udtale os om, hvad den sande middelværdi $\mu$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er. 
 I eksemplet med mægleren tidligere, var den gennemsnitlige afstand til nærmeste filial 748 meter, ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` 102 meter og stikprøvestørrelsen 200.
 
  
@@ -1846,7 +1846,7 @@ Påstanden i nulhypotesen $H_0$ er vores udgangspunkt, noget vi på forhånd men
 
 
 #### Signifikansniveau
-``r tippy(" Signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` $\alpha$ angiver sandsynligheden for at forkaste en sand nulhypotese, ofte sættes dette til 5%. Det betyder at i 1 ud af 20 tilfælde, vil vi komme til at forkaste nulhypotesen, til trods for at denne var sand. Vi udtager stikprøver simpelt tilfældigt fra populationen, enkelte af disse vil give et forkert billede af virkeligheden. Ønsker man yderligere sikkerhed, for ikke at forkaste en sand nulhypotese, kan man sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, så vil man kun i 1 ud af 100 tilfælde forkaste en korrekt nulhypotese.
+``r tippy(" Signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` $\alpha$ angiver sandsynligheden for at forkaste en sand nulhypotese, ofte sættes dette til 5%. Det betyder at i 1 ud af 20 tilfælde, vil vi komme til at forkaste nulhypotesen, til trods for at denne var sand. Vi udtager stikprøver simpelt tilfældigt fra ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, enkelte af disse vil give et forkert billede af virkeligheden. Ønsker man yderligere sikkerhed, for ikke at forkaste en sand nulhypotese, kan man sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1%, så vil man kun i 1 ud af 100 tilfælde forkaste en korrekt nulhypotese.
 
 I medicinalindustrien bruger man typisk 1% signifikansniveu for at sikre at et produkt har en effekt. Hypoteserne ville da være.
 $$H_0\ produktet\ har\ ingen\ effekt$$
@@ -1862,7 +1862,7 @@ Vi kalder hypoteseværdien $\mu_0=730$, vores ``r tippy(" teststørrelse", size=
 
 $$\frac{\hat{\mu}-\mu_0}{SEM}=\frac{748-730}{\frac{\hat{\sigma}}{\sqrt{n}}}=\frac{18}{\frac{102}{\sqrt{200}}}=\frac{18}{7.2125}=`r round(18/7.2125,4)`$$
 
-Hvor vi fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, har gennemsnittet $\hat{\mu}$ 748 meter, ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, ville vi ikke tro på at afstanden i populationen er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi har en stor ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
+Hvor vi fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, har gennemsnittet $\hat{\mu}$ 748 meter, ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` $\hat{\sigma}$ 102 meter og stikprøvestørrelsen 200. Teststørrelser er et centralt begreb i hypotesetests, tælleren  748-730, er et mål for hvor stor forskellen er mellem det vi har observeret i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` 748, og den værdi vi antager under nulhypotesen 730. Der gælder for alle typer af tests at store teststørrelser er kritiske for nulhypotesen. Store teststørelser betyder vi ikke tror på nulhypotesen. I dette tilfælde er nulhypotesen, at afstanden til nærmeste filial er 730 meter. Hvornår er en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` så stor? Det afhænger af testtypen og stikprøvestørrelsen. Her er der tale om en tosidet (da alternativ hypotesen er $\neq$) t-test, det betyder at numerisk store teststørrelser er kritiske. Havde vi fx observeret afstanden til nærmeste filial var 700 meter, var tælleren 700-730 blevet negativ, da nævneren altid er positiv ville ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` blive negativ. Var afstanden kun 700 meter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, ville vi ikke tro på at afstanden i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er 730 meter. Når vi tester tosidet er meget negative eller positive teststørrelser kritiske for nulhypotesen, dvs. når ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` numerisk bliver stor, tror vi ikke på nulhypotesen. Da vi ser på en t-test afhænger fraktilerne af antallet af frihedsgrader og ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi har en stor ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, vil værdier mindre end -1.96 eller større end 1.96 være kritiske for nulhypotsen. Her er stikprøvestørrelsen 200, dvs. vi benytter t-fordelingen med 199 frihedsgrader, hvilket gør at de kritiske værdier bliver -1.97 og 1.97. I ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` dividerer vi med standardfejlen SEM, dette er for at skalere ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` korrekt, så den altid er i en skala, der svarer til t-fordelingen. Havde vi fx målt afstanden til nærmeste filial i centimeter, ville tælleren blive 74800-73000=1800, vi korrigerer for skala ved at dividere med SEM, skalerer vi så ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver den samme uanset om vi måler i meter eller centimeter. 
 
 
 #### Signifikanssandsynlighed p-værdi
@@ -1940,7 +1940,7 @@ Ovenfor undersøgte vi om den sande afstand til nærmeste filial i gennemsnit er
 1. Afstanden til nærmeste filial er mindst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er mindre end 730 meter.  
 2. Afstanden til nærmeste filial er højst 730 meter mod alternativ hypotesen at afstanden til nærmeste filial er større end 730 meter. 
 
-I formuleringen af spørgsmålet der stilles ligger nøglen til hvilken type test vi bruger, nedenfor er et skema over de ord man oplever i en formuleringen af et spørgsmål, disse skal benyttes til at afgøre om det er den ene eller anden ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vi skal benytte. Bemærk når man opstiller en konkret ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vil $\mu_0$ blive skiftet ud med den mulige middelværdi i populationen man ønsker at teste:
+I formuleringen af spørgsmålet der stilles ligger nøglen til hvilken type test vi bruger, nedenfor er et skema over de ord man oplever i en formuleringen af et spørgsmål, disse skal benyttes til at afgøre om det er den ene eller anden ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vi skal benytte. Bemærk når man opstiller en konkret ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` vil $\mu_0$ blive skiftet ud med den mulige middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` man ønsker at teste:
 
 |Ord              | Operator             |Hypotese                       |Passer med
 |:-------------   |:------------         |:------------                 |:---------
@@ -1962,7 +1962,7 @@ I 2. får vi givet alternativ hypotesen da udsagnet ikke indeholder lig med, nul
 $$H_0:\mu \leq 730$$
 $$H_1:\mu > 730$$
 
-Hvilket betyder vi skal benytte den 2. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  0.67%, vi forkaster altså nulhypotesen. Vi konkluderer derfor at $\mu > 730$. Den gennemsnitlige afstand til nærmeste filial i populationen er altså større end 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den hvide højre hale.
+Hvilket betyder vi skal benytte den 2. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  0.67%, vi forkaster altså nulhypotesen. Vi konkluderer derfor at $\mu > 730$. Den gennemsnitlige afstand til nærmeste filial i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er altså større end 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den hvide højre hale.
 
 Hvis vi her ser på teststørrelser i stedet for afstanden i meter, har vi beregnet denne til 2.4957 svarende til de 748 meter, da alternativhypotesen er større end, skal vi se på højre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` større end 2.4957, når  nulhypotesen om at afstanden er 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er større end 2.4957, svarer oversat til meter, til at afstanden er større end end 748 meter, sandsynligheden for en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver arealet højre hale  0.0067 altså ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``.
 
@@ -1993,7 +1993,7 @@ I 2 får vi givet alternativ hypotesen, da udsagnet ikke indeholder lig med, nul
 $$H_0:\mu \geq 730$$
 $$H_1:\mu < 730$$
 
-Hvilket betyder vi skal benytte den 3. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  99.33%, vi forkaster altså IKKE nulhypotesen. Vi konkluderer derfor at $\mu \geq 730$. Den gennemsnitlige afstand til nærmeste filial i populationen er altså mindst 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den store grå venstre hale.
+Hvilket betyder vi skal benytte den 3. af de 3 testmuligheder i Freestat output, dvs. ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver  99.33%, vi forkaster altså IKKE nulhypotesen. Vi konkluderer derfor at $\mu \geq 730$. Den gennemsnitlige afstand til nærmeste filial i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er altså mindst 730 meter. ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er illustreret i figuren nedenfor, som den store grå venstre hale.
 
 Hvis vi ser på ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` har vi beregnet denne til 2.4957, da alternativhypotesen er mindre end, skal vi se på venstre hale. Vi skal beregne sandsynligheden (``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``) for at få en mere ekstrem ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))``, det betyder her en ``r tippy(" teststørrelse", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` mindre end 2.4957, når  nulhypotesen om at afstanden er mindst 730 meter er sand. At ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er mindre end 2.4957, svarer oversat til meter at afstanden er mindre end 748 meter, sandsynligheden for dette er meget høj nemlig 99.33%. Dette svarer til den grå venstre hale, vi er altså meget langt fra 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` og forkaster ikke nulhypotesen.
 
@@ -2027,12 +2027,12 @@ tsize <- function(x,mu0) (mean(x)-mu0)/sqrt(var(x)/length(x))
 
 ```
 
-I datasættet [Statkarakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ)   <img src="img/12-Ball-Real.pngc200.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> findes 54 statistik 2015 finansøkonom karakterer. Man kan med rette diskutere om karakterer for specifikke klasser/undervisere/lokationer etc. er repræsentative for populationen. 
+I datasættet [Statkarakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ)   <img src="img/12-Ball-Real.pngc200.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> findes 54 statistik 2015 finansøkonom karakterer. Man kan med rette diskutere om karakterer for specifikke klasser/undervisere/lokationer etc. er repræsentative for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. 
 Her antager vi at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er respræsentativ. Det er ligeledes tvivlsomt om vi kan behandle karakterer som en ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, der er tale om en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` ordinal variabel. I uddannelsesmæssige sammenhænge behandles karakterer som en ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, der beregnes gennemsnit og standardafvigelser, derfor forudsætter vi her variablen er ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))``.
 
 Vi finder parameterestimatet ved stikprøvegennemsnittet som $\hat{\mu}=`r round(mean((kar$Grade)),2)`$ 
 
-Vi ønsker nu at undersøge om gennemsnittet i populationen, kan antages at ligge præcis mellem 4 og 7 dvs. 5.5. Det betyder vores $\mu_0=5.5$. Hypoteserne bliver:
+Vi ønsker nu at undersøge om gennemsnittet i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, kan antages at ligge præcis mellem 4 og 7 dvs. 5.5. Det betyder vores $\mu_0=5.5$. Hypoteserne bliver:
 
 $$H_0: \mu = 5.5$$
 $$H_1: \mu \neq 5.5$$
@@ -2040,7 +2040,7 @@ $$H_1: \mu \neq 5.5$$
 Standard fejlen SE for middelværdien er `r round(se(kar$Grade),2)`, . Det betyder ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` bliver `r round(tsize(kar$Grade,5.5),2)`.
 Vi kan nu bestemme ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``, arealet af de 2 haler i t-fordelingen med 53 frihedsgrader. bliver `r round(pt(tsize(kar$Grade,5.5),53)*2,4)`, da ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er større end 5%, kan vi altså ikke forkaste nulhypotesen. 
 
-Vi konkluderer altså gennemsnittet i populationen, kan antages at være 5.5.
+Vi konkluderer altså gennemsnittet i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, kan antages at være 5.5.
 
 ## Standardafvigelse test
 
@@ -2097,9 +2097,9 @@ $\ Forkast\ H_0$    |   Type 1 fejl falsk positiv  |Korrekt beslutning
   <summary> Spørgsmål hypotesetest dagsafkast </summary> 
 Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% og en standardafvigelse på 0.6%  
 
-**1.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om det gennemsnitlige dagsafkast $\mu$ i populationen antages at være 0%?  
+**1.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om det gennemsnitlige dagsafkast $\mu$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` antages at være 0%?  
 
-**2.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ i populationen antages at være mindre end 0.7% dvs. 0.007?  
+**2.** Test på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` antages at være mindre end 0.7% dvs. 0.007?  
 
 </details>  
 <br>
@@ -2139,8 +2139,8 @@ Da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tool
   <summary> Spørgsmål hypotesetest uddannelse </summary> 
   
 Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt antal års uddannelse EDUCATION. Datasættet kan hentes her  [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM)  
-**1.** Er det gennemsnitlige antal års uddannelse i populationen 13 år?  
-**2.** Er ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen mindre end 3 år?  
+**1.** Er det gennemsnitlige antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` 13 år?  
+**2.** Er ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` mindre end 3 år?  
 
 
 </details>  
@@ -2153,7 +2153,7 @@ $$H_0:\mu=13$$
 $$H_1:\mu\neq13$$
 <img src="img/mu13test.png" alt="mu13test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.02% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, afviser vi nulhypotesen. Det gennemsnitlige antal års uddannelse i populationen altså ikke 13 år.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 0.02% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, afviser vi nulhypotesen. Det gennemsnitlige antal års uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` altså ikke 13 år.  
 	
 <br>
 <br>
@@ -2165,7 +2165,7 @@ $$H_0:\sigma\geq3$$
 $$H_1:\sigma<3$$
 <img src="img/sigma3test.png" alt="sigma3test" align="right" width="50%" height="50%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 
-Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 12.17% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke afvise nulhypotesen, ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` er altså mindst 3 i populationen.  
+Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` 12.17% er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, kan vi ikke afvise nulhypotesen, ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` er altså mindst 3 i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.  
 	
 <br>
 <br>
@@ -2260,12 +2260,12 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
 1. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 100, fra en population med kendt standardafvigelse $\sigma=10$, hvad bliver standardfejlen for middelværdien?  
 2. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 900, fra en population med kendt standardafvigelse $\sigma=15$, hvad bliver SEM?  
 3. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 81, fra en population med kendt standardafvigelse $\sigma=36$, hvad bliver standardfejlen for middelværdien?  
-4. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 100, fra en population med kendt standardafvigelse $\sigma=10$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
-5. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 900, fra en population med kendt standardafvigelse $\sigma=15$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
-6. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 81, fra en population med kendt standardafvigelse $\sigma=36$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i populationen er $\bar{x}=\hat\mu=100$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
-7. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 4. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=10$?  
-8. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 5. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=15$?  
-9. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 6. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=36$?  
+4. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 100, fra en population med kendt standardafvigelse $\sigma=10$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+5. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 900, fra en population med kendt standardafvigelse $\sigma=15$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er $\bar{x}=\hat\mu=20$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+6. Der er udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på 81, fra en population med kendt standardafvigelse $\sigma=36$, stikprøvegennemsnittet dvs. parameterestimatet $\hat\mu$, for den ukendte middelværdi $\mu$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er $\bar{x}=\hat\mu=100$, hvad bliver nedre og øvre grænser 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien?  
+7. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 4. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=10$?  
+8. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 5. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=15$?  
+9. Hvad ville 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blive i 6. hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=36$?  
 </details>  
 <br>
 <details> 
@@ -2273,22 +2273,22 @@ Da p værdien/``r tippy(" signifikanssandsynligheden", size="large" ,interactive
 1. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{10}{\sqrt{100}}=1$  
 2. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{15}{\sqrt{900}}=0.5$  
 3. Standardfejlen for middelværdien kan udregnes til $\frac{\sigma}{\sqrt{n}}=\frac{36}{\sqrt{81}}=4$  
-4. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 1. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=20-1.96\cdot1=18.04$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot1=20+1.96=21.96$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.04 og 21.96"  
-5. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 2. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=\hat\mu-1.96\cdot0.5=20-0.98=19.02$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot0.5=20+0.98=20.98$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98"  
-6. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 3. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=100-1.96\cdot4=100-7.84=92.16$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot4=100+7.84=107.84$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.16 og 107.84"  
-7. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=10$, benytter vi t-fordelingen med 100-1=99 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;99) hvilket giver 1.9842. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
+4. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 1. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=20-1.96\cdot1=18.04$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot1=20+1.96=21.96$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 18.04 og 21.96"  
+5. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 2. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=\hat\mu-1.96\cdot0.5=20-0.98=19.02$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot0.5=20+0.98=20.98$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 19.02 og 20.98"  
+6. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien udregnes vha. standardfejlen vi fandt i 3. Nedre grænse bliver $\hat\mu-1.96\cdot\frac{\sigma}{\sqrt{n}}=100-1.96\cdot4=100-7.84=92.16$, øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver $\hat\mu+1.96\cdot4=100+7.84=107.84$. Sagt med andre ord: "Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 92.16 og 107.84"  
+7. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=10$, benytter vi t-fordelingen med 100-1=99 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;99) hvilket giver 1.9842. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $20-1.9842\cdot1=18.02$  
 Øvre grænse $20+1.9842\cdot1=21.98$  
-"Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 18.02 og 21.98"  
-8. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=15$, benytter vi t-fordelingen med 900-1=899 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;899) hvilket giver 1.9626.  
+"Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 18.02 og 21.98"  
+8. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=15$, benytter vi t-fordelingen med 900-1=899 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;899) hvilket giver 1.9626.  
 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $20-1.9626\cdot0.5=19.02$  
 Øvre grænse $20+1.9626\cdot0.5=20.98$  
-"Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 19.02 og 20.98"  
-9. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i populationen ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=36$, benytter vi t-fordelingen med 81-1=80 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;80), hvilket giver 1.9901. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
+"Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 19.02 og 20.98"  
+9. Hvis ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i $\sigma$ i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke var kendt og derfor blev estimeret ud fra ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til $\hat\sigma=36$, benytter vi t-fordelingen med 81-1=80 frihedsgrader. I Excel kan denne udregnes ved =TINV(0.05;80), hvilket giver 1.9901. 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien bliver:  
 Nedre grænse $100-1.9901\cdot4=92.04$  
 Øvre grænse $100+1.9901\cdot4=107.96$  
-"Vi kan med 95% sikkerhed sige at den sande middelværdi i populationen ligger mellem 92.04 og 107.96"  
+"Vi kan med 95% sikkerhed sige at den sande middelværdi i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 92.04 og 107.96"  
 </details>  
 
 <br>
@@ -2313,7 +2313,7 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 1. Hvad bliver parameterestimatet for middelværdien for variablen egenkapital?  
 2. Hvad bliver parameterestimatet for standard afvigelsen for variablen egenkapital?  
 3. Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen egenkapital?  
-4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i populationen?  
+4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``?  
 5. Hvad bliver parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ for variablen egenkapital?  
 6. Hvad bliver nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen for variablen egenkapital?  
 </details>  
@@ -2326,7 +2326,7 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 $\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=$$`r round(mean(Egenkapital),2)`$. Resultatet står som ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` gennemsnit i output fra Freestat herunder.  
 2. Parameterestimatet for standard afvigelsen for variablen egenkapital findes som $\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=$$`r round(sd(Egenkapital),2)`$. Resultatet står som standard afvigelse spredning i Freestat herunder.round(sd(Egenkapital),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.  
 3. Standardfejlen for middelværdien kan udregnes som   $SEM=\sigma_\bar{X}=\frac{\hat\sigma}{\sqrt{n}}=$$\frac{`r round(sd(Egenkapital),2)`}{\sqrt{369}}=`r semek`$. Resultatet står som standard fejl middel i Freestat herunder.  
-4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, kan udregnes til:  
+4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, kan udregnes til:  
   $\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanek`-1.966431\cdot`r semek`$$=`r round(meanek-1.966431*semek,2)`$ og
 $\hat\mu+1.966431\cdot \sigma_\bar{X}=$$`r meanek`+1.966431\cdot `r semek`$$=`r round(meanek+1.966431*semek,2)`$  
   5. Parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ bliver $676727.53$  
@@ -2354,13 +2354,13 @@ semar <- round(sdar/length(ar)^0.5,2)
 
 ```
 
-I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlVmxHTDltNk1VSG8), der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. For at benytte ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til at udtale sig om populationen, forudsættes det at denne er simpelt tilfældigt udtrukket fra populationen. Besvar følgende spørgsmål for variablen årets resultat i antal 1000 DKK.  
+I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlVmxHTDltNk1VSG8), der viser data for 369 danske virksomheder med ekstern revision. Der er således en overvægt af virksomheder af en vis størrelse, hvorfor samtlige beløb er angivet i antal 1000 DKK. For at benytte ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` til at udtale sig om ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, forudsættes det at denne er simpelt tilfældigt udtrukket fra ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Besvar følgende spørgsmål for variablen årets resultat i antal 1000 DKK.  
 
 
 1. Hvad bliver parameterestimatet for middelværdien for variablen årets resultat?  
 2. Hvad bliver parameterestimatet for standard afvigelsen for variablen årets resultat?  
 3. Hvad bliver standardfejlen for middelværdien (engelsk standard error of the mean SEM eller SE) for variablen årets resultat?  
-4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for populationen, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i populationen?  
+4. Når vi skal finde nedre og øvre grænser for et 95% konfidensinterval vha. z-fordelingen ganger vi med faktoren 1.96. Her har vi imidlertid ukendt standardafvigelse for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, derfor benytter vi t-fordelingen. I dette tilfælde er antallet af frihedsgrader n-1=369-1=368, faktoren bliver 1.9664 næsten det samme for z-fordelingen. Hvad bliver nedre og øvre grænser for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, for den gennemsnitlige egenkapital for virksomheder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``?  
 5. Hvad bliver parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ for variablen årets resultat?  
 6. Hvad bliver nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen?  
 
@@ -2375,7 +2375,7 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 $\hat\mu=\bar{x}=\frac{\sum_1^nx_i}{n}=\frac{\sum_1^nx_i}{369}=`r round(mean(ar),2)`$. Resultatet står som ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` gennemsnit i output fra Freestat herunder.  
 2. Parameterestimatet for standard afvigelsen for variablen årets resultat findes som $\hat\sigma=S=\sqrt{\frac{\sum_1^n(x_i-\bar{x})^2}{n-1}}=\frac{\sum_1^nx_i}{368}=`r round(sd(ar),2)`$. Resultatet står som standard afvigelse spredning i Freestat   herunder.round(sd(ar),2). Husk vi korrigerer ved at fratrække 1 fra stikprøvestørrelsen i nævneren dvs. n-1.  
 3. Standardfejlen for middelværdien kan udregnes som $SEM=\sigma_\bar{X}=\frac{\sigma}{\sqrt{n}}=\frac{`r round(sd(ar),2)`}{\sqrt{369}}=`r semar`$. Resultatet står som standard fejl middel i Freestat herunder.  
-4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i populationen, kan udregnes til:$\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanar`-1.966431\cdot`r semar`=`r round(meanar-1.96643126706281*semar,2)`$ og $\hat\mu+1.966431\cdot\sigma_\bar{X}=`r meanar`+1.966431\cdot`r semar`=`r round(meanar+1.96643126706281*semar,2)`$  
+4. Grænserne for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, kan udregnes til:$\hat\mu-1.966431\cdot \sigma_\bar{X}=`r meanar`-1.966431\cdot`r semar`=`r round(meanar-1.96643126706281*semar,2)`$ og $\hat\mu+1.966431\cdot\sigma_\bar{X}=`r meanar`+1.966431\cdot`r semar`=`r round(meanar+1.96643126706281*semar,2)`$  
   5. Parameterestimatet for ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\hat\sigma$ bliver 374398.75  
 6. Nedre og øvre grænse for 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for standard afvigelsen bliver hhv. 349194.35 og 403554.74 i antal 1000 DKK.  
 
@@ -2437,20 +2437,20 @@ I linket her er filen [VIRKSOMHEDER-DK](https://drive.google.com/uc?export=downl
 
 1. Hvilken type variabel er variablen Omsætning?  
 2. Hvad bliver standardfejlen?  
-3. Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i populationen?  
-4. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 500.000.000 DKK, dvs. en halv mia. DKK, på et 5% signifikans niveau? Hvorledes ville hypoteserne for et test af denne påstand se ud?  
-5. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 600.000.000 DKK på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
-6. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i populationen kunne være 700.000.000 DKK, på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
+3. Hvad bliver 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``?  
+4. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kunne være 500.000.000 DKK, dvs. en halv mia. DKK, på et 5% signifikans niveau? Hvorledes ville hypoteserne for et test af denne påstand se ud?  
+5. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kunne være 600.000.000 DKK på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
+6. Ville vi kunne afvise en antagelse om at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kunne være 700.000.000 DKK, på et 5% signifikans niveau? Hvorledes ville et hypoteserne for et test af denne påstand se ud?  
 7. Har de 3 tests ensidede eller tosidede alternativ hypoteser, eller et mix af disse?  
-8. Hvad bliver 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i populationen? Er dette konfidensinterval smallere eller bredere end 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``?  
-9. En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om denne påstand kan antages at være korrekt, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
+8. Hvad bliver 90% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``? Er dette konfidensinterval smallere eller bredere end 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``?  
+9. En revisionsteam har en begrundet formodning om at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kan antages at være 250 mio. DKK. Opstil hypoteser og undersøg på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om denne påstand kan antages at være korrekt, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 10. Kunne revisorteamet ud fra ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` afgøre at man ikke kunne forkaste nulhypotesen?
-11. Test på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om den gennemsnitlige omsætning i populationen kan antages at være 250 mio. DKK, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
+11. Test på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, om den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kan antages at være 250 mio. DKK, bestem herunder ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` og hold denne op mod ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 12. Er konklusionen niveaufølsom?  
-13. Test om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?  
-14. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i populationen er højst 250 mio. DKK?  
-15. Test om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?  
-16. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i populationen er mindst 600 mio. DKK?  
+13. Test om den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er højst 250 mio. DKK?  
+14. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er højst 250 mio. DKK?  
+15. Test om den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er mindst 600 mio. DKK?  
+16. Test på 1% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` om den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er mindst 600 mio. DKK?  
 </details>  
 
 <br>
@@ -2476,37 +2476,37 @@ plot(hc)
 ```
 1. Variablen Omsætning er en kvanitativ, ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel, ratioskala, vi kan således benytte fanen 1 ``r tippy(" kvantitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` i Freestat.  
 2. Standardfejlen for middelværdien bliver $SEM=\frac{\sigma}{\sqrt{n}}=\frac{1.829.195.752}{\sqrt{369}}=95.224.127$ DDK eller ca. 95 mio.  
-3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
+3. Vi kan med 95% sikkerhed sige at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 240.136 og 614.639 1.000 DKK. Dette er et meget stort spænd fra ca 240 til 615 mio. DKK. Dette skyldes den store variation i data, hvilket øger standardfejlen som påvirker grænserne i ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. Nedre grænse findes fx. som $427.387.680-1.9664\cdot95.224.127$ Den typiske afvigelse fra middelværdien er da også 1.829.196 1000 DKK, altså næsten 2 mia DKK i datafordelingen. Herunder ses output fra Freestat, bemærk vi sætter ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 5% for at ændre konfidensniveaet til 95%.  
 <img src="img/dkvirkoms5.png" alt="dkvirkoms5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
-4. Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 500 mio. DKK er indeholdt i dette interval. Kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 500 mio. DKK.  
+4. Nej, da den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 500 mio. DKK er indeholdt i dette interval. Kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 500 mio. DKK.  
 Hypoteserne ville være:  
 $$H_0: \mu=500\ mio.$$  
 $$H_1: \mu\neq500\ mio.$$  
-Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen kan antages at være 500 mio.  
-5.  Nej, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 600 mio. DKK er indeholdt i dette interval, kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 600 mio. DKK.  
+Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kan antages at være 500 mio.  
+5.  Nej, da den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, og 600 mio. DKK er indeholdt i dette interval, kan vi ikke afvise en antagelse om at den gennemsnitlige omsætning skulle være 600 mio. DKK.  
 Hypoteserne ville være:  
 $$H_0: \mu=600\ mio.$$  
 $$H_1: \mu\neq600\ mio.$$  
-Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen kan antages at være 600 mio.  
-6. Ja, da den gennemsnitlige omsætning i populationen med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, kan vi afvise en antagelse om at den gennemsnitlige omsætning skulle være 700 mio. DKK.
+Vi kan således ikke forkaste nulhypotesen, og konkluderer den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` kan antages at være 600 mio.  
+6. Ja, da den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sikkerhed ligger mellem 240 til 615 mio. DKK, kan vi afvise en antagelse om at den gennemsnitlige omsætning skulle være 700 mio. DKK.
 Hypoteserne ville være:  
 $$H_0: \mu=700\ mio.$$  
 $$H_1: \mu\neq700\ mio$$  
-Vi forkaster nulhypotesen, og konkluderer den gennemsnitlige omsætning i populationen, ikke kan antages at være 700 mio.  
+Vi forkaster nulhypotesen, og konkluderer den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ikke kan antages at være 700 mio.  
 7. Alle tre tests har tosidede alternativ hypoteser, alle tre indeholder forskellig fra operatoren $\neq$  
-8. Vi kan med 90% sikkerhed sige at den gennemsnitlige omsætning i populationen ligger mellem 
+8. Vi kan med 90% sikkerhed sige at den gennemsnitlige omsætning i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 
 270.363 og 584.413 1.000 DKK. Dette konfideninterval er altså smallere end 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, hvilket giver god mening nu har hver hale 5% af sandsynligheden mod 2.5% før. Vi er jo også kun 90% sikre på at $\mu$ ligger i intervallet. Ønsker man smallere konfidensinterval øget præcision, uden at øge stikprøvestørrelsen kan man således slække på ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``. Herunder ses output fra Freestat, bemærk vi ændrer ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` i den hvide celle til 10% for at ændre konfidensniveaet til 90%.  
 <img src="img/dkvirkoms10.png" alt="dkvirkoms10" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 9. Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
 $$H_0:\mu\neq250\ mio.$$  
-Af nedenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket lige er større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 5% og Test middel af populationen til 250000 1000 DKK.  
+Af nedenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket lige er større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi kan altså ikke forkaste nulhypotesen. Vi kan ikke afvise revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 5% og Test middel af ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` til 250000 1000 DKK.  
 <img src="img/dkvirkomshyp5.png" alt="dkvirkomshyp5" align="middle" width="80%" height="80%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 10 Ja, da alternativhypotesen er tosidet skal ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` ligge mellem -1.9664 og 1.9664 svarende til 2.5% og 97.5% fraktilerne for t-fordelingen med 368 frihedsgrader. Man kan se den numeriske værdi af disse i Excel med kommandoen =TINV(5%;368). ``r tippy(" Teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er angivet i Freestat til 1.8628 denne er således ikke så stor at det er kritisk for nulhypotesen, men ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` er dog tæt på den øvre grænse, hvilket tydeligere illustreres af at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er tæt på 5%.  
 11 Testet bliver:  
 $$H_0:\mu=250\ mio.$$  
 $$H_0:\mu\neq250\ mio.$$  
-Af ovenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket er mindre end 10% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi må forkaste nulhypotesen. Vi afviser revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 10% og Test middel af populationen til 250000 1000 DKK. 
+Af ovenstående output fra Freestat ses at ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` bliver 6.33%, hvilket er mindre end 10% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi må forkaste nulhypotesen. Vi afviser revisorteamets påstand om at den gennemsnitlige omsætning er 250 mio. DKK. Bemærk husk at sætte de hvide felter, ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 10% og Test middel af ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` til 250000 1000 DKK. 
 12 Ja konklusionen er niveaufølsom, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` betyder vi forkaster nulhypotesen på 10% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, men ikke på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 13. Vi kan oversætte højst til symbolet $\leq$, da symbolet indeholder lighedstegn, skal det i nulhypotesen. Da ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` ikke er angivet tester vi på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 Testet bliver:  
@@ -2582,7 +2582,7 @@ $$H_1:\mu> 4.9$$
 Da ``r tippy(" signifikanssandsynligheden", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))``/``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er 0.0077 mindre end signifikans niveauet 5% forkaster vi nulhypotesen.  
 Antal ansatte pr. 1000 kunder er altså større end 4.9.  
 Opgave 2.2  
-Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i populationen ligger mellem 0.3500 og 0.6317
+Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 0.3500 og 0.6317
 <img src="img/freestatstdki.png" alt="freestatstdki" align="left" width="60%" height="60%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>  
 </details>  
 
@@ -2592,7 +2592,7 @@ Vi kan med 95% sikkerhed sige at ``r tippy(" standardafvigelsen", size="large" ,
 
 
 
-I datasættet  <a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ" target="_blank">USA aktier</a> findes månedlige aktieafkast i %, fra 5 store amerikanske virksomheder siden år 2000. Virksomhederne er Coca Cola, Bank of America, JP Morgan Chase, Microsoft og Kellogs den sidste variabel US portefølje er en portefølje bestående at 20% af hver af disse 5 aktier. Vi forudsætter at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for populationen. Angiv korte præcise svar, angiv hypoteser, p-værdier teknisk og ikke-teknisk konklusion hvor det er relevant.  
+I datasættet  <a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ" target="_blank">USA aktier</a> findes månedlige aktieafkast i %, fra 5 store amerikanske virksomheder siden år 2000. Virksomhederne er Coca Cola, Bank of America, JP Morgan Chase, Microsoft og Kellogs den sidste variabel US portefølje er en portefølje bestående at 20% af hver af disse 5 aktier. Vi forudsætter at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Angiv korte præcise svar, angiv hypoteser, p-værdier teknisk og ikke-teknisk konklusion hvor det er relevant.  
 
 1.	Angiv 95% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` for middelværdien for Bank of America og for US porteføljen.  
 
@@ -2657,7 +2657,7 @@ cat(readLines('np.html'))
 
 ## Parameterestimat for andele
 
-Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt interesseret i hvor mange af netop disse 100 personer, der benytter MobilePay. Vi har udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` af en population (populationen er her alle danskere med en konto), som vi benytter til at udtale os om, hvor stor en andel i populationen, der kan antages at benytte MobilePay. Hvis 31 ud af 100 danskere bruger MobilePay, er vores bedste gæt på andelen i populationen der benytter MobilePay 0.31. Vi er imidlertid godt klar over, at det ville være højst besynderligt, at netop 31,000...% af alle danskere benytter MobilePay. Vi kalder $\hat{p}$ for vores estimat (vores bedste gæt) på populationsandelen $p$ "den sande ukendte andel af kontohavere der benytter MobilePay". 
+Hvis vi har spurgt 100 danskere om de bruger MobilePay, er vi ikke specifikt interesseret i hvor mange af netop disse 100 personer, der benytter MobilePay. Vi har udtaget en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` af en population (``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er her alle danskere med en konto), som vi benytter til at udtale os om, hvor stor en andel i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, der kan antages at benytte MobilePay. Hvis 31 ud af 100 danskere bruger MobilePay, er vores bedste gæt på andelen i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` der benytter MobilePay 0.31. Vi er imidlertid godt klar over, at det ville være højst besynderligt, at netop 31,000...% af alle danskere benytter MobilePay. Vi kalder $\hat{p}$ for vores estimat (vores bedste gæt) på populationsandelen $p$ "den sande ukendte andel af kontohavere der benytter MobilePay". 
 
 $$Parameterestimatet\  for\  p\ er\ \hat{p} = \frac{31}{100}=0.31$$  
 
@@ -2666,7 +2666,7 @@ Vi betragter nu igen Tryg aktien i datasættet<a href="FILER/DK aktiekurser.xlsx
 Vi kan nu bestemme parameterestimatet for p den sande andel af dage med overskud i Tryg aktien.
 $$\hat{p}=\frac{x}{n}=\frac{`r length(which(DKdf[,1]>0))`}{`r length(DKdf[,1])`}=`r round(length(which(DKdf[,1]>0))/length(DKdf[,1]),2)`$$
 
-Bemærk at den ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` ``r tippy(" kontinuerte", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel dagligt afkast for Trygaktien, blev omdannet til en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra populationen, skal være respræsentativ for populationen. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` stammer jo fra en bestemt periode, en repræsentativ ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
+Bemærk at den ``r tippy(" kvantitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[1,2],"</h4>"))`` ``r tippy(" kontinuerte", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` variabel dagligt afkast for Trygaktien, blev omdannet til en ``r tippy(" kvalitativ", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` binær variabel, når vi i stedet for dagligt afkast kun ser på positivt/ikke positivt afkast. Vores ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, skal være respræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Det er tvivlsomt om denne forudsætning er opfyldt, for aktier vil konjunkturer have en vis overordnet indflydelse på kursen. Vores ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` stammer jo fra en bestemt periode, en repræsentativ ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, burde således være udtrukket tilfældigt blandt alle registrerede dagsafkast af aktien.
 
 
 
@@ -2678,7 +2678,7 @@ $$(1-\alpha)\  KI=\left[\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat
 
 Hvor $z_{1-\frac{\alpha}{2}}$ er $1-\frac{\alpha}{2}$ fraktilen for z-fordelingen altså standard normalfordelingen. Hvis vi betragter et 95% konfidensinterval, er $\alpha$ altså ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` 5%, det betyder vi benytter $1-\frac{0.05}{2}=0.975$ fraktilen eller 97.5% fraktilen for z-fordelingen 
 
-Vi ser igen på MobilePay eksemplet 31 ud af 100 brugte MobilePay $\hat{p}=0.31$. Hvis vi skal bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` af andelen af brugere af MobilePay i populationen, kan vi vha. formlen ovenfor udregne nedre grænse som:
+Vi ser igen på MobilePay eksemplet 31 ud af 100 brugte MobilePay $\hat{p}=0.31$. Hvis vi skal bestemme et 95% ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` af andelen af brugere af MobilePay i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, kan vi vha. formlen ovenfor udregne nedre grænse som:
 
 $$\hat{p} - z_{1-\frac{\alpha}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$0.31-1.96\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.2194$$
@@ -2690,7 +2690,7 @@ $$0.31+1.96\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.4006$$
 
 Hvis vi skal tolke hvad dette betyder med menneskeord kan vi altså sige:  
 
-*Vi kan med 95% sikkerhed sige at andelen af MobilePay brugere i populationen ligger mellem 21.94% og 40.06%.*
+*Vi kan med 95% sikkerhed sige at andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 21.94% og 40.06%.*
 
 Havde vi ønsket større sikkerhed/konfidens, kunne vi opnå dette på bekostning af præcisionen. Vi kunne sætte ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` til 1% dvs. ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))`` til 99%. Vi skulle da benytte 99.5% fraktilen for z-fordelingen denne er ca. 2.58, dette ville være den eneste ændring i udregningen af ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 
@@ -2704,7 +2704,7 @@ $$0.31+2.5758\cdot\sqrt[]{\frac{0.31(1-0.31)}{100}}=0.4291$$
 
 Tolkningen ville være:  
 
-*Vi kan med 99% sikkerhed sige at andelen af MobilePay brugere i populationen ligger mellem 19.09% og 42.91%.*
+*Vi kan med 99% sikkerhed sige at andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem 19.09% og 42.91%.*
 
 Vi mister altså præcision (``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` blev jo bredere), når vi får større sikkerhed (99% i stedet for 95%). Hvis man ønsker at øge sikkerheden uden at ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` bliver bredere, kan man se på formlen at vi også kan øge ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` størrelsen n. Stikprøve størrelsen er jo i nævneren i formlen for ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``, så hvis vi øger n bliver faktoren mindre, og dermed bliver konfidens intervallet smallere.
 
@@ -2748,7 +2748,7 @@ Den øvre grænse bliver:
 $$\hat{p}+z_{1-\frac{0.05}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$`r phat`+1.96\cdot\sqrt[]{\frac{`r phat`(1-`r phat`)}{100}}=`r CIup(5,length(which(DKdf[,1]>0)),length(DKdf[,1]))`$$
 
-Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem `r CIlow(5,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(5,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
+Vi kan altså med 95% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(5,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(5,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
 
 Vi kan, hvis vi ønsker at finde 90% KI, blot ændre z-fraktilen fra 97.5% til 95%, dvs. fra 1.96 til 1.6448.
 Den nedre grænse bliver:
@@ -2761,7 +2761,7 @@ Den øvre grænse bliver:
 $$\hat{p}+z_{1-\frac{0.1}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$`r phat`+1.6448\cdot\sqrt[]{\frac{`r phat`(1-`r phat`)}{100}}=`r CIup(10,length(which(DKdf[,1]>0)),length(DKdf[,1]))`$$
 
-Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem `r CIlow(10,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(10,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
+Vi kan altså med 90% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(10,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(10,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
 
 99% KI findes ved at benytte 0.995 z-fraktilen der er 2.5758
 Den nedre grænse bliver:
@@ -2774,7 +2774,7 @@ Den øvre grænse bliver:
 $$\hat{p}+z_{1-\frac{0.01}{2}}\cdot \sqrt[]{\frac{\hat{p}(1-\hat{p})}{n}}=$$
 $$`r phat`+2.5758\cdot\sqrt[]{\frac{`r phat`(1-`r phat`)}{100}}=`r CIup(1,length(which(DKdf[,1]>0)),length(DKdf[,1]))`$$
 
-Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i populationen ligger mellem `r CIlow(1,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(1,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
+Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg aktien i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(1,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`% og `r CIup(1,length(which(DKdf[,1]>0)),length(DKdf[,1]))*100`%
 
 
 
@@ -2785,7 +2785,7 @@ Vi kan altså med 99% sikkerhed sige, at andelen af dage med overskud i Tryg akt
   <summary> Spørgsmål konfidensinterval andel utroskab</summary>
   
 
-I linket her er filen [Fairs Affairs](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U), filen indeholder data fra en kendt undersøgelse af 601 respondenters svar på blandt andet om og hvor ofte de har været utro. Bestem konfidensintervaller for andelen i populationen der er utro (utro er når antallet af affærer er større end nul).  
+I linket her er filen [Fairs Affairs](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U), filen indeholder data fra en kendt undersøgelse af 601 respondenters svar på blandt andet om og hvor ofte de har været utro. Bestem konfidensintervaller for andelen i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` der er utro (utro er når antallet af affærer er større end nul).  
 
 ```{r echo=FALSE,message=FALSE}
 list.of.packages <- c("readxl")
@@ -2803,16 +2803,16 @@ phat <- n1/n01
 <details> 
   <summary> Svar konfidensinterval andel utroskab</summary>
 
-Du skulle gerne komme frem til at `r n1` respondenter ud af `r n01` har været utro, hvilket giver et parameter estimat for andelen af utro i populationen $\hat{p}=`r phat`$.
+Du skulle gerne komme frem til at `r n1` respondenter ud af `r n01` har været utro, hvilket giver et parameter estimat for andelen af utro i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\hat{p}=`r phat`$.
 Konfidensintervallerne kan tolkes som.  
 
-Vi kan med 90% sikkerhed sige at andelen af utro i populationen ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
+Vi kan med 90% sikkerhed sige at andelen af utro i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
 
-Vi kan med 95% sikkerhed sige at andelen af utro i populationen ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
+Vi kan med 95% sikkerhed sige at andelen af utro i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
 
-Vi kan med 99% sikkerhed sige at andelen af utro i populationen ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.  
+Vi kan med 99% sikkerhed sige at andelen af utro i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.  
 
-Konfidensintervallerne forudsætter som vanligt at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for populationen, hvilket kan sikres ved simpel tilfældig udvælgelse.  
+Konfidensintervallerne forudsætter som vanligt at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, hvilket kan sikres ved simpel tilfældig udvælgelse.  
 
 </details>  
 <br>
@@ -2828,7 +2828,7 @@ phat <- n1/n01
 ```
 
 
-I linket  [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM), findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte. Bestem konfidensintervaller for andelen i populationen der er kvinder.
+I linket  [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM), findes data på funktion, antal års uddannelse, køn og race for 474 amerikanske bankansatte. Bestem konfidensintervaller for andelen i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` der er kvinder.
 
 </details>  
 <br>
@@ -2836,15 +2836,15 @@ I linket  [bankdata](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDM
   <summary> Svar konfidensinterval andel køn bankdata</summary>
 
 
-Vi betragter nu andelen af kvinder blandt de bankansatte. Du skulle gerne komme frem til at `r n1` respondenter ud af `r n01` er kvinder, hvilket giver et parameter estimat for andelen af kvinder i populationen $\hat{p}=`r phat`$.
+Vi betragter nu andelen af kvinder blandt de bankansatte. Du skulle gerne komme frem til at `r n1` respondenter ud af `r n01` er kvinder, hvilket giver et parameter estimat for andelen af kvinder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` $\hat{p}=`r phat`$.
 
-Vi kan med 90% sikkerhed sige at andelen af kvinder i populationen ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.
+Vi kan med 90% sikkerhed sige at andelen af kvinder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.
 
-Vi kan med 95% sikkerhed sige at andelen af kvinder i populationen ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.
+Vi kan med 95% sikkerhed sige at andelen af kvinder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.
 
-Vi kan med 99% sikkerhed sige at andelen af kvinder i populationen ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.
+Vi kan med 99% sikkerhed sige at andelen af kvinder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.
 
-Konfidensintervallerne forudsætter at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for populationen.  
+Konfidensintervallerne forudsætter at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.  
 </details>  
 <br>
 <details> 
@@ -2856,7 +2856,7 @@ n1 <- length(which(bank[,5]=="yes"))
 n01 <- length(bank[[5]])
 phat <- n1/n01
 ```
-Vi betragter fortsat bankdata. Estimer for populationen andelen af ikke hvide dvs. minoriteter, på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
+Vi betragter fortsat bankdata. Estimer for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` andelen af ikke hvide dvs. minoriteter, på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 
 </details>  
 <br>
@@ -2865,11 +2865,11 @@ Vi betragter fortsat bankdata. Estimer for populationen andelen af ikke hvide dv
 
 Konfidensintervallerne bliver:  
 
-Vi kan med 90% sikkerhed sige at andelen af minoriteter i populationen ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
+Vi kan med 90% sikkerhed sige at andelen af minoriteter i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
 
-Vi kan med 95% sikkerhed sige at andelen af minoriteter i populationen ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
+Vi kan med 95% sikkerhed sige at andelen af minoriteter i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
 
-Vi kan med 99% sikkerhed sige at andelen af minoriteter i populationen ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.  
+Vi kan med 99% sikkerhed sige at andelen af minoriteter i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.  
 
 
 </details>  
@@ -2884,7 +2884,7 @@ n1 <- length(which(bank[,2]=="manage"))
 n01 <- length(bank[[2]])
 phat <- n1/n01
 ```
-Vi betragter fortsat bankdata. Estimer for populationen andelen af ansatte i ledelsesfunktioner (dvs. manage), på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
+Vi betragter fortsat bankdata. Estimer for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` andelen af ansatte i ledelsesfunktioner (dvs. manage), på hhv. 0.1, 0.05 og 0.01 ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``.  
 
 </details>  
 <br>
@@ -2893,11 +2893,11 @@ Vi betragter fortsat bankdata. Estimer for populationen andelen af ansatte i led
 Konfidensintervallerne bliver:  
 
 
-Vi kan med 90% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i populationen ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
+Vi kan med 90% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(10,n1,n01)*100`% og `r CIup(10,n1,n01)*100`%.  
 
-Vi kan med 95% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i populationen ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
+Vi kan med 95% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(5,n1,n01)*100`% og `r CIup(5,n1,n01)*100`%.  
 
-Vi kan med 99% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i populationen ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.   
+Vi kan med 99% sikkerhed sige at andelen af ansatte i ledelsesfunktioner i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger mellem `r CIlow(1,n1,n01)*100`% og `r CIup(1,n1,n01)*100`%.   
 
 </details>  
 
@@ -2942,7 +2942,7 @@ Vi fandt i en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow =
 
 
 
-Kan vi sige at andelen af MobilePay brugere i populationen er 35%? For at undersøge dette opstiller vi nul- og alternativhypotesen.
+Kan vi sige at andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er 35%? For at undersøge dette opstiller vi nul- og alternativhypotesen.
 
 $$H_0: p = 0.35$$
 
@@ -2962,7 +2962,7 @@ Hvis vi ikke kan afvise nulhypotesen betyder det at den sande populations parame
 $$\sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.35(1-0.35)}{100}}=`r round(((0.35*0.65)/100)^.5,4)`$$  
 
 
-Vi ønsker at teste om andelen i populationen, der bruger MobilePay, kan antages at være 35%, derfor ønsker vi at måle hvor stor forskellen er mellem den observerede andel 31% og hypotese andelen $P_0$ 35%. Til dette bruger vi z-teststørrelsen.  
+Vi ønsker at teste om andelen i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, der bruger MobilePay, kan antages at være 35%, derfor ønsker vi at måle hvor stor forskellen er mellem den observerede andel 31% og hypotese andelen $P_0$ 35%. Til dette bruger vi z-teststørrelsen.  
 
 
 ```{r pnormfunktion, echo=FALSE}
@@ -3017,18 +3017,18 @@ ptest <- function(x,n,p0) list(z = (x/n-p0)/((p0*(1-p0))/n)^0.5, pv = pnorm((x/n
 ## Hypotesetest en andel, ensidet alternativ hypotese nedad
 Hvis vi baseret på MobilePay ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` i stedet havde spurgt:
 
-Er andelen af MobilePay brugere i populationen mindre end 35%? 
-Er andelen af MobilePay brugere i populationen mindst 35%? 
+Er andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` mindre end 35%? 
+Er andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` mindst 35%? 
 
 Begge disse udsagn leder hver sin vej til samme ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` test. 
 
-Andelen af MobilePay brugere i populationen er mindre end 35%?  
+Andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er mindre end 35%?  
 Kan omskrives til en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``
 $$H_1:p<0.35$$
 Bemærk da operatoren mindre end $<$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``. Det komplementære udsagn er altså nulhypotesen:
 $$H_0:p\geq 0.35$$
 
-Andelen af MobilePay brugere i populationen er mindst 35%? 
+Andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er mindst 35%? 
 Kan omskrives til nulhypotesen
 $$H_0:p\geq 0.35$$
 Det komplementære udsagn bliver:
@@ -3085,17 +3085,17 @@ Da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tool
 ## Hypotesetest en andel, ensidet alternativ hypotese opad
 Hvis vi baseret på MobilePay ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` i stedet havde spurgt:
 
-Er andelen af MobilePay brugere i populationen større end 35%? 
-Er andelen af MobilePay brugere i populationen højst 35%? 
+Er andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` større end 35%? 
+Er andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` højst 35%? 
 
 Begge disse udsagn leder hver sin vej til samme ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))`` test.  
-Andelen af MobilePay brugere i populationen er større end 35%?  
+Andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er større end 35%?  
 Kan omskrives til en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``
 $$H_1:p>0.35$$
 Bemærk da operatoren større end $>$ ikke indeholder et lighedstegn, ved vi at udsagnet skal skrives som en alternativ ``r tippy(" hypotese", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[5,2],"</h4>"))``. Det komplementære udsagn er altså nulhypotesen:
 $$H_0:p\leq 0.35$$
 
-Andelen af MobilePay brugere i populationen er højst 35%? 
+Andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` er højst 35%? 
 Kan omskrives til nulhypotesen
 $$H_0:p\leq 0.35$$
 Det komplementære udsagn bliver:
@@ -3379,9 +3379,9 @@ cat(readLines('np.html'))
 Vi igen ser på MobilePay undersøgelsen hvor 31 ud af 100 brugte MobilePay, man har en 1 år gammel undersøgelse, hvor man havde spurgt 200 respondenter om de bruger MobilePay, af disse svarede 45, at de bruger Danske Banks app. 
 
 Vi så tidligere, hvordan vi udregner konfidensintervaller for andele.
-Vi fandt i den nye undersøgelse at mellem `r round2(prop.test(31,100,correct = F)$conf.int[1],2)`% og `r round2(prop.test(31,100,correct = F)$conf.int[2],2)`% i populationen med 95% sandsynlighed i dag bruger MobilPay.
+Vi fandt i den nye undersøgelse at mellem `r round2(prop.test(31,100,correct = F)$conf.int[1],2)`% og `r round2(prop.test(31,100,correct = F)$conf.int[2],2)`% i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sandsynlighed i dag bruger MobilPay.
 
-Tilsvarende kan vi sige at andelen af MobilePay brugere i populationen med 95% sandsynlighed tidligere lå mellem `r round2(prop.test(45,200,correct = F)$conf.int[1],2)`% og `r round2(prop.test(45,200,correct = F)$conf.int[2],2)`%. Det kan være lidt svært af afgøre om forskellen er signifikant da vi af nedenstående grafiske præsentation kan se at der er et mindre overlap mellem de 2 konfidensintervaller.
+Tilsvarende kan vi sige at andelen af MobilePay brugere i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` med 95% sandsynlighed tidligere lå mellem `r round2(prop.test(45,200,correct = F)$conf.int[1],2)`% og `r round2(prop.test(45,200,correct = F)$conf.int[2],2)`%. Det kan være lidt svært af afgøre om forskellen er signifikant da vi af nedenstående grafiske præsentation kan se at der er et mindre overlap mellem de 2 konfidensintervaller.
 
 ```{r echo=FALSE,fig.width=9, fig.height=3, dev='svg'}
 
@@ -3501,7 +3501,7 @@ nf <- length(which(bank[,4]=="female"))
 
 ```
 
-I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 95% sikkerhed mellem `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf[1],2)` og `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf[2],2)`, der er altså signifikant forskel ved 5% signifikans niveau. Andelen af mænd i ledelse, ligger på `r round2(xm*100/nm,2)`% og andelen af kvinder i ledelse ligger på `r round2(xf*100/nf,2)`%.  
+I ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger forskellen i andelene af kvinder og mænd i ledelse med 95% sikkerhed mellem `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf[1],2)` og `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf[2],2)`, der er altså signifikant forskel ved 5% signifikans niveau. Andelen af mænd i ledelse, ligger på `r round2(xm*100/nm,2)`% og andelen af kvinder i ledelse ligger på `r round2(xf*100/nf,2)`%.  
 
 ```{r echo=FALSE,fig.width=9, fig.height=3, dev='svg'}
 plot(x=NULL, y=NULL, xlim=c(2*min(0,(prop.test(c(xm,xf),c(nm,nf),correct = F)$conf.int[1])), 1.05*max(0.01,prop.test(c(xm,xf),c(nm,nf),correct = F)$conf.int[2])), xlab="",ylim=c(-1, 1),bty="n",yaxt='n', ann=FALSE)
@@ -3514,7 +3514,7 @@ text(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf.int[2],0,ro
 text(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.95,correct = F)$conf.int[1],0,"Forskel \nandele",pos=2,cex=0.5,font= 3)
 ```
 
-I populationen ligger forskellen i andelene af kvinder og mænd i ledelse med 99% sikkerhed mellem `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.99,correct = F)$conf[1],2)` og `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.99,correct = F)$conf[2],2)`, der er altså signifikant forskel ved 1% signifikans niveau. Andelen af mænd i ledelse, ligger på `r round2(xm*100/nm,2)`% er altså helt sikkert større end andelen af kvinder i ledelse ligger på `r round2(xf*100/nf,2)`%.  
+I ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ligger forskellen i andelene af kvinder og mænd i ledelse med 99% sikkerhed mellem `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.99,correct = F)$conf[1],2)` og `r round2(prop.test(c(xm,xf),c(nm,nf),conf.level = 0.99,correct = F)$conf[2],2)`, der er altså signifikant forskel ved 1% signifikans niveau. Andelen af mænd i ledelse, ligger på `r round2(xm*100/nm,2)`% er altså helt sikkert større end andelen af kvinder i ledelse ligger på `r round2(xf*100/nf,2)`%.  
 
 ```{r echo=FALSE,fig.width=9, fig.height=3, dev='svg'}
 plot(x=NULL, y=NULL, xlim=c(2*min(0,(prop.test(c(xm,xf),c(nm,nf),correct = F)$conf.int[1])), 1.05*max(0.01,prop.test(c(xm,xf),c(nm,nf),correct = F)$conf.int[2])), xlab="",ylim=c(-1, 1),bty="n",yaxt='n', ann=FALSE)
@@ -3602,7 +3602,7 @@ Vi har altså sat
 $$p_{mand}=p_1$$
 $$p_{kvinde}=p_2$$
 
-P-værdien bliver `r round2(pv/2,4)`, hvilket er større end 5%, vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at mænd ikke er signifikant mere utro end kvinder i populationen. Vi har dog en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` der er tæt på 10%, så det er ikke en meget sikker konklusion.
+P-værdien bliver `r round2(pv/2,4)`, hvilket er større end 5%, vi kan altså ikke forkaste nulhypotesen. Vi konkluderer at mænd ikke er signifikant mere utro end kvinder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Vi har dog en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` der er tæt på 10%, så det er ikke en meget sikker konklusion.
 
 Nedenfor ses output fra Freestat:
 
@@ -3972,7 +3972,7 @@ For at konkludere om nulhypotesen skal forkastes, bestemmes  ``r tippy(" signifi
 - Roger Jones
 </div>
 
-Man skal ligesom ved små stikprøver i test af en middelværdi, sikre sig normalitet i populationen. Dette kan på samme måde gøres visuelt i et normalfraktildiagram for de 2 stikprøver.
+Man skal ligesom ved små stikprøver i test af en middelværdi, sikre sig normalitet i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``. Dette kan på samme måde gøres visuelt i et normalfraktildiagram for de 2 stikprøver.
 
 #### Eksempler
 ##### Statistik karakterer 
@@ -4175,7 +4175,7 @@ Vi ser igen på [bankdata](https://drive.google.com/uc?export=download&id=0B1E7V
 
 
 **1.** Bestem ved hjælp af konfidensintervaller for forskellen om der forskel på kvinder og mænds gennemsnitlige uddannelseslængde?  
-**2.** Bestem ved hjælp af konfidensintervaller for forskellen om der forskel på ledelsens og administationens gennemsnitlige uddannelse i populationen?   
+**2.** Bestem ved hjælp af konfidensintervaller for forskellen om der forskel på ledelsens og administationens gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``?   
 
 ```{r echo=FALSE,message=FALSE}
 library(readxl)
@@ -4201,17 +4201,17 @@ mandat <- as.numeric(as.vector(subset(BANKDATA,(BANKDATA[,2]=="manage"),select =
 
 **1.** Bemærk der er uens varianser, vi skal således benyttet Unpooled t-test til at bestemme konfidensintervaller.  
 Der er `r round(length(fdat),2)` kvinder, deres gennemsnitlige uddanelseslængde er `r round(mean(fdat),2)`, Der er `r round(length(mdat),2)` mænd, deres gennemsnitlige uddanelseslængde er `r round(mean(mdat),2)`  
-Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =F)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F)$conf.int[2],2)` år.  
-Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
+Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round(t.test(mdat,fdat,var.equal =F)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F)$conf.int[2],2)` år.  
+Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
 
 Havde vi i stedet benyttet pooled t-test havde vi nået samme konklusion, der er ikke meget forskel på grænserne:  
-Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[2],2)` år.  
-Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
+Vi kan med 95% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE)$conf.int[2],2)` år.  
+Vi kan med 99% sikkerhed sige at forskellen på mænds og kvinders gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[1],2)` år og `r round(t.test(mdat,fdat,var.equal =TRUE,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på, at der er forskel på uddannelseslængden for mænd og kvinder, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.  
 
 **2.** Bemærk der er uens varianser, vi skal således benyttet Unpooled t-test til at bestemme konfidensintervaller. Der er `r round(length(adat),2)` personer i administative stillinger, deres gennemsnitlige uddanelseslængde er `r round(mean(adat),2)`, Der er `r round(length(mandat),2)` i ledelsen, deres gennemsnitlige uddanelseslængde er `r round2(mean(mandat),2)`  
-Vi kan med 95% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i populationen, ligger mellem `r round(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[2],2)` år.  
+Vi kan med 95% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.95)$conf.int[2],2)` år.  
 
-Vi kan med 99% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i populationen, ligger mellem `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på at der er forskel på uddannelseslængden for ledere og administrativt personale, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
+Vi kan med 99% sikkerhed sige at forskellen på ledelsens og administrationens gennemsnitlige uddannelse i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ligger mellem `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[1],2)` år og `r round2(t.test(mandat,adat,var.equal =F,conf.level = 0.99)$conf.int[2],2)` år. Vi er altså ret sikre på at der er forskel på uddannelseslængden for ledere og administrativt personale, da 0 ikke engang er indeholdt i 99% ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``.
 </details> 
 <br>
 <details> 
@@ -5831,7 +5831,7 @@ Vi har følgende størrelser når vi ser på den hypergeometiske fordeling:
 |Fiasko     |N-m|n-k|N + k - n - m|
 |Ialt     |N|n|N-n|
 
-Antag en endelig population, består af en pose med gule og røde M&M's N=100, der udtages en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på n=20 M&M. Succes er gule M&M's, der er m=30 gule M&M's i populationen altså posen. Vi siger den stokastiske variabel X, er fordelt efter den hypergeometriske fordeling med parametrene N=100, m=30, n=20 notationen er:
+Antag en endelig population, består af en pose med gule og røde M&M's N=100, der udtages en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` på n=20 M&M. Succes er gule M&M's, der er m=30 gule M&M's i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` altså posen. Vi siger den stokastiske variabel X, er fordelt efter den hypergeometriske fordeling med parametrene N=100, m=30, n=20 notationen er:
 $$X \sim h(N=100,m=30,n=20)$$
 Man kan da beregne sandsynligheden for netop k gule M&M's i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` vha. den hypergeometriske fordeling. Vi kan for at få et overblik skrive værdierne ind i skemaet.
 
@@ -6076,7 +6076,7 @@ cat(readLines('npp.html'))
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/259842430' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 
-Der findes forskellige metoder, til at udtage en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra en population. Vort ønske er at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repæsentativ for den population, vi ønsker at udtale os om. At ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repæsentativ, betyder at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` afspejler populationen korrekt, det er svært at sikre repræsentativitet. Man kunne forestille sig en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` var repræsentativ mht. køn og alder i populationen, men ikke mht. det andre parametre som fx indkomst og geografi.
+Der findes forskellige metoder, til at udtage en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra en population. Vort ønske er at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repæsentativ for den population, vi ønsker at udtale os om. At ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repæsentativ, betyder at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` afspejler ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` korrekt, det er svært at sikre repræsentativitet. Man kunne forestille sig en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` var repræsentativ mht. køn og alder i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, men ikke mht. det andre parametre som fx indkomst og geografi.
 
 <img src="img/samplingmethods.png" align="left" width="100%" height="100%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -6088,38 +6088,38 @@ Nogle af de vigtigste ``r tippy(" stikprøve", size="large" ,interactive = TRUE,
 
 Bekvemmelighedsudvælgelse er som navnet antyder, den letteste stikprøveudvælgelsesmetode, men det kan også være en meget upræcis metode. Hvis man fx. udvælger forbipasserende på strøget, er ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` nem at indsamle, men ikke nødvendigvis repræsentativ.
 <img src="img/sampling.jpg" align="right" width="59%" height="59%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
-1. Er populationen fx. danskere, får man her en overrepræsentation af københavnere.
+1. Er ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` fx. danskere, får man her en overrepræsentation af københavnere.
 
-2. Var populationen en landmands produktion af agurker, kunne bekvemmelighedsudvælgelse fx. betyde at landmanden udtager en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra de nærmeste planter. Stikprøven vil måske ikke være repræsentativ for populationen mht. vanding, gødning, sol og varme etc.
+2. Var ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` en landmands produktion af agurker, kunne bekvemmelighedsudvælgelse fx. betyde at landmanden udtager en ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra de nærmeste planter. Stikprøven vil måske ikke være repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` mht. vanding, gødning, sol og varme etc.
 
-3. Hvis Elektronikfabrikanten Foxconn, der producerer forbrugerelektronik, kvalitetssikrer på baggrund af bekvemmelighedsudvælgelse, kunne man forestille sig man udtager ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra nærmeste samlebånd. Stikprøven vil måske ikke være repræsentativ for populationen mht. til kvaliteten, der er måske forskellig kvalitet i forskellige fabrikshaller, forskellige lokationer, under forskellige produktionsledere, produktionsanlæg, medarbejdere etc.
+3. Hvis Elektronikfabrikanten Foxconn, der producerer forbrugerelektronik, kvalitetssikrer på baggrund af bekvemmelighedsudvælgelse, kunne man forestille sig man udtager ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` fra nærmeste samlebånd. Stikprøven vil måske ikke være repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` mht. til kvaliteten, der er måske forskellig kvalitet i forskellige fabrikshaller, forskellige lokationer, under forskellige produktionsledere, produktionsanlæg, medarbejdere etc.
 
 ## <font color="red">Snowballing<sup> Premium </font></sup>
-Snowball udvælgelse betyder at deltagerne i ens undersøgelse selv rekrutterer yderligere deltagere. Ofte vil der være gode chancer for, at folk, der er relevante for undersøgelsen, kender andre, der også er. Disse nye deltagere kender måske flere mennesker, der kan deltage osv. Denne udvælgelses metode er nem men ikke nødvendigvis repræsentativ for populationen.
+Snowball udvælgelse betyder at deltagerne i ens undersøgelse selv rekrutterer yderligere deltagere. Ofte vil der være gode chancer for, at folk, der er relevante for undersøgelsen, kender andre, der også er. Disse nye deltagere kender måske flere mennesker, der kan deltage osv. Denne udvælgelses metode er nem men ikke nødvendigvis repræsentativ for ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.
 
 1. Ønsker man at undersøge unges kendskab til forsikring, kunne man få de oprindeligt udvalgte deltagere til at videresende spørgeskemaet til andre unge de kender.
 
 ## <font color="red">Simpel tilfældig udvælgelse<sup> Premium </font></sup>
-Ved simpel tilfældig udvælgelse har hver respondent eller element i populationen (fx. unge, agurker, danskere, elektronisk komponenter) samme sandsynlighed for at blive udtrukket. Man sørger altså for, at alle i populationen, har samme chance for at komme med i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, dette er svært at administrere uden registre eller samme tilgang til alle respondenter eller elermenter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. Man kan også være begrænset fx. fysiske, administrative eller geografiske begrænsninger. Simpel tilfældig udvælgelse er samme princip som udtrækningen af lottotallene, hvor alle tal er lige sandsynlige.
+Ved simpel tilfældig udvælgelse har hver respondent eller element i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` (fx. unge, agurker, danskere, elektronisk komponenter) samme sandsynlighed for at blive udtrukket. Man sørger altså for, at alle i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, har samme chance for at komme med i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, dette er svært at administrere uden registre eller samme tilgang til alle respondenter eller elermenter i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``. Man kan også være begrænset fx. fysiske, administrative eller geografiske begrænsninger. Simpel tilfældig udvælgelse er samme princip som udtrækningen af lottotallene, hvor alle tal er lige sandsynlige.
 
-1. Er populationen på 1 mio., skal sandsynligheden for udtrækning således være $\frac{1}{1.000.000}=0.000001$ for hvert element i populationen.
+1. Er ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` på 1 mio., skal sandsynligheden for udtrækning således være $\frac{1}{1.000.000}=0.000001$ for hvert element i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.
 
 ## <font color="red">Systematisk udvælgelse<sup> Premium </font></sup>
 
-Man kan udvælge respondenter systematisk, hvis man har en ordning af populationen, ordningen kan fx. være ud fra løbenummer, tid, alfabet etc.
+Man kan udvælge respondenter systematisk, hvis man har en ordning af ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, ordningen kan fx. være ud fra løbenummer, tid, alfabet etc.
 
 1. Ønsker man at belyse deltagerne i en konferences holdning, kunne man interviewe hver 10. deltager når du forlader konferencen.
 
 ## <font color="red">Stratificeret udvælgelse<sup> Premium </font></sup>
 
-At stratificere betyder man opdeler populationen i ens grupper eller segmenter, dette kaldes stata. Der er måske grupper i populationen, med samme karakteristika, det kan være specielle holdninger, etnicitet, indkomst, socialklasse, køn eller andre kriterier, der kan have betydning for folks holdning. Stratificeret udvælgelse vil ofte give mere præcise resultater, end simpel tilfældig udvælgelse.
+At stratificere betyder man opdeler ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` i ens grupper eller segmenter, dette kaldes stata. Der er måske grupper i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, med samme karakteristika, det kan være specielle holdninger, etnicitet, indkomst, socialklasse, køn eller andre kriterier, der kan have betydning for folks holdning. Stratificeret udvælgelse vil ofte give mere præcise resultater, end simpel tilfældig udvælgelse.
 
 1. Skal man undersøge befolkningens holdning til udflytningen af statslige arbejdspladser, vil der måske være forskel på holdningen alt efter om man bor i by eller på land, er mand eller kvinde. Befolkningenen kunne inddeles efter køn, by- og landbefolkning, så man får 4 strata med nogenlunde ens holdninger.
 
-2. Det kan være landmanden, der dyrker agurker, opdeler populationen i 3 strata i forhold til kvaliteten af drivhusene.
+2. Det kan være landmanden, der dyrker agurker, opdeler ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` i 3 strata i forhold til kvaliteten af drivhusene.
 
 ### <font color="red">Proportional allokering<sup> Premium </font></sup>
-Proportional allokering, betyder man sikrer hvert strata har en andel i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, der svarer til andelen i populationen.
+Proportional allokering, betyder man sikrer hvert strata har en andel i ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))``, der svarer til andelen i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``.
 
 1. Udgør  andelen af kvinder i landbefolkningen 20% af befolkningen, skal stikprøveandelen således være 20%. Har man adspurgt 1000 respondenter, skal 200 af disse således være kvinder, der bor på landet.
 
@@ -6133,7 +6133,7 @@ Man kunne forestille sig at kvinder i landbefolkningen, var et mere homogent str
 
 <div class="Keats">
 <img src="img/readersdigest.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
-I 1936 gennemførte Readers Digest en meget stor og dyr undersøgelse, man spurgte 2,4 mio. vælgere for at finde ud af, hvem de ville stemme på ved præsidentvalget. Stikprøven viste at 57% stemme på Landon og 43% på Roosevelt. Resultatet af valget blev at Roosevelt vandt med 62% mod 38% til Landon. Problemet ved det voldsomme fejlskøn lå primært i stikprøveindsamlingen. Vælgerne var udvalgt ud fra telefonlister, abonnementer og medlemslister til klubber. I 1936 var telefon en luksus, som fx. de 9 mio arbejdsløse, ikke havde råd til. Man kalder denne type problem ved udvælgelsen, hvor grupper fra populationen ikke repræsenteres korrekt, for coverage error, dette resulterer i ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` bias eller udvælgelses bias. George Gallup forudsagde korrekt Roosevelt ville vinde, udfra en mindre ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` med kun 50.000 respondenter.
+I 1936 gennemførte Readers Digest en meget stor og dyr undersøgelse, man spurgte 2,4 mio. vælgere for at finde ud af, hvem de ville stemme på ved præsidentvalget. Stikprøven viste at 57% stemme på Landon og 43% på Roosevelt. Resultatet af valget blev at Roosevelt vandt med 62% mod 38% til Landon. Problemet ved det voldsomme fejlskøn lå primært i stikprøveindsamlingen. Vælgerne var udvalgt ud fra telefonlister, abonnementer og medlemslister til klubber. I 1936 var telefon en luksus, som fx. de 9 mio arbejdsløse, ikke havde råd til. Man kalder denne type problem ved udvælgelsen, hvor grupper fra ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` ikke repræsenteres korrekt, for coverage error, dette resulterer i ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` bias eller udvælgelses bias. George Gallup forudsagde korrekt Roosevelt ville vinde, udfra en mindre ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` med kun 50.000 respondenter.
 </div>
 
 ### <font color="red">Poststratifikation<sup> Premium </font></sup>
@@ -6142,13 +6142,13 @@ Poststratifikation eller efter stratificering, betyder man efter man har indsaml
 
 
 ## <font color="red">Klyngeudvælgelse eller cluster udvælgelse<sup> Premium </font></sup>
-Klyngeudvælgelse betyder man opdeler populationen i klynger. Klynger fx. forskellige afdelinger i en virksomhed eller geografiske områder i befolkning fx boligområder. Så udtager man til ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` samtlige respondenter fra et antal tilfældigt udvalgte klynger.
+Klyngeudvælgelse betyder man opdeler ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` i klynger. Klynger fx. forskellige afdelinger i en virksomhed eller geografiske områder i befolkning fx boligområder. Så udtager man til ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` samtlige respondenter fra et antal tilfældigt udvalgte klynger.
 
 1. Man kunne forestille sig at man opdelte landet efter veje, og herefter spurgte samtlige respondenter på tilfældigt udvalgte veje.
 
 2. Det kunne være at landmanden undersøgte samtlige agurker på udvalgte vækstborde, klyngerne ville så være vækstbordene.
 
-3. Foxconn kunne opdele populationen i klynger efter hvilket samlebånd, de blev produceret på, og så tilfældigt udvælge et antal klynger, hvor man undersøger samtlige elektronikprodukter.
+3. Foxconn kunne opdele ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` i klynger efter hvilket samlebånd, de blev produceret på, og så tilfældigt udvælge et antal klynger, hvor man undersøger samtlige elektronikprodukter.
 
 
 <br>
@@ -6490,7 +6490,7 @@ Vi kan nu udregne ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE
 
 $$\chi^2=\frac{(60-75)^2}{75}+\frac{(40-30)^2}{30}+\frac{(50-45)^2}{45}=3+3\frac{1}{3}+\frac{5}{9}=`r chi`$$
 
-Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` 6.89 er større end den kritiske værdi 5.99, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``, der er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi tester her på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, dvs. 100%-5%=95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``. Vi vælger 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi ikke har signifikans- eller ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i populationen, er ikke identiske med fordelingen i regionen.
+Vi sammenligner med chi i anden fordelingen med k-1=3-1=2 frihedsgrader $\chi^2_2$, den kritiske værdi bliver `r chicrit` hvilket giver ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv`, illustreret ved den gule hale i figuren nedenfor. Da ``r tippy(" teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`` 6.89 er større end den kritiske værdi 5.99, får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))``, der er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Vi tester her på 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, dvs. 100%-5%=95% ``r tippy(" konfidensniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``. Vi vælger 5% ``r tippy(" signifikansniveau", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, når vi ikke har signifikans- eller ``r tippy(" konfidensniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[10,2],"</h4>"))``, givet i opgaven. Vi forkaster nulhypotesen og konkluderer, fordelingen af boligtyper i ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))``, er ikke identiske med fordelingen i regionen.
 
 ```{r 68,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(0,15,length.out=200)
@@ -6572,7 +6572,7 @@ chidf <- length(obs)-1
 chicrit <- round(qchisq(0.95,chidf),4)
 chipv <- round(1-pchisq(chi,chidf),4)
 ```
-[Hent datasættet statkarakterer](https://www.dropbox.com/s/mnsmu56cdkl8yyv/Statkarakterer.xlsx?dl=1) for ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` for statistikstuderende , betragt kun de beståede studerende, kan populationen antages at følge de generelle retningslinjer?
+[Hent datasættet statkarakterer](https://www.dropbox.com/s/mnsmu56cdkl8yyv/Statkarakterer.xlsx?dl=1) for ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` for statistikstuderende , betragt kun de beståede studerende, kan ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` antages at følge de generelle retningslinjer?
 
 
 </details>
@@ -6604,7 +6604,7 @@ Bemærk forventede værdier er mindre end 5 men større end 3, der kan være pro
 
 `r round(chibi,4)[1]`+`r round(chibi,4)[2]`+`r round(chibi,4)[3]`+`r round(chibi,4)[4]`=`r chi`
 
-Hvilket fører til ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv` illustreret ved den gule hale herunder, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` forkaster vi nulhypotesen, og konkluderer at statistikkarakterer på Finansøkonom ikke følger den ønskede fordeling. Vi kan ud fra chi i anden bidragene se hvilke karakterer der giver de største afvigelser. Store bidrag betyder store afvigelser mellem det observede og ønskede. Det største bidrag `r round(max(chibi),4)` stammer fra 02 karakteren, her er den observerede karakter `r round(obs,4)[1]`, mens den forventede værdi er `r round(exp,4)[1]`. Der er altså flere studerende, end forventet der får 02. Bemærk for at vi kan udtale os om populationen finansøkonomer, fordres at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for finansøkonomer. Stikprøven er ikke udtaget simpelt tilfældigt, da der er tale om 2 bestemte klasser, det kan derfor diskuteres om ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er afspejler populationen korrekt.
+Hvilket fører til ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` `r chipv` illustreret ved den gule hale herunder, da ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` er mindre end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))`` forkaster vi nulhypotesen, og konkluderer at statistikkarakterer på Finansøkonom ikke følger den ønskede fordeling. Vi kan ud fra chi i anden bidragene se hvilke karakterer der giver de største afvigelser. Store bidrag betyder store afvigelser mellem det observede og ønskede. Det største bidrag `r round(max(chibi),4)` stammer fra 02 karakteren, her er den observerede karakter `r round(obs,4)[1]`, mens den forventede værdi er `r round(exp,4)[1]`. Der er altså flere studerende, end forventet der får 02. Bemærk for at vi kan udtale os om ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` finansøkonomer, fordres at ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er repræsentativ for finansøkonomer. Stikprøven er ikke udtaget simpelt tilfældigt, da der er tale om 2 bestemte klasser, det kan derfor diskuteres om ``r tippy(" stikprøven", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` er afspejler ``r tippy(" populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`` korrekt.
 
 ```{r gofstatkar,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(0,25,length.out=200)
