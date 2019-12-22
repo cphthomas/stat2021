@@ -12,7 +12,9 @@ BEGREB <<- c(
   "Signifikansniveau",
   "Konfidensniveau",
   "Standardafvigelsen",
-  "Konfidensinterval"
+  "Konfidensinterval",
+  "Stikprøve",
+  "Population"
 
 
 
@@ -161,6 +163,18 @@ forklaring <<- c(
   Vi kan beregne konfidensintervaller for parametre vi estimerer, fx. gennemsnittet, standardafvigelsen, andelen etc.<br>
   I modsætning til et punktestimat for fx. middelværdien, fortæller konfidensintervallet os noget om kvaliteten af vort estimat/gæt, ud fra bredden af konfidensintervallet.</i><br><br>
   <a href=\"https://s.tepedu.dk/konfidensintervaller.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om konfidensintervallet!</a>
+  <br>",
+  "En stikprøve, er et udsnit af populationen (den store mængde vi ønsker at udtale os om), hvis stikprøven afspejler populationen korrekt, siger vi stikprøven er repæsentativ.<br>
+  <i>Vi bruger stikprøver, da det er billigere end at undersøge hele populationen.<br>
+  Hvis vi fx. ønsker at udtale os om danske mænds gennemsnitlige højde, kan vi udtage en stikprøve, hvor vi måler 100 mænds højde.<br>
+  Stikprøven består så af de 100 målinger af højderne, populationen er så alle danske mænd.</i><br><br>
+    <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om stikprøver!</a>
+  <br>",
+  "Populationen er den store mængde, vi ønsker at udtale os om. Fx alle iphone brugere i København, alle kontohavere i Danske Bank, alle danske kvinder etc.<br>
+  <i>Vi bruger som redskab stikprøver som er en lille del af populationen til at udtale os om populationen, da det er billigere end at undersøge hele populationen.<br>
+  Hvis vi fx. ønsker at udtale os om danske mænds gennemsnitlige højde, kan vi udtage en stikprøve, hvor vi måler 100 mænds højde.<br>
+  Stikprøven består så af de 100 målinger af højderne, populationen er så alle danske mænd.</i><br><br>
+  <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om stikprøver!</a>
   <br>"
 
 
