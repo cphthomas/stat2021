@@ -93,12 +93,17 @@
 <script src="libs/highcharts-7.0.1/custom/symbols-extra.js"></script>
 <script src="libs/highcharts-7.0.1/custom/text-symbols.js"></script>
 <script src="libs/highchart-binding-0.7.0/highchart.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.11/datatables.js"></script>
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/dt-plugin-searchhighlight-1.10.19/source.css" rel="stylesheet" />
+<script src="libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
+<script src="libs/dt-plugin-searchhighlight-1.10.19/source.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/jszip-1.10.19/jszip.min.js"></script>
 <script src="libs/pdfmake-1.10.19/pdfmake.min.js"></script>
 <script src="libs/pdfmake-1.10.19/vfs_fonts.js"></script>
@@ -108,11 +113,6 @@
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
-<link href="libs/dt-plugin-searchhighlight-1.10.19/source.css" rel="stylesheet" />
-<script src="libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
-<script src="libs/dt-plugin-searchhighlight-1.10.19/source.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -467,8 +467,8 @@ Please Wait…
 <p>Den tilsynsførende spørger ham nysgerrigt. “Nu har du siddet i 2 timer og slået plat og krone for svarene uden at åbne bogen, hvordan kan det dog tage dig så lang tid?”</p>
 <p>Den studerende svarer febrisk, mens han stadig slår plat og krone “Shhh! jeg er ved at tjekke svarene”</p>
 </div>
-<p>Binomialfordelingen er en <code><span id="htmlwidget-49732dfce53a0e5534a7" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-49732dfce53a0e5534a7">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Diskrete variable er variable, der har heltallige værdier fx.<br><i>\n  Antal børn i familien<br>\n  {0, 1, 0, 3, 2, 1,0,1,0,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om diskrete variable!<\/a><\/h4>","text":" diskret"},"evals":[],"jsHooks":[]}</script></code> (heltallig) fordeling, der beskriver sandsynligheden for x succeser, ved n identiske Bernoulli forsøg. Sandsynlighedsfordelingen for krone ved ti kast, med en fair mønt, er således 10 uafhængige forsøg med samme sandsynlighedsparameter p = 0.5 antalsparameteren n er 10, hvilket er det samlede antal enkelt forsøg.
+<p>Binomialfordelingen er en <code><span id="htmlwidget-94fb1716f107b41c7f95" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-94fb1716f107b41c7f95">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Diskrete variable er variable, der har heltallige værdier fx.<br><i>\n  Antal børn i familien<br>\n  {0, 1, 0, 3, 2, 1,0,1,0,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om diskrete variable!<\/a><\/h4>","text":" diskret"},"evals":[],"jsHooks":[]}</script></code> (heltallig) fordeling, der beskriver sandsynligheden for x succeser, ved n identiske Bernoulli forsøg. Sandsynlighedsfordelingen for krone ved ti kast, med en fair mønt, er således 10 uafhængige forsøg med samme sandsynlighedsparameter p = 0.5 antalsparameteren n er 10, hvilket er det samlede antal enkelt forsøg.
 For at en stokastisk variabel X er binomialfordelt, skal følgende 3 forudsætninger være opfyldt:</p>
 <ol style="list-style-type: decimal">
 <li><p>Den stokastiske variabel betegner antallet af succeser i n forsøg, som hver især kan antage to værdier kaldet succes og fiasko.</p></li>
@@ -499,16 +499,16 @@ For at en stokastisk variabel X er binomialfordelt, skal følgende 3 forudsætni
 <p><img src="_main_files/figure-html/Binomialfordelingen450-1.svg" width="864" /></p>
 <p>Her ses binomialfordelingen med antalsparamerter n=8 og sandsynlighedsparameter p=0.5.</p>
 <p><img src="_main_files/figure-html/Binomialfordelingen850-1.svg" width="864" /></p>
-<p>Her ses binomialfordelingen med antalsparamerter n=8 og sandsynlighedsparameter p=0.9. Bemærk fordelingen bliver <code><span id="htmlwidget-2a0040f71096f4a3cb76" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-2a0040f71096f4a3cb76">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" venstreskæv"},"evals":[],"jsHooks":[]}</script></code> hvis p er større end 0.5 hvor den er symmetrisk.</p>
+<p>Her ses binomialfordelingen med antalsparamerter n=8 og sandsynlighedsparameter p=0.9. Bemærk fordelingen bliver <code><span id="htmlwidget-71b9d2108484f6eff671" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-71b9d2108484f6eff671">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" venstreskæv"},"evals":[],"jsHooks":[]}</script></code> hvis p er større end 0.5 hvor den er symmetrisk.</p>
 <p><img src="_main_files/figure-html/Binomialfordelingen890-1.svg" width="864" /></p>
-<p>Her ses binomialfordelingen med antalsparamerter n=8 og sandsynlighedsparameter p=0.1 denne er <code><span id="htmlwidget-a5df3632d33d967e9328" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-a5df3632d33d967e9328">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" højreskæv"},"evals":[],"jsHooks":[]}</script></code>.</p>
+<p>Her ses binomialfordelingen med antalsparamerter n=8 og sandsynlighedsparameter p=0.1 denne er <code><span id="htmlwidget-7af3ea1c9a36a4a54e6b" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-7af3ea1c9a36a4a54e6b">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" højreskæv"},"evals":[],"jsHooks":[]}</script></code>.</p>
 <p><img src="_main_files/figure-html/Binomialfordelingen810-1.svg" width="864" /></p>
 <p>Figuren nedenfor vises 3 binomialfordelinger, samtlige med sandsynlighedsparameter p=0.5 og antalsparameter n hhv. 10, 20 og 50.</p>
 <p><img src="_main_files/figure-html/Binom3stk-1.svg" width="864" /></p>
-<p>Figuren nedenfor viser 3 binomialfordelinger med sandsynlighedsparametre p hhv. 0.1, 0.5 og 0.9 samtlige har antalsparameter n 50. Bemærk at sandsynlighedsparametrene påvirker <code><span id="htmlwidget-1ce671e6c100469ca425" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-1ce671e6c100469ca425">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" skævheden"},"evals":[],"jsHooks":[]}</script></code>. En sandsynlighedsparameter, mindre end 0.5 giver højreskævhed, netop 0.5 giver symmetri og større end 0.5 venstreskævhed.</p>
+<p>Figuren nedenfor viser 3 binomialfordelinger med sandsynlighedsparametre p hhv. 0.1, 0.5 og 0.9 samtlige har antalsparameter n 50. Bemærk at sandsynlighedsparametrene påvirker <code><span id="htmlwidget-a1e15d0d35289b5e2b66" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-a1e15d0d35289b5e2b66">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>\n  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!<\/a>\n  <\/h4>","text":" skævheden"},"evals":[],"jsHooks":[]}</script></code>. En sandsynlighedsparameter, mindre end 0.5 giver højreskævhed, netop 0.5 giver symmetri og større end 0.5 venstreskævhed.</p>
 <p><img src="_main_files/figure-html/Binom3ford2-1.svg" width="864" /></p>
 <p>Vi kan for for en binomialfordelt stokastisk variabel <span class="math inline">\(X\sim bin(n,p)\)</span> beregne:</p>
 <p>Middelværdien

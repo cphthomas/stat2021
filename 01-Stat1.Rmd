@@ -459,15 +459,16 @@ Herunder ses ``r tippy(" fraktiler", size="large" ,interactive = TRUE, arrow = T
 <br>
 
 
-```{r dagsafkastpcttabel, echo=FALSE,warning=FALSE, echo=FALSE }
-# options(scipen=999) #disable scientific
-# frak <- c(0,.005,.025,.05,.1,.2,.25,.3,.4,.5,.6,.7,.75,.8,.9,.95,.975,.995,1)
-# frak2 <- c("0% Fraktilen","0.5% Fraktilen","2.5% Fraktilen","5% Fraktilen","10% Fraktilen","20% Fraktilen","25% Fraktilen","30% Fraktilen","40% Fraktilen","50% Fraktilen","60% Fraktilen","70% Fraktilen","75% Fraktilen","80% Fraktilen","90% Fraktilen","95% Fraktilen","97.5% Fraktilen","99.5% Fraktilen","100% Fraktilen")
-# df <- data.frame(round(quantile(DKdf[,1],frak),3))
-# names(df)[1] <- "Dagsafkast i procent"
-# # names(df)[0] <- "Fraktiler"
-# #rownames(df) <- c()
-# datatable(df,rownames = frak2,caption = "Fraktiler for Dagligt afkast Tryg aktien")
+```{r dagsafkastpcttabel, echo=FALSE,warning=FALSE}
+options(scipen=999) #disable scientific
+frak <- c(0,.005,.025,.05,.1,.2,.25,.3,.4,.5,.6,.7,.75,.8,.9,.95,.975,.995,1)
+frak2 <- c("0% Fraktilen","0.5% Fraktilen","2.5% Fraktilen","5% Fraktilen","10% Fraktilen","20% Fraktilen","25% Fraktilen","30% Fraktilen","40% Fraktilen","50% Fraktilen","60% Fraktilen","70% Fraktilen","75% Fraktilen","80% Fraktilen","90% Fraktilen","95% Fraktilen","97.5% Fraktilen","99.5% Fraktilen","100% Fraktilen")
+df <- data.frame(round(quantile(DKdf[,1],frak),3))
+names(df)[1] <- "Dagsafkast i procent"
+names(df)[0] <- "Fraktiler"
+rownames(df) <- c()
+datatable(df,rownames = frak2,options = list(searchHighlight = TRUE,pageLength = 18,dom = 'Bfrt',language = list(url = '////cdn.datatables.net/plug-ins/1.10.20/i18n/Danish.json'),
+    buttons = c('pdf', 'excel'),autoWidth = TRUE, columnDefs = list(list(className = 'dt-left', targets = 0:0))),caption = "Fraktiler for Dagligt afkast Tryg aktien")
 
 ```
 

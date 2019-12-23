@@ -93,12 +93,17 @@
 <script src="libs/highcharts-7.0.1/custom/symbols-extra.js"></script>
 <script src="libs/highcharts-7.0.1/custom/text-symbols.js"></script>
 <script src="libs/highchart-binding-0.7.0/highchart.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.11/datatables.js"></script>
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/dt-plugin-searchhighlight-1.10.19/source.css" rel="stylesheet" />
+<script src="libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
+<script src="libs/dt-plugin-searchhighlight-1.10.19/source.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/jszip-1.10.19/jszip.min.js"></script>
 <script src="libs/pdfmake-1.10.19/pdfmake.min.js"></script>
 <script src="libs/pdfmake-1.10.19/vfs_fonts.js"></script>
@@ -108,11 +113,6 @@
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
 <script src="libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
-<link href="libs/dt-plugin-searchhighlight-1.10.19/source.css" rel="stylesheet" />
-<script src="libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
-<script src="libs/dt-plugin-searchhighlight-1.10.19/source.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -675,15 +675,15 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
 <p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(1,1,0) 
+## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
-##           ar1
-##       -0.5203
-## s.e.   0.1184
+##           ma1
+##       -0.5272
+## s.e.   0.1146
 ## 
-## sigma^2 estimated as 108.5:  log likelihood=-187.76
-## AIC=379.52   AICc=379.78   BIC=383.34</code></pre>
+## sigma^2 estimated as 61.63:  log likelihood=-173.63
+## AIC=351.27   AICc=351.52   BIC=355.09</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
@@ -691,35 +691,35 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## 
 ## Coefficients:
 ##          ar1
-##       0.6181
-## s.e.  0.1091
+##       0.6790
+## s.e.  0.1049
 ## 
-## sigma^2 estimated as 94.32:  log likelihood=-184.35
-## AIC=372.7   AICc=372.95   BIC=376.52</code></pre>
+## sigma^2 estimated as 87.07:  log likelihood=-182.42
+## AIC=368.84   AICc=369.09   BIC=372.66</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(0,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##          ma1      ma2     mean
-##       0.5918  -0.1439  99.1776
-## s.e.  0.0695   0.0673   1.0857
+##           ar1     ma1     mean
+##       -0.3257  0.8138  98.7792
+## s.e.   0.0955  0.0555   0.9589
 ## 
-## sigma^2 estimated as 114.4:  log likelihood=-756.6
-## AIC=1521.19   AICc=1521.4   BIC=1534.38</code></pre>
+## sigma^2 estimated as 99.92:  log likelihood=-743.01
+## AIC=1494.02   AICc=1494.22   BIC=1507.21</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      104.89503 91.18758 118.6025 83.93130 125.8588
-## 202       97.43098 81.50306 113.3589 73.07133 121.7906
-## 203       99.17763 83.12807 115.2272 74.63194 123.7233
-## 204       99.17763 83.12807 115.2272 74.63194 123.7233
-## 205       99.17763 83.12807 115.2272 74.63194 123.7233
-## 206       99.17763 83.12807 115.2272 74.63194 123.7233
-## 207       99.17763 83.12807 115.2272 74.63194 123.7233
-## 208       99.17763 83.12807 115.2272 74.63194 123.7233
-## 209       99.17763 83.12807 115.2272 74.63194 123.7233
-## 210       99.17763 83.12807 115.2272 74.63194 123.7233</code></pre>
+## 201      100.63626 87.82565 113.4469 81.04412 120.2284
+## 202       98.17447 83.91906 112.4299 76.37271 119.9762
+## 203       98.97619 84.57606 113.3763 76.95308 120.9993
+## 204       98.71510 84.29970 113.1305 76.66864 120.7615
+## 205       98.80013 84.38311 113.2171 76.75120 120.8491
+## 206       98.77243 84.35524 113.1896 76.72324 120.8216
+## 207       98.78145 84.36424 113.1987 76.73224 120.8307
+## 208       98.77852 84.36131 113.1957 76.72930 120.8277
+## 209       98.77947 84.36226 113.1967 76.73025 120.8287
+## 210       98.77916 84.36195 113.1964 76.72994 120.8284</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
