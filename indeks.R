@@ -21,7 +21,11 @@ BEGREB <<- c(
   "Medianen",
   "Parameter",
   "Kurtosis",
-  "Skævhed"
+  "Skævhed",
+  "Standardfejlen",
+  "t-fordelingen",
+  "Frihedsgrader",
+  "z-fordelingen"
 
 
 
@@ -56,7 +60,7 @@ forklaring <<- c(
   Nedbørsmængde i mm. i Dragør<br>
   {0,00, 0,02, 0,03, 0.12, 0.08, 1,12,1,43,1,21,0,03,...}<br>
   Indholdet i Coca Cola dåser i ml.<br>
-  {333,12, 333,08, 332,82, 332,73, 332,93,...}</i><br><br>
+  {333.12, 333.08, 332.82, 332,73, 332.93,...}</i><br><br>
   <a href=\"https://s.tepedu.dk/datast-og-data.html#kvalitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvantitative variable!</a>",
 
   "En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>
@@ -240,9 +244,43 @@ forklaring <<- c(
 
 
   "Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>
-  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden</i><br><br>
+  Man vil ofte ud fra fordelingen i fx. et histogram eller et boksplot, kunne vurdere skævheden</i><br><br>
   <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!</a>
+  ",
+
+  "Standardfejlen også kaldet SE (standard error) er standardafvigelsen for stikprøvefordelingen.<br>
+  <i>Hvor standardafvigelsen angiver den typiske afvigelse for en observation, kan standardfejlen udtrykke usikkerheden på fx. gennemsnittet af
+  n målinger, hvor n er stikprøvestørrelsen. Standardfejlen for middelværdien findes som standardafvigelsen divideret med kvadratroden af n, jo
+  større stikprøve jo mindre standardfejl. Standardfejlen bruges til at beregne konfidensinterval. Nedre og øvre grænse for konfidensintervallet
+  for middelværdien findes som middelværdien plus og minus ca. 2 gange standardfejlen.<i><br>
+  <a href=\"https://s.tepedu.dk/normalfordelingen.html#den-centrale-gr%C3%A6nsev%C3%A6rdis%C3%A6tning-clt\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om standardfejlen!</a>
+  ",
+
+  "t-fordelingen bruges i statistik når vi estimerer standardafvigelsen baseret på en stikprøve, vi bruger t-fordelingen til at beregne konfidensintervaller og hypoteseteste.<br>
+  <i>Udseendet af t-fordelingen bestemmes ud fra antal frihedsgrader, den ligner standard normalfordelingen
+  altså normalfordelingen der har middel 0 og standardafvigelse 1, bare med federe haler. Når antal frihedsgrader stiger approximerer (tilnærmer sig) t-fordelingen z-fordelingen.
+  </i><br><br>
+  <a href=\"https://s.tepedu.dk/normalfordelingen.html#t-fordelingen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om t-fordelingen!</a>
+  ",
+
+
+  "Frihedsgrader angiver, løst formuleret uden detaljer, antallet af værdier, der frit kan variere i beregningen af teststørrelsen.<br>
+  Antallet af frihedsgrader bestemmer useendet af fordelingen, t-, F- og &Chi;<sup>2</sup>-fordelinger bestemmes ud fra antallet af frihedsgrader.<br>
+  Antallet af frihedsgrader for t-fordelingen bestemmes ved antallet af observationer i stikprøven minus 1, når antal frihedsgrader stiger approximerer t-fordelingen standard normalfordelingen.<br>
+  Antallet af frihedsgrader for &Chi;<sup>2</sup>-fordelingen bestemmes ved (række-kategoier minus en) gange (søjle-kategorier minus en), når antal frihedsgrader stiger approximerer &Chi;<sup>2</sup>-fordelingen normalfordelingen.<br><br>
+  <a href=\"https://s.tepedu.dk/normalfordelingen.html#frihedsgrader\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om frihedsgrader!</a>
+  ",
+
+
+
+  "z-fordelingen er normalfordelingen med middelværdi &mu; = 0 og standardafvigelse &sigma; = 1.<br>
+  Historisk har man benyttet transformation af normalfordelinger til z-fordelingen, for derefter at bestemmme sandsynligheder ud fra tabelopslag.<br>
+  Med computere er tabelopslag ikke længere nødvendige, hvorfor z-fordelingens ikke længere har samme vigtighed.<br>
+  <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om z-fordelingen!</a>
   "
+
+
+
 
 )
 
