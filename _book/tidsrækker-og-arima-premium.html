@@ -675,51 +675,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
 <p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##           ma1
-##       -0.4716
-## s.e.   0.1290
+##           ar1
+##       -0.5203
+## s.e.   0.1184
 ## 
-## sigma^2 estimated as 94.16:  log likelihood=-184.19
-## AIC=372.39   AICc=372.64   BIC=376.21</code></pre>
+## sigma^2 estimated as 108.5:  log likelihood=-187.76
+## AIC=379.52   AICc=379.78   BIC=383.34</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(0,2,1) 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##          ma1
-##       -0.353
-## s.e.   0.148
+##          ar1
+##       0.6181
+## s.e.  0.1091
 ## 
-## sigma^2 estimated as 98.34:  log likelihood=-181.5
-## AIC=367.01   AICc=367.27   BIC=370.79</code></pre>
+## sigma^2 estimated as 94.32:  log likelihood=-184.35
+## AIC=372.7   AICc=372.95   BIC=376.52</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
 ## ARIMA(0,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##          ma1     ma2      mean
-##       0.4655  -0.239  100.3292
-## s.e.  0.0710   0.070    0.7441
+##          ma1      ma2     mean
+##       0.5918  -0.1439  99.1776
+## s.e.  0.0695   0.0673   1.0857
 ## 
-## sigma^2 estimated as 74.73:  log likelihood=-713.96
-## AIC=1435.93   AICc=1436.13   BIC=1449.12</code></pre>
+## sigma^2 estimated as 114.4:  log likelihood=-756.6
+## AIC=1521.19   AICc=1521.4   BIC=1534.38</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      104.18188 93.10295 115.2608 87.23812 121.1256
-## 202       98.87986 86.65944 111.1003 80.19033 117.5694
-## 203      100.32918 87.82517 112.8332 81.20594 119.4524
-## 204      100.32918 87.82517 112.8332 81.20594 119.4524
-## 205      100.32918 87.82517 112.8332 81.20594 119.4524
-## 206      100.32918 87.82517 112.8332 81.20594 119.4524
-## 207      100.32918 87.82517 112.8332 81.20594 119.4524
-## 208      100.32918 87.82517 112.8332 81.20594 119.4524
-## 209      100.32918 87.82517 112.8332 81.20594 119.4524
-## 210      100.32918 87.82517 112.8332 81.20594 119.4524</code></pre>
+## 201      104.89503 91.18758 118.6025 83.93130 125.8588
+## 202       97.43098 81.50306 113.3589 73.07133 121.7906
+## 203       99.17763 83.12807 115.2272 74.63194 123.7233
+## 204       99.17763 83.12807 115.2272 74.63194 123.7233
+## 205       99.17763 83.12807 115.2272 74.63194 123.7233
+## 206       99.17763 83.12807 115.2272 74.63194 123.7233
+## 207       99.17763 83.12807 115.2272 74.63194 123.7233
+## 208       99.17763 83.12807 115.2272 74.63194 123.7233
+## 209       99.17763 83.12807 115.2272 74.63194 123.7233
+## 210       99.17763 83.12807 115.2272 74.63194 123.7233</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
