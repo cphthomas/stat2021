@@ -15,12 +15,21 @@ pacman::p_load(Cairo,timeDate, DT,plotly,rio,exams,e1071,WriteXLS,readxl,maps,kn
 
 # Indledning 
 		
-```{r, echo=FALSE, results='asis'}
+```{r, echo=FALSE, results='asis',warning=FALSE,include=FALSE}
 cat(readLines('np.html'))
 source("indeks.R")
 ```
 			
 
+<!-- ```{r} -->
+<!-- boble <- function(navn,nr){ -->
+<!--   indhold <- paste0(tippy(navn, size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[nr,2],"</h4>"))) -->
+<!--   return(indhold) -->
+<!-- } -->
+
+
+
+<!-- ``` -->
 
 
 
@@ -873,7 +882,7 @@ Hvorfor kan en portefølje, der ikke er volatil (dvs. porteføljen har en lille 
 
 
 ```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
+# cat(readLines('np.html'))
 ```
 
 
@@ -885,7 +894,7 @@ cat(readLines('np.html'))
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337728' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er normalfordelingen essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien $\mu$ og ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$.
+Vi vil i dette kapitel se på forskellige typer af fordelinger. Data- ``r tippy(" stikprøve", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[13,2],"</h4>"))`` og sandsynlighedsfordelingen. For at forstå sammenhængen mellem disse er ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))`` essentiel. Normalfordelingen er den vigtigste sandsynligheds fordeling,<img src="img/height.png" align="right" width="20%" height="20%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> den er ``r tippy(" kontinuert", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[4,2],"</h4>"))`` symmetrisk mesokurtisk og bestemmes entydigt ud fra middelværdien $\mu$ og ``r tippy(" standardafvigelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[11,2],"</h4>"))`` $\sigma$.
 
 
 
@@ -918,7 +927,7 @@ plot(x,y,type="l",main = "Fordelingen af mænds højde",xlim=c(140,220),cex.main
 
 <img src="img/popcorn.png" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-IQ, Popcorn poptider, nedbør, vandstand etc. er normalfordelte fænomener. Tæthedsfunktionen for normalfordelingen er givet ved:
+IQ, Popcorn poptider, nedbør, vandstand etc. er normalfordelte fænomener. Tæthedsfunktionen for ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))`` er givet ved:
 
 $$ f\left( x, \mu, \sigma \right) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^ { - \frac {\left( x - \mu \right)^2} {2 \sigma^2} }$$
 
@@ -953,7 +962,7 @@ legend("topright", legend=c("Middel=-1","Middel=0","Middel=4"), col=c("lightgrey
 ```
 
   
-Middelværdi, median og modus/typetal er altid identisk for normalfordelingen, skævhed og kurtosis er 0.
+Middelværdi, median og modus/typetal er altid identisk for ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, skævhed og kurtosis er 0.
 
 
 
@@ -970,7 +979,7 @@ Hvis sandsynlighedsmålet fx. er normalfordelt skriver vi $X\sim N(\mu,\sigma)$.
 Ser vi på eksemplet med danske mænds højde, kan vi definere en normalfordelt stokastisk variabel $X\sim N(\mu=180.4,\sigma=7.42)$. Skal vi bestemme sandsynligheden for at en person er lavere end 178 cm, skriver vi dette som $P(X<178)$. Vi kan beregne sandsynligheder i det meste software. I Excel ville vi beregne $P(X<178)=0.37$, ved hjælp af formlen =NORMAL.FORDELING(178;180,4;7,42;1). 
 
 ### Standard normalfordelingen
-Der findes en særlig kendt normalfordeling, kaldet standard normalfordelingen, denne har parametrene $\mu=0$ og $\sigma=1$, hvilket altså betyder den har middel, median og modus 0 og standardafvigelse 1. Standard normalfordelingen ses i figuren herunder. 
+Der findes en særlig kendt normalfordeling, kaldet standard ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, denne har parametrene $\mu=0$ og $\sigma=1$, hvilket altså betyder den har middel, median og modus 0 og standardafvigelse 1. Standard normalfordelingen ses i figuren herunder. 
 
 ```{r stdnormal,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
@@ -1011,7 +1020,7 @@ axis(side = 1, at=c(-5,-2.56,-1.64,-1,1,1.64,2.56,5),cex.axis=0.6)
 grid()
 ```
 
-På grund af symmetrien for normalfordelingen, og da standardnormalfordelingen har middel 0 bliver 95% fraktilen bliver 1.64. Denne er vist i figuren herunder. Der gælder at hvis en vilkårlig $\alpha$%-fraktil for standard normalfordelingen er $-a$, bliver $1-\alpha$%-fraktilen $a$.
+På grund af symmetrien for ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, og da standardnormalfordelingen har middel 0 bliver 95% fraktilen bliver 1.64. Denne er vist i figuren herunder. Der gælder at hvis en vilkårlig $\alpha$%-fraktil for standard normalfordelingen er $-a$, bliver $1-\alpha$%-fraktilen $a$.
 ```{r 95fraktil,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
 y <- dnorm(x)
