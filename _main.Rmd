@@ -1,3 +1,55 @@
+--- 
+title: "Statistik"
+author: "Thomas Petersen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Statistik"
+favicon: "favicon.ico"
+---
+
+
+#    {-}
+					
+					
+```{r, echo=FALSE, results='asis'}
+cat(readLines('fp.html'))
+```
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  
+<h3>***Video sådan køber du adgang.***</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/354519447' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+  <br>
+  <br>
+  <br>
+  <br>
+<h3>***Video sådan afmelder du dit abonnement.***</h3>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/354519512' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
 ---
 output: 
   html_document: 
@@ -8848,4 +8900,689 @@ auto.arima(berkshire)
 
 
 <script async src="https://widget.spreaker.com/widgets.js"></script>
+
+
+<!--chapter:end:01-Stat1.Rmd-->
+
+# Materialer
+
+```{r, echo=FALSE, results='asis'}
+# cat(readLines('np.html'))
+```
+
+
+
+|MINDMAPS og Freestat|
+|-------------|
+|[Hent Freestat premium her](https://www.dropbox.com/s/a2jztexbxfzcli0/FREESTAT.xlsx?dl=1)|   
+|[Hent Freestat basis her](https://www.dropbox.com/s/jlug3bacgwqbka3/FREESTATfin.xlsx?dl=1)|   
+|[CPH Finansøkonom statistik mindmap](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQ1Zhdjh5WTJ4bnM)|
+
+***
+
+|Skabeloner|
+|-------------|
+|[Skabelon test af middelværdi](https://www.dropbox.com/s/xygqhfe6wmxzntf/Skabelon%20test%20af%20middelv%C3%A6rdi%20%CE%BC.docx?dl=1)|
+|[Skabelon test af standardafvigelse](https://www.dropbox.com/s/m3vmdo47f6ocza3/skabelon%20test%20af%20standardafvigelse.docx?dl=1)|
+|[Skabelon test af andel p](https://www.dropbox.com/s/vazc4t384xfw2vf/Skabelon%20test%20af%20andel%20p.docx?dl=1)|
+|[Skabelon test af 2 andele](https://www.dropbox.com/s/wbu8gaasar0i991/Skabelon%20test%20af%202%20andele.docx?dl=1)|
+|[Skabeloner test 2 middelværdier](https://www.dropbox.com/s/9qv7i2xlt2ioiut/Skabeloner%20test%202%20middelv%C3%A6rdier.docx?dl=1)|
+|[Skabelon Simpel lineær regression](https://www.dropbox.com/s/8ppxk89bapfh53p/Skabelon%20Simpel%20line%C3%A6r%20regression.docx?dl=1)|
+|[Skabelon Multipel lineær regression](https://www.dropbox.com/s/jghmkyl4ou66lim/Skabelon%20Multipel%20line%C3%A6r%20regression%20slutmodel.docx?dl=1)|
+|[Skabelon Goodness of fit test](https://www.dropbox.com/s/ectavp709wtmv6p/Skabelon%20Goodness%20of%20fit%20test.docx?dl=1)|
+|[Skabelon Chi i anden test](https://www.dropbox.com/s/gc0u8hdyrksa9jw/Skabelon%20Chi%20i%20anden%20test.docx?dl=1)|
+|[Skabelon ANOVA/ANAVA](https://www.dropbox.com/s/9q9joeo1gv8ywky/Skabelon%20ANOVA%3AANAVA.docx?dl=1)|  
+
+
+
+
+***
+
+
+|Datasæt|
+|-------------|
+|[2015-Januar-Data.xlsx](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldkt1OUx6LTEyMXM)|
+|[AFFAIRS.xls data vedr. utroskab](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRlVQcFBtdVlHZ1U)|
+|[BANKDATA.xls data vedr. bankansattes uddannelse, køn og etnicitet ](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRENKWWxlNlBXbmM)|
+|[Debt.xlsx](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlUGdpNXZjWm1sNk0)|
+|[Forbes 400 2014 RICH US](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYTRWVWozb09PRTQ)|
+|[Forbes-Global-2000 YEAR 2015](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlNEdtLUV3NFJTSkk)|
+|[FORD FOCUS](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlNTkzeVJlQV81OHM)|
+|[Fortune-Global-500](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQm51dXNjM3NmdE0)|
+|[GDP](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQUhPbEgxdmJhZTg)|
+|[GDP PER CAPITA USD](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSVkweHBpT19GZjg)|
+|[GDP2015](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlamdFSkk4SWU4eWM)|
+|[HELBRED](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlMTM1UUNMdzdoUm8)|
+|[Hjemmesidedesigns besøgstider i millisekunder](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlS3Y5ZUhROU9iNnM)|
+|[IMDB stikprøve på 759 film](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM)|
+|[KØNSROLLER](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlalR4TGdjSkV0RzA)|
+|[MEDIEFORBRUG](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSTFXM1pCMUtjc2M)|
+|[SOMMERHUSE LEJE RØMØ](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE)|
+|[Statkarakterer](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRURnNjk0UnJSYzQ)|
+|[TITANIC](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYWJOOG5yamNoOTQ)|
+|[TYVERI](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlMFZJdm5QdXpGTGc)|
+|[usarrest](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlRDhUYUk4R0NwVFk)|
+|[VIRKSOMHEDER-DK](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlVmxHTDltNk1VSG8)|
+|[Yahooinvestexcel](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlYnFpbWp1YTBlLVE)|
+|[USA afkast pr md](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ)|
+|[Hjemmeopgave USA afkast](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlekM5eVRYZkdUZnc)|
+|[Hjemmeopgave USA afkast løsning](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlSDNPZi1zSTlqNk0)|
+
+
+***
+
+|Finansøkonom valgfag statistik eksamensopgaver|
+|-------------|
+|[2017 December eksamensopgave valgfag statistik](https://www.dropbox.com/s/lpiglled5qdmtjh/2017%20December%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 December data valgfag statistik](https://www.dropbox.com/s/ki9mpbsn8jak84i/2017%20December%20-%20Data.xlsx?dl=1)|   
+|[2017 November eksamensopgave valgfag statistik](https://www.dropbox.com/s/3wwbnvyxdz5z04h/2017%20November%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 November data valgfag statistik](https://www.dropbox.com/s/nqqyc5puaqjuoo7/2017%20November%20valgfag%20statistik%20-%20Erstatninger.xlsx?dl=1)|   
+|[2017 Juni eksamensopgave valgfag statistik](https://www.dropbox.com/s/hc44wglho5tccgs/2017%20Juni%20eksamensopgave%20valgfag%20statistik.pdf?dl=1)|   
+|[2017 Juni data valgfag statistik](https://www.dropbox.com/s/73azkke4vnduzbk/2017%20Juni%20Data%20-%20Billeasing.xlsx?dl=1)|   
+|[2017 Maj eksamensopgave valgfag statistik](https://www.dropbox.com/s/psnsb67bw4v98a7/2017%20Maj%20eksamensopgave%20valgfag%20statistk.pdf?dl=1)|   
+|[2017 Maj data valgfag statistik](https://www.dropbox.com/s/7wpcnkdrjs9tetl/2017%20Maj%20Bank.xlsx?dl=1)|   
+|[2017 Maj løsningsforslag valgfag statistik](https://www.dropbox.com/s/4z84mj0mvx4xrql/2017%20Maj%20Valgfag%2C%20statistik%20-%20l%C3%B8sning.docx?dl=1)|   
+
+***
+
+|Finansøkonom statistik eksamensopgaver|
+|-------------|
+[Mappe med gamle eksamensopgaver](https://drive.google.com/drive/folders/0B1E7VnhxsDMlUTJXLWowYjFNTzg?usp=sharing)|
+
+
+***
+
+|Edutest|
+|-------------|
+|[www.edutest.dk](http://www.edutest.dk)|
+
+***
+
+|Hjemmeside af Benjamin Tejlbjerg med gymnasie matematik og statistik|
+|-------------|
+|[http://www.mathhx.dk](http://www.mathhx.dk/?q=node/117)|
+
+<!--chapter:end:02-Datasaet.Rmd-->
+
+## Videoer teori
+
+
+
+
+
+#### Introduktion
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228225774' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Data
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228229052' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Deskriptiv statistik
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228228677' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Fraktiler
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228228875' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Skævhed
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228226797' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Kurtosis
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228223866' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Sandsynligheder
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228228340' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Normalfordelingen
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337728' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Konfidensintervaller normalfordelingen 
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337765' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Normalfraktildiagram
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337668' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Stikprøvefordelingen
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337553' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Stikprøvefordelingen 2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337520' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Parameter-estimat
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337632' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### t-fordelingen
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337473' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Konfidensinterval middelværdien
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337810' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Fejlmargin
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337972' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Hypotesetest middelværdi
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/227337869' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Lineær regression
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228381611' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Lineær regression forudsætninger
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228381611' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### Goodness of fit test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231079869' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+### Chi i anden test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231079771' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+### Chi i anden test 2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231074575' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+### Anova
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231386150' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+<!--chapter:end:03-VideoerTeori.Rmd-->
+
+## Freestat FIN
+
+
+
+#### Mindmap hypoteser
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228385193' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Beskrivende statistik Freestat
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228226686' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Middelværdi standardafvigelse KI
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226077779' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Middelværdi test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226077032' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Middelværdi fejlmargin
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226077032' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Standardafvigelse test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226076398' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### 1 Andel test og KI
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/225968110' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### 1 Andel fejlmargin og FPC
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226076060' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### FPC endelig populations korrektion og z-test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226018075' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### 1 Andel test og KI
+<style>.embed-container { position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/225968110' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### 1 Andel fejlmargin og FPC
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226076060' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### 2 Andele
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226075888' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### 2 Middelværdier
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226073803' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Parret t-test
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228416754' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Korrelation
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226072242' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Simpel lineær regression
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226071259' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Simpel lineær regression PI og KI
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/225987363' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Multipel lineær regression
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226060430' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Dummy variable
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226042549' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+#### Multipel lineær regression forudsagt værdi
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226060763' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+#### ANOVA variansanalyse
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/231384291' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+<!--chapter:end:04-VideoerFreestatFin.Rmd-->
+
+## Eksamensvideoer
+
+<a name="2017_9_5"></a>
+
+
+
+___  
+___  
+___  
+
+#### Eksamen statistik 2 timer 2017 9 5 
+[2017 9 5 Opgave](https://www.dropbox.com/s/3gd6mcocowe8glq/2017%209%20Statistik%20Fin.pdf?dl=1)
+[2017 9 5 Data](https://www.dropbox.com/s/y4p8j90wjbzhtb3/2017%209%20statistik%20Data%202.RE.xlsx?dl=1)
+[2017 9 5 Løsningsforslag](https://www.dropbox.com/s/wruqocv7g0fvkob/2017%209%20Statistik%20Fin%20opg%201%20og%203%20l%C3%B8sning%20skabelon%20Freestat%20.docx?dl=1)
+
+##### Opgave 1 1 Normalfraktildiagram
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814242' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1 2 Test middel
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814353' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1 3 Varianshomogenitet
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814326' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1 4 Test af 2 middelværdier
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814384' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1 5 Konfidensinterval for forskellen af middelværdier
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814294' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 3 1 Test af andel
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814257' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 3 2 Konfidensinterval for middelværdi
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/263814415' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+___  
+___  
+___  
+
+<a name="2016_8_10"></a>
+
+
+
+___  
+___  
+___  
+
+#### Eksamen statistik 2 timer 2016 8 10
+[2016 8 10 Opgave](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlTy1NVjFBMDRLZFk)
+[2016 8 10 Data](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlcVdQUVFjUEp2SUE)
+[2016 8 10 Løsningsforslag](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlQnNjMk9XZDZKWUU)
+
+
+##### Opgave 1 Lineær regression
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226381571' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2 Andele
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226377107' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 3 Middelværdier
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226376881' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 4 Teori KI, punktestimat, testniveau
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226373724' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+<a name="2015_8_7"></a>
+
+
+  
+___  
+___  
+___  
+  
+<a name="2015_8_7"></a>
+
+
+
+___  
+___  
+___  
+  
+#### Eksamen statistik 2 timer 2015 8 7
+[2015 8 7 Opgave](https://www.dropbox.com/s/dwbpp3ykq17tbvb/2015%208%207%201.reeksamen.pdf?dl=1)
+[2015 8 7 Data](https://www.dropbox.com/s/45d1xkhjp3c0owh/2015%208%207%20Data.xlsx?dl=1)
+[2015 8 7 Løsningsforslag](https://www.dropbox.com/s/9nhbc21yth3si6o/2015%208%207%20Freestat%20skabelon%20l%C3%B8sning.docx?dl=1)
+
+##### Opgave 1.1  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054859' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1.2  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054899' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1.3  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054921' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 1.4  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054930' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+##### Opgave 1.5  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054963' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 2.1 og 2.2  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266054985' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 2.3   
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266055061' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 3.1   
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266055117' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 3.2  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266055181' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 3.3  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/266055230' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+  
+
+
+
+  
+___  
+___  
+___  
+  
+
+  
+  
+<a name="2015_3_4"></a>
+
+
+
+___  
+___  
+___  
+  
+#### Eksamen statistik 2 timer 2015 3 4  
+[2015 3 4 Opgave](https://drive.google.com/file/d/0B1E7VnhxsDMlLVBMek5kWEhRZlU/view?usp=sharing)
+[2015 3 4 Data](https://drive.google.com/file/d/0B1E7VnhxsDMlX0p3Qk8wWlNxM28/view?usp=sharing)
+[2015 3 4 Løsningsforslag](https://drive.google.com/file/d/0B1E7VnhxsDMlWXNWTW55Sk94RDA/view?usp=sharing)
+
+
+##### Opgave 1 lineær regression  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226381565' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2 Test af 2 middelværdier  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226381328' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 3 KI andel og middel, test af middel  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226381302' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 4 2 Andele  
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/226379835' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+<!--chapter:end:05-VideoerEksamensopgaver.Rmd-->
+
+## Eksamensvideoer AU Smartlearning
+
+
+
+
+___  
+___  
+___
+
+#### Konverter eksamensopgaven til Word
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270313506' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+<a name="smartau2017_6"></a>
+
+
+
+___  
+___  
+___
+
+#### Eksamen statistik AU Smartlearning 4 timer 2017 6
+[2017 6 Eksamensopgave](https://www.dropbox.com/s/dlgt1hnh6wu4aja/Statistik%20eksamensopgave%20juni%202017%20opgave%202.pdf?dl=1)
+[2017 6 Løsningsforslag](https://www.dropbox.com/s/s0fl0lg2i2zk2hh/Eksamen%202017%20juni%20opgave%202%20L%C3%98SNING.docx?dl=1)
+
+##### Opgave 2.1 Normalfraktildiagram
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261471273' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2.2 Test varians
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261478912' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 2.3 Test Middel
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261478966' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2.4 Test ens varianser
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261479020' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2.5 Test to middelværdier
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261479100' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 2.6 Sandsynlighed normalfordelingen
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261479159' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+##### Opgave 2.7 Sandsynlighed normalfordelingen
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/261471445' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+<a name="smartau2016_1"></a>
+
+
+
+___  
+___  
+___ 
+
+
+#### Eksamen statistik 4 timer 2016 1  
+[2016 1 Opgave](https://www.dropbox.com/s/t1h9o0xnutneavu/AU%20Statistik%20eksamensopgave%20-%20januar%202016.pdf?dl=1)  
+
+[2016 1 Løsningsforslag](https://www.dropbox.com/s/vk2igqyofts6fes/AU%20Statistik%20eksamensopgave%20-%20januar%202016%20l%C3%B8sningsforslag.docx?dl=1)
+
+
+
+##### AU januar 2016 Opgave 1.1
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270309969' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+##### AU januar 2016 Opgave 1.2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270310431' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### AU januar 2016 Opgave 1.3
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270310886' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### AU januar 2016 Opgave 1.4
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270311020' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+
+##### AU januar 2016 Opgave 1.5
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270311217' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### AU januar 2016 Opgave 2.1 og 2.2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270311300' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### AU januar 2016 Opgave 3.1
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270311591' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### AU januar 2016 Opgave 3.2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270311802' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### AU januar 2016 Opgave 3.3
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270312269' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### AU januar 2016 Opgave 3.4
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270312695' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### AU januar 2016 Opgave 4.1 og 4.2
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270312916' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+
+
+<a name="smartau2015_8"></a>
+
+
+
+___  
+___  
+___  
+
+#### Eksamen statistik 4 timer 2015 6 
+[2015 6 Opgave](https://www.dropbox.com/s/lpyp894as98ho11/Smartlearning%20AU%202015%206.pdf?dl=1)
+[2015 6 Løsningsforslag](https://www.dropbox.com/s/kf4avnc43qpz20d/2015%206%20AU%20SMART%20Vejledende.docx?dl=1)
+
+##### Opgave 1.1 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/269192191' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 1.2 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/269192249' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 1.3 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/269192324' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+##### Opgave 1.4 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/269192388' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+##### Opgave 1.5 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/269192472' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### Opgave 1.6 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267807615' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### Opgave 1.7 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/270313669' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+##### Opgave 2.1 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267809477' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+
+
+##### Opgave 2.2 og 2.3 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267809805' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+
+
+##### Opgave 3.1 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267892434' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### Opgave 3.2 og 3.3 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267810285' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### Opgave 3.4 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267689590' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+##### Opgave 4.1 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267684958' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+##### Opgave 4.2 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267685056' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+
+##### Opgave 4.3 Eksamen AU statistik 4 timer 2015 6
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/267689528' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+
+<!--chapter:end:06-VideoerEksamenAUSmartlearning.Rmd-->
+
+# Ordliste
+
+```{r, echo=FALSE, results='asis'}
+# cat(readLines('np.html'))
+source("indeks.R")
+```
+
+
+
+```{r test2, echo=FALSE, message=FALSE}
+library(DT)
+# library(lubridate)
+# library(MMWRweek)
+library(dplyr)
+
+
+
+skema <- tibble(indeks[,1],indeks[,2])
+
+
+colnames(skema) = c('Begreb', "Forklaring")
+
+
+datatable(skema, rownames = FALSE, extensions = 'Buttons',class = 'cell-border hover compact', escape = FALSE,  options = list(searchHighlight = TRUE,pageLength = 18,dom = 'Bfrt',language = list(url = '////cdn.datatables.net/plug-ins/1.10.20/i18n/Danish.json'),
+    buttons = c('pdf', 'excel'),autoWidth = TRUE, columnDefs = list(list(className = 'dt-left', targets = 0:0))))%>%
+  formatStyle('Begreb',  fontWeight = 'bold')%>%
+  formatStyle(
+  'Forklaring',
+  target = 'row',
+  color = styleEqual(0, 'white'),
+  backgroundColor = styleEqual(c(0,8), c('lightgray',"red"))
+)
+
+
+
+
+```
+
+<!--chapter:end:07-Ordliste.Rmd-->
 

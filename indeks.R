@@ -15,7 +15,12 @@ BEGREB <<- c(
   "Konfidensinterval",
   "Stikprøve",
   "Population",
-  "Normalfordelingen"
+  "Normalfordelingen",
+  "Fraktiler",
+  "Kvartiler",
+  "Medianen"
+
+
 
 
 
@@ -190,12 +195,39 @@ forklaring <<- c(
   Danskernes højde er fx. normalfordelt med middelværdi &mu; = 180,2 cm. og standardafvigelse &sigma; = 7,42<br><br>
 
   <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om normalfordelingen!</a>
-  "
+  ",
+
+  "Fraktiler er et tal mellem 0 og 1, der angiver andelen af et ordnet observationssæt. Vi opdeler et datasæt ordnet fra mindst til størst efter andelen angivet ved fraktilen.<br>
+  Hvis fx. 0,45 fraktilen for mænds højde er 176 cm betyder det at 45% af mændene højst er 176 cm, og 55% er højere 176 cm.<br>
+  Kendte fraktiler er:<br>
+  0.25 fraktilen kaldes også 1. kvartil, 25% af observationerne er mindre end 1. kvartil.<br>
+  0.5 fraktilen kaldes også medianen, 50% af observationerne er mindre end medianen.<br>
+  0.75 fraktilen kaldes også 3. kvartil, 75% af observationerne er mindre end 3. kvartil.<br>
+  0.1, 0.2, 0.3, 0,4... kaldes deciler<br><br>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om fraktiler!</a>
+  ",
+
+  "Kvartiler angiver 0.25; 0.5 eller 0.75 andelen af et ordnet observationssæt.<br>
+  Hvis fx. 0,75 fraktilen for mænds højde er 179 cm betyder det at 75% af mændene højst er 179 cm, og 25% er højere 179 cm.<br>
+  0.25 fraktilen kaldes 1. kvartil, 25% af observationerne er mindre end 1. kvartil.<br>
+  0.5 fraktilen kaldes medianen eller 2. kvartil, 50% af observationerne er mindre end medianen.<br>
+  0.75 fraktilen kaldes 3. kvartil, 75% af observationerne er mindre end 3. kvartil.<br><br>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om fraktiler!</a>
+  ",
+
+  "Medianen angiver den miderste observation af et ordnet observationssæt, medianen kaldes også 0.5 fraktilen.<br>
+  0.5 fraktilen kaldes medianen eller 2. kvartil, 50% af observationerne er mindre end medianen, 50% er større.<br>
+  Hvis fx. medianen for mænds højde er 177 cm betyder det at 50% af mændene højst er 177 cm, og 50% er højere 177 cm.<br><br>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om fraktiler!</a>
+  ",
 
 
 
 
 )
+
+
+
 
 
 
