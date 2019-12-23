@@ -18,7 +18,10 @@ BEGREB <<- c(
   "Normalfordelingen",
   "Fraktiler",
   "Kvartiler",
-  "Medianen"
+  "Medianen",
+  "Parameter",
+  "Kurtosis",
+  "Skævhed"
 
 
 
@@ -212,17 +215,34 @@ forklaring <<- c(
   0.25 fraktilen kaldes 1. kvartil, 25% af observationerne er mindre end 1. kvartil.<br>
   0.5 fraktilen kaldes medianen eller 2. kvartil, 50% af observationerne er mindre end medianen.<br>
   0.75 fraktilen kaldes 3. kvartil, 75% af observationerne er mindre end 3. kvartil.<br><br>
-  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om fraktiler!</a>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvartiler!</a>
   ",
 
   "Medianen angiver den miderste observation af et ordnet observationssæt, medianen kaldes også 0.5 fraktilen.<br>
   0.5 fraktilen kaldes medianen eller 2. kvartil, 50% af observationerne er mindre end medianen, 50% er større.<br>
   Hvis fx. medianen for mænds højde er 177 cm betyder det at 50% af mændene højst er 177 cm, og 50% er højere 177 cm.<br><br>
-  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om fraktiler!</a>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#medianen-kvartiler-og-fraktilen\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om medianen!</a>
+  ",
+
+  "En parameter betegner en ukendt konstant i en statistisk model eller formel, ud fra en stikprøve estimeres (gættes kvalificeret på) dens værdi.<br>
+  En parameter kan fx. være &beta;, &mu;, p, &sigma; etc.<br>
+  <i>Vi ønsker at udtale os om danske mænds højde, populationen er så danske mænd. Stikprøve gennemsnittet for fx. 100 mænds højde 179.34 cm. er parameter estimatet (gættet på middelværdien i populationen).
+  Den sande ukendte parameter i populationen er altså middelhøjden i populationen &mu;</i>",
+
+  "Kurtosis (topstejlhed) angiver om en fordeling er spids (leptokurtisk), klokkeformet (mesokurtisk) eller flad (platykurtisk).<br>
+  <i>Normalfordelingen er klokkeformet (mesokurtisk), man kan beregne kurtosis som et tal er fordelingen:<br>
+  Spids (leptokurtisk) er kurtosis positiv<br>
+  Klokkeformet (mesokurtisk) er kurtosis ca. 0<br>
+  Flad (platykurtisk) er kurtosis negativ<br>
+  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere topstejlheden.</i><br><br>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#kurtosis\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kurtosis!</a>
+  ",
+
+
+  "Skævheden angiver om en fordeling er venstreskæv (hale mod venstre, skævheden er negativ), symmetrisk (skævheden er ca. 0) eller højreskæv (hale mod højre, skævheden er positiv)<br>
+  Man vil ofte ud fra fordelingen i fx. et histogram kunne vurdere skævheden</i><br><br>
+  <a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#sk%C3%A6vhed\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om skævhed!</a>
   "
-
-
-
 
 )
 
