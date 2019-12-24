@@ -6300,7 +6300,7 @@ Her står sandsynligheden for B er den samme ligegyldigt om hændelsen A indtræ
 
 Vi kan omskrive begge ligninger til nedenstående resultat.
 $$\small P(A\mid B)=P(A)\Leftrightarrow \frac{P(A\cap B)}{P(B)}=P(A)\Leftrightarrow P(A\cap B)=P(A)\cdot P(B)$$
-Så hændelserne A og B er uafhængige hvis fælleshændelsen $\small P(A\cap B)$ er lig med produktet af hændelserne $\small P(A) \cdot P(B)$
+Så hændelserne A og B er uafhængige hvis sandsynligheden for fælleshændelsen $\small P(A\cap B)$ er lig med produktet af sandsynlighederne for hændelserne $\small P(A) \cdot P(B)$
 
 Er hændelserne drikke kaffe og the uafhængige?
 Vi finder sandsynligheden for fælleshændelsen:

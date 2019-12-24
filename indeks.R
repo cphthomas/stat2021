@@ -25,7 +25,8 @@ BEGREB <<- c(
   "Standardfejlen",
   "t-fordelingen",
   "Frihedsgrader",
-  "z-fordelingen"
+  "z-fordelingen",
+  "Chi i anden tests"
 
 
 
@@ -275,11 +276,17 @@ forklaring <<- c(
 
   "z-fordelingen er normalfordelingen med middelværdi &mu; = 0 og standardafvigelse &sigma; = 1.<br>
   Historisk har man benyttet transformation af normalfordelinger til z-fordelingen, for derefter at bestemmme sandsynligheder ud fra tabelopslag.<br>
-  Med computere er tabelopslag ikke længere nødvendige, hvorfor z-fordelingens ikke længere har samme vigtighed.<br>
+  Med computere er tabelopslag ikke længere nødvendige, hvorfor z-fordelingens ikke længere har samme vigtighed.<br><br>
   <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om z-fordelingen!</a>
-  "
+  ",
 
-
+"Chi i anden tests (skrives også som &Chi;<sup>2</sup>-tests), kan bruges til af teste om der er sammenhæng mellem 2 kvalitative variable fx. køn og mobiltelefonmærke.<br>
+<i>Chi i andet testet er en udvidelse af test af 2 andele, hvor vi kun kan teste 2 kvalitative binære variable (kun 2 udfald fx. mand/kvinde).<br>
+I Chi i andet testet er nulhypotesen at de 2 variable er uafhængige (ingen sammenhæng), hvis vi forkaster nulhypotesen er der afhængighed (sammenhæng).
+Hvis der er en sammenhæng skal denne sammenhæng beskrives ud fra observerede og forventede celleværdier, det kan fx. være vi finder at kvinder oftere har Iphone.<br>
+Vi tester ved hjælp af &Chi;<sup>2</sup>-fordelingen, der en højreskæv fordeling, bestemt af antallet af frihedsgrader.</i><br><br>
+<a href=\"https://s.tepedu.dk/chi-i-anden-tests.html#chi-i-anden-test\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om &Chi;<sup>2</sup>-tests!</a>
+"
 
 
 )
