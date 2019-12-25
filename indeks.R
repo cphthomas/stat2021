@@ -331,7 +331,7 @@ H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br><br>
 <a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
 ",
 
-"Ensidet alternativhypotese H<sub>1</sub> betyder vi <br>
+"Ensidet alternativhypotese H<sub>1</sub> betyder vi tester ikke med tosidet alternativ hypotese ≠, vi tester enten > eller >.<br>
 <i>Eksempler på ensidede alternativhypoteser er:<br>
 H<sub>1</sub>: &mu;<45 (Middelværdien er mindre end 45)<br>
 H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br>
@@ -343,7 +343,18 @@ Eller ensidet opad, vi forkaster nulhypotesen hvis middelværdien er signifikant
 H<sub>1</sub>: &mu;≤45 (Middelværdien er højst 45)<br><br>
 H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br><br>
 <a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
+",
+
+"Tosidet alternativhypotese H<sub>1</sub> betyder vi tester med tosidet alternativ hypotese ≠, vi tester ikke > eller >.<br>
+<i>Eksempel på tosidet en alternativhypotese er:<br>
+H<sub>1</sub>: &mu;≠45 (Middelværdien er forskellig fra 45)<br>
+Hvilket vil testet:<br>
+H<sub>0</sub>: &mu;=45 (Middelværdien er 45)<br>
+H<sub>1</sub>: &mu;≠45 (Middelværdien er forskellig fra 45)<br>
+Vi kalder testet for test med tosidet alternativ hypotese, da vi enten kan ende i alternativ hypotesen, både hvis middelværdien er signifikan mindre eller større end 45<br><br>
+<a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
 "
+
 
 
 )
