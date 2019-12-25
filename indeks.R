@@ -26,7 +26,11 @@ BEGREB <<- c(
   "t-fordelingen",
   "Frihedsgrader",
   "z-fordelingen",
-  "Chi i anden tests"
+  "Chi i anden tests",
+  "Normalfraktildiagram",
+  "Stikprøvefordelingen",
+  "Nulhypotesen",
+  "Alternativ hypotesen"
 
 
 
@@ -274,22 +278,76 @@ forklaring <<- c(
 
 
 
-  "z-fordelingen er normalfordelingen med middelværdi &mu; = 0 og standardafvigelse &sigma; = 1.<br>
+  "z-fordelingen (kaldes også standard normalfordelingen) er normalfordelingen med middelværdi &mu; = 0 og standardafvigelse &sigma; = 1.<br>
   Historisk har man benyttet transformation af normalfordelinger til z-fordelingen, for derefter at bestemmme sandsynligheder ud fra tabelopslag.<br>
   Med computere er tabelopslag ikke længere nødvendige, hvorfor z-fordelingens ikke længere har samme vigtighed.<br><br>
   <a href=\"https://s.tepedu.dk/normalfordelingen.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om z-fordelingen!</a>
   ",
 
 "Chi i anden tests (skrives også som &Chi;<sup>2</sup>-tests), kan bruges til af teste om der er sammenhæng mellem 2 kvalitative variable fx. køn og mobiltelefonmærke.<br>
-<i>Chi i andet testet er en udvidelse af test af 2 andele, hvor vi kun kan teste 2 kvalitative binære variable (kun 2 udfald fx. mand/kvinde).<br>
+<i>Chi i andet testet er en udvidelse af test af 2 andele, hvor vi kun kan teste 2 kvalitative binære variable (kun 2 udfald fx. mand/kvinde, Iphone/ikke Iphone).<br>
 I Chi i andet testet er nulhypotesen at de 2 variable er uafhængige (ingen sammenhæng), hvis vi forkaster nulhypotesen er der afhængighed (sammenhæng).
-Hvis der er en sammenhæng skal denne sammenhæng beskrives ud fra observerede og forventede celleværdier, det kan fx. være vi finder at kvinder oftere har Iphone.<br>
-Vi tester ved hjælp af &Chi;<sup>2</sup>-fordelingen, der en højreskæv fordeling, bestemt af antallet af frihedsgrader.</i><br><br>
+Hvis der er en sammenhæng, skal denne sammenhæng beskrives ud fra observerede og forventede celleværdier (hvor der er store Chi celle bidrag), det kan fx. være vi finder at kvinder oftere har Iphone.<br>
+Vi tester ved hjælp af &Chi;<sup>2</sup>-fordelingen, der er en højreskæv fordeling, bestemt af antallet af frihedsgrader.</i><br><br>
 <a href=\"https://s.tepedu.dk/chi-i-anden-tests.html#chi-i-anden-test\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om &Chi;<sup>2</sup>-tests!</a>
+",
+
+
+"Normalfraktildiagrammer kan bruges til at afgøre, om en stikprøve kan antages at stamme fra normalfordelt population.<br>
+<i>Hvis punkterne ligger pænt omkring den rette linje er normalitetsbetingelsen opfyldt,
+ved test af fx. en kvantitaiv variabel og varianshomogenitet forudsætter at variablene opfylder normalitetsbetingelsen.</i><br><br>
+<a href=\"https://s.tepedu.dk/normalfordelingen.html#normalfraktildiagram\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om normalfraktildiagrammer!</a>
+",
+
+
+"Stikprøvefordelingen er en fordelingen af parameterestimaterne, ud fra uendelig mange lige store stikprøver fra populationen.<br>
+<i>Stikprøvefordelingen er altså IKKE fordelingen af en enkelt stikprøve.<br>
+Stikprøvefordelingen for fx. middelværdien, vil være normalfordelt med middelværdi &mu;, standardfejlen SEM vil være standardafvigelsen for stikprøvefordelingen,
+når blot stikprøven er tilstrækkeligt stor (større end 30 observationer).<br>
+Normaliteten af stikprøvefordelingen gælder uanset om populationen stikprøverne trækkes fra ikke er normalfordelt.<br>
+Denne viden om stikprøvefordelingen bruges til hypotesetests og beregning af konfidensintervaller.
+Man har kun en stikprøve,
+men ved hvordan fordelingen ville blive, hvis man fortsatte med at udtage stikprøver af samme størrelse.<br><br>
+<a href=\"https://s.tepedu.dk/normalfordelingen.html#parametre-og-parameter-estimater\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om stikprøvefordelingen!</a></i>
+",
+
+
+"Nulhypotesen H<sub>0</sub> er vores grundtro i et hypotesetest, vi har altid lighedstegn i nulhypotesen. Der skal stærke beviser til at forkaste nulhypotesen.<br>
+<i>Eksempler på nulhypoteser er:<br>
+H<sub>0</sub>: &mu;=45 (Middelværdien er 45)<br>
+H<sub>0</sub>: &mu;≤45 (Middelværdien er højst 45)<br>
+H<sub>0</sub>: &mu;≥45 (Middelværdien er mindst 45)<br><br>
+<a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
+",
+
+
+"Alternativhypotesen H<sub>1</sub> eller H<sub>a</sub> er vores det modsatte udsagn af nulhypotesen i et hypotesetest, vi har aldrig lighedstegn i alternativhypotesen.
+Der skal stærke beviser til at forkaste nulhypotesen, sker dette tror vi på udsagnet i alternativhypotesen.<br>
+<i>Eksempler på alternativhypoteser er:<br>
+H<sub>1</sub>: &mu;≠45 (Middelværdien er ikke 45)<br>
+H<sub>1</sub>: &mu;<45 (Middelværdien er mindre end 45)<br>
+H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br><br>
+<a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
+",
+
+"Ensidet alternativhypotese H<sub>1</sub> betyder vi <br>
+<i>Eksempler på ensidede alternativhypoteser er:<br>
+H<sub>1</sub>: &mu;<45 (Middelværdien er mindre end 45)<br>
+H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br>
+Hvilket vil føre til 2 mulige tests:<br>
+Enten ensidet nedad, vi forkaster nulhypotesen hvis middelværdien er signifikant mindre end 45:<br>
+H<sub>0</sub>: &mu;≥45 (Middelværdien er mindst 45)<br>
+H<sub>1</sub>: &mu;<45 (Middelværdien er mindre end 45)<br>
+Eller ensidet opad, vi forkaster nulhypotesen hvis middelværdien er signifikant større end 45:<br>
+H<sub>1</sub>: &mu;≤45 (Middelværdien er højst 45)<br><br>
+H<sub>1</sub>: &mu;>45 (Middelværdien er større end 45)<br><br>
+<a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
 "
 
 
 )
+
+
 
 
 
