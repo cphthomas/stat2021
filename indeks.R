@@ -31,7 +31,8 @@ BEGREB <<- c(
   "Stikprøvefordelingen",
   "Nulhypotesen",
   "Alternativ hypotesen",
-  "Ensidet alternativhypotese"
+  "Ensidet alternativhypotese",
+  "Tosidet alternativhypotese"
 
 
 
