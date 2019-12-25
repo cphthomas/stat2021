@@ -39,7 +39,11 @@ BEGREB <<- c(
   "Uafhængighed",
   "Goodness of fit test",
   "Binomialfordelingen",
-  "Poisson fordelingen"
+  "Poisson fordelingen",
+  "Modus",
+  "Lineær regression",
+  "Prædiktionsinterval for responsvariablen Y",
+  "Konfidensinterval for responsvariablen Y"
 
 
 
@@ -386,7 +390,7 @@ Fx. kan en man teste om ens stikprøve er repærsentativ i forhold til kønsford
 
 
 "Binomialfordelingen er en  diskret  (heltallig) fordeling, der angiver sandsynligheden for x succeser, ved n forsøg.<br>
-Sandsynligheden for slå flere end 5 seksere x=5 i 30=n kast med en terning, kan fx. beregnes vha. binomialfordelingen.<br>
+Sandsynligheden for slå flere end 5 seksere x=5 i n=30 kast med en terning, kan fx. beregnes vha. binomialfordelingen.<br>
 For beregningen af sandsynligheder i binomialfordelingen, kræves en sandsynlighedsparameter her p=<sup>1</sup>&frasl;<sub>6</sub> og en antalsparameter her n=30.<br><br>
 <a href=\"https://s.tepedu.dk/binomialfordelingen-premium.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om binomialfordelingen!</a>
 ",
@@ -397,14 +401,32 @@ For beregningen af sandsynligheder i binomialfordelingen, kræves en sandsynligh
 Fx. Antal konkurser pr år. Fordelingen bestemmes udelukkende ud fra middelværdien &lambda;, der angiver det forventede antal
 hændelser pr. måleenhed, i eksemplet her er &lambda; det forventede antal konkurser pr. år.<br><br>
 <a href=\"https://s.tepedu.dk/binomialfordelingen-premium.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om binomialfordelingen!</a>
+",
+
+"Modus/modalværdi/typetallet er den hyppigst forekommende observation for et observations sæt.<br><br>
+<a href=\"https://s.tepedu.dk/deskriptiv-statistik.html#modus\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om modus!</a>
+",
+
+"Lineær regression analyserer en lineær sammenhængen mellem en afhængig Y-variabel (responsvariablen) og en eller flere X-variable (forklarende variable).<br>
+Ved simpel lineær regression er der kun er en forklarende X-variabel, ved multipel lineær regression er der mindst 2 forklarende variable.<br><br>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>
+",
+
+"Prædiktionsintervallet også kaldet forudsigelsesintervallet for responsvariablen Y  givet X, angiver nedre og øvre grænse indenfor hvilke responsvariablen Y med en bestemt sandsynlighed vil lande.<br>
+Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, forklares ud fra X prisen, ville et 95% prædiktionsinterval for afsætningen 160 stk. til 200 stk.
+ved prisen 20, betyde at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br>
+Bemærk 95% prædiktionsintervallet, må ikke forveksles med 95% konfidensintervallet, der angiver 95% konfidensintervallet for den gennemsnitlige afsætning ved prisen 20,
+dette interval ville være smallere, da vi her ser på den gennemsnitlige afsætning frem for en afsætning.<br><br>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
+",
+
+"Konfidensintervallet for responsvariablen Y givet X, angiver nedre og øvre grænse indenfor hvilke gennemsnittet for responsvariablen Y med en bestemt sandsynlighed vil lande.<br>
+Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, forklares ud fra X prisen, ville et 95% konfidensinterval for afsætningen 170 stk. til 190 stk.
+ved prisen 20, betyde at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem 170 stk. til 190 stk.<br>
+Bemærk 95% konfidensintervallet, må ikke forveksles med 95% prædiktionsintervallet, der angiver 95% prædiktionsintervallet for kun en afsætning ved prisen 20,
+dette interval ville være bredere, da vi her kun ser på en afsætning frem for en gennemsnitlige afsætning.<br><br>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
 "
-
-
-
-
-
-
-
 
 
 )

@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-25" />
+<meta name="date" content="2019-12-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -678,47 +678,47 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## 
 ## Coefficients:
 ##           ma1
-##       -0.6491
-## s.e.   0.1184
+##       -0.4689
+## s.e.   0.1233
 ## 
-## sigma^2 estimated as 116:  log likelihood=-189.56
-## AIC=383.12   AICc=383.37   BIC=386.94</code></pre>
+## sigma^2 estimated as 87.53:  log likelihood=-182.37
+## AIC=368.73   AICc=368.99   BIC=372.56</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(0,1,2) 
 ## 
 ## Coefficients:
-##          ar1
-##       0.7575
-## s.e.  0.0880
+##          ma1     ma2
+##       0.6758  0.2916
+## s.e.  0.1423  0.1664
 ## 
-## sigma^2 estimated as 115.9:  log likelihood=-189.68
-## AIC=383.36   AICc=383.62   BIC=387.19</code></pre>
+## sigma^2 estimated as 172.8:  log likelihood=-198.99
+## AIC=403.97   AICc=404.49   BIC=409.71</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##          ar1      ma1      ma2      mean
-##       0.5005  -0.0855  -0.5008  100.7284
-## s.e.  0.1431   0.1273   0.0692    0.6120
+##           ar1     ma1     mean
+##       -0.3518  0.7589  99.9802
+## s.e.   0.1024  0.0657   0.9355
 ## 
-## sigma^2 estimated as 109.3:  log likelihood=-751.42
-## AIC=1512.84   AICc=1513.15   BIC=1529.33</code></pre>
+## sigma^2 estimated as 105.1:  log likelihood=-747.98
+## AIC=1503.95   AICc=1504.16   BIC=1517.15</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      104.26227 90.86549 117.6591 83.77366 124.7509
-## 202       96.45332 81.94872 110.9579 74.27044 118.6362
-## 203       98.58884 83.56196 113.6157 75.60721 121.5705
-## 204       99.65760 84.50273 114.8125 76.48022 122.8350
-## 205      100.19248 85.00572 115.3792 76.96633 123.4186
-## 206      100.46017 85.26543 115.6549 77.22182 123.6985
-## 207      100.59414 85.39740 115.7909 77.35274 123.8355
-## 208      100.66119 85.46395 115.8584 77.41902 123.9034
-## 209      100.69474 85.49738 115.8921 77.45238 123.9371
-## 210      100.71154 85.51414 115.9089 77.46913 123.9539</code></pre>
+## 201       98.49957 85.35972 111.6394 78.40390 118.5952
+## 202      100.50113 86.31404 114.6882 78.80385 122.1984
+## 203       99.79697 85.48560 114.1083 77.90962 121.6843
+## 204      100.04469 85.71802 114.3714 78.13393 121.9555
+## 205       99.95754 85.62897 114.2861 78.04389 121.8712
+## 206       99.98820 85.65940 114.3170 78.07419 121.9022
+## 207       99.97742 85.64858 114.3062 78.06336 121.8915
+## 208       99.98121 85.65237 114.3100 78.06715 121.8953
+## 209       99.97988 85.65104 114.3087 78.06581 121.8939
+## 210       99.98035 85.65151 114.3092 78.06628 121.8944</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
