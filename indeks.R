@@ -32,7 +32,9 @@ BEGREB <<- c(
   "Nulhypotesen",
   "Alternativ hypotesen",
   "Ensidet alternativhypotese",
-  "Tosidet alternativhypotese"
+  "Tosidet alternativhypotese",
+  "Approximativt",
+  "Estimat"
 
 
 
@@ -41,20 +43,7 @@ BEGREB <<- c(
 
 )
 
-Kapitel <<- c(
 
-
-
-
-
-
-
-
-
-
-
-
-  )
 
 forklaring <<- c(
   "En kvantitativ variabel, er populært sagt en numerisk variabel man kan \"regne med \" fx. finde gennemsnit, median, standardafvigelse, fraktiler osv. Eksempler på kvantitative variable er:<i><br>
@@ -354,7 +343,19 @@ H<sub>0</sub>: &mu;=45 (Middelværdien er 45)<br>
 H<sub>1</sub>: &mu;≠45 (Middelværdien er forskellig fra 45)<br>
 Vi kalder testet for test med tosidet alternativ hypotese, da vi enten kan ende i alternativ hypotesen, både hvis middelværdien er signifikan mindre eller større end 45<br><br>
 <a href=\"https://s.tepedu.dk/hypotesetests-middelv%C3%A6rdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om hypotesetests!</a></i>
-"
+",
+
+"Approximativt betyder nogenlunde eller cirka.<br>
+Hvis en fordeling er nogenlunde normalfordelt, skriver vi fordelingen er approximativt normalfordelt"
+
+
+,
+
+"Estimat betyder gæt.<br>
+Hvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>
+Vi kan skrive vort estimat for &mu; er 179 cm."
+
+
 
 
 
