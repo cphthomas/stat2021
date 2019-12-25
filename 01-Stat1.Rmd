@@ -5980,13 +5980,14 @@ cat(readLines('npp.html'))
 ```
 
 
-Poisson fordelingen er en ``r tippy(" diskret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer indenfor i tid eller rum. Fx.
-<img src="img/car.png" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
-1. Antal cykelpunkteringer indenfor 1000 km.
-2. Antal mål i EM-finalen.
-3. Antal dødsfald i trafikken på et år.
-4. Antal kunder i en bankfilial i timen.
-5. Antal skadesanmeldelser i løbet af ugen.
+Poisson fordelingen er en ``r tippy(" diskret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`` sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer i tid eller rum. Fx.
+<img src="img/car.png" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>  
+
+1. Antal cykelpunkteringer indenfor 1000 km.  
+2. Antal mål i EM-finalen.  
+3. Antal dødsfald i trafikken på et år.  
+4. Antal kunder i en bankfilial i timen.  
+5. Antal skadesanmeldelser i løbet af ugen.  
 
 Poisson fordelingen har kun en ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` middelværdien $\lambda$ (det græske bogstav lambda), det forventede antal hændelser pr. enhed. Notationen for en stokastisk variabel der er poissonfordelt er:
 

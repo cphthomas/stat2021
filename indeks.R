@@ -38,7 +38,8 @@ BEGREB <<- c(
   "Varianshomogenitet",
   "Uafhængighed",
   "Goodness of fit test",
-  "Binomialfordelingen"
+  "Binomialfordelingen",
+  "Poisson fordelingen"
 
 
 
@@ -384,7 +385,26 @@ Fx. kan en man teste om ens stikprøve er repærsentativ i forhold til kønsford
 ",
 
 
-"Binomialfordelingen"
+"Binomialfordelingen er en  diskret  (heltallig) fordeling, der angiver sandsynligheden for x succeser, ved n forsøg.<br>
+Sandsynligheden for slå flere end 5 seksere x=5 i 30=n kast med en terning, kan fx. beregnes vha. binomialfordelingen.<br>
+For beregningen af sandsynligheder i binomialfordelingen, kræves en sandsynlighedsparameter her p=<sup>1</sup>&frasl;<sub>6</sub> og en antalsparameter her n=30.<br><br>
+<a href=\"https://s.tepedu.dk/binomialfordelingen-premium.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om binomialfordelingen!</a>
+",
+
+
+
+"Poisson fordelingen er en  diskret  sandsynlighedsfordeling, der angiver sandsynligheden for at et antal begivenheder, indtræffer i tid eller rum.<br>
+Fx. Antal konkurser pr år. Fordelingen bestemmes udelukkende ud fra middelværdien &lambda;, der angiver det forventede antal
+hændelser pr. måleenhed, i eksemplet her er &lambda; det forventede antal konkurser pr. år.<br><br>
+<a href=\"https://s.tepedu.dk/binomialfordelingen-premium.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om binomialfordelingen!</a>
+"
+
+
+
+
+
+
+
 
 
 )
