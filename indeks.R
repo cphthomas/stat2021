@@ -26,7 +26,7 @@ BEGREB <<- c(
   "t-fordelingen",
   "Frihedsgrader",
   "z-fordelingen",
-  "Chi i anden tests",
+  "Chi i anden test",
   "Normalfraktildiagram",
   "Stikprøvefordelingen",
   "Nulhypotesen",
@@ -35,7 +35,10 @@ BEGREB <<- c(
   "Tosidet alternativhypotese",
   "Approximativt",
   "Estimat",
-  "Varianshomogenitet"
+  "Varianshomogenitet",
+  "Uafhængighed",
+  "Goodness of fit test",
+  "Binomialfordelingen"
 
 
 
@@ -364,8 +367,24 @@ Testet kunne se ud som nedenfor, bemærk er der varianshomogenitet, er standarda
 H<sub>0</sub>: &sigma;<sub>CBS</sub>=&sigma;<sub>Cph</sub> (Der er Varianshomogenitet)<br>
 H<sub>1</sub>: &sigma;<sub>CBS</sub>≠&sigma;<sub>Cph</sub> (Der er ikke varianshomogenitet)<br><br>
 <a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html#varianshomogenitet\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om varianshomogenitet!</a></i>
-"
+",
 
+"Afhængighed betyder sammenhæng og bruges i forbindelse med Chi i anden tests.<br>
+Hvis der er afhængighed mellem 2 kvalitative fx køn og mobiltelefonmærke, betyder det der er sammenhæng mellem køn og mobiltelefonmærke,<br>
+Mænd og kvinder benytter altså forskellige mobiltelefonmærker. Er der uafhængighed mellem køn og mobiltelefonmærke, betyder altså der ikke er forskel på hvilket mobiltelefonmærke mænd og kvinder foretrækker.<br><br>
+<a href=\"https://s.tepedu.dk/chi-i-anden-tests.html#uafh%C3%A6ngighed-1\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om afhængighed!</a>
+",
+
+
+"Goodness of fit testet bruges til at afgøre om en kvalitativ stiktprøve er repræsentativ i forhold til fx. fordelingen i populationen.<br>
+Goodness of fit testet er et Chi i andet test for kun en variabel.
+Goodness of fit testet er en udvidelse af z-testet for en andel.<br>
+Fx. kan en man teste om ens stikprøve er repærsentativ i forhold til kønsfordelingen i populationen, hvis denne er kendt.<br><br>
+<a href=\"https://s.tepedu.dk/chi-i-anden-tests.html#goodness-of-fit-test\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om goodness of fit tests!</a>
+",
+
+
+"Binomialfordelingen"
 
 
 )
