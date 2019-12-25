@@ -30,7 +30,8 @@ BEGREB <<- c(
   "Normalfraktildiagram",
   "Stikprøvefordelingen",
   "Nulhypotesen",
-  "Alternativ hypotesen"
+  "Alternativ hypotesen",
+  "Ensidet alternativhypotese"
 
 
 
