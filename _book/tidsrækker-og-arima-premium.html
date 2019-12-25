@@ -589,7 +589,8 @@ Hent ARIMA22.xlsx Excel filen <a href="FILER/ARIMA22.xlsx" download>her</a>. Imp
 ## Start = 51 
 ## End = 65 
 ## Frequency = 1 
-##  [1] 216.7592 215.7779 215.5536 215.5023 215.4905 215.4878 215.4872 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871 215.4871</code></pre>
+##  [1] 216.7592 215.7779 215.5536 215.5023 215.4905 215.4878 215.4872 215.4871 215.4871 215.4871 215.4871 215.4871
+## [13] 215.4871 215.4871 215.4871</code></pre>
 </details>
 <br>
 <details>
@@ -667,58 +668,54 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## Start = 51 
 ## End = 62 
 ## Frequency = 1 
-##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756</code></pre>
+##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756
+## [12]  99.01756</code></pre>
 <p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en residual)</p>
 </div>
 <div id="plots-med-forskellige-modeller-premium" class="section level2">
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
 <p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) 
+## ARIMA(0,1,0) 
 ## 
-## Coefficients:
-##           ma1
-##       -0.5166
-## s.e.   0.1233
-## 
-## sigma^2 estimated as 71.86:  log likelihood=-177.47
-## AIC=358.93   AICc=359.19   BIC=362.76</code></pre>
+## sigma^2 estimated as 118.6:  log likelihood=-190.34
+## AIC=382.69   AICc=382.77   BIC=384.6</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(2,0,0) with non-zero mean 
+## ARIMA(0,1,2) 
 ## 
 ## Coefficients:
-##          ar1      ar2      mean
-##       1.5680  -0.6719  108.5590
-## s.e.  0.0994   0.1003   14.9818
+##          ma1     ma2
+##       0.8000  0.2655
+## s.e.  0.1426  0.1253
 ## 
-## sigma^2 estimated as 140.5:  log likelihood=-198.59
-## AIC=405.18   AICc=406.05   BIC=412.91</code></pre>
+## sigma^2 estimated as 99.15:  log likelihood=-185.17
+## AIC=376.34   AICc=376.86   BIC=382.08</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,1) with non-zero mean 
+## ARIMA(2,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1      mean
-##       -0.3866  0.8109  100.8582
-## s.e.   0.0968  0.0582    0.8631
+##           ar1      ar2     ma1     mean
+##       -0.1582  -0.2287  0.6220  98.9573
+## s.e.   0.1437   0.0958  0.1439   0.8692
 ## 
-## sigma^2 estimated as 88.81:  log likelihood=-731.17
-## AIC=1470.34   AICc=1470.55   BIC=1483.54</code></pre>
+## sigma^2 estimated as 112.7:  log likelihood=-754.49
+## AIC=1518.99   AICc=1519.29   BIC=1535.48</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      103.41083 91.33334 115.4883 84.93991 121.8818
-## 202       99.87132 86.75151 112.9911 79.80630 119.9363
-## 203      101.23972 87.97115 114.5083 80.94719 121.5322
-## 204      100.71068 87.42002 114.0013 80.38437 121.0370
-## 205      100.91521 87.62125 114.2092 80.58386 121.2466
-## 206      100.83614 87.54169 114.1306 80.50403 121.1682
-## 207      100.86671 87.57218 114.1612 80.53449 121.1989
-## 208      100.85489 87.56035 114.1494 80.52265 121.1871
-## 209      100.85946 87.56492 114.1540 80.52722 121.1917
-## 210      100.85769 87.56316 114.1522 80.52545 121.1899</code></pre>
+## 201      102.84925 89.24728 116.4512 82.04684 123.6517
+## 202       97.15395 82.16037 112.1475 74.22325 120.0846
+## 203       98.35259 82.80632 113.8989 74.57663 122.1285
+## 204       99.46537 83.89892 115.0318 75.65853 123.2722
+## 205       99.01523 83.41239 114.6181 75.15275 122.8777
+## 206       98.83197 83.22912 114.4348 74.96948 122.6945
+## 207       98.96390 83.35912 114.5687 75.09845 122.8293
+## 208       98.98494 83.38012 114.5898 75.11943 122.8505
+## 209       98.95144 83.34654 114.5563 75.08580 122.8171
+## 210       98.95193 83.34702 114.5568 75.08628 122.8176</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
@@ -778,10 +775,14 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <a class="sourceLine" id="cb109-2" data-line-number="2">pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</a>
 <a class="sourceLine" id="cb109-3" data-line-number="3">salg &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span>pred<span class="op">$</span>pred</a>
 <a class="sourceLine" id="cb109-4" data-line-number="4">salg</a></code></pre></div>
-<pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov       Dec
-## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239  934.5120  703.5005  626.9879  571.9988  668.5363
-## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626 1029.1243  774.7246  690.4657  629.9094  736.2206
-## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233 1133.3154  853.1596  760.3701  693.6830  810.7573</code></pre>
+<pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov
+## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239  934.5120  703.5005  626.9879  571.9988
+## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626 1029.1243  774.7246  690.4657  629.9094
+## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233 1133.3154  853.1596  760.3701  693.6830
+##            Dec
+## 2015  668.5363
+## 2016  736.2206
+## 2017  810.7573</code></pre>
 <div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">plot</span>(data,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">2018</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1600</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Tractor Salg&#39;</span>)</a>
 <a class="sourceLine" id="cb111-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
 <a class="sourceLine" id="cb111-3" data-line-number="3"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a>

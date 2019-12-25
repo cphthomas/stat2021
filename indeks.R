@@ -34,7 +34,8 @@ BEGREB <<- c(
   "Ensidet alternativhypotese",
   "Tosidet alternativhypotese",
   "Approximativt",
-  "Estimat"
+  "Estimat",
+  "Varianshomogenitet"
 
 
 
@@ -353,9 +354,17 @@ Hvis en fordeling er nogenlunde normalfordelt, skriver vi fordelingen er approxi
 
 "Estimat betyder gæt.<br>
 Hvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>
-Vi kan skrive vort estimat for &mu; er 179 cm."
+Vi kan skrive vort estimat for &mu; er 179 cm.",
 
 
+
+"Varianshomogenitet betyder der er ens varianser for populationerne.<br>
+<i>Hvis fx. vi har 2 stikprøver med højder for CBS og Cphbusiness studerende, vil varianshomogenitet betyde der er samme variation i de 2 populationer.<br>
+Testet kunne se ud som nedenfor, bemærk er der varianshomogenitet, er standardafvigelserne også altid ens.<br>
+H<sub>0</sub>: &sigma;<sub>CBS</sub>=&sigma;<sub>Cph</sub> (Der er Varianshomogenitet)<br>
+H<sub>1</sub>: &sigma;<sub>CBS</sub>≠&sigma;<sub>Cph</sub> (Der er ikke varianshomogenitet)<br><br>
+<a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html#varianshomogenitet\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om varianshomogenitet!</a></i>
+"
 
 
 

@@ -521,8 +521,8 @@ Please Wait…
 <p>Nulhypotesen i Bartletts test er at variablene ikke er korrelerede dvs. alle korrelationskoefficienter <span class="math inline">\(\rho=0\)</span>,</p>
 <p><span class="math display">\[H_0:Alle\ \rho=0\]</span>
 <span class="math display">\[H_1:Ikke\ alle\ \rho=0  \]</span></p>
-<p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille <code><span id="htmlwidget-c1a7a9061268c9b7157f" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-c1a7a9061268c9b7157f">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>p-værdien også kaldet signifikanssandsynligheden er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>\n  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br>\n  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>\n  Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0<\/sub>: &mu;=210<br>\n  H<sub>1<\/sub>: &mu;&ne;210<br>\n  Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>\n  Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om p-værdier!<\/a>\n  <\/h4>","text":" p-værdi"},"evals":[],"jsHooks":[]}</script></code> på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
+<p>Forkaster vi nulhypotesen, er der basis for at gennemføre faktoranalysen. Den lille <code><span id="htmlwidget-6b84dc21c73158fd2cca" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-6b84dc21c73158fd2cca">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>p-værdien også kaldet signifikanssandsynligheden er et tal mellem 0 og 1, den angiver sandsynligheden for, hvis nulhypotesen er sand, at få en mere ekstrem teststørrelse, end den vi har fået i testet (teststørrelsen måler forskellen mellem fx. stikprøvegennemsnit og middelværdien antaget i nulhypotesen). <br>\n  Jo lavere p-værdi, des mindre tror vi på nulhypotesen<br>\n  <i>Antag fx. at vi har en stikprøve af 100 mænds højde, med et gennemsnit på 176.32 cm.<br>\n  Vi ønsker at teste om middel højden i populationen, kan antages at være 210 cm dvs. <br>H<sub>0<\/sub>: &mu;=210<br>\n  H<sub>1<\/sub>: &mu;&ne;210<br>\n  Vi vil her få en meget negativ teststørrelse, hvilket giver en mikroskopisk lille p-værdi.<br>\n  Det vil være nærmest umuligt at få en mere ekstrem teststørrelse, hvis den sande middelhøjde er 210 cm.<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om p-værdier!<\/a>\n  <\/h4>","text":" p-værdi"},"evals":[],"jsHooks":[]}</script></code> på 0.00167791, betyder vi gennemfører faktoranalysen.</p>
 <p>Vi kan ligeledes køre Kaiser-Meyer-Olkin KMO testet fra pshych pakken:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">KMO</span>(data)</a></code></pre></div>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
@@ -702,10 +702,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## Call: KMO(r = personality)
 ## Overall MSA =  0.84
 ## MSA for each item = 
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi contrar sociabl 
-##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79    0.86    0.75    0.87    0.89    0.87    0.84    0.85    0.86    0.87    0.81    0.86    0.83    0.90 
-##    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##    0.89    0.83    0.87    0.78    0.87    0.81    0.73    0.90    0.89    0.78</code></pre>
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79    0.86    0.75    0.87    0.89    0.87 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##    0.84    0.85    0.86    0.87    0.81    0.86    0.83    0.90    0.89    0.83    0.87    0.78    0.87    0.81 
+## laidbck withdrw givinup easygon 
+##    0.73    0.90    0.89    0.78</code></pre>
 <p>Vi gennemfører klart analysen viser begge tests.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span></a>
 <a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</a></code></pre></div>
@@ -714,8 +716,9 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 <p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))</a>
 <a class="sourceLine" id="cb31-2" data-line-number="2">evp<span class="op">$</span>values</a></code></pre></div>
-<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636 0.8553802 0.7968460 0.7128793 0.6936229 0.6396893 0.6277046 0.5399600 0.5074253 0.4719721 0.4639916
-## [18] 0.4455816 0.4376430 0.4135706 0.3906941 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
+<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636 0.8553802 0.7968460 0.7128793 0.6936229
+## [12] 0.6396893 0.6277046 0.5399600 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941 0.3696839
+## [23] 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
 <p>Vi benytter her 7 faktorer:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)</a>
 <a class="sourceLine" id="cb33-2" data-line-number="2">fapers7</a></code></pre></div>
@@ -724,10 +727,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## factanal(x = personality, factors = 7)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi contrar sociabl 
-##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512   0.390   0.181   0.251   0.640   0.387   0.478   0.517   0.560   0.377   0.388   0.411   0.392   0.367 
-##    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##   0.421   0.528   0.284   0.229   0.562   0.663   0.248   0.362   0.557   0.549 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512   0.390   0.181   0.251   0.640   0.387 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##   0.478   0.517   0.560   0.377   0.388   0.411   0.392   0.367   0.421   0.528   0.284   0.229   0.562   0.663 
+## laidbck withdrw givinup easygon 
+##   0.248   0.362   0.557   0.549 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
@@ -780,10 +785,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret på i hvor h�
 ## factanal(x = personality, factors = 8)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi contrar sociabl 
-##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533   0.417   0.170   0.257   0.649   0.364   0.490   0.468   0.497   0.333   0.347   0.420   0.391   0.365 
-##    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##   0.420   0.502   0.276   0.236   0.565   0.682   0.005   0.367   0.550   0.580 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533   0.417   0.170   0.257   0.649   0.364 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##   0.490   0.468   0.497   0.333   0.347   0.420   0.391   0.365   0.420   0.502   0.276   0.236   0.565   0.682 
+## laidbck withdrw givinup easygon 
+##   0.005   0.367   0.550   0.580 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7 Factor8
