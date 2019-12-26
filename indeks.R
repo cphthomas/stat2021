@@ -43,7 +43,9 @@ BEGREB <<- c(
   "Modus",
   "Lineær regression",
   "Prædiktionsinterval for responsvariablen Y",
-  "Konfidensinterval for responsvariablen Y"
+  "Konfidensinterval for responsvariablen Y",
+  "Residual",
+  "Multikollinaritet"
 
 
 
@@ -416,7 +418,7 @@ Ved simpel lineær regression er der kun er en forklarende X-variabel, ved multi
 Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, forklares ud fra X prisen, ville et 95% prædiktionsinterval for afsætningen 160 stk. til 200 stk.
 ved prisen 20, betyde at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br>
 Bemærk 95% prædiktionsintervallet, må ikke forveksles med 95% konfidensintervallet, der angiver 95% konfidensintervallet for den gennemsnitlige afsætning ved prisen 20,
-dette interval ville være smallere, da vi her ser på den gennemsnitlige afsætning frem for en afsætning.<br><br>
+dette interval ville være smallere, da vi her ser på den gennemsnitlige afsætning frem for en afsætning. Konfidensintervallet kunne fx. ved prisen 20, vise at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem  170 stk. til 190 stk.<br><br>
 <a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
 ",
 
@@ -424,9 +426,27 @@ dette interval ville være smallere, da vi her ser på den gennemsnitlige afsæt
 Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, forklares ud fra X prisen, ville et 95% konfidensinterval for afsætningen 170 stk. til 190 stk.
 ved prisen 20, betyde at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem 170 stk. til 190 stk.<br>
 Bemærk 95% konfidensintervallet, må ikke forveksles med 95% prædiktionsintervallet, der angiver 95% prædiktionsintervallet for kun en afsætning ved prisen 20,
-dette interval ville være bredere, da vi her kun ser på en afsætning frem for en gennemsnitlige afsætning.<br><br>
+dette interval ville være bredere, da vi her kun ser på en afsætning frem for en gennemsnitlige afsætning. Prædiktionsintervallet kunne fx. ved prisen 20, vise at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br><br>
 <a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
-"
+",
+
+"Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>
+<i>
+Antag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>
+En ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.
+Da bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.
+</i><br><br>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>",
+
+"Multikollinaritet er et problem, der kan opstå i en multipel lineær regressionsmodel, hvis nogle af de forklarende X-variable
+indbyrdes er meget kraftigt korrelerede (tommelfingerreglen anigver mindre end -0.8 eller større end 0.8),
+kan man ikke isoleret forklare, deres effekt på responsvariablen Y, X-variablene påvirker samtidigt den anden X-variabel.<br>
+<i>Hvis vi har en multipel lineær regressionsmodel, der forudsiger Y-variablen brugtbilspriser, ud fra X-variablene, kørte km og alder på for bilen.
+Kørte km og alder på bilen, vil være kraftigt positivt korrelerede (jo ældre bil jo flere kørte km.).
+Det kan derfor evt. være svært isoleret at forklare effekten af at en bil er 1 år ældre, dette påvirker jo også km. kørt.</i><br><br>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>"
+
+
 
 
 )
