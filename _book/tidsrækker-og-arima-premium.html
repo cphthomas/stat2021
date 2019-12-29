@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2019-12-26" />
+<meta name="date" content="2019-12-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -674,51 +674,51 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
 <p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(0,1,1) 
+## ARIMA(0,1,2) 
 ## 
 ## Coefficients:
-##           ma1
-##       -0.5876
-## s.e.   0.1292
+##           ma1     ma2
+##       -0.7798  0.3197
+## s.e.   0.1451  0.1457
 ## 
-## sigma^2 estimated as 160.1:  log likelihood=-197.55
-## AIC=399.11   AICc=399.36   BIC=402.93</code></pre>
+## sigma^2 estimated as 94.56:  log likelihood=-183.98
+## AIC=373.96   AICc=374.48   BIC=379.69</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(0,1,1) 
+## ARIMA(1,1,0) 
 ## 
 ## Coefficients:
-##          ma1
-##       0.5536
-## s.e.  0.1226
+##         ar1
+##       0.550
+## s.e.  0.118
 ## 
-## sigma^2 estimated as 70.29:  log likelihood=-176.94
-## AIC=357.88   AICc=358.14   BIC=361.7</code></pre>
+## sigma^2 estimated as 80.84:  log likelihood=-180.43
+## AIC=364.87   AICc=365.12   BIC=368.69</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,1) with non-zero mean 
+## ARIMA(2,0,2) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1      mean
-##       -0.4659  0.8610  101.7472
-## s.e.   0.1092  0.0692    0.9003
+##           ar1      ar2     ma1     ma2     mean
+##       -1.1730  -0.3296  1.7313  0.7972  98.8665
+## s.e.   0.1186   0.0935  0.0953  0.0795   0.9739
 ## 
-## sigma^2 estimated as 102.3:  log likelihood=-745.31
-## AIC=1498.62   AICc=1498.83   BIC=1511.81</code></pre>
+## sigma^2 estimated as 98.08:  log likelihood=-740.27
+## AIC=1492.55   AICc=1492.98   BIC=1512.34</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      108.81861 95.85931 121.7779 88.99908 128.6381
-## 202       98.45237 84.51835 112.3864 77.14213 119.7626
-## 203      103.28241 89.14566 117.4192 81.66211 124.9027
-## 204      101.03190 86.85152 115.2123 79.34488 122.7189
-## 205      102.08050 87.89066 116.2703 80.37902 123.7820
-## 206      101.59192 87.40003 115.7838 79.88729 123.2965
-## 207      101.81957 87.62723 116.0119 80.11426 123.5249
-## 208      101.71350 87.52107 115.9059 80.00805 123.4189
-## 209      101.76292 87.57047 115.9554 80.05744 123.4684
-## 210      101.73989 87.54743 115.9323 80.03440 123.4454</code></pre>
+## 201       96.68049 83.98891 109.3721 77.27039 116.0906
+## 202       99.19652 84.66110 113.7319 76.96652 121.4265
+## 203       99.19979 84.47141 113.9282 76.67467 121.7249
+## 204       98.36664 83.63132 113.1020 75.83091 120.9024
+## 205       99.34287 84.60538 114.0804 76.80382 121.8819
+## 206       98.47234 83.72811 113.2166 75.92299 121.0217
+## 207       99.17171 84.42093 113.9225 76.61234 121.7311
+## 208       98.63827 83.88289 113.3937 76.07186 121.2047
+## 209       99.03349 84.27531 113.7917 76.46279 121.6042
+## 210       98.74572 83.98596 113.5055 76.17261 121.3188</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
@@ -845,25 +845,25 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## ARIMA(3,1,3) with drift 
 ## 
 ## Coefficients:
-##           ar1      ar2     ar3     ma1     ma2      ma3   drift
-##       -0.1283  -0.1008  0.7571  0.1384  0.0002  -0.8085  0.7443
-## s.e.   0.0934   0.0818  0.0872  0.0805  0.0745   0.0774  0.4032
+##           ar1      ar2     ar3     ma1      ma2      ma3   drift
+##       -0.1314  -0.1002  0.7562  0.1416  -0.0009  -0.8086  0.7386
+## s.e.   0.0892   0.0795  0.0862  0.0773   0.0718   0.0758  0.4019
 ## 
-## sigma^2 estimated as 249.4:  log likelihood=-3126.37
-## AIC=6268.74   AICc=6268.94   BIC=6305.69</code></pre>
+## sigma^2 estimated as 249.1:  log likelihood=-3134.24
+## AIC=6284.47   AICc=6284.66   BIC=6321.44</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</a>
 <a class="sourceLine" id="cb124-2" data-line-number="2">fagoog</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 751       1346.776 1326.535 1367.016 1315.821 1377.731
-## 752       1346.577 1317.807 1375.346 1302.578 1390.575
-## 753       1346.190 1312.049 1380.330 1293.976 1398.403
-## 754       1349.045 1310.641 1387.449 1290.312 1407.779
-## 755       1348.918 1306.484 1391.353 1284.021 1413.816
-## 756       1348.705 1303.172 1394.238 1279.069 1418.342
-## 757       1351.258 1302.977 1399.540 1277.418 1425.099
-## 758       1351.208 1300.145 1402.271 1273.114 1429.302
-## 759       1351.147 1297.804 1404.490 1269.566 1432.728
-## 760       1353.444 1297.982 1408.906 1268.623 1438.266</code></pre>
+## 753       1350.013 1329.786 1370.240 1319.079 1380.948
+## 754       1353.238 1324.487 1381.989 1309.267 1397.209
+## 755       1353.704 1319.591 1387.818 1301.532 1405.876
+## 756       1352.252 1313.888 1390.615 1293.580 1410.923
+## 757       1355.186 1312.801 1397.570 1290.364 1420.008
+## 758       1355.649 1310.176 1401.123 1286.104 1425.195
+## 759       1354.547 1306.335 1402.759 1280.814 1428.281
+## 760       1357.215 1306.230 1408.201 1279.240 1435.190
+## 761       1357.677 1304.420 1410.933 1276.228 1439.126
+## 762       1356.867 1301.499 1412.234 1272.189 1441.544</code></pre>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
 <div id="eksporter-aktiekurser-til-excel-premium" class="section level3">
@@ -885,21 +885,21 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <pre><code>## Series: GS[, 6] 
 ## ARIMA(0,1,0) 
 ## 
-## sigma^2 estimated as 9.827:  log likelihood=-1918.57
-## AIC=3839.14   AICc=3839.14   BIC=3843.75</code></pre>
+## sigma^2 estimated as 9.804:  log likelihood=-1922.79
+## AIC=3847.58   AICc=3847.59   BIC=3852.2</code></pre>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1">fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</a>
 <a class="sourceLine" id="cb133-2" data-line-number="2">fags</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 751         229.91 225.8926 233.9274 223.7659 236.0541
-## 752         229.91 224.2285 235.5915 221.2209 238.5991
-## 753         229.91 222.9516 236.8684 219.2681 240.5519
-## 754         229.91 221.8751 237.9449 217.6217 242.1983
-## 755         229.91 220.9268 238.8933 216.1713 243.6487
-## 756         229.91 220.0693 239.7507 214.8600 244.9600
-## 757         229.91 219.2809 240.5391 213.6542 246.1658
-## 758         229.91 218.5470 241.2730 212.5318 247.2882
-## 759         229.91 217.8577 241.9623 211.4776 248.3424
-## 760         229.91 217.2058 242.6142 210.4806 249.3394</code></pre>
+## 753         230.66 226.6474 234.6726 224.5232 236.7968
+## 754         230.66 224.9853 236.3347 221.9813 239.3387
+## 755         230.66 223.7099 237.6101 220.0308 241.2892
+## 756         230.66 222.6348 238.6852 218.3865 242.9336
+## 757         230.66 221.6875 239.6325 216.9378 244.3822
+## 758         230.66 220.8311 240.4889 215.6280 245.6920
+## 759         230.66 220.0436 241.2764 214.4236 246.8964
+## 760         230.66 219.3106 242.0094 213.3026 248.0174
+## 761         230.66 218.6221 242.6979 212.2497 249.0703
+## 762         230.66 217.9710 243.3490 211.2538 250.0662</code></pre>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="672" /></p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
@@ -913,24 +913,24 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##          ar1      ar2      ar3      ma1     ma2
-##       0.2536  -0.9427  -0.0948  -0.3229  0.9752
-## s.e.  0.0422   0.0209   0.0370   0.0222  0.0160
+##       0.2536  -0.9427  -0.0948  -0.3230  0.9752
+## s.e.  0.0422   0.0208   0.0370   0.0222  0.0159
 ## 
-## sigma^2 estimated as 5.84:  log likelihood=-1709.97
-## AIC=3431.95   AICc=3432.06   BIC=3459.62</code></pre>
+## sigma^2 estimated as 5.832:  log likelihood=-1711.77
+## AIC=3435.55   AICc=3435.66   BIC=3463.23</code></pre>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1">faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</a>
 <a class="sourceLine" id="cb141-2" data-line-number="2">faddb</a></code></pre></div>
 <pre><code>##     Point Forecast     Lo 80    Hi 80     Lo 95    Hi 95
-## 746       107.0754 103.97828 110.1725 102.33877 111.8120
-## 747       107.0640 102.83327 111.2948 100.59364 113.5344
-## 748       106.9143 101.76894 112.0596  99.04516 114.7834
-## 749       106.8799 100.99841 112.7613  97.88496 115.8747
-## 750       107.0134 100.49693 113.5298  97.04733 116.9794
-## 751       107.0939  99.97532 114.2124  96.20698 117.9808
-## 752       106.9917  99.29424 114.6891  95.21947 118.7639
-## 753       106.8772  98.65420 115.1002  94.30120 119.4532
-## 754       106.9369  98.24435 115.6295  93.64278 120.2310
-## 755       107.0696  97.92884 116.2104  93.09000 121.0493</code></pre>
+## 747       107.2266 104.13154 110.3216 102.49314 111.9600
+## 748       107.0793 102.85129 111.3073 100.61313 113.5454
+## 749       107.0403 101.89837 112.1823  99.17638 114.9043
+## 750       107.1715 101.29394 113.0491  98.18254 116.1605
+## 751       107.2555 100.74329 113.7676  97.29596 117.2150
+## 752       107.1568 100.04287 114.2707  96.27699 118.0365
+## 753       107.0402  99.34776 114.7326  95.27565 118.8047
+## 754       107.0957  98.87804 115.3133  94.52788 119.6635
+## 755       107.2290  98.54215 115.9159  93.94359 120.5145
+## 756       107.2216  98.08675 116.3564  93.25107 121.1921</code></pre>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
@@ -944,24 +944,24 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##           ar1    drift
-##       -0.0291  56.4583
-## s.e.   0.0141  25.6281
+##       -0.0291  56.5416
+## s.e.   0.0141  25.6186
 ## 
-## sigma^2 estimated as 3497389:  log likelihood=-44995.28
-## AIC=89996.56   AICc=89996.57   BIC=90016.13</code></pre>
+## sigma^2 estimated as 3496402:  log likelihood=-45012.48
+## AIC=90030.95   AICc=90030.96   BIC=90050.52</code></pre>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1">faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</a>
 <a class="sourceLine" id="cb149-2" data-line-number="2">faberkshire</a></code></pre></div>
 <pre><code>##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 5028       338438.1 336041.4 340834.7 334772.7 342103.4
-## 5029       338494.8 335154.3 341835.2 333386.0 343603.5
-## 5030       338551.2 334479.1 342623.4 332323.4 344779.0
-## 5031       338607.7 333916.6 343298.7 331433.3 345782.1
-## 5032       338664.1 333426.8 343901.5 330654.3 346674.0
-## 5033       338720.6 332988.8 344452.4 329954.5 347486.6
-## 5034       338777.0 332590.2 344963.9 329315.1 348239.0
-## 5035       338833.5 332222.8 345444.2 328723.4 348943.7
-## 5036       338890.0 331881.1 345898.9 328170.8 349609.2
-## 5037       338946.4 331560.7 346332.1 327651.0 350241.9</code></pre>
+## 5030       338999.5 336603.1 341395.8 335334.6 342664.3
+## 5031       339055.3 335715.4 342395.2 333947.4 344163.3
+## 5032       339111.9 335040.4 343183.4 332885.1 345338.7
+## 5033       339168.4 334478.1 343858.7 331995.2 346341.6
+## 5034       339225.0 333988.5 344461.5 331216.5 347233.5
+## 5035       339281.5 333550.7 345012.4 330516.9 348046.1
+## 5036       339338.1 333152.2 345523.9 329877.6 348798.5
+## 5037       339394.6 332785.0 346004.2 329286.1 349503.1
+## 5038       339451.1 332443.4 346458.9 328733.8 350168.5
+## 5039       339507.7 332123.2 346892.1 328214.2 350801.2</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
 </div>
@@ -986,11 +986,11 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##           ar1    mean
-##       -0.6433  0.3401
-## s.e.   0.2373  0.0755
+##       -0.6465  0.3417
+## s.e.   0.2374  0.0756
 ## 
-## sigma^2 estimated as 0.2181:  log likelihood=-7.73
-## AIC=21.46   AICc=24.13   BIC=23.15</code></pre>
+## sigma^2 estimated as 0.2194:  log likelihood=-7.77
+## AIC=21.54   AICc=24.21   BIC=23.24</code></pre>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1">berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</a>
@@ -1002,7 +1002,7 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##         mean
-##       0.1067
+##       0.1068
 ## s.e.  0.0499
 ## 
 ## sigma^2 estimated as 0.03504:  log likelihood=3.86

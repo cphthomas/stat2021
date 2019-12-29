@@ -26,6 +26,9 @@ BEGREB <<- c(
   "t-fordelingen",
   "Frihedsgrader",
   "z-fordelingen",
+
+
+
   "Chi i anden test",
   "Normalfraktildiagram",
   "Stikprøvefordelingen",
@@ -45,7 +48,8 @@ BEGREB <<- c(
   "Prædiktionsinterval for responsvariablen Y",
   "Konfidensinterval for responsvariablen Y",
   "Residual",
-  "Multikollinaritet"
+  "Multikollinaritet",
+  "Korrelation"
 
 
 
@@ -427,7 +431,7 @@ Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, f
 ved prisen 20, betyde at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem 170 stk. til 190 stk.<br>
 Bemærk 95% konfidensintervallet, må ikke forveksles med 95% prædiktionsintervallet, der angiver 95% prædiktionsintervallet for kun en afsætning ved prisen 20,
 dette interval ville være bredere, da vi her kun ser på en afsætning frem for en gennemsnitlige afsætning. Prædiktionsintervallet kunne fx. ved prisen 20, vise at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br><br>
-<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om konfidensintervallet!</a>
 ",
 
 "Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>
@@ -439,15 +443,22 @@ Da bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er 
 <a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>",
 
 "Multikollinaritet er et problem, der kan opstå i en multipel lineær regressionsmodel, hvis nogle af de forklarende X-variable
-indbyrdes er meget kraftigt korrelerede (tommelfingerreglen anigver mindre end -0.8 eller større end 0.8),
+indbyrdes er meget kraftigt korrelerede (tommelfingerreglen anigver en korrelationskoefficient mindre end -0.8 eller større end 0.8),
 kan man ikke isoleret forklare, deres effekt på responsvariablen Y, X-variablene påvirker samtidigt den anden X-variabel.<br>
 <i>Hvis vi har en multipel lineær regressionsmodel, der forudsiger Y-variablen brugtbilspriser, ud fra X-variablene, kørte km og alder på for bilen.
 Kørte km og alder på bilen, vil være kraftigt positivt korrelerede (jo ældre bil jo flere kørte km.).
 Det kan derfor evt. være svært isoleret at forklare effekten af at en bil er 1 år ældre, dette påvirker jo også km. kørt.</i><br><br>
-<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>"
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#foruds%C3%A6tning-multikollinaritet\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om multikollinaritet!</a>",
 
-
-
+"Korrelationen angiver hvor meget 2 variable samvarierer, vi kan måle korrelationen vha. korrelationskoefficienten der er et tal mellem -1 og 1.<br><i>
+Korrelationskoefficienten er klart positiv hvis høje og lave værdier for den ene variabel følges med høje og lave værdier for den anden variabel.<br>
+Korrelationskoefficienten er klart negativ hvis høje og lave værdier for den ene variabel følges med lave og høje værdier for den anden variabel.<br>
+Er der ingen samvariation mellem 2 variable er korrelationskoefficienten tæt på 0.<br>
+Korrelationskoeficienten i en kiosk mellem afsætning af is og temperaturen vil være positiv, jo koldere/varmere det er jo mindre/større afsætning af is.<br>
+Korrelationskoeficienten i en kiosk mellem afsætning af varm kakao og temperaturen vil være negativ, jo koldere/varmere det er jo større/mindre afsætning af kakao.<br>
+For to variable som ikke er korrelerede (de samvarierer ikke) som fx. Apple aktie kursen og nedbørsmængden i Dragør, vil vi få en korrelationskoefficient tæt på 0.
+</i><br><br>
+<a href=\"https://s.tepedu.dk/korrelation.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om korrelationsanalyse!</a>"
 
 )
 
