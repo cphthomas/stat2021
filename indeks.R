@@ -49,7 +49,8 @@ BEGREB <<- c(
   "Konfidensinterval for responsvariablen Y",
   "Residual",
   "Multikollinaritet",
-  "Korrelation"
+  "Korrelation",
+  "Dummy variabel"
 
 
 
@@ -458,7 +459,21 @@ Korrelationskoeficienten i en kiosk mellem afsætning af is og temperaturen vil 
 Korrelationskoeficienten i en kiosk mellem afsætning af varm kakao og temperaturen vil være negativ, jo koldere/varmere det er jo større/mindre afsætning af kakao.<br>
 For to variable som ikke er korrelerede (de samvarierer ikke) som fx. Apple aktie kursen og nedbørsmængden i Dragør, vil vi få en korrelationskoefficient tæt på 0.
 </i><br><br>
-<a href=\"https://s.tepedu.dk/korrelation.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om korrelationsanalyse!</a>"
+<a href=\"https://s.tepedu.dk/korrelation.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om korrelationsanalyse!</a>",
+
+
+"En Dummy variabel, er en variabel, der kun kan antage værdierne 0 og 1.<br><i>
+Vi bruger dummy variable i lineær regression, når vi ønsker at have en kvalitativ variabel med i den kvantitative regressionsanalyse. Vi siger variablen er i basis når den er slukket dvs. lig med 0, variablen er tændt når den antager værdien 1.<br>
+En kvalitativ binær variabel som køn, kan kodes til fx. <b>Dummy Mand</b>, så er den tændt dvs. 1, når respondenten er en mand, og i basis når det er en kvinde dvs. 0.<br>
+Man kan også kode variablen som <b>Dummy Kvinde</b>, med mand i basis, dvs. når variablen er slukket, er der tale om en mand.<br>
+Kvalitative variable, der ikke er binære, som fx. ugedag, kan også kodes som som dummy variable. Når ugedag skal kodes som dummy variable, får man 6 dummyvariable. Man skal vælge en basis, fx. mandag, så får man dummyvariablene:<br>
+<b>Dummy Tirsdag</b>, <b>Dummy Onsdag</b>, <b>Dummy Torsdag</b>, <b>Dummy Fredag</b>, <b>Dummy Lørsdag</b> og <b>Dummy Søndag</b>.<br>
+Når de 6 dummy variable er slukket, er det så mandag, højst 1 dummy kan være tændt ad gangen.<br><br>
+</i>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#dummy-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om dummy variable!</a>
+"
+
+
 
 )
 
