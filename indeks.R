@@ -36,6 +36,10 @@ BEGREB <<- c(
   "Alternativ hypotesen",
   "Ensidet alternativhypotese",
   "Tosidet alternativhypotese",
+
+
+
+
   "Approximativt",
   "Estimat",
   "Varianshomogenitet",
@@ -44,13 +48,8 @@ BEGREB <<- c(
   "Binomialfordelingen",
   "Poisson fordelingen",
   "Modus",
-
-
-
   "Lineær regression",
-
-
-    "Prædiktionsinterval for responsvariablen Y",
+  "Prædiktionsinterval for responsvariablen Y",
   "Konfidensinterval for responsvariablen Y",
   "Residual",
   "multikollinearitet",
