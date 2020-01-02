@@ -429,7 +429,7 @@ Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, f
 ved prisen 20, betyde at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br>
 Bemærk 95% prædiktionsintervallet, må ikke forveksles med 95% konfidensintervallet, der angiver 95% konfidensintervallet for den gennemsnitlige afsætning ved prisen 20,
 dette interval ville være smallere, da vi her ser på den gennemsnitlige afsætning frem for en afsætning. Konfidensintervallet kunne fx. ved prisen 20, vise at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem  170 stk. til 190 stk.<br><br>
-<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om prædiktionsintervallet!</a>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om prædiktionsintervallet!</a>
 ",
 
 "Konfidensintervallet for responsvariablen Y givet X, angiver nedre og øvre grænse indenfor hvilke gennemsnittet for responsvariablen Y med en bestemt sandsynlighed vil lande.<br>
@@ -437,7 +437,7 @@ Hvis vi fx. har en simpel lineær regressionsmodel, hvor Y afsætningen af is, f
 ved prisen 20, betyde at den gennemsnitlige afsætning med 95% sandsynlighed liggger mellem 170 stk. til 190 stk.<br>
 Bemærk 95% konfidensintervallet, må ikke forveksles med 95% prædiktionsintervallet, der angiver 95% prædiktionsintervallet for kun en afsætning ved prisen 20,
 dette interval ville være bredere, da vi her kun ser på en afsætning frem for en gennemsnitlige afsætning. Prædiktionsintervallet kunne fx. ved prisen 20, vise at afsætningen med 95% sandsynlighed liggger mellem  160 stk. til 200 stk.<br><br>
-<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\">Klik her for at lære mere om konfidensintervallet!</a>
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#video-simpel-line%C3%A6r-regression-pi-og-ki\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om konfidensintervallet!</a>
 ",
 
 "Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>
