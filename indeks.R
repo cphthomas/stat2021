@@ -44,11 +44,16 @@ BEGREB <<- c(
   "Binomialfordelingen",
   "Poisson fordelingen",
   "Modus",
+
+
+
   "Lineær regression",
-  "Prædiktionsinterval for responsvariablen Y",
+
+
+    "Prædiktionsinterval for responsvariablen Y",
   "Konfidensinterval for responsvariablen Y",
   "Residual",
-  "Multikollinaritet",
+  "multikollinearitet",
   "Korrelation",
   "Dummy variabel"
 
@@ -443,13 +448,13 @@ Da bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er 
 </i><br><br>
 <a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!</a>",
 
-"Multikollinaritet er et problem, der kan opstå i en multipel lineær regressionsmodel, hvis nogle af de forklarende X-variable
+"Multikollinearitet er et problem, der kan opstå i en multipel lineær regressionsmodel, hvis nogle af de forklarende X-variable
 indbyrdes er meget kraftigt korrelerede (tommelfingerreglen anigver en korrelationskoefficient mindre end -0.8 eller større end 0.8),
 kan man ikke isoleret forklare, deres effekt på responsvariablen Y, X-variablene påvirker samtidigt den anden X-variabel.<br>
 <i>Hvis vi har en multipel lineær regressionsmodel, der forudsiger Y-variablen brugtbilspriser, ud fra X-variablene, kørte km og alder på for bilen.
 Kørte km og alder på bilen, vil være kraftigt positivt korrelerede (jo ældre bil jo flere kørte km.).
 Det kan derfor evt. være svært isoleret at forklare effekten af at en bil er 1 år ældre, dette påvirker jo også km. kørt.</i><br><br>
-<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#foruds%C3%A6tning-multikollinaritet\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om multikollinaritet!</a>",
+<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#foruds%C3%A6tning-multikollinearitet\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om multikollinearitet!</a>",
 
 "Korrelationen angiver hvor meget 2 variable samvarierer, vi kan måle korrelationen vha. korrelationskoefficienten der er et tal mellem -1 og 1.<br><i>
 Korrelationskoefficienten er klart positiv hvis høje og lave værdier for den ene variabel følges med høje og lave værdier for den anden variabel.<br>

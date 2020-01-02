@@ -394,7 +394,7 @@ Gennemsnit
 <img src="img/moose.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
 En finansøkonom, en biolog og en statistiker er på elgjagt. De ser er flot stor elg. Finansøkonomen skyder og rammer en cm. foran snuden. Biologen skyder og rammer 1 cm. bag halen. Statistikeren jubler og råber: "Vi fik den!!! Vi fik den !!!"
 </div>
-Modus/modalværdi/typetallet er den hyppigst forekommende observation for et observations sæt. Typetallet er ikke nødvendigvis godt til at beskrive data. Har vi fx. observations sættet:  {1,1,2,3,4,5,6,7,8,9,10} er typetallet 1, ``r tippy(" medianen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` 5 og middelværdien 5.09. I dette tilfælde ville modus være en ringe deskriptor for observations sættet. 
+Modus/modalværdi/typetallet er den hyppigst forekommende observation for et observations sæt. Typetallet er ikke nødvendigvis godt til at beskrive data. Har vi fx. observations sættet:  {1,1,2,3,4,5,6,7,8,9,10} er typetallet 1, ``r tippy(" medianen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` 5 og middelværdien 5.09. I dette tilfælde ville ``r tippy(" modus", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[40,2],"</h4>"))`` være en ringe deskriptor for observations sættet. 
 
 Har vi en fordeling med en top kalder vi den for unimodal, har fordelingen 2 toppe kalder vi den bimodal.
 
@@ -963,7 +963,7 @@ legend("topright", legend=c("Middel=-1","Middel=0","Middel=4"), col=c("lightgrey
 ```
 
   
-Middelværdi, ``r tippy(" median", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` og modus/typetal er altid identisk for ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, skævhed og ``r tippy(" kurtosis", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[20,2],"</h4>"))`` er 0.
+Middelværdi, ``r tippy(" median", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` og ``r tippy(" modus", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[40,2],"</h4>"))``/typetal er altid identisk for ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, skævhed og ``r tippy(" kurtosis", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[20,2],"</h4>"))`` er 0.
 
 
 
@@ -980,7 +980,7 @@ Hvis sandsynlighedsmålet fx. er normalfordelt skriver vi $X\sim N(\mu,\sigma)$.
 Ser vi på eksemplet med danske mænds højde, kan vi definere en normalfordelt stokastisk variabel $X\sim N(\mu=180.4,\sigma=7.42)$. Skal vi bestemme sandsynligheden for at en person er lavere end 178 cm, skriver vi dette som $P(X<178)$. Vi kan beregne sandsynligheder i det meste software. I Excel ville vi beregne $P(X<178)=0.37$, ved hjælp af formlen =NORMAL.FORDELING(178;180,4;7,42;1). 
 
 ### Standard normalfordelingen
-Der findes en særlig kendt normalfordeling, kaldet standard ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, denne har parametrene $\mu=0$ og $\sigma=1$, hvilket altså betyder den har middel, ``r tippy(" median", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` og modus 0 og standardafvigelse 1. Standard normalfordelingen ses i figuren herunder. 
+Der findes en særlig kendt normalfordeling, kaldet standard ``r tippy(" normalfordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[15,2],"</h4>"))``, denne har parametrene $\mu=0$ og $\sigma=1$, hvilket altså betyder den har middel, ``r tippy(" median", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))`` og ``r tippy(" modus", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[40,2],"</h4>"))`` 0 og standardafvigelse 1. Standard normalfordelingen ses i figuren herunder. 
 
 ```{r stdnormal,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
 x <- seq(-5,5,length.out=200)
@@ -4291,21 +4291,21 @@ Dagstemperaturen og dagssalget af varm kakao på Seven Eleven, har negativ samva
 
 Er korrelationskoefficienten 0 eller tæt på 0 er 2 variable ikke korrelerede, fx. nedbørsmængden i Bergen og Intel kursen.
 
-Det er svært præcis at definere grænser for hvornår noget er korreleret stærkt og svagt eller slet ikke, herunder er dog et skema der angiver mulige tolkninger af korrelationskoefficienter.
+Det er svært præcis at definere grænser for hvornår noget er ``r tippy(" korreleret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` stærkt og svagt eller slet ikke, herunder er dog et skema der angiver mulige tolkninger af korrelationskoefficienter.
 
 |Korrelationskoefficient                  | Tolkning                       
 |:-------------                 |:------------                    
--1 til -0.8                     | Stærk negativ korrelation
--0.8 til -0.6                  | Klar negativ korrelation
--0.6 til -0.3                  | Negativ korrelation
--0.3 til -0.15                  | Svag negativ korrelation
--0.15 til -0.1                  | Meget svag negativ korrelation
--0.1 til 0.1                  | Ingen korrelation
-0.1 til 0.15                 | Meget svag positiv korrelation
-0.15 til 0.3                  | Svag positiv korrelation
-0.3 til 0.6                  | Positiv korrelation
-0.6 til 0.8                  | Klar positiv korrelation
-0.8 til 1                     | Stærk positiv korrelation
+-1 til -0.8                     | Stærk negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+-0.8 til -0.6                  | Klar negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+-0.6 til -0.3                  | Negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+-0.3 til -0.15                  | Svag negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+-0.15 til -0.1                  | Meget svag negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+-0.1 til 0.1                  | Ingen ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+0.1 til 0.15                 | Meget svag positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+0.15 til 0.3                  | Svag positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+0.3 til 0.6                  | Positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+0.6 til 0.8                  | Klar positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
+0.8 til 1                     | Stærk positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``
 
 Ud fra korrelationskoefficienten alene, er det ikke umiddelbart muligt at tale om hvilken af de 2 variable der har effekt på den anden variabel. Korrelationskoefficienten fortæller alene, om der er en samvariation mellem 2 variable.
 
@@ -4317,36 +4317,36 @@ Vi ser nu på datasættet [HELBRED.xlsx](https://drive.google.com/uc?export=down
 
 ![](img/korr1.png)
 
-Vi ser på tabelen korrelationsmatrice. Bemærk de 5 variable giver korrelationskoefficienter for de 10 mulige parvise kombinationer. Man behøver kun at se på koefficienterne under diagonalen med 1 taller, den øverste del er samme koefficienter. Der er 1 taller i diagonalen da fx. Spise frugt er perfekt positivt korreleret med sig selv.
+Vi ser på tabelen korrelationsmatrice. Bemærk de 5 variable giver korrelationskoefficienter for de 10 mulige parvise kombinationer. Man behøver kun at se på koefficienterne under diagonalen med 1 taller, den øverste del er samme koefficienter. Der er 1 taller i diagonalen da fx. Spise frugt er perfekt positivt ``r tippy(" korreleret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` med sig selv.
 
-Korrelationskoefficienterne er farvekodet jo rødere koefficient, des mere negativt korrelerede er 2 variable. Grønne koefficienter betyder positiv korrelation mellem 2 variable. Hvide eller svagt farvede betyder ingen eller ringe korrelation.
+Korrelationskoefficienterne er farvekodet jo rødere koefficient, des mere negativt korrelerede er 2 variable. Grønne koefficienter betyder positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` mellem 2 variable. Hvide eller svagt farvede betyder ingen eller ringe ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.
 
 Ikke overraskende er der grøn positiv korrelationskoefficient på 0.38 mellem spise frugt og spise grøntsager. Det betyder respondenter der spiser megen frugt, har større tilbøjelighed til at spise mange grøntsager og omvendt. Ligeledes betyder dette at spiser man få grøntsager spiser man ligeledes lidt frugt.
 
 Af den røde negative korrelationskoefficient på -0.1884 for grøntsager og vægt ses, at høj vægt betyder man spiser få grøntsager, lav vægt betyder flere grøntsager. Denne sammenhæng er ikke så stærk som for frugt og grøntsager.
 
 
-Bemærk korrelationen beskriver en samvariation mellem 2 variable, men ikke hvad forklaringen er på samvariationen, hvis der overhovedet er en fornuftig forklaring på korrelationen. Vi siger at hvis der er en årsagssammenhæng mellem 2 variable, at der er kausalitet. Der kan godt være korrelation uden at der er kausalitet. 
+Bemærk ``r tippy(" korrelationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` beskriver en samvariation mellem 2 variable, men ikke hvad forklaringen er på samvariationen, hvis der overhovedet er en fornuftig forklaring på ``r tippy(" korrelationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``. Vi siger at hvis der er en årsagssammenhæng mellem 2 variable, at der er kausalitet. Der kan godt være ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` uden at der er kausalitet. 
 
-Statistikere opdagede i 1920'erne positiv korrelation mellem antallet af lungekræfttilfælde og cigaretrygning. Der gik dog flere årtier inden man konstaterede, at der var kausalitet mellem rygning og lungekræft. 
+Statistikere opdagede i 1920'erne positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` mellem antallet af lungekræfttilfælde og cigaretrygning. Der gik dog flere årtier inden man konstaterede, at der var kausalitet mellem rygning og lungekræft. 
 
 ### Spuriøse korrelationer  
-Konstaterer man variable er korrelerede, uden en der er en fornuftig årsagssammenhæng, siger vi, der er tale om en spuriøs korrelation. 
+Konstaterer man variable er korrelerede, uden en der er en fornuftig årsagssammenhæng, siger vi, der er tale om en spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``. 
 
-Danske forskere opdagede, at der var positiv korrelation mellem antallet af børnefødsler og antallet af storkepar. Det var dog ikke storken der kom med børnene. Folk i landområder, får flere børn end folk i byområder af socioøkonomiske årsager. I byområder er der få storke. Når variablene forekomsten af børnefødsler og antallet af storkepar forklares af en mellemkommende variabel, urbaniseringsgrad, siger vi sammenhængen mellem storke og børnefødsler er spuriøs.
+Danske forskere opdagede, at der var positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` mellem antallet af børnefødsler og antallet af storkepar. Det var dog ikke storken der kom med børnene. Folk i landområder, får flere børn end folk i byområder af socioøkonomiske årsager. I byområder er der få storke. Når variablene forekomsten af børnefødsler og antallet af storkepar forklares af en mellemkommende variabel, urbaniseringsgrad, siger vi sammenhængen mellem storke og børnefødsler er spuriøs.
 
 Der findes flere interessante sider, der udelukkende viser spuriøse sammenhænge mellem forskellige variable. <a href="http://www.tylervigen.com/spurious-correlations" target="_blank">spurious correlations</a> er en hjemmeside med mange sjove variable der er korrelerede, hvor det er svært at forestille sig en kausal sammenhæng.
 
 
 <br>
 <details> 
-  <summary>Spørgsmål spuriøs korrelation.</summary>
+  <summary>Spørgsmål spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
 [Hent datasættet spuriøs korrelation her](https://www.dropbox.com/s/1jerrptayat4xi7/spuri%C3%B8s%20korrelation.xlsx?dl=1), prøv i Freestat at beregne korrelationerne mellem skilsmisse og mælkeforbrug i første fane.
 
 </details> 
 <br>
 <details> 
-  <summary>Svar spuriøs korrelation.</summary>
+  <summary>Svar spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
 <img src="img/corr1.png" alt="corr1.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
 
@@ -4355,38 +4355,38 @@ Der er en stærk positiv korrelation mellem skilsmisse og mælkeforbrug. Korrela
 </details> 
 <br>
 <details> 
-  <summary>Spørgsmål spuriøs korrelation.</summary>
+  <summary>Spørgsmål spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
   
 [Hent datasættet spuriøs korrelation her](https://www.dropbox.com/s/1jerrptayat4xi7/spuri%C3%B8s%20korrelation.xlsx?dl=1), prøv i Freestat at beregne korrelationerne mellem drukning og mord i anden fane.
 
 </details> 
 <br>
 <details> 
-  <summary>Svar spuriøs korrelation.</summary>
+  <summary>Svar spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
 <img src="img/corr2.png" alt="corr2.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Der er en stærk positiv korrelation mellem drukning og mord. Korrelationskoefficienten er på 0.8506, men sammenhængen er spuriøs.
+Der er en stærk positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` mellem drukning og mord. Korrelationskoefficienten er på 0.8506, men sammenhængen er spuriøs.
 
 </details> 
 <br>
 <details> 
-  <summary>Spørgsmål spuriøs korrelation.</summary>
+  <summary>Spørgsmål spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
   
-[Hent datasættet spuriøs korrelation her](https://www.dropbox.com/s/1jerrptayat4xi7/spuri%C3%B8s%20korrelation.xlsx?dl=1), prøv i Freestat at beregne korrelationerne mellem ost og bier i tredie fane.
+[Hent datasættet spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` her](https://www.dropbox.com/s/1jerrptayat4xi7/spuri%C3%B8s%20korrelation.xlsx?dl=1), prøv i Freestat at beregne korrelationerne mellem ost og bier i tredie fane.
 
 </details> 
 <br>
 <details> 
-  <summary>Svar spuriøs korrelation.</summary>
+  <summary>Svar spuriøs ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
 
 <img src="img/corr3.png" alt="corr3.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
-Der er en positiv korrelation mellem ost og bier. Korrelationskoefficienten er på 0.4474, men sammenhængen er spuriøs.
+Der er en positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` mellem ost og bier. Korrelationskoefficienten er på 0.4474, men sammenhængen er spuriøs.
 
 </details> 
 <br>
 <details> 
-  <summary>Spørgsmål korrelation.</summary>
+  <summary>Spørgsmål ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
   
 [Hent datasættet Ford her](https://www.dropbox.com/s/21hf56ppe409pis/Ford.xlsx?dl=1), der viser salgspriser, kørte km etc. Beregn korrelationskoefficienterne mellem variablene År, Pris DKK,	Alder (år) og Kilometer. 
 1. Er disse som vi ville forvente, er korrelationerne kausale?
@@ -4396,7 +4396,7 @@ Der er en positiv korrelation mellem ost og bier. Korrelationskoefficienten er p
 </details> 
 <br>
 <details> 
-  <summary>Svar korrelation.</summary>
+  <summary>Svar ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``.</summary>
 
 <img src="img/ford.png" alt="ford.png" align="right" width="100%" height="100%"style="border:0px solid #eeeeee; padding:5px; margin:6px;"/>
 
@@ -4501,7 +4501,7 @@ En variabel vi bruger til at forudsige, her temperaturen, kaldes:
 
 Baseret på observationerne kan vi forsøge at forudsige salget af drinks, til dette formål opstiller vi en lineær model.
 Normalt når vi har en lineær funktion har vi i matematik lært at denne har forskriften $$y=ax+b$$
-Når vi har at gøre med lineær regression bruger vi typisk betegnelsen $\beta_1$ eller mere sigende $\beta_{temperatur}$ eller $\beta_{temp}$ om hældningskoefficienten $a$. Vi bruger ofte betegnelsen $\beta_0$ eller $\alpha$ om skæringen med y-aksen b også kaldet interceptet.
+Når vi har at gøre med lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))`` bruger vi typisk betegnelsen $\beta_1$ eller mere sigende $\beta_{temperatur}$ eller $\beta_{temp}$ om hældningskoefficienten $a$. Vi bruger ofte betegnelsen $\beta_0$ eller $\alpha$ om skæringen med y-aksen b også kaldet interceptet.
 
 
 
@@ -4529,8 +4529,8 @@ $$\hat{Y}=0.75 \cdot X_{temp}+0.5 \Leftrightarrow$$
 $$\hat{Y}=0.75 \cdot 6+0.5\Leftrightarrow$$
 $$\hat{Y}=5$$
 
-Vi kan i figuren se at de sorte prikker er faktiske observationer, og linjen er modellen af virkeligheden. Vi har beregnet modellens forudsigelse af drinkssalget ved de 3 temperaturer 2, 4 og 8 grader, modellens forudsigelser er illustreret ved sorte trekanter. Vi kalder forskellen mellem faktiske og observerede værdier for residualer, definitionen for residualer er altså faktisk minus observeret værdi. Man benytter ofte det græske bogstav epsilon $\epsilon$ til at betegne residualerne. For at have et mål for hvor stor forskellen mellem modellen og de faktiske observationer er samlet set, bruger vi summen af de kvadrerede residualer SSR.
-Residualer af observerede salg af drinks beregnes som: $$SSR=(1-2)^2+(5-3.5)^2+(6-6.5)^2=1+2.25+0.25=3.5$$ Vi kalder værdien for summen af kvadrerede residualer på engelsk SSR sums of squared residuals, de 3 kvadrerede residualer er illustreret som de 3 grå kvadrater i figuren nedenfor.
+Vi kan i figuren se at de sorte prikker er faktiske observationer, og linjen er modellen af virkeligheden. Vi har beregnet modellens forudsigelse af drinkssalget ved de 3 temperaturer 2, 4 og 8 grader, modellens forudsigelser er illustreret ved sorte trekanter. Vi kalder forskellen mellem faktiske og observerede værdier for ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, definitionen for ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` er altså faktisk minus observeret værdi. Man benytter ofte det græske bogstav epsilon $\epsilon$ til at betegne ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``. For at have et mål for hvor stor forskellen mellem modellen og de faktiske observationer er samlet set, bruger vi summen af de kvadrerede ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` SSR.
+Residualer af observerede salg af drinks beregnes som: $$SSR=(1-2)^2+(5-3.5)^2+(6-6.5)^2=1+2.25+0.25=3.5$$ Vi kalder værdien for summen af kvadrerede ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` på engelsk SSR sums of squared residuals, de 3 kvadrerede ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` er illustreret som de 3 grå kvadrater i figuren nedenfor.
 
 
 ```{r joereg1,echo=FALSE,fig.width=9, fig.height=9,dev="svg"}
@@ -4641,10 +4641,10 @@ ggplot(joe, aes(x=Temperatur, y=Drinks)) +
 ```
 
 
-Her har vi kun en forklarende variabel temperatur, vi kalder derfor specielt analysen for simpel lineær regression. Vi vil senere se på analyse vha. lineær regression med flere forklarende variable, denne analysetype kalder vi for multipel lineær regression.
+Her har vi kun en forklarende variabel temperatur, vi kalder derfor specielt analysen for simpel lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``. Vi vil senere se på analyse vha. lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))`` med flere forklarende variable, denne analysetype kalder vi for multipel lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``.
 
 ## Freestat output lineær regression Joe and The Juice
-Vi kan få software til at beregne output for os, i Freestat kan fanen mreg, benyttes til lineær regression. Vi skal altid taste værdier for responsvariablen Y i **I-søjlen** husk overskift. Vi sætter en eller flere forklarende variable i de efterfølgende søjler. 
+Vi kan få software til at beregne output for os, i Freestat kan fanen mreg, benyttes til lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``. Vi skal altid taste værdier for responsvariablen Y i **I-søjlen** husk overskift. Vi sætter en eller flere forklarende variable i de efterfølgende søjler. 
 
 ![](img/freestatmregjoe.png)
 
@@ -4655,7 +4655,7 @@ I cellen **B15** ses estimatet for parameteren $\beta_0$ altså $\hat{\beta}_0$.
 I cellen **B16** ses estimatet for parameteren $\beta_{temp}$ altså $\hat{\beta}_{temp}$.  
 I cellerne **I3-I5** har vi de faktiske værdier.  
 I cellerne **G3-G5** har vi de forventede eller forudsagte værdier.  
-I cellerne **H3-H5** har vi residualerne, dette er faktisk minus forudsagt.  
+I cellerne **H3-H5** har vi ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, dette er faktisk minus forudsagt.  
 
 Vi nævnte tidligere at modellen her egentlig er fjollet lille, dette resulterer i at den ikke kan bruges til noget, da den ene forklarende variabel ikke er signifikant. 
 
@@ -4676,10 +4676,10 @@ I cellen **E16** ses ``r tippy(" p-værdien", size="large" ,interactive = TRUE, 
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/228381611' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Der er 4 forudsætninger, der skal være opfyldt for at kvaliteten af vor lineære regressionsmodel er god. Linearitet, varianshomogenitet, uafhængighed residualer og normalitet residualer. Vi kan undersøge om de 4 forudsætninger er opfyldt, ved at se på 3 forskellige plots et linjetilpasningsplot, et residualplot og et normalfraktildiagram.  Et linjetilpasningsplot er et xy-punktdiagram hvor regressionslinjen er indtegnet. De 3 plots tegnes automatisk, når man genererer en lineær regressionsmodel i Freestat.
+Der er 4 forudsætninger, der skal være opfyldt for at kvaliteten af vor lineære regressionsmodel er god. Linearitet, varianshomogenitet, uafhængighed ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` og normalitet ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``. Vi kan undersøge om de 4 forudsætninger er opfyldt, ved at se på 3 forskellige plots et linjetilpasningsplot, et residualplot og et normalfraktildiagram.  Et linjetilpasningsplot er et xy-punktdiagram hvor regressionslinjen er indtegnet. De 3 plots tegnes automatisk, når man genererer en lineær regressionsmodel i Freestat.
 
 ### Linearitet
-For at benytte lineær regression, er den vigtigste forudsætning, at der er en lineær sammenhæng mellem den forklarende variabel X og responsvariablen Y. Er der ikke en lineær sammenhæng, kan vi ikke beskrive sammenhængen ved en lineær regressionsmodel. Herunder er nogle eksempler på linjetilpasningsplots, hvor der er problemer med forudsætningen om lineraritet.
+For at benytte lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``, er den vigtigste forudsætning, at der er en lineær sammenhæng mellem den forklarende variabel X og responsvariablen Y. Er der ikke en lineær sammenhæng, kan vi ikke beskrive sammenhængen ved en lineær regressionsmodel. Herunder er nogle eksempler på linjetilpasningsplots, hvor der er problemer med forudsætningen om lineraritet.
 
 I de fire røde linjetilpasningsplots, er der problemer med linearitet. Responsvariablen i plot 1 og 2, kunne bedre beskrives ved en parabel. Modellerne over- og undervurderer konsekvent værdien af y. Hvis forudsætningen om linearitet, ikke er opfyldt er det alvorligt, vi ser af figurerne at modellen ikke vil beskrive responsvariablen korrekt. Responsvariablen i plot 3 og 4 kunne synes at følge en eksponentiel eller polynomisk udvikling. Bemærk man kan ikke umiddelbart ud fra r-kvadereret og ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` for F- og t-testet, konstatere at der er problemer med linearitetsantagelsen. Vi kan imidlertid let se der er problemer med lineariteten i linjetilpasningsplots.
 
@@ -4968,8 +4968,8 @@ Er der varianshomogenitet, siger man med et fint specialudtryk, at der er homosk
 
 ### Uafhængighed residualer
 
-Uafhængighed af residualer betyder at hverken værdien af X eller andre residualer påvirker en residual, målefejlen er altså tilfældig. I resiualplots 1, 2, og 3 er der uafhængighed mellem residualerne, lave residualer medfører fx ikke nødvendigvis lave eller høje residualer. Der er som før beskrevet ikke varianshomogenitet , men der er ikke afhængighed i residualerne. 
-I resiualplots 4, 5 og 6, er der ikke uafhængige residualer, lave residualer medfører lave residualer og høje residualer medfører høje residualer. Der må ikke være systematik imellem residualerne, punkterne i residualplottet skal ligge tilfældigt som i residualplot 7 og 8, her er både antagelsen om varianshomogenitet og uafhængige residualer opfyldt.
+Uafhængighed af ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` betyder at hverken værdien af X eller andre ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` påvirker en ``r tippy(" residual", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, målefejlen er altså tilfældig. I resiualplots 1, 2, og 3 er der uafhængighed mellem ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, lave ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` medfører fx ikke nødvendigvis lave eller høje ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``. Der er som før beskrevet ikke varianshomogenitet , men der er ikke afhængighed i ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``. 
+I resiualplots 4, 5 og 6, er der ikke uafhængige ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, lave ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` medfører lave ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` og høje ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` medfører høje ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``. Der må ikke være systematik imellem ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``, punkterne i residualplottet skal ligge tilfældigt som i residualplot 7 og 8, her er både antagelsen om varianshomogenitet og uafhængige ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` opfyldt.
 
 ```{r residualplots,echo=FALSE,fig.width=9, fig.height=36 ,dev="svg"}
 par(mfrow=c(8,1))
@@ -5057,7 +5057,7 @@ title(main = list("Residualplot 8, 500 observationer\nForudsætningen om varians
 ```
 
 ### Normalitet residualer
-Vi kan undersøge normaliteten af residualerne ved at plotte disse i et normalfraktildiagram. Her skal punkterne ligge tæt omkring den rette linje. Af nedenstående plots er kun residualerne i 1. plot normalfordelte.
+Vi kan undersøge normaliteten af ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` ved at plotte disse i et normalfraktildiagram. Her skal punkterne ligge tæt omkring den rette linje. Af nedenstående plots er kun ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` i 1. plot normalfordelte.
 
 ```{r normalfraktildiagrammer,echo=FALSE,warning=FALSE,fig.width=9, fig.height=9 ,dev="svg"}
 par(mfrow=c(2,2))
@@ -5108,9 +5108,9 @@ qqline(lm(y ~ x)$residuals)
 |Forudsætning   |Plot  |Udseende af plot
 |:-------------|:-------------|:-------------
 |Linearitet af observationer| Linjetilpasningsplot  |Observationerne følger en linjeform       |
-|Uafhængighed af residualerne|Residualplot|Der er ikke systematik i residualplottet|
+|Uafhængighed af ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``|Residualplot|Der er ikke systematik i residualplottet|
 |Varianshomogenitet/homoskedasticitet|Residualplot|Der er ikke trompetform i residualplottet|
-|Normalitet af residualerne|Normalfraktildiagram for residualerne|Punkterne ligger pænt om den rette linje|
+|Normalitet af ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``|Normalfraktildiagram for ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``|Punkterne ligger pænt om den rette linje|
 
 
 
@@ -5126,7 +5126,7 @@ qqline(lm(y ~ x)$residuals)
 
 Hvis vi ønsker at undersøge om lejeprisen på sommerhuse afhænger af kvm. prisen, kan vi benytte lineær regressionsanalyse til at afgøre om lejeprisen kan forudsiges af kvm. prisen. 
 
-For at vi kan beskrive responsvariablen vha. lineær regression, skal der være en lineær sammenhæng, dette kan vi undersøge ved at plotte de 2 variable i et XY punktdiagram. I linket [sommerhuse](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE), findes data som lejepriser og størrelse, for 57 sommerhuse beliggende på Rømø. Vi kan undersøge, om om der er en lineær sammenhæng mellem disse i et punktdiagram. Det er naturligt at antage at lejeprisen afhænger af størrelsen og ikke omvendt, dvs. responsvariablen Y er lejepris og den uafhængige variabel X er størrelsen i kvm. Vi kan forvente en positiv sammenhæng mellem de 2 variable, dvs. jo større sommerhus jo større lejepris. 
+For at vi kan beskrive responsvariablen vha. lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``, skal der være en lineær sammenhæng, dette kan vi undersøge ved at plotte de 2 variable i et XY punktdiagram. I linket [sommerhuse](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlOWNjUzlQd0s4TVE), findes data som lejepriser og størrelse, for 57 sommerhuse beliggende på Rømø. Vi kan undersøge, om om der er en lineær sammenhæng mellem disse i et punktdiagram. Det er naturligt at antage at lejeprisen afhænger af størrelsen og ikke omvendt, dvs. responsvariablen Y er lejepris og den uafhængige variabel X er størrelsen i kvm. Vi kan forvente en positiv sammenhæng mellem de 2 variable, dvs. jo større sommerhus jo større lejepris. 
 
 
 ```{r sommerhusescatterplot,echo=FALSE,fig.width=9, fig.height=5 ,dev="svg"}
@@ -5180,7 +5180,7 @@ legend("topleft",
 
 Ud fra figuren, er antagelsen om en lineær sammenhæng rimelig.
 
-Når man producerer en simpel lineær regression i Freestat fanen linreg, får man automatisk linjetilpasningsplot, residualplot og normalfraktildiagram. Freestat giver os ligeledes følgende beregninger:
+Når man producerer en simpel lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))`` i Freestat fanen linreg, får man automatisk linjetilpasningsplot, residualplot og normalfraktildiagram. Freestat giver os ligeledes følgende beregninger:
 
 ![](img/simlinreg.png)
 
@@ -5193,7 +5193,7 @@ Størrelsen har en effekt, da ``r tippy(" p-værdien", size="large" ,interactive
 Estimatet for skæringen med y-aksen `r a` er ikke signifikant, ``r tippy(" p-værdien", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[7,2],"</h4>"))`` i celle **E15** 15.61% er jo større end 5% ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``, 
 $$H_0:\beta_{0}=0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ 0\ DKK$$$$H_1:\beta_{0}\neq 0\ Lejeprisen\ for\ et\ 0\ kvm\ hus\ er\ forskellig\ fra\ 0\ DKK$$
 
-Skæringen kunne derfor være fx. 0. Normalt interesserer denne test os ikke, vi udelader derfor test af skæringen fra fremtidige analyser. For at sikre den optimale tilpasning af regressionslinjen (og dermed minimere residualerne), bibeholder vi altid skæringen i modellen. 
+Skæringen kunne derfor være fx. 0. Normalt interesserer denne test os ikke, vi udelader derfor test af skæringen fra fremtidige analyser. For at sikre den optimale tilpasning af regressionslinjen (og dermed minimere ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``), bibeholder vi altid skæringen i modellen. 
 
 
 Ud fra R-kvadreret i cellen **B3** konstateres at 69% af variationen i responsvariablen Lejepris pr uge, kan forklares ud fra variationen i den forklarende variabel Kvm. Herudover skal 31% af variationen i lejepris, forklares ud fra andre faktorer, der ikke er beskrevet i modellen.
@@ -5218,17 +5218,17 @@ Forudsiger vi en lejepris for et 10 eller 200 Kvm. sommerhus er der tale om ekst
 
 #### Prædiktionsinterval
 
-For den simple lineære regression, kan vi forudsige, i hvilket interval responsvariablen lejepris pr. uge vil ligge med 95% sandsynlighed, for en bestemt værdi af den uafhængige variabel Kvm. I celle **D4**, kan vi indtaste en vilkårlig x-værdi og bestemme et prædiktionsinterval også kaldet et forudsigelsesinterval. I Freestat output er indsat 100, hvilket svarer til at lejeprisen pr. uge vil med 95% sikkerhed ligge mellem **D6** 4649 DKK og **D8** 9034 DKK. for et 100 Kvm. sommerhus. Der er tale om et meget bredt interval hvilket skyldes, at vi udtaler os om et enkelt sommerhus.
+For den simple lineære ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``, kan vi forudsige, i hvilket interval responsvariablen lejepris pr. uge vil ligge med 95% sandsynlighed, for en bestemt værdi af den uafhængige variabel Kvm. I celle **D4**, kan vi indtaste en vilkårlig x-værdi og bestemme et ``r tippy(" prædiktionsinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[42,2],"</h4>"))`` også kaldet et ``r tippy(" forudsigelsesinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[42,2],"</h4>"))``. I Freestat output er indsat 100, hvilket svarer til at lejeprisen pr. uge vil med 95% sikkerhed ligge mellem **D6** 4649 DKK og **D8** 9034 DKK. for et 100 Kvm. sommerhus. Der er tale om et meget bredt interval hvilket skyldes, at vi udtaler os om et enkelt sommerhus.
 
 #### Konfidensinterval
 
-For den simple lineære regression, kan vi forudsige, i hvilket interval den gennemsnitlige lejepris pr. uge vil ligge med 95% sandsynlighed for en bestemt størrelse sommerhus.I celle **E4**, kan vi indtaste en vilkårlig x-værdi og bestemme et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))``. I Freestat output er indsat 100, hvilket svarer til at den gennemsnitlige lejepris pr. uge vil med 95% sikkerhed ligge mellem **E6** 6514 DKK og **E8** 7169 DKK. for et 100 Kvm. sommerhus. Bemærk ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`` er smallere end prædiktionsintervallet, da vi udtaler os om gennemsnittet og ikke et enkelt sommerhus.
+For den simple lineære ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``, kan vi forudsige, i hvilket interval den gennemsnitlige lejepris pr. uge vil ligge med 95% sandsynlighed for en bestemt størrelse sommerhus.I celle **E4**, kan vi indtaste en vilkårlig x-værdi og bestemme et ``r tippy(" konfidensinterval", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[43,2],"</h4>"))``. I Freestat output er indsat 100, hvilket svarer til at den gennemsnitlige lejepris pr. uge vil med 95% sikkerhed ligge mellem **E6** 6514 DKK og **E8** 7169 DKK. for et 100 Kvm. sommerhus. Bemærk ``r tippy(" konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[43,2],"</h4>"))`` er smallere end ``r tippy(" prædiktionsintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[42,2],"</h4>"))``, da vi udtaler os om gennemsnittet og ikke et enkelt sommerhus.
 
 #### Forudsætninger
 
-Vi undersøger ligeledes om forudsætningerne om varianshomogenitet ved residualplottet, plottet ser fornuftigt ud, de største residualer er for sommerhuse med et areal omkring på 90 til 120 kvm, men vi vil her konstatere at der ikke er problemer med forudsætningen om varianshomogenitet.
+Vi undersøger ligeledes om forudsætningerne om varianshomogenitet ved residualplottet, plottet ser fornuftigt ud, de største ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` er for sommerhuse med et areal omkring på 90 til 120 kvm, men vi vil her konstatere at der ikke er problemer med forudsætningen om varianshomogenitet.
 
-Der er ikke nogen tydelig systematik i residualplottet, hvorfor vi konstaterer forudsætningen om uafhængighed af residualerne er opfyldt.
+Der er ikke nogen tydelig systematik i residualplottet, hvorfor vi konstaterer forudsætningen om uafhængighed af ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` er opfyldt.
 
 ```{r residualplot,echo=FALSE,fig.width=9, fig.height=5 ,dev="svg"}
 x <- kvm
@@ -5241,7 +5241,7 @@ title(main = list("Residualplot\nSommerhuse Rømø ", cex = 1.3,
                   col = "grey50", font = 3),ylab="Residualer")
 ```
 
-Der er i normalfraktildiagrammet store afvigelser i enderne, dette er ikke så kritisk som omkring ``r tippy(" medianen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))``. Forudsætningen om normalitet af residualerne synes ikke opfyldt, hvilket bemærkes da dette har effekt på kvaliteten af modellen.
+Der er i normalfraktildiagrammet store afvigelser i enderne, dette er ikke så kritisk som omkring ``r tippy(" medianen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[18,2],"</h4>"))``. Forudsætningen om normalitet af ``r tippy(" residualerne", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` synes ikke opfyldt, hvilket bemærkes da dette har effekt på kvaliteten af modellen.
 
 ```{r qq,echo=FALSE,fig.width=9, fig.height=5 ,dev="svg"}
 x <- sort(rnorm(100,20,2))
@@ -5329,7 +5329,7 @@ legend("topleft", cex = 0.8, title=paste("Regressionslinjen",a,"+",b,"x R kvadre
 
 Vi får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på `r pv` altså større end ``r tippy(" signifikansniveauet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[9,2],"</h4>"))``. Dette betyder vi kan ikke forkaste nulhypotesen i testet:
 $$H_0:\beta_{Strandafstand}=0\ Strandafstand\ har\ ingen\ effekt$$$$H_1:\beta_{Strandafstand}\neq 0\ Strandafstand\ har\ effekt$$
-Vi kan altså ikke afvise at hældningen $\beta_{Strandafstand}$ er nul, hvilket betyder moderniseringår seneste ikke har signifikant effekt. Det betyder vi kan ikke bruge modellen. Bemærk det er muligt  variablen ville være signifikant, hvis den indgår i en multipel lineær regression, den er næsten signifikant i den simple lineære model. Når vi kontrollerer for andre forklarende variable i en multipel model, kan dette medføre den bliver signifikant. Bemærk hældningskoeficienten `r b` i modellen er negativ hvilket vi ville forvente jo større afstand til strand jo lavere lejepris.
+Vi kan altså ikke afvise at hældningen $\beta_{Strandafstand}$ er nul, hvilket betyder moderniseringår seneste ikke har signifikant effekt. Det betyder vi kan ikke bruge modellen. Bemærk det er muligt  variablen ville være signifikant, hvis den indgår i en multipel lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``, den er næsten signifikant i den simple lineære model. Når vi kontrollerer for andre forklarende variable i en multipel model, kan dette medføre den bliver signifikant. Bemærk hældningskoeficienten `r b` i modellen er negativ hvilket vi ville forvente jo større afstand til strand jo lavere lejepris.
 </details>  
 
 ## Multipel lineær regression
@@ -5367,7 +5367,7 @@ Datasættet der er brugt i videoerne herunder kan hentes [her](https://www.dropb
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/382439637' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
   
   
-### Forudsætning multikollinaritet
+### Forudsætning ``r tippy(" multikollinearitet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[45,2],"</h4>"))``
   
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/268567497' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
@@ -5386,7 +5386,7 @@ Datasættet der er brugt i videoerne herunder kan hentes [her](https://www.dropb
 <br>
 
 
-## Spørgsmål lineær regression
+## Spørgsmål lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))``
 <!-- 
 Marts 2017 
 [2017 3 2. RE Statistik Fin Opgave](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWjF0WThURjNPbUU)
@@ -5397,7 +5397,7 @@ Marts 2017
 
 <br>
 <details> 
-  <summary> Spørgsmål korrelation USA afkast.</summary>
+  <summary> Spørgsmål ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` USA afkast.</summary>
 
 
 I datasættet USA afkast er der månedsafkast i procent for udvalgte aktier fra Dow Jones indekset samt månedsafkastet af selve indekset i procent. [hent datasættet her](https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMldVZtS2tzV0RqVjQ). 
@@ -5410,7 +5410,7 @@ I datasættet USA afkast er der månedsafkast i procent for udvalgte aktier fra 
 </details>  
 <br>
 <details> 
-  <summary> Svar korrelation USA afkast.</summary>
+  <summary> Svar ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` USA afkast.</summary>
 
 1. Korrelationskoefficienten mellem Kellogs aktien og Microsoft aktien (MFST) er kun -0.001, får en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 98.82 procent, aktierne er altså ikke korrelerede?  
 2. JP Morgan JPM og BOA Bank of America er mest korrelerede. Korrelationskoefficienten er 0.6944, ved test for om aktierne er positivt korrelerede får vi en ``r tippy(" p-værdi", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[6,2],"</h4>"))`` på 0.0000. JPM og BOA er altså klart positivt korrelerede. Dette giver god mening da begge selskaber tilhører den finansielle sektor.  
@@ -5502,7 +5502,7 @@ afkast[nrow(afkast)-100:nrow(afkast),]
 
 <a href="FILER/Tyskland Afkast pr. md. i procent.xls" download> Hent datasættet Tyskland Afkast pr. md. i procent her.</a>, i dette datasæt er måneds afkast i procent siden år 2000 for Deutsche Bank, BAYER AG (Tysk kemigigant) samt hele DAX det tyske aktieindeks.
 
-CAPM er en  model til at prisfastsætte finansielle aktiver, vi gennemgår ikke modellen her. Vi kan ved hjælp af simpel lineær regression bestemme hvor volatil/følsom aktien er i forhold til resten af markedet her DAX det tyske aktie indeks. Den risikofri rente er for tiden meget lav her sættes den her til konstant 0, så kan modellen opstilles som:
+CAPM er en  model til at prisfastsætte finansielle aktiver, vi gennemgår ikke modellen her. Vi kan ved hjælp af simpel lineær ``r tippy(" regression", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[41,2],"</h4>"))`` bestemme hvor volatil/følsom aktien er i forhold til resten af markedet her DAX det tyske aktie indeks. Den risikofri rente er for tiden meget lav her sættes den her til konstant 0, så kan modellen opstilles som:
 
 $$Y_{aktie}=\beta\cdot X_{DAX}+\beta_0$$
 
@@ -5995,7 +5995,7 @@ Poisson fordelingen er en ``r tippy(" diskret", size="large" ,interactive = TRUE
 4. Antal kunder i en bankfilial i timen.  
 5. Antal skadesanmeldelser i løbet af ugen.  
 
-Poisson fordelingen har kun en ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` middelværdien $\lambda$ (det græske bogstav lambda), det forventede antal hændelser pr. enhed. Notationen for en stokastisk variabel der er poissonfordelt er:
+Poisson fordelingen har kun en ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` middelværdien $\lambda$ (det græske bogstav lambda), det forventede antal hændelser pr. enhed. Notationen for en stokastisk variabel der er ``r tippy(" poissonfordelt", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[39,2],"</h4>"))`` er:
 
 $$X\sim Pois(\lambda)$$
 
@@ -6047,7 +6047,7 @@ Nedenfor ses output fra Freestat:
   <summary>Spørgsmål bankkunder</summary>
 
 <img src="img/bankkunder.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px;margin:6px;"/>
-Antag at antal kunder der ankommer i en bank i minuttet er poissonfordelt med intensitet 2.
+Antag at antal kunder der ankommer i en bank i minuttet er ``r tippy(" poissonfordelt", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[39,2],"</h4>"))`` med intensitet 2.
 1. Hvad er sandsynligheden for der netop ankommer 1 kunde i minuttet?
 2. Hvad er sandsynligheden for der netop ankommer 10 kunder på 10 minutter?
 3. Hvad er sandsynligheden for der mindst ankommer 1 kunde i minuttet?
@@ -6057,11 +6057,11 @@ Antag at antal kunder der ankommer i en bank i minuttet er poissonfordelt med in
 <details>
   <summary>Svar bankkunder</summary>
 
-1. Vi skal finde sandsynligheden for der netop ankommer 1 kunde i minuttet. Her er tale om en poisson fordeling med ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` $\lambda$=2, vi ønsker at bestemme sandsynligheden for at x=1.
+1. Vi skal finde sandsynligheden for der netop ankommer 1 kunde i minuttet. Her er tale om en ``r tippy(" poisson", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[39,2],"</h4>"))`` fordeling med ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` $\lambda$=2, vi ønsker at bestemme sandsynligheden for at x=1.
 $$P(X=1)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-2}\cdot 2^1}{1!}=0.2707$$
 ![](img/poisson2.png)
 
-2. Vi skal finde sandsynligheden for der netop ankommer 10 kunder på 10 minutter. Her er tale om en poisson fordeling med ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` $\lambda$=20. Vi skal jo betragte 10 minutters intervallet, derfor ganger vi intensiteten for 1 minut $\lambda$=2 med 10. Vi ønsker at bestemme sandsynligheden for at x=10.
+2. Vi skal finde sandsynligheden for der netop ankommer 10 kunder på 10 minutter. Her er tale om en ``r tippy(" poisson", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[39,2],"</h4>"))`` fordeling med ``r tippy(" parameter", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[19,2],"</h4>"))`` $\lambda$=20. Vi skal jo betragte 10 minutters intervallet, derfor ganger vi intensiteten for 1 minut $\lambda$=2 med 10. Vi ønsker at bestemme sandsynligheden for at x=10.
 $$P(X=10)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-20}\cdot 20^{10}}{10!}=0.0058$$
 ![](img/poisson3.png)
 
@@ -7736,7 +7736,7 @@ cor(data)
 Så det ser ud til, at Pris har stærke negative sammenhænge med Æstetik og Brand.
 Venner har en stærk positiv sammenhæng med Familie.
 
-Det betyder, at vi kan forvente, at vi vil have to fælles faktorer, og en vil være relateret til pris, æstetik og brand, og den anden vil være relateret til ven og familie. Vi kan lave et corrplot, der grafisk illustrerer disse sammenhænge, store blå prikker er positiv korrelation, store røde negativ korrelation. Så vi skal installere corplott pakken, her bruger vi pacman til installationen.
+Det betyder, at vi kan forvente, at vi vil have to fælles faktorer, og en vil være relateret til pris, æstetik og brand, og den anden vil være relateret til ven og familie. Vi kan lave et corrplot, der grafisk illustrerer disse sammenhænge, store blå prikker er positiv ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``, store røde negativ ``r tippy(" korrelation", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))``. Så vi skal installere corplott pakken, her bruger vi pacman til installationen.
 
 ```{r corrplot, dev='svg'}
 pacman::p_load(corrplot)
@@ -7760,7 +7760,7 @@ fa1
 
 **Uniqueness** angiver hvor meget af variationen i en variabel, der ikke er associeret med faktoren. Jo lavere Uniqueness, des større sammenhæng til faktorerne.
 
-**Loadings** angiver hvordan hver variabel er vægtet for faktorerne, men også hvor stærk korrelationen er til hver faktor. Faktor 1 påvirkes således mest af Æstetik, Brand og Pris. Denne faktor kan ses af corrplottet hvor disse tre variable ses at påvirke hinanden, Pris er negativt korreleret med Æstetik og Brand.
+**Loadings** angiver hvordan hver variabel er vægtet for faktorerne, men også hvor stærk ``r tippy(" korrelationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` er til hver faktor. Faktor 1 påvirkes således mest af Æstetik, Brand og Pris. Denne faktor kan ses af corrplottet hvor disse tre variable ses at påvirke hinanden, Pris er negativt ``r tippy(" korreleret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[46,2],"</h4>"))`` med Æstetik og Brand.
 
 **Proportion Var** er et vigtigt nøgletal, der angiver andelen af variationen i data, der er forklaret af den pågældende faktor. Her forklares alså kun 36.5% af variationen i datasættet. Proportion Var findes som SS loadings divideret med antallet af variable dvs. her 6.
 
@@ -7930,10 +7930,10 @@ Alder i år
 10 Forskeruddannelse. Ph.d., doktor
 
 **Kvindedummy**
-Dummy variabel kodet med kvinde=1, mand=0
+``r tippy(" Dummy variabel", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[47,2],"</h4>"))`` kodet med kvinde=1, mand=0
 
 **Hjemmeboendebørndummy**
-Dummy variabel kodet med Ja=1, Nej=0
+``r tippy(" Dummy variabel", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[47,2],"</h4>"))`` kodet med Ja=1, Nej=0
 
 Gennemfør en faktor analyse på datasættet.
 
@@ -7943,7 +7943,7 @@ Gennemfør en faktor analyse på datasættet.
   <summary>Spørgsmål Genderroles</summary>
 
 Download filen genderroles <a href="FILER/genderroles.xlsx" download>her</a> og importer den i R via File - Import Dataset.
-Pas på variablene skal konverteres til dummy variable, hvor det giver mening. Man bør nok udelade  variablen Region, ellers skal den ændres til et passende antal dummy variable.
+Pas på variablene skal konverteres til ``r tippy(" dummy variable", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[47,2],"</h4>"))``, hvor det giver mening. Man bør nok udelade  variablen Region, ellers skal den ændres til et passende antal ``r tippy(" dummy variable", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[47,2],"</h4>"))``.
 
 Gennemfør en faktor analyse på datasættet.
 
@@ -8218,7 +8218,7 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <details>
   <summary>Spørgsmål Forbes 100 US</summary>
 
-Download filen om de 100 rigeste i USA  <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable er kodet om til dummy variable.
+Download filen om de 100 rigeste i USA  <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære ``r tippy(" kvalitative", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[2,2],"</h4>"))`` variable er kodet om til ``r tippy(" dummy variable", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[47,2],"</h4>"))``.
 
 Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.
 
@@ -8532,12 +8532,12 @@ $$\hat{Y_t}-Y_{t-1}=0$$
 
 
 
-Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl residualer til at forudsige kursen.
+Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl ``r tippy(" residualer", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` til at forudsige kursen.
 
 Modellen kan skrives som:
 
 $$\hat{Y_t}=\mu+\theta_1 e_{t-1}$$
-Hvis vi forestiller os $\mu=50$ $\theta_1=0.5$ kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen residualen til tid t-1 er $e_{t-1}$ er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
+Hvis vi forestiller os $\mu=50$ $\theta_1=0.5$ kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen ``r tippy(" residualen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))`` til tid t-1 er $e_{t-1}$ er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
 $$\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60$$
 
 ```{r, include=FALSE, warning=FALSE}
@@ -8566,7 +8566,7 @@ Vi kan nu forudsige aktiekursen 12 perioder frem med predict:
 predict(auto.arima(ARIMA4), n.ahead = 12)$pred
 ```
 
-Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en residual)
+Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en ``r tippy(" residual", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[44,2],"</h4>"))``)
 
 ## <font color="red">Plots med forskellige modeller<sup> Premium </font></sup>
 
