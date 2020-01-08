@@ -26,9 +26,6 @@ BEGREB <<- c(
   "t-fordelingen",
   "Frihedsgrader",
   "z-fordelingen",
-
-
-
   "Chi i anden test",
   "Normalfraktildiagram",
   "Stikprøvefordelingen",
@@ -36,10 +33,6 @@ BEGREB <<- c(
   "Alternativ hypotesen",
   "Ensidet alternativhypotese",
   "Tosidet alternativhypotese",
-
-
-
-
   "Approximativt",
   "Estimat",
   "Varianshomogenitet",
