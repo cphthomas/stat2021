@@ -18,6 +18,8 @@ pre code {
    background-color: transparent;
 }
 
+/* Styleclass for tippy comments */
+.hl { font-style: italic; color: #3ACF3A;}
 
 /* Linkcolor */
 /*a:link{
@@ -72,7 +74,7 @@ pre code {
 }
 
 body {
-   font-family: "HelveticaNeue-Light" !important, "Helvetica Neue Light" !important, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-family: "HelveticaNeue-Light" !important, "Helvetica Neue Light" !important, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
    font-weight: 300;
 }
 
@@ -86,18 +88,18 @@ body {
     font-size: 14;
     margin-left: 30px;
     border: 1px solid lightgrey;
-} 
+}
 
 .Keatswide {
     float: right;
-    
+
     font-family: "Times New Roman", Times, Serif;
     font-style: italic;
     font-size: 14;
     margin: 10px;
   padding: 10px;
     border: 1px solid lightgrey;
-} 
+}
 
 .Macbeth {
     font-family: Garamond, Times, Serif;
@@ -146,7 +148,7 @@ table th {
 }
 
 table td {
-  padding: 12px;  
+  padding: 12px;
   background-color: #eeeeee;
   border-width: 1px;
   border-style: solid;
@@ -212,7 +214,7 @@ width: 94%;
 /*dette er styling af details tag pas på summary outline skal måske fjernes*/
 
 /*details summary::-webkit-details-marker {
-  color: #428bca; 
+  color: #428bca;
   font-size: 20px;
 }*/
 
@@ -238,7 +240,7 @@ details[open] summary {
     border-bottom: 1px solid #aaa;
     margin-bottom: .5em;
 }
-summary{outline:none;} 
+summary{outline:none;}
 
 
 /*
@@ -247,18 +249,16 @@ summary::-webkit-details-marker {
   display: none
 }
 summary:after {
-  
-  content: "+"; 
-  color: blue; 
-  align-content: right; 
-  font-size: 1.5em; 
-  font-weight: bold; 
-  
- 
-  
+
+  content: "+";
+  color: blue;
+  align-content: right;
+  font-size: 1.5em;
+  font-weight: bold;
+
+
+
 }
 details[open] summary:after {
   content: "-";
 }*/
-
-

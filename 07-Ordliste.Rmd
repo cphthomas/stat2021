@@ -7,6 +7,15 @@ source("indeks.R")
 
 
 
+
+
+
+
+
+
+
+
+
 ```{r test2, echo=FALSE, message=FALSE}
 library(DT)
 # library(lubridate)

@@ -47,7 +47,12 @@ BEGREB <<- c(
   "Residual",
   "multikollinearitet",
   "Korrelation",
-  "Dummy variabel"
+  "Dummy variabel",
+  "Pooled t-test",
+  "Unpooled t-test",
+  "Parret t-test",
+  "ANOVA"
+
 
 
 
@@ -292,14 +297,16 @@ forklaring <<- c(
 <i>Chi i andet testet er en udvidelse af test af 2 andele, hvor vi kun kan teste 2 kvalitative binære variable (kun 2 udfald fx. mand/kvinde, Iphone/ikke Iphone).<br>
 I Chi i andet testet er nulhypotesen at de 2 variable er uafhængige (ingen sammenhæng), hvis vi forkaster nulhypotesen er der afhængighed (sammenhæng).
 Hvis der er en sammenhæng, skal denne sammenhæng beskrives ud fra observerede og forventede celleværdier (hvor der er store Chi celle bidrag), det kan fx. være vi finder at kvinder oftere har Iphone.<br>
-Vi tester ved hjælp af &Chi;<sup>2</sup>-fordelingen, der er en højreskæv fordeling, bestemt af antallet af frihedsgrader.</i><br><br>
+Vi tester ved hjælp af &Chi;<sup>2</sup>-fordelingen, der er en højreskæv fordeling, bestemt af antallet af frihedsgrader. Hypoteserne kunne generisk skrives som:<br><br>
+H<sub>0</sub>: Der er uafhængighed mellem de 2 kvalitative variable<br>
+H<sub>1</sub>: Der er afhængighed mellem de 2 kvalitative variable<br><br></i>
 <a href=\"https://s.tepedu.dk/chi-i-anden-tests.html#chi-i-anden-test\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om &Chi;<sup>2</sup>-tests!</a>
 ",
 
 
 "Normalfraktildiagrammer kan bruges til at afgøre, om en stikprøve kan antages at stamme fra normalfordelt population.<br>
-<i>Hvis punkterne ligger pænt omkring den rette linje er normalitetsbetingelsen opfyldt,
-ved test af fx. en kvantitaiv variabel og varianshomogenitet forudsætter at variablene opfylder normalitetsbetingelsen.</i><br><br>
+<i>Hvis punkterne ligger pænt omkring den rette linje er normalitetsbetingelsen opfyldt.
+Ved test af fx. en mindre kvantitaiv stikprøve og varianshomogenitet forudsættes at variablene opfylder normalitetsbetingelsen.</i><br><br>
 <a href=\"https://s.tepedu.dk/normalfordelingen.html#normalfraktildiagram\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om normalfraktildiagrammer!</a>
 ",
 
@@ -371,7 +378,7 @@ Vi kan skrive vort estimat for &mu; er 179 cm.",
 
 
 "Varianshomogenitet betyder der er ens varianser for populationerne.<br>
-<i>Hvis fx. vi har 2 stikprøver med højder for CBS og Cphbusiness studerende, vil varianshomogenitet betyde der er samme variation i de 2 populationer.<br>
+<i>Hvis fx. vi har 2 stikprøver med højder for CBS og Cphbusiness studerende, vil varianshomogenitet betyde, at der er samme variation i de 2 populationer.<br>
 Testet kunne se ud som nedenfor, bemærk er der varianshomogenitet, er standardafvigelserne også altid ens.<br>
 H<sub>0</sub>: &sigma;<sub>CBS</sub>=&sigma;<sub>Cph</sub> (Der er Varianshomogenitet)<br>
 H<sub>1</sub>: &sigma;<sub>CBS</sub>≠&sigma;<sub>Cph</sub> (Der er ikke varianshomogenitet)<br><br>
@@ -468,7 +475,52 @@ Kvalitative variable, der ikke er binære, som fx. ugedag, kan også kodes som s
 Når de 6 dummy variable er slukket, er det så mandag, højst 1 dummy kan være tændt ad gangen.<br><br>
 </i>
 <a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#dummy-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om dummy variable!</a>
+",
+
+"Pooled t-test benyttes til test af gennemsnit for 2 kvantitative variable, når populationerne har samme varians (varianshomogenitet).<br>
+<i>Eksempler på stikprøver, hvor middelværdierne kan testes vha. pooled t-test kunne være:<br>
+For 2 stikprøver med højder for CBS og SDU studerende, kan man teste om gennemsnitshøjden for CBS og SDU studerende er ens med pooled t-test, hvis der er varianshomogenitet.<br>
+For 2 stikprøver med med salgspriser for ejendomme i 2 byer, kan man teste om gennemsnitsprisen er højere for den ene by med pooled t-test, hvis der er varianshomogenitet.<br>
+Har de 2 populationer ikke ens varianser, kan man i stedet benytte et unpooled t-test, pooled t-test er dog det mest præcise.<br><br>
+</i>
+<a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om pooled t-test!</a>
+",
+
+"Unpooled t-test benyttes til test af gennemsnit for 2 kvantitative variable, når populationerne ikke har samme varians (der er ikke varianshomogenitet).<br>
+<i>Eksempler på stikprøver, hvor middelværdierne kan testes vha. unpooled t-test kunne være:<br>
+For 2 stikprøver med højder for CBS og SDU studerende, kan man teste om gennemsnitshøjden for CBS og SDU studerende er ens med unpooled t-test, hvis der ikke er varianshomogenitet.<br>
+For 2 stikprøver med med salgspriser for ejendomme i 2 byer, kan man teste om gennemsnitsprisen er højere for den ene by med unpooled t-test, hvis der ikke er varianshomogenitet.<br>
+Har de 2 populationer ens varianser, kan man i stedet benytte et pooled t-test, hvilket er mere præcist.<br><br>
+</i>
+<a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om unpooled t-test!</a>
+",
+
+"Parret t-test benyttes til test af gennemsnit for 2 kvantitative variable, hvor hver observation er en måling af samme objekt.<br>
+<i>Eksempler på stikprøver, hvor middelværdierne kan testes vha. parret t-test kunne være:<br>
+De samme 68 rotters (samme objekter) blodtryk målt før og efter medicinsk behandling.<br>
+Dagsafkastet for Danske Bank aktien og Nordea aktien på de samme 68 handelsdage (samme objekter).<br>
+Omsætningen for de samme 68 dagligvarebutikker (samme objekter) før og efter en reklamekampagne.<br>
+Parret t-test har altid samme antal observationer, dette er ikke nødvendigt for pooled og unpooled t-test.<br><br>
+</i>
+<a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om parret t-test!</a>
+",
+
+
+"ANOVA testet benyttes til test af gennemsnit for flere end 2 kvantitative variable, populationerne skal have samme varians.<br>
+<i>Eksempler på stikprøver, hvor middelværdierne kan testes vha. ANOVA testet kunne være:<br>
+For 4 stikprøver med højder for CBS, KU, CPH Business og SDU studerende, kan man teste om middelhøjden er ens med ANOVA testet.<br>
+For 6 stikprøver med med salgspriser for ejendomme i 6 byer, kan man teste om middelværdierne er ens med ANOVA testet.<br>
+ANOVA testet er en udvidelse af pooled t-test, hypoteserne kan generisk skrives som:<br>
+H<sub>0</sub>: Alle middelværdier er ens<br>
+H<sub>1</sub>: Ikke alle middelværdier er ens<br><br>
+</i>
+<a href=\"https://s.tepedu.dk/middelv%C3%A6rdier.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om parret t-test!</a>
 "
+
+
+
+
+
 
 
 
