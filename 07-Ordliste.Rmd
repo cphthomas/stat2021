@@ -7,11 +7,16 @@ source("indeks.R")
 
 
 
+```{r start,echo=FALSE,warning=FALSE,include=FALSE}
+#pacman autoload evt. manglende pakker
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(Cairo,timeDate, DT,plotly,rio,exams,e1071,WriteXLS,readxl,maps,knitr,kableExtra,ggplot2,openxlsx,quantmod,highcharter,forecast,tippy,dplyr) #load various packages
+```
 
 
 
 
-
+Når vi bestemmer <span class="hl">`r tippy("teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`</span> ser vi på forskellen mellem $\hat{p}$ og $p_0$. Vi skalerer <span class="hl">`r tippy("teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`</span> til standard normalfordelingen ved at dividere med <span class="hl">`r tippy("standardfejlen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[22,2],"</h4>"))`</span> . Her bruges <span class="hl">`r tippy("z-fordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[25,2],"</h4>"))`</span> dvs. standard normalfordelingen. Vi kalder <span class="hl">`r tippy("teststørrelsen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[8,2],"</h4>"))`</span> for z-teststørrelsen eller z-scoren. Andre tests hvor man benytter fx. <span class="hl">`r tippy("t-fordelingen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[23,2],"</h4>"))`</span> eller F-fordelingen, kaldes t-teststørrelsen og F-teststørrelsen.
 
 
 

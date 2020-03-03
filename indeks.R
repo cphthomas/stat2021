@@ -154,7 +154,7 @@ forklaring <<- c(
   H<sub>0</sub>: &mu;=210<br>
   H<sub>1</sub>: &mu;&ne;210<br>
   Vi vil her få en meget negativ teststørrelse, 176.32-210 divideret med standardfejlen for middelværdien SEM<br>
-  Ønskede at teste om middel højden i populationen, kunne antages at være 150 cm ud fra samme stikprøve ville vi få et meget positiv teststørrelse, 176.32-150 divideret med standardfejlen for middelværdienSEM</i><br><br>
+  Ønskede at teste om middel højden i populationen, kunne antages at være 150 cm ud fra samme stikprøve ville vi få et meget positiv teststørrelse, 176.32-150 divideret med standardfejlen for middelværdien SEM</i><br><br>
   <a href=\"https://s.tepedu.dk/hypotesetests-middelvrdi.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om teststørrelser!</a>
   ",
 
@@ -264,7 +264,7 @@ forklaring <<- c(
 
   "Standardfejlen også kaldet SE (standard error) er standardafvigelsen for stikprøvefordelingen.<br>
   <i>Hvor standardafvigelsen angiver den typiske afvigelse for en observation, kan standardfejlen udtrykke usikkerheden på fx. gennemsnittet af
-  n målinger, hvor n er stikprøvestørrelsen. Standardfejlen for middelværdien findes som standardafvigelsen divideret med kvadratroden af n, jo
+  n målinger, hvor n er stikprøvestørrelsen. Standardfejlen for middelværdien SEM findes som standardafvigelsen divideret med kvadratroden af n, jo
   større stikprøve jo mindre standardfejl. Standardfejlen bruges til at beregne konfidensinterval. Nedre og øvre grænse for konfidensintervallet
   for middelværdien findes som middelværdien plus og minus ca. 2 gange standardfejlen.<i><br>
   <a href=\"https://s.tepedu.dk/normalfordelingen.html#den-centrale-gr%C3%A6nsev%C3%A6rdis%C3%A6tning-clt\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om standardfejlen!</a>
