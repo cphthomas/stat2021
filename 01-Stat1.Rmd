@@ -236,7 +236,7 @@ cat(readLines('np.html'))
 
 
 
-```{r OMX-data2, include=FALSE}
+```{r OMX-data2, include=FALSE,warning = FALSE}
 
 list.of.packages <- c("knitr","ggplot2","exams","openxlsx")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
@@ -314,7 +314,7 @@ plot(hc)
 
 Her er samme data med færre søjler, nu har vi på y-aksen frekvensen af søjlerne i stedet for hyppigheden. Frekvensen er antallet af observationer i hver søjle divideret med det totale antal observationer.
 
-```{r OMX-hist2,echo=FALSE,fig.width=9, fig.height=5, dev='svg'}
+```{r OMX-hist2,echo=FALSE,warning=F,fig.width=9, fig.height=5, dev='svg'}
 hc <- ggplot(data=DKdf, aes(DKdf$TRYG, ..density..)) + 
   geom_histogram( binwidth=1,
                  col="white", 
@@ -329,35 +329,6 @@ plot(hc)
 ```
 
 
-
-<!-- ```{r OMX-tabel,echo=FALSE} -->
-<!-- library(DT) -->
-<!-- datatable(DKdf[,1], options = list(pageLength = 5)) -->
-<!-- ``` -->
-
-
-<!-- ```{r OMX-histplotly,echo=FALSE,fig.width=9, fig.height=5, dev='svg'} -->
-<!-- hc <- ggplot(data=DKdf, aes(DKdf$TRYG, ..density..)) + -->
-<!--   geom_histogram( binwidth=1, -->
-<!--                  col="white", -->
-<!--                  aes(fill=..density..)) + -->
-<!--     scale_fill_gradient("Frekvens", low = "lightgrey", high = "black") + -->
-<!--   scale_size_area() + -->
-<!--   stat_bin(binwidth=1, geom="text", aes(label=round(..density..,2)), vjust=-1.5,size=2)+ -->
-<!--   xlab("Dagligt afkast Tryg aktien") + -->
-<!--   ylab("Frekvens=Hyppighed/n") + -->
-<!--   ggtitle("Histogram") -->
-<!-- ggplotly(hc) -->
-<!-- ``` -->
-
-
-<!-- ```{r OMX-grafer, echo=FALSE} -->
-<!-- library(dygraphs) -->
-<!-- dygraph(DKdf, main = paste0("Danske aktiekurser pr. ",Sys.Date())) %>% -->
-<!--   dyOptions(colors = RColorBrewer::brewer.pal(6, "Set2")) -->
-<!-- barx <- round(mean(DKdf[,1]),4) -->
-<!-- s2 <- round(var(DKdf[,1]),4) -->
-<!-- ``` -->
 
 
 
