@@ -6262,11 +6262,11 @@ Dette tyder ikke på at der er racemæssig forskel på andelen af dødsdømte.
 
 ## Uafhængighed
 
-Vi kan sige at 2 hændelser A og B er uafhængige hvis sandsynligheden for at den ene hændelse indtræffer ikke påvirkes af om den anden hændelse indtræffer eller ej.
+Vi kan sige at 2 hændelser A og B er uafhængige, hvis sandsynligheden for at den ene hændelse indtræffer ikke påvirkes af om den anden hændelse indtræffer eller ej.
 
 Sandsynligheden for at slå krone med en mønt og slå en sekser med en terning, er 2 hændelser der er uafhængige.
 
-Trækker man et es fra et spil kort, vil sandsynligheden for igen at trække et es være påvirket af det første træk. Disse hændelser er ikke uafhængige.
+Trækker man et es fra et spil kort, vil sandsynligheden for igen at trække et es være påvirket af det første træk, nu vil sandsynligheden for at trække es være mindre. Disse hændelser er ikke uafhængige.
 
 
 Vi kan udtrykke uafhængige hændelser vha. betingede sandsynligheder.
@@ -6279,6 +6279,14 @@ Her står sandsynligheden for B er den samme ligegyldigt om hændelsen A indtræ
 Vi kan omskrive begge ligninger til nedenstående resultat.
 $$\small P(A\mid B)=P(A)\Leftrightarrow \frac{P(A\cap B)}{P(B)}=P(A)\Leftrightarrow P(A\cap B)=P(A)\cdot P(B)$$
 Så hændelserne A og B er uafhængige hvis sandsynligheden for fælleshændelsen $\small P(A\cap B)$ er lig med produktet af sandsynlighederne for hændelserne $\small P(A) \cdot P(B)$
+
+Vi nævnte at sandsynligheden for at slå krone med en mønt og slå en sekser med en terning, er 2 hændelser der er uafhængige. Sandsynligheden for fælleshændelsen krone og sekser kan skrives som: 
+
+$$P(A\cap B)=P(krone\cap sekser)=\frac{1}{12}$$ 
+Dette er det samme som produktet af sandsynlighederne for hændelserne: 
+
+$$P(A) \cdot P(B) = P(krone) \cdot P(sekser) = \frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}$$
+
 
 Er hændelserne drikke kaffe og the uafhængige?
 Vi finder sandsynligheden for fælleshændelsen:

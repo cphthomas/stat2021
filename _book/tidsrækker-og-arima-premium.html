@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2020-04-21" />
+<meta name="date" content="2020-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -491,7 +491,7 @@ Please Wait…
 <!-- ``` -->
 <p>Vi kan nu plotte vore data i R.</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">plot.ts</span>(ARIMA1, <span class="dt">xlab=</span><span class="st">&#39;Tid&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Kursdata&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
 <p>Det er svært at se nogen tydelig udvikling i kursen.</p>
 <p>Vi benytter auto.arima til at undersøge om der er en systematik i tidsserien, for at bruge denne funktion skal vi hente og loade pakken forecast med fx. pacman:</p>
 <p>Funktionen auto.arima i R er en fantastisk funktion, der automatisk finder den ARIMA model, der passer bedst på observationerne.</p>
@@ -510,8 +510,8 @@ Please Wait…
 <p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC) benyttes til at vælge ARIMA modellen med mindst AIC og BIC værdier. auto.arima finder den bedste model automatisk.</p>
 <p>Her er ligningen for aktiekursen, den bedste forudsigelse af den fremtidige kurs er den gennemsnitlige kurs der tidligere er observeret.</p>
 <p><span class="math display">\[\hat{Y_t}=19.90\]</span></p>
-<p>Variablen <span class="math inline">\(\hat{Y}_t\)</span>, kaldet Y hat t angiver vort <span class="hl"><span id="htmlwidget-9cc4360c2be0d076ea5c" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-9cc4360c2be0d076ea5c">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Estimat betyder gæt.<br>\nHvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>\nVi kan skrive vort estimat for &mu; er 179 cm.<\/h4>","text":"estimat"},"evals":[],"jsHooks":[]}</script></span> (gæt) på aktiekursen på tidspunkt <span class="math inline">\(t=1,2,3,...\)</span>. Der er således så lidt systematik i Data at her er tale om en ARIMA(0,0,0) model. Vi ser også at der står “ARIMA(0,0,0) with non-zero mean” i output fra R.</p>
+<p>Variablen <span class="math inline">\(\hat{Y}_t\)</span>, kaldet Y hat t angiver vort <span class="hl"><span id="htmlwidget-f751152579efc175b52c" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-f751152579efc175b52c">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Estimat betyder gæt.<br>\nHvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>\nVi kan skrive vort estimat for &mu; er 179 cm.<\/h4>","text":"estimat"},"evals":[],"jsHooks":[]}</script></span> (gæt) på aktiekursen på tidspunkt <span class="math inline">\(t=1,2,3,...\)</span>. Der er således så lidt systematik i Data at her er tale om en ARIMA(0,0,0) model. Vi ser også at der står “ARIMA(0,0,0) with non-zero mean” i output fra R.</p>
 </div>
 <div id="arima100-eller-ar1-autoregression-premium" class="section level2">
 <h2><span class="header-section-number">22.2</span> <font color="red">ARIMA(1,0,0) eller AR(1) autoregression<sup> Premium </font></sup></h2>
@@ -615,7 +615,7 @@ Dette betyder at Y stiger konstant med <span class="math inline">\(\mu\)</span> 
 <span class="math display">\[\hat{Y_t}-Y_{t-1}=10\Leftrightarrow \hat{Y_t}=Y_{t-1}+10\]</span></p>
 <p>Hent ARIMA3.xlsx Excel filen <a href="FILER/ARIMA3.xlsx" download>her</a>. Importer ARIMA3.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">ts.plot</span>(ARIMA3)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">auto.arima</span>(ARIMA3)</a></code></pre></div>
 <pre><code>## Series: ARIMA3 
 ## ARIMA(0,1,0) with drift 
@@ -641,16 +641,16 @@ Vi indsætter drift i stedet for <span class="math inline">\(\mu\)</span>, tolni
 </iframe>
 </div>
 <p><br></p>
-<p>Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl <span class="hl"><span id="htmlwidget-017f02eaed41baa936ee" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-017f02eaed41baa936ee">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualer"},"evals":[],"jsHooks":[]}</script></span> til at forudsige kursen.</p>
+<p>Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl <span class="hl"><span id="htmlwidget-a926d8b7b9b8b7f7140d" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-a926d8b7b9b8b7f7140d">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualer"},"evals":[],"jsHooks":[]}</script></span> til at forudsige kursen.</p>
 <p>Modellen kan skrives som:</p>
 <p><span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\]</span>
-Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="math inline">\(\theta_1=0.5\)</span> kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen <span class="hl"><span id="htmlwidget-d18de5e2aaad36b38c24" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-d18de5e2aaad36b38c24">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualen"},"evals":[],"jsHooks":[]}</script></span> til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
+Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="math inline">\(\theta_1=0.5\)</span> kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen <span class="hl"><span id="htmlwidget-15b2c0d335e4cd10c858" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-15b2c0d335e4cd10c858">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualen"},"evals":[],"jsHooks":[]}</script></span> til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
 <span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60\]</span></p>
 <p>Hent ARIMA4.xlsx Excel filen <a href="FILER/ARIMA4.xlsx" download>her</a>. Importer ARIMA4.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">ts.plot</span>(ARIMA4)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">auto.arima</span>(ARIMA4)</a></code></pre></div>
 <pre><code>## Series: ARIMA4 
 ## ARIMA(0,0,1) with non-zero mean 
@@ -669,60 +669,60 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## End = 62 
 ## Frequency = 1 
 ##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756</code></pre>
-<p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en <span class="hl"><span id="htmlwidget-9f10d35098989e7b4cfe" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-9f10d35098989e7b4cfe">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residual"},"evals":[],"jsHooks":[]}</script></span>)</p>
+<p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en <span class="hl"><span id="htmlwidget-6aa6998cd04909ca7aeb" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-6aa6998cd04909ca7aeb">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residual"},"evals":[],"jsHooks":[]}</script></span>)</p>
 </div>
 <div id="plots-med-forskellige-modeller-premium" class="section level2">
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <pre><code>## Series: ap1 
-## ARIMA(2,0,0) with non-zero mean 
+## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
-##          ar1    ar2      mean
-##       0.3261  0.351  117.3954
-## s.e.  0.1314  0.133    3.6847
+##           ma1
+##       -0.7049
+## s.e.   0.1189
 ## 
-## sigma^2 estimated as 84.85:  log likelihood=-184.34
-## AIC=376.68   AICc=377.55   BIC=384.41</code></pre>
+## sigma^2 estimated as 98.7:  log likelihood=-185.59
+## AIC=375.17   AICc=375.43   BIC=379</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(1,1,0) 
+## ARIMA(1,1,1) 
 ## 
 ## Coefficients:
-##          ar1
-##       0.5616
-## s.e.  0.1200
+##          ar1     ma1
+##       0.6238  0.3625
+## s.e.  0.1389  0.1626
 ## 
-## sigma^2 estimated as 122.5:  log likelihood=-190.83
-## AIC=385.65   AICc=385.91   BIC=389.48</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+## sigma^2 estimated as 78.66:  log likelihood=-179.57
+## AIC=365.15   AICc=365.67   BIC=370.89</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(0,0,2) with non-zero mean 
+## ARIMA(1,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##          ma1      ma2     mean
-##       0.3814  -0.2898  99.0687
-## s.e.  0.0686   0.0693   0.7209
+##           ar1     ma1      mean
+##       -0.1301  0.7211  100.3209
+## s.e.   0.1046  0.0718    1.0875
 ## 
-## sigma^2 estimated as 88.36:  log likelihood=-730.68
-## AIC=1469.36   AICc=1469.56   BIC=1482.55</code></pre>
+## sigma^2 estimated as 103.8:  log likelihood=-746.84
+## AIC=1501.67   AICc=1501.88   BIC=1514.87</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      104.09477 92.04800 116.1415 85.67083 122.5187
-## 202       95.82228 82.92919 108.7154 76.10401 115.5405
-## 203       99.06873 85.71147 112.4260 78.64057 119.4969
-## 204       99.06873 85.71147 112.4260 78.64057 119.4969
-## 205       99.06873 85.71147 112.4260 78.64057 119.4969
-## 206       99.06873 85.71147 112.4260 78.64057 119.4969
-## 207       99.06873 85.71147 112.4260 78.64057 119.4969
-## 208       99.06873 85.71147 112.4260 78.64057 119.4969
-## 209       99.06873 85.71147 112.4260 78.64057 119.4969
-## 210       99.06873 85.71147 112.4260 78.64057 119.4969</code></pre>
+## 201      103.53007 90.47098 116.5892 83.55791 123.5022
+## 202       99.90344 84.73367 115.0732 76.70328 123.1036
+## 203      100.37516 85.17220 115.5781 77.12424 123.6261
+## 204      100.31380 85.11028 115.5173 77.06203 123.5656
+## 205      100.32179 85.11826 115.5253 77.06999 123.5736
+## 206      100.32075 85.11722 115.5243 77.06895 123.5725
+## 207      100.32088 85.11735 115.5244 77.06909 123.5727
+## 208      100.32087 85.11733 115.5244 77.06907 123.5727
+## 209      100.32087 85.11734 115.5244 77.06907 123.5727
+## 210      100.32087 85.11734 115.5244 77.06907 123.5727</code></pre>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="arima-af-højere-orden-premium" class="section level2">
 <h2><span class="header-section-number">22.6</span> <font color="red">ARIMA af højere orden<sup> Premium </font></sup></h2>
@@ -750,16 +750,16 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <a class="sourceLine" id="cb110-2" data-line-number="2">data =<span class="st"> </span><span class="kw">ts</span>(data[,<span class="dv">2</span>],<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</a></code></pre></div>
 <p>Vi ser salget er voksende over tid, der er ligeledes en sæsonkomponent.</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">plot</span>(data, <span class="dt">xlab=</span><span class="st">&#39;Years&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Tractor Sales&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
 <p>Differens tranformer data for at generere stationære data mht. middel (fjern trend)</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">diff</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Differenced Tractor Sales&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
 <p>log transformer data for at sikre stationaritet mht. varians.</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">log10</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Log (Tractor Sales)&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
 <p>Eventuel Differens og log transformation af data for at sikre stationaritet både mht. middel og varians.</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">diff</span>(<span class="kw">log10</span>(data)),<span class="dt">ylab=</span><span class="st">&#39;Differenced Log (Tractor Sales)&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <p>Find bedste model med auto.arima, når der er stationaritet.</p>
 <p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC), vælg ARIMA modellen med mindst AIC and BIC værdier. auto.arima finder den bedste model automatisk.</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">require</span>(forecast)</a>
@@ -788,16 +788,16 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <a class="sourceLine" id="cb119-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
 <a class="sourceLine" id="cb119-3" data-line-number="3"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a>
 <a class="sourceLine" id="cb119-4" data-line-number="4"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 </div>
 <div id="detail-debet-card-forbrug-på-island-millioner-isk.-premium" class="section level3">
 <h3><span class="header-section-number">22.8.2</span> <font color="red">Detail debet card forbrug på Island (millioner ISK).<sup> Premium </font></sup></h3>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="co">#Hent fpp pakken og load den</span></a>
 <a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">plot</span>(debitcards)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">dldebitcards &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">log10</span>(debitcards))</a>
 <a class="sourceLine" id="cb121-2" data-line-number="2"><span class="kw">plot</span>(dldebitcards,<span class="dt">ylab=</span><span class="st">&quot;Differenced Log (debitcards)&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">require</span>(forecast)</a>
 <a class="sourceLine" id="cb122-2" data-line-number="2">ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(debitcards), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb122-3" data-line-number="3">ARIMAfit</a></code></pre></div>
@@ -818,7 +818,7 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <a class="sourceLine" id="cb124-4" data-line-number="4"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
 <a class="sourceLine" id="cb124-5" data-line-number="5"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a>
 <a class="sourceLine" id="cb124-6" data-line-number="6"><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
 <p>Forudsagt brug af debetkort bliver:</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred)</a></code></pre></div>
 <pre><code>##           Jan      Feb      Mar      Apr      May      Jun      Jul      Aug      Sep      Oct      Nov      Dec
@@ -840,34 +840,34 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <a class="sourceLine" id="cb127-2" data-line-number="2"><span class="kw">getSymbols</span>(<span class="st">&quot;GOOG&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;GOOG&quot;</code></pre>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="kw">plot</span>(GOOG[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1">agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</a>
 <a class="sourceLine" id="cb130-2" data-line-number="2">agoog</a></code></pre></div>
 <pre><code>## Series: GOOG[, 6] 
-## ARIMA(1,1,0) 
+## ARIMA(0,1,1) 
 ## 
 ## Coefficients:
-##           ar1
-##       -0.1610
-## s.e.   0.0343
+##           ma1
+##       -0.1601
+## s.e.   0.0327
 ## 
-## sigma^2 estimated as 375.4:  log likelihood=-3628.53
-## AIC=7261.06   AICc=7261.08   BIC=7270.5</code></pre>
+## sigma^2 estimated as 393.3:  log likelihood=-3687.51
+## AIC=7379.03   AICc=7379.04   BIC=7388.49</code></pre>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</a>
 <a class="sourceLine" id="cb132-2" data-line-number="2">fagoog</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 830       1269.289 1244.461 1294.118 1231.317 1307.262
-## 831       1268.858 1236.448 1301.268 1219.291 1318.425
-## 832       1268.927 1230.049 1307.806 1209.467 1328.387
-## 833       1268.916 1224.551 1313.282 1201.065 1336.767
-## 834       1268.918 1219.666 1318.170 1193.594 1344.242
-## 835       1268.918 1215.224 1322.612 1186.800 1351.035
-## 836       1268.918 1211.122 1326.714 1180.527 1357.309
-## 837       1268.918 1207.292 1330.543 1174.670 1363.166
-## 838       1268.918 1203.687 1334.148 1169.156 1368.679
-## 839       1268.918 1200.271 1337.564 1163.932 1373.904</code></pre>
+## 839       1324.502 1299.086 1349.917 1285.632 1363.371
+## 840       1324.502 1291.311 1357.693 1273.740 1375.263
+## 841       1324.502 1285.038 1363.965 1264.148 1384.855
+## 842       1324.502 1279.634 1369.369 1255.883 1393.120
+## 843       1324.502 1274.815 1374.188 1248.512 1400.491
+## 844       1324.502 1270.423 1378.580 1241.796 1407.207
+## 845       1324.502 1266.362 1382.641 1235.585 1413.418
+## 846       1324.502 1262.567 1386.436 1229.781 1419.222
+## 847       1324.502 1258.991 1390.012 1224.312 1424.691
+## 848       1324.502 1255.601 1393.402 1219.127 1429.876</code></pre>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
 <div id="eksporter-aktiekurser-til-excel-premium" class="section level3">
 <h3><span class="header-section-number">22.9.1</span> <font color="red">Eksporter Aktiekurser til Excel<sup> Premium </font></sup></h3>
 <p>Man kan eksportere data til fx Excel med pakken rio, herunder dannes en Excel fil med to ark med hhv. aktiedata og forudsigelser. Funktionen export(), benyttes, man angiver data til de enkelte ark en list() funktion, sidste argument er selve filnavnet. Filen gemmes i arbejdsbiblioteket. Herfra kan den kopieres eller exporteres.</p>
@@ -881,7 +881,7 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;GS&quot;</code></pre>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="kw">plot</span>(GS[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">ags &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GS[,<span class="dv">6</span>])</a>
 <a class="sourceLine" id="cb139-2" data-line-number="2">ags</a></code></pre></div>
 <pre><code>## Series: GS[, 6] 
@@ -889,88 +889,88 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## 
 ## Coefficients:
 ##           ar1     ma1     ma2     ma3
-##       -0.8594  0.7629  0.0250  0.1672
-## s.e.   0.0456  0.0542  0.0449  0.0362
+##       -0.8590  0.7709  0.0266  0.1621
+## s.e.   0.0448  0.0535  0.0455  0.0365
 ## 
-## sigma^2 estimated as 14.06:  log likelihood=-2267.29
-## AIC=4544.58   AICc=4544.65   BIC=4568.17</code></pre>
+## sigma^2 estimated as 14.18:  log likelihood=-2295.44
+## AIC=4600.88   AICc=4600.95   BIC=4624.53</code></pre>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1">fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</a>
 <a class="sourceLine" id="cb141-2" data-line-number="2">fags</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 830       180.8374 176.0321 185.6428 173.4883 188.1866
-## 831       181.5119 175.0360 187.9879 171.6079 191.4160
-## 832       180.4562 172.3592 188.5531 168.0730 192.8394
-## 833       181.3636 171.7312 190.9959 166.6321 196.0950
-## 834       180.5837 169.7719 191.3956 164.0484 197.1190
-## 835       181.2539 169.2677 193.2402 162.9226 199.5853
-## 836       180.6779 167.7107 193.6451 160.8463 200.5096
-## 837       181.1730 167.2233 195.1227 159.8388 202.5072
-## 838       180.7475 165.9372 195.5578 158.0971 203.3979
-## 839       181.1132 165.4432 196.7832 157.1480 205.0784</code></pre>
+## 839       177.4088 172.5834 182.2342 170.0290 184.7886
+## 840       175.7629 169.2322 182.2936 165.7750 185.7508
+## 841       176.0462 167.8853 184.2071 163.5652 188.5272
+## 842       175.8029 166.0978 185.5080 160.9602 190.6455
+## 843       176.0119 165.1199 186.9039 159.3540 192.6698
+## 844       175.8324 163.7588 187.9059 157.3675 194.2972
+## 845       175.9866 162.9257 189.0475 156.0116 195.9615
+## 846       175.8541 161.8046 189.9036 154.3672 197.3410
+## 847       175.9679 161.0521 190.8837 153.1561 198.7796
+## 848       175.8702 160.0892 191.6511 151.7353 200.0050</code></pre>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="672" /></p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;DANSKE.CO&quot;</code></pre>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">plot</span>(DANSKE.CO[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">addb &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(DANSKE.CO[,<span class="dv">6</span>])</a>
 <a class="sourceLine" id="cb147-2" data-line-number="2">addb</a></code></pre></div>
 <pre><code>## Series: DANSKE.CO[, 6] 
-## ARIMA(3,1,2) with drift 
+## ARIMA(2,1,2) with drift 
 ## 
 ## Coefficients:
-##          ar1      ar2      ar3      ma1     ma2    drift
-##       0.2656  -0.9445  -0.0795  -0.3168  0.9751  -0.1144
-## s.e.  0.0382   0.0217   0.0356   0.0163  0.0174   0.0717
+##           ar1      ar2     ma1     ma2    drift
+##       -1.0346  -0.9135  1.0155  0.9454  -0.1078
+## s.e.   0.0824   0.0295  0.0549  0.0357   0.0765
 ## 
-## sigma^2 estimated as 4.779:  log likelihood=-1804.33
-## AIC=3622.66   AICc=3622.8   BIC=3655.64</code></pre>
+## sigma^2 estimated as 4.839:  log likelihood=-1829.68
+## AIC=3671.37   AICc=3671.47   BIC=3699.7</code></pre>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1">faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</a>
 <a class="sourceLine" id="cb149-2" data-line-number="2">faddb</a></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 823       72.62422 69.82274 75.42570 68.33973 76.90871
-## 824       72.06327 68.20134 75.92520 66.15695 77.96959
-## 825       72.12665 67.41106 76.84223 64.91478 79.33851
-## 826       72.50358 67.10359 77.90357 64.24501 80.76215
-## 827       72.38726 66.40360 78.37092 63.23605 81.53847
-## 828       71.79413 65.25790 78.33037 61.79782 81.79044
-## 829       71.51529 64.44307 78.58752 60.69926 82.33133
-## 830       71.80950 64.24863 79.37037 60.24614 83.37286
-## 831       71.99698 64.00280 79.99117 59.77093 84.22304
-## 832       71.58990 63.18504 79.99476 58.73577 84.44402</code></pre>
+## 832       77.39152 74.57241 80.21062 73.08006 81.70297
+## 833       77.29556 73.34663 81.24450 71.25618 83.33494
+## 834       77.17619 72.27041 82.08197 69.67345 84.67893
+## 835       77.06960 71.41633 82.72288 68.42367 85.71554
+## 836       76.97118 70.67075 83.27161 67.33550 86.60686
+## 837       76.85263 69.91558 83.78969 66.24333 87.46194
+## 838       76.74745 69.26558 84.22931 65.30492 88.18997
+## 839       76.64682 68.65982 84.63383 64.43176 88.86189
+## 840       76.52927 68.03393 85.02461 63.53677 89.52177
+## 841       76.42507 67.48060 85.36954 62.74568 90.10445</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">plot</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1">aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])</a>
 <a class="sourceLine" id="cb155-2" data-line-number="2">aberkshire</a></code></pre></div>
 <pre><code>## Series: `BRK-A`[, 6] 
-## ARIMA(5,1,4) with drift 
+## ARIMA(4,1,5) with drift 
 ## 
 ## Coefficients:
-##           ar1     ar2      ar3      ar4      ar5     ma1      ma2     ma3     ma4    drift
-##       -0.4685  0.5133  -0.2036  -0.8385  -0.0774  0.3617  -0.5013  0.2665  0.7154  45.7114
-## s.e.   0.0598  0.0590   0.0644   0.0452   0.0187  0.0584   0.0613  0.0663  0.0487  25.8616
+##           ar1     ar2      ar3      ar4     ma1      ma2     ma3     ma4      ma5    drift
+##       -0.4471  0.4799  -0.2736  -0.7466  0.3345  -0.4705  0.3457  0.6142  -0.0801  42.2301
+## s.e.   0.0677  0.0811   0.0611   0.0462  0.0682   0.0813  0.0629  0.0486   0.0171  25.6198
 ## 
-## sigma^2 estimated as 4337928:  log likelihood=-46248.46
-## AIC=92518.93   AICc=92518.98   BIC=92590.85</code></pre>
+## sigma^2 estimated as 4368423:  log likelihood=-46347.88
+## AIC=92717.76   AICc=92717.81   BIC=92789.7</code></pre>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</a>
 <a class="sourceLine" id="cb157-2" data-line-number="2">faberkshire</a></code></pre></div>
 <pre><code>##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 5107       285761.4 283092.3 288430.6 281679.3 289843.6
-## 5108       282851.6 279272.7 286430.5 277378.1 288325.1
-## 5109       286275.3 281881.0 290669.7 279554.7 292995.9
-## 5110       282306.1 277253.5 287358.7 274578.9 290033.4
-## 5111       284251.4 278685.5 289817.3 275739.1 292763.7
-## 5112       282910.7 276857.8 288963.7 273653.5 292168.0
-## 5113       282795.1 276364.5 289225.7 272960.4 292629.8
-## 5114       284922.8 278073.6 291772.1 274447.8 295397.8
-## 5115       282910.6 275687.9 290133.2 271864.4 293956.7
-## 5116       286037.5 278414.9 293660.0 274379.8 297695.2</code></pre>
+## 5116       275299.9 272621.3 277978.4 271203.4 279396.3
+## 5117       273344.5 269763.2 276925.7 267867.5 278821.5
+## 5118       274988.3 270599.6 279377.1 268276.3 281700.4
+## 5119       274033.4 268975.6 279091.1 266298.2 281768.5
+## 5120       275524.1 269956.1 281092.2 267008.6 284039.7
+## 5121       275493.4 269443.1 281543.7 266240.2 284746.6
+## 5122       275340.5 268920.2 281760.8 265521.5 285159.5
+## 5123       275783.1 268952.3 282614.0 265336.3 286230.0
+## 5124       274491.2 267292.3 281690.1 263481.4 285501.0
+## 5125       275429.9 267835.5 283024.4 263815.2 287044.7</code></pre>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-150-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
 </div>
 </div>
 <div id="aktieafkast-premium" class="section level2">
@@ -986,34 +986,29 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">apple &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">AAPL</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)  <span class="co"># Årligt Afkast 2003 til i dag</span></a>
 <a class="sourceLine" id="cb162-2" data-line-number="2"><span class="kw">plot</span>(apple, <span class="dt">main =</span> <span class="st">&quot;Apple årligt afkast siden 2007&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="kw">auto.arima</span>(apple)</a></code></pre></div>
 <pre><code>## Series: apple 
 ## ARIMA(1,0,0) with non-zero mean 
 ## 
 ## Coefficients:
 ##           ar1    mean
-##       -0.6623  0.3397
-## s.e.   0.2183  0.0689
+##       -0.6562  0.3417
+## s.e.   0.2190  0.0692
 ## 
-## sigma^2 estimated as 0.2018:  log likelihood=-7.87
-## AIC=21.74   AICc=24.14   BIC=23.66</code></pre>
+## sigma^2 estimated as 0.2018:  log likelihood=-7.86
+## AIC=21.73   AICc=24.13   BIC=23.64</code></pre>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1">berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</a>
 <a class="sourceLine" id="cb167-2" data-line-number="2"><span class="kw">plot</span>(berkshire, <span class="dt">main =</span> <span class="st">&quot;Berkshire årligt afkast siden 2007&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-152-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="kw">auto.arima</span>(berkshire)</a></code></pre></div>
 <pre><code>## Series: berkshire 
-## ARIMA(0,0,0) with non-zero mean 
+## ARIMA(0,0,0) with zero mean 
 ## 
-## Coefficients:
-##         mean
-##       0.0874
-## s.e.  0.0500
-## 
-## sigma^2 estimated as 0.03772:  log likelihood=3.6
-## AIC=-3.19   AICc=-2.1   BIC=-1.92</code></pre>
+## sigma^2 estimated as 0.04333:  log likelihood=2.11
+## AIC=-2.21   AICc=-1.88   BIC=-1.58</code></pre>
 </div>
 </div>
             </section>
