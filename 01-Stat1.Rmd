@@ -7335,7 +7335,7 @@ Vi kan undersøge hvilke designs der har de største afvigelser ved at se på fo
 Vi kan grafisk sammenligne middelværdierne i boxplots, her ser vi ligeledes forskellen er størst mellem design 1 og design 4. Middelværdierne er markeret med orange prikker.
 
 
-```{r boxplots,echo=FALSE,fig.width=9, fig.height=5 ,dev="svg"}
+```{r boxplots,echo=FALSE,warning=FALSE,fig.width=9, fig.height=5 ,dev="svg"}
 ggplot(data = Designs, aes(x=design, y=tider)) + geom_boxplot(aes(fill = design)) + ggtitle("Boxplots for de 4 designs")+
 stat_summary(fun.y="mean", colour="orange", geom="point", shape=16, size=3)
 ```

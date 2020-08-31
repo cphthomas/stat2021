@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2020-08-18" />
+<meta name="date" content="2020-08-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -485,7 +485,7 @@ Please Wait…
 <p><br></p>
 <p>Nedenfor har vi aktiekurser for 50 dage for en fiktiv aktie, vi vil nu undersøge om disse kan bruges til at forudsige noget om fremtidige aktiekurser. For at gøre dette, skal man enten importere Excelfilen, eller copy paste data fra rammen nedenfor.</p>
 <p>Hent ARIMA1.xlsx Excel filen <a href="FILER/ARIMA1.xlsx" download>her</a>. Importer ARIMA1.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="tidsrækker-og-arima-premium.html#cb83-1"></a>ARIMA1 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA1)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="tidsrækker-og-arima-premium.html#cb82-1"></a>ARIMA1 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA1)</span></code></pre></div>
 <!-- ```{r, echo=FALSE, comment="",warning=FALSE} -->
 <!-- # write.table(as.data.frame(ARIMA1), file = "ARIMA1") kommando til gemme ts -->
 <!-- library("readxl") -->
@@ -494,12 +494,12 @@ Please Wait…
 <!-- dput(ARIMA1) -->
 <!-- ``` -->
 <p>Vi kan nu plotte vore data i R.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="tidsrækker-og-arima-premium.html#cb84-1"></a><span class="kw">plot.ts</span>(ARIMA1, <span class="dt">xlab=</span><span class="st">&#39;Tid&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Kursdata&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="tidsrækker-og-arima-premium.html#cb83-1"></a><span class="kw">plot.ts</span>(ARIMA1, <span class="dt">xlab=</span><span class="st">&#39;Tid&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Kursdata&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
 <p>Det er svært at se nogen tydelig udvikling i kursen.</p>
 <p>Vi benytter auto.arima til at undersøge om der er en systematik i tidsserien, for at bruge denne funktion skal vi hente og loade pakken forecast med fx. pacman:</p>
 <p>Funktionen auto.arima i R er en fantastisk funktion, der automatisk finder den ARIMA model, der passer bedst på observationerne.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="tidsrækker-og-arima-premium.html#cb85-1"></a><span class="kw">auto.arima</span>(ARIMA1)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="tidsrækker-og-arima-premium.html#cb84-1"></a><span class="kw">auto.arima</span>(ARIMA1)</span></code></pre></div>
 <pre><code>## Series: ARIMA1 
 ## ARIMA(0,0,0) with non-zero mean 
 ## 
@@ -544,9 +544,9 @@ Om 4 dage dvs. <span class="math inline">\(t=4\)</span> vil kursen så være for
 <p><span class="math inline">\(\phi\)</span> må kun antage værdier mellem og ikke lig med -1 og 1, hvilket betyder den er stationær, altså nærmer sig den sande middelværdi <span class="math inline">\(\mu\)</span>.</p>
 <p>Hvad vil der ske hvis <span class="math inline">\(\mu=100\)</span> og <span class="math inline">\(\phi=-0.5\)</span> for en ARIMA(1,0,0) model (husk <span class="math inline">\(c=(1-\phi)\cdot\mu\)</span> når man skal bestemme modellen)?</p>
 <p>Hent ARIMA2.xlsx Excel filen <a href="FILER/ARIMA2.xlsx" download>her</a>. Importer ARIMA2.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tidsrækker-og-arima-premium.html#cb87-1"></a>ARIMA2 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA2)</span></code></pre></div>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="tidsrækker-og-arima-premium.html#cb88-1"></a>aaa2 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA2)</span>
-<span id="cb88-2"><a href="tidsrækker-og-arima-premium.html#cb88-2"></a>aaa2</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="tidsrækker-og-arima-premium.html#cb86-1"></a>ARIMA2 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA2)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tidsrækker-og-arima-premium.html#cb87-1"></a>aaa2 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA2)</span>
+<span id="cb87-2"><a href="tidsrækker-og-arima-premium.html#cb87-2"></a>aaa2</span></code></pre></div>
 <pre><code>## Series: ARIMA2 
 ## ARIMA(1,0,0) with non-zero mean 
 ## 
@@ -561,7 +561,7 @@ Om 4 dage dvs. <span class="math inline">\(t=4\)</span> vil kursen så være for
 <p>Modellen kan skrives som.</p>
 <p><span class="math display">\[\hat{Y_t}=c + \phi Y_{t-1}\Leftrightarrow \hat{Y_t}=(1-0.3664)\cdot 103.2372 + 0.3664Y_{t-1}\Leftrightarrow \hat{Y_t}=65.4125 + 0.3664Y_{t-1}\]</span></p>
 <p>Vi ser nu igen på vores eksempel med ARIMA2, vi kan nu i R forudsige aktiekursen 12 perioder frem med predict:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="tidsrækker-og-arima-premium.html#cb90-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA2), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="tidsrækker-og-arima-premium.html#cb89-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA2), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</span></code></pre></div>
 <pre><code>## Time Series:
 ## Start = 51 
 ## End = 62 
@@ -574,9 +574,9 @@ Hent ARIMA22.xlsx Excel filen <a href="FILER/ARIMA22.xlsx" download>her</a>. Imp
 <br>
 <details>
 <p><summary>Svar ARIMA(1,0,0)</summary></p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="tidsrækker-og-arima-premium.html#cb92-1"></a>ARIMA22 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA22)</span>
-<span id="cb92-2"><a href="tidsrækker-og-arima-premium.html#cb92-2"></a>aaa22 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA22)</span>
-<span id="cb92-3"><a href="tidsrækker-og-arima-premium.html#cb92-3"></a>aaa22</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="tidsrækker-og-arima-premium.html#cb91-1"></a>ARIMA22 &lt;-<span class="st"> </span><span class="kw">ts</span>(ARIMA22)</span>
+<span id="cb91-2"><a href="tidsrækker-og-arima-premium.html#cb91-2"></a>aaa22 &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(ARIMA22)</span>
+<span id="cb91-3"><a href="tidsrækker-og-arima-premium.html#cb91-3"></a>aaa22</span></code></pre></div>
 <pre><code>## Series: ARIMA22 
 ## ARIMA(1,0,0) with non-zero mean 
 ## 
@@ -587,7 +587,7 @@ Hent ARIMA22.xlsx Excel filen <a href="FILER/ARIMA22.xlsx" download>her</a>. Imp
 ## 
 ## sigma^2 estimated as 180.3:  log likelihood=-199.82
 ## AIC=405.63   AICc=406.15   BIC=411.37</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="tidsrækker-og-arima-premium.html#cb94-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA22), <span class="dt">n.ahead =</span> <span class="dv">15</span>)<span class="op">$</span>pred</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tidsrækker-og-arima-premium.html#cb93-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA22), <span class="dt">n.ahead =</span> <span class="dv">15</span>)<span class="op">$</span>pred</span></code></pre></div>
 <pre><code>## Time Series:
 ## Start = 51 
 ## End = 65 
@@ -618,9 +618,9 @@ Dette betyder at Y stiger konstant med <span class="math inline">\(\mu\)</span> 
 <p>Forestiller man sig en ARIMA(0,1,0) med drift 10 og en kurs på tidspunkt t-1 på 120, vil vi forudsige en kurs på 130 ved tid t og 140 ved tid t+1 osv. Vi kan opskrive modellen som:
 <span class="math display">\[\hat{Y_t}-Y_{t-1}=10\Leftrightarrow \hat{Y_t}=Y_{t-1}+10\]</span></p>
 <p>Hent ARIMA3.xlsx Excel filen <a href="FILER/ARIMA3.xlsx" download>her</a>. Importer ARIMA3.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="tidsrækker-og-arima-premium.html#cb96-1"></a><span class="kw">ts.plot</span>(ARIMA3)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tidsrækker-og-arima-premium.html#cb95-1"></a><span class="kw">ts.plot</span>(ARIMA3)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="tidsrækker-og-arima-premium.html#cb97-1"></a><span class="kw">auto.arima</span>(ARIMA3)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="tidsrækker-og-arima-premium.html#cb96-1"></a><span class="kw">auto.arima</span>(ARIMA3)</span></code></pre></div>
 <pre><code>## Series: ARIMA3 
 ## ARIMA(0,1,0) with drift 
 ## 
@@ -653,9 +653,9 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 <script type="application/json" data-for="htmlwidget-0a4f7a4eb7d0dd89f23d">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualen"},"evals":[],"jsHooks":[]}</script></span> til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
 <span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60\]</span></p>
 <p>Hent ARIMA4.xlsx Excel filen <a href="FILER/ARIMA4.xlsx" download>her</a>. Importer ARIMA4.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tidsrækker-og-arima-premium.html#cb99-1"></a><span class="kw">ts.plot</span>(ARIMA4)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="tidsrækker-og-arima-premium.html#cb98-1"></a><span class="kw">ts.plot</span>(ARIMA4)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="tidsrækker-og-arima-premium.html#cb100-1"></a><span class="kw">auto.arima</span>(ARIMA4)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tidsrækker-og-arima-premium.html#cb99-1"></a><span class="kw">auto.arima</span>(ARIMA4)</span></code></pre></div>
 <pre><code>## Series: ARIMA4 
 ## ARIMA(0,0,1) with non-zero mean 
 ## 
@@ -667,7 +667,7 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## sigma^2 estimated as 95.68:  log likelihood=-184.81
 ## AIC=375.62   AICc=376.14   BIC=381.35</code></pre>
 <p>Vi kan nu forudsige aktiekursen 12 perioder frem med predict:</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="tidsrækker-og-arima-premium.html#cb102-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA4), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="tidsrækker-og-arima-premium.html#cb101-1"></a><span class="kw">predict</span>(<span class="kw">auto.arima</span>(ARIMA4), <span class="dt">n.ahead =</span> <span class="dv">12</span>)<span class="op">$</span>pred</span></code></pre></div>
 <pre><code>## Time Series:
 ## Start = 51 
 ## End = 62 
@@ -713,7 +713,7 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## sigma^2 estimated as 92.7:  log likelihood=-735.47
 ## AIC=1478.94   AICc=1479.14   BIC=1492.13</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="tidsrækker-og-arima-premium.html#cb107-1"></a><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="tidsrækker-og-arima-premium.html#cb106-1"></a><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</span></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
 ## 201       99.59577 87.25706 111.9345 80.72534 118.4662
 ## 202       97.63564 84.18292 111.0884 77.06149 118.2098
@@ -725,7 +725,7 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## 208       99.05537 85.27827 112.8325 77.98512 120.1256
 ## 209       99.05537 85.27827 112.8325 77.98512 120.1256
 ## 210       99.05537 85.27827 112.8325 77.98512 120.1256</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="tidsrækker-og-arima-premium.html#cb109-1"></a><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="tidsrækker-og-arima-premium.html#cb108-1"></a><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="arima-af-højere-orden-premium" class="section level2">
@@ -750,25 +750,25 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 <div id="traktorer-premium" class="section level3">
 <h3><span class="header-section-number">22.8.1</span> <font color="red">Traktorer<sup> Premium </font></sup></h3>
 <p>Hent følgende data for traktor salg, med følgende kommandoer i R.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="tidsrækker-og-arima-premium.html#cb110-1"></a>data =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;http://ucanalytics.com/blogs/wp-content/uploads/2015/06/Tractor-Sales.csv&#39;</span>)</span>
-<span id="cb110-2"><a href="tidsrækker-og-arima-premium.html#cb110-2"></a>data =<span class="st"> </span><span class="kw">ts</span>(data[,<span class="dv">2</span>],<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="tidsrækker-og-arima-premium.html#cb109-1"></a>data =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;http://ucanalytics.com/blogs/wp-content/uploads/2015/06/Tractor-Sales.csv&#39;</span>)</span>
+<span id="cb109-2"><a href="tidsrækker-og-arima-premium.html#cb109-2"></a>data =<span class="st"> </span><span class="kw">ts</span>(data[,<span class="dv">2</span>],<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</span></code></pre></div>
 <p>Vi ser salget er voksende over tid, der er ligeledes en sæsonkomponent.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="tidsrækker-og-arima-premium.html#cb111-1"></a><span class="kw">plot</span>(data, <span class="dt">xlab=</span><span class="st">&#39;Years&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Tractor Sales&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="tidsrækker-og-arima-premium.html#cb110-1"></a><span class="kw">plot</span>(data, <span class="dt">xlab=</span><span class="st">&#39;Years&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Tractor Sales&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
 <p>Differens tranformer data for at generere stationære data mht. middel (fjern trend)</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="tidsrækker-og-arima-premium.html#cb112-1"></a><span class="kw">plot</span>(<span class="kw">diff</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Differenced Tractor Sales&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="tidsrækker-og-arima-premium.html#cb111-1"></a><span class="kw">plot</span>(<span class="kw">diff</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Differenced Tractor Sales&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
 <p>log transformer data for at sikre stationaritet mht. varians.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="tidsrækker-og-arima-premium.html#cb113-1"></a><span class="kw">plot</span>(<span class="kw">log10</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Log (Tractor Sales)&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="tidsrækker-og-arima-premium.html#cb112-1"></a><span class="kw">plot</span>(<span class="kw">log10</span>(data),<span class="dt">ylab=</span><span class="st">&#39;Log (Tractor Sales)&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
 <p>Eventuel Differens og log transformation af data for at sikre stationaritet både mht. middel og varians.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="tidsrækker-og-arima-premium.html#cb114-1"></a><span class="kw">plot</span>(<span class="kw">diff</span>(<span class="kw">log10</span>(data)),<span class="dt">ylab=</span><span class="st">&#39;Differenced Log (Tractor Sales)&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="tidsrækker-og-arima-premium.html#cb113-1"></a><span class="kw">plot</span>(<span class="kw">diff</span>(<span class="kw">log10</span>(data)),<span class="dt">ylab=</span><span class="st">&#39;Differenced Log (Tractor Sales)&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <p>Find bedste model med auto.arima, når der er stationaritet.</p>
 <p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC), vælg ARIMA modellen med mindst AIC and BIC værdier. auto.arima finder den bedste model automatisk.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="tidsrækker-og-arima-premium.html#cb115-1"></a><span class="kw">require</span>(forecast)</span>
-<span id="cb115-2"><a href="tidsrækker-og-arima-premium.html#cb115-2"></a>ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(data), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</span>
-<span id="cb115-3"><a href="tidsrækker-og-arima-premium.html#cb115-3"></a>ARIMAfit</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="tidsrækker-og-arima-premium.html#cb114-1"></a><span class="kw">require</span>(forecast)</span>
+<span id="cb114-2"><a href="tidsrækker-og-arima-premium.html#cb114-2"></a>ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(data), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</span>
+<span id="cb114-3"><a href="tidsrækker-og-arima-premium.html#cb114-3"></a>ARIMAfit</span></code></pre></div>
 <pre><code>## Series: log10(data) 
 ## ARIMA(0,1,1)(0,1,1)[12] 
 ## 
@@ -780,31 +780,31 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## sigma^2 estimated as 0.0002571:  log likelihood=354.4
 ## AIC=-702.79   AICc=-702.6   BIC=-694.17</code></pre>
 <p>Nu kan vi forudsige kommende traktor salg med modellen</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="tidsrækker-og-arima-premium.html#cb117-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb117-2"><a href="tidsrækker-og-arima-premium.html#cb117-2"></a>pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</span>
-<span id="cb117-3"><a href="tidsrækker-og-arima-premium.html#cb117-3"></a>salg &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span>pred<span class="op">$</span>pred</span>
-<span id="cb117-4"><a href="tidsrækker-og-arima-premium.html#cb117-4"></a>salg</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="tidsrækker-og-arima-premium.html#cb116-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb116-2"><a href="tidsrækker-og-arima-premium.html#cb116-2"></a>pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</span>
+<span id="cb116-3"><a href="tidsrækker-og-arima-premium.html#cb116-3"></a>salg &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span>pred<span class="op">$</span>pred</span>
+<span id="cb116-4"><a href="tidsrækker-og-arima-premium.html#cb116-4"></a>salg</span></code></pre></div>
 <pre><code>##            Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov       Dec
 ## 2015  567.7645  566.4765  670.8226  758.9138  855.9482  817.2827  938.7239  934.5120  703.5005  626.9879  571.9988  668.5363
 ## 2016  625.2464  623.8280  738.7384  835.7481  942.6065  900.0265 1033.7626 1029.1243  774.7246  690.4657  629.9094  736.2206
 ## 2017  688.5479  686.9859  813.5300  920.3613 1038.0383  991.1474 1138.4233 1133.3154  853.1596  760.3701  693.6830  810.7573</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="tidsrækker-og-arima-premium.html#cb119-1"></a><span class="kw">plot</span>(data,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">2018</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1600</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Tractor Salg&#39;</span>)</span>
-<span id="cb119-2"><a href="tidsrækker-og-arima-premium.html#cb119-2"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb119-3"><a href="tidsrækker-og-arima-premium.html#cb119-3"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
-<span id="cb119-4"><a href="tidsrækker-og-arima-premium.html#cb119-4"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="tidsrækker-og-arima-premium.html#cb118-1"></a><span class="kw">plot</span>(data,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2003</span>,<span class="dv">2018</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1600</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Tractor Salg&#39;</span>)</span>
+<span id="cb118-2"><a href="tidsrækker-og-arima-premium.html#cb118-2"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb118-3"><a href="tidsrækker-og-arima-premium.html#cb118-3"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb118-4"><a href="tidsrækker-og-arima-premium.html#cb118-4"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 </div>
 <div id="detail-debet-card-forbrug-på-island-millioner-isk.-premium" class="section level3">
 <h3><span class="header-section-number">22.8.2</span> <font color="red">Detail debet card forbrug på Island (millioner ISK).<sup> Premium </font></sup></h3>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="tidsrækker-og-arima-premium.html#cb120-1"></a><span class="co">#Hent fpp pakken og load den</span></span>
-<span id="cb120-2"><a href="tidsrækker-og-arima-premium.html#cb120-2"></a><span class="kw">plot</span>(debitcards)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="tidsrækker-og-arima-premium.html#cb119-1"></a><span class="co">#Hent fpp pakken og load den</span></span>
+<span id="cb119-2"><a href="tidsrækker-og-arima-premium.html#cb119-2"></a><span class="kw">plot</span>(debitcards)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="tidsrækker-og-arima-premium.html#cb121-1"></a>dldebitcards &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">log10</span>(debitcards))</span>
-<span id="cb121-2"><a href="tidsrækker-og-arima-premium.html#cb121-2"></a><span class="kw">plot</span>(dldebitcards,<span class="dt">ylab=</span><span class="st">&quot;Differenced Log (debitcards)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="tidsrækker-og-arima-premium.html#cb120-1"></a>dldebitcards &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">log10</span>(debitcards))</span>
+<span id="cb120-2"><a href="tidsrækker-og-arima-premium.html#cb120-2"></a><span class="kw">plot</span>(dldebitcards,<span class="dt">ylab=</span><span class="st">&quot;Differenced Log (debitcards)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="tidsrækker-og-arima-premium.html#cb122-1"></a><span class="kw">require</span>(forecast)</span>
-<span id="cb122-2"><a href="tidsrækker-og-arima-premium.html#cb122-2"></a>ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(debitcards), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</span>
-<span id="cb122-3"><a href="tidsrækker-og-arima-premium.html#cb122-3"></a>ARIMAfit</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="tidsrækker-og-arima-premium.html#cb121-1"></a><span class="kw">require</span>(forecast)</span>
+<span id="cb121-2"><a href="tidsrækker-og-arima-premium.html#cb121-2"></a>ARIMAfit =<span class="st"> </span><span class="kw">auto.arima</span>(<span class="kw">log10</span>(debitcards), <span class="dt">approximation=</span><span class="ot">FALSE</span>,<span class="dt">trace=</span><span class="ot">FALSE</span>)</span>
+<span id="cb121-3"><a href="tidsrækker-og-arima-premium.html#cb121-3"></a>ARIMAfit</span></code></pre></div>
 <pre><code>## Series: log10(debitcards) 
 ## ARIMA(2,1,0)(0,1,1)[12] 
 ## 
@@ -816,15 +816,15 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 ## sigma^2 estimated as 0.0004402:  log likelihood=343.95
 ## AIC=-679.9   AICc=-679.61   BIC=-668.05</code></pre>
 <p>Nu kan vi forudsige kommende debetkort omsætning med modellen</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="tidsrækker-og-arima-premium.html#cb124-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb124-2"><a href="tidsrækker-og-arima-premium.html#cb124-2"></a>pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</span>
-<span id="cb124-3"><a href="tidsrækker-og-arima-premium.html#cb124-3"></a><span class="kw">plot</span>(debitcards,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2000</span>,<span class="dv">2016</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">40000</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Debetcard usage&#39;</span>)</span>
-<span id="cb124-4"><a href="tidsrækker-og-arima-premium.html#cb124-4"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb124-5"><a href="tidsrækker-og-arima-premium.html#cb124-5"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
-<span id="cb124-6"><a href="tidsrækker-og-arima-premium.html#cb124-6"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="tidsrækker-og-arima-premium.html#cb123-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb123-2"><a href="tidsrækker-og-arima-premium.html#cb123-2"></a>pred =<span class="st"> </span><span class="kw">predict</span>(ARIMAfit, <span class="dt">n.ahead =</span> <span class="dv">36</span>)</span>
+<span id="cb123-3"><a href="tidsrækker-og-arima-premium.html#cb123-3"></a><span class="kw">plot</span>(debitcards,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">2000</span>,<span class="dv">2016</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">40000</span>),<span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;Debetcard usage&#39;</span>)</span>
+<span id="cb123-4"><a href="tidsrækker-og-arima-premium.html#cb123-4"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred),<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb123-5"><a href="tidsrækker-og-arima-premium.html#cb123-5"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="op">+</span><span class="dv">2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb123-6"><a href="tidsrækker-og-arima-premium.html#cb123-6"></a><span class="kw">lines</span>(<span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred<span class="dv">-2</span><span class="op">*</span>pred<span class="op">$</span>se),<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
 <p>Forudsagt brug af debetkort bliver:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="tidsrækker-og-arima-premium.html#cb125-1"></a><span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="tidsrækker-og-arima-premium.html#cb124-1"></a><span class="dv">10</span><span class="op">^</span>(pred<span class="op">$</span>pred)</span></code></pre></div>
 <pre><code>##           Jan      Feb      Mar      Apr      May      Jun      Jul      Aug      Sep      Oct      Nov      Dec
 ## 2013 19717.77 19162.87 20436.29 20506.84 23262.14 23545.62 24292.86 25544.16 22267.47 22543.80 22081.63 29090.93
 ## 2014 20701.39 20352.57 21886.85 21721.53 24745.18 25091.09 25806.49 27175.65 23697.15 23970.40 23490.36 30947.83
@@ -840,135 +840,135 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 </div>
 <p><br></p>
 <p>Man kan hente online aktiekurser med quantmod pakken installer denne med fx. pacman, vi skal også bruge pakken forecast som vi ligeledes henter. Vi henter nedenfor Google justeret lukkekurs til dato det er 6 søjle i GOOG matricen nedenfor. Vi kan se forecaste aktiekursen vha.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="tidsrækker-og-arima-premium.html#cb127-1"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(quantmod, forecast)</span>
-<span id="cb127-2"><a href="tidsrækker-og-arima-premium.html#cb127-2"></a><span class="kw">getSymbols</span>(<span class="st">&quot;GOOG&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="tidsrækker-og-arima-premium.html#cb126-1"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(quantmod, forecast)</span>
+<span id="cb126-2"><a href="tidsrækker-og-arima-premium.html#cb126-2"></a><span class="kw">getSymbols</span>(<span class="st">&quot;GOOG&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;GOOG&quot;</code></pre>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="tidsrækker-og-arima-premium.html#cb129-1"></a><span class="kw">plot</span>(GOOG[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="tidsrækker-og-arima-premium.html#cb128-1"></a><span class="kw">plot</span>(GOOG[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="tidsrækker-og-arima-premium.html#cb130-1"></a>agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</span>
-<span id="cb130-2"><a href="tidsrækker-og-arima-premium.html#cb130-2"></a>agoog</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="tidsrækker-og-arima-premium.html#cb129-1"></a>agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</span>
+<span id="cb129-2"><a href="tidsrækker-og-arima-premium.html#cb129-2"></a>agoog</span></code></pre></div>
 <pre><code>## Series: GOOG[, 6] 
 ## ARIMA(0,1,1) with drift 
 ## 
 ## Coefficients:
 ##           ma1   drift
-##       -0.1624  0.8027
-## s.e.   0.0317  0.5557
+##       -0.1603  0.9320
+## s.e.   0.0314  0.5559
 ## 
-## sigma^2 estimated as 401.7:  log likelihood=-4022.76
-## AIC=8051.51   AICc=8051.54   BIC=8065.96</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="tidsrækker-og-arima-premium.html#cb132-1"></a>fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</span>
-<span id="cb132-2"><a href="tidsrækker-og-arima-premium.html#cb132-2"></a>fagoog</span></code></pre></div>
+## sigma^2 estimated as 403.9:  log likelihood=-4064.98
+## AIC=8135.95   AICc=8135.98   BIC=8150.42</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="tidsrækker-og-arima-premium.html#cb131-1"></a>fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</span>
+<span id="cb131-2"><a href="tidsrækker-og-arima-premium.html#cb131-2"></a>fagoog</span></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 913       1517.489 1491.802 1543.176 1478.205 1556.774
-## 914       1518.292 1484.785 1551.799 1467.048 1569.536
-## 915       1519.094 1479.275 1558.914 1458.196 1579.993
-## 916       1519.897 1474.637 1565.157 1450.678 1589.117
-## 917       1520.700 1470.586 1570.814 1444.057 1597.342
-## 918       1521.503 1466.966 1576.040 1438.095 1604.910
-## 919       1522.305 1463.678 1580.933 1432.642 1611.968
-## 920       1523.108 1460.657 1585.558 1427.598 1618.618
-## 921       1523.911 1457.858 1589.963 1422.892 1624.930
-## 922       1524.713 1455.245 1594.182 1418.470 1630.956</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="tidsrækker-og-arima-premium.html#cb134-1"></a><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</span></code></pre></div>
+## 922       1644.172 1618.416 1669.928 1604.782 1683.562
+## 923       1645.104 1611.472 1678.736 1593.668 1696.540
+## 924       1646.036 1606.050 1686.022 1584.883 1707.190
+## 925       1646.968 1601.508 1692.429 1577.442 1716.494
+## 926       1647.900 1597.557 1698.244 1570.907 1724.894
+## 927       1648.832 1594.040 1703.625 1565.035 1732.630
+## 928       1649.764 1590.858 1708.671 1559.675 1739.854
+## 929       1650.697 1587.945 1713.448 1554.727 1746.666
+## 930       1651.629 1585.255 1718.003 1550.118 1753.139
+## 931       1652.561 1582.752 1722.369 1545.797 1759.324</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="tidsrækker-og-arima-premium.html#cb133-1"></a><span class="kw">plot</span>(fagoog,<span class="dt">main =</span> <span class="st">&quot;Google adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
 <div id="eksporter-aktiekurser-til-excel-premium" class="section level3">
 <h3><span class="header-section-number">22.9.1</span> <font color="red">Eksporter Aktiekurser til Excel<sup> Premium </font></sup></h3>
 <p>Man kan eksportere data til fx Excel med pakken rio, herunder dannes en Excel fil med to ark med hhv. aktiedata og forudsigelser. Funktionen export(), benyttes, man angiver data til de enkelte ark en list() funktion, sidste argument er selve filnavnet. Filen gemmes i arbejdsbiblioteket. Herfra kan den kopieres eller exporteres.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="tidsrækker-og-arima-premium.html#cb135-1"></a><span class="co">#Hent rio med install.packages(&quot;rio&quot;)</span></span>
-<span id="cb135-2"><a href="tidsrækker-og-arima-premium.html#cb135-2"></a><span class="co">#Load rio med library(&quot;rio&quot;) eller benyt pacman</span></span>
-<span id="cb135-3"><a href="tidsrækker-og-arima-premium.html#cb135-3"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(quantmod, forecast, rio)</span>
-<span id="cb135-4"><a href="tidsrækker-og-arima-premium.html#cb135-4"></a><span class="co"># getSymbols(&quot;GOOG&quot;,from = &quot;2017-01-01&quot;, to = Sys.Date(),getSymbols.warning4.0=FALSE)</span></span>
-<span id="cb135-5"><a href="tidsrækker-og-arima-premium.html#cb135-5"></a>agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</span>
-<span id="cb135-6"><a href="tidsrækker-og-arima-premium.html#cb135-6"></a>fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</span>
-<span id="cb135-7"><a href="tidsrækker-og-arima-premium.html#cb135-7"></a><span class="kw">export</span>(<span class="kw">list</span>(GOOG,fagoog),<span class="st">&quot;FILER/google.xlsx&quot;</span>) <span class="co">#Skriver filen google.xlsx til arbejdsbiblioteket.</span></span></code></pre></div>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="tidsrækker-og-arima-premium.html#cb136-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="tidsrækker-og-arima-premium.html#cb134-1"></a><span class="co">#Hent rio med install.packages(&quot;rio&quot;)</span></span>
+<span id="cb134-2"><a href="tidsrækker-og-arima-premium.html#cb134-2"></a><span class="co">#Load rio med library(&quot;rio&quot;) eller benyt pacman</span></span>
+<span id="cb134-3"><a href="tidsrækker-og-arima-premium.html#cb134-3"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(quantmod, forecast, rio)</span>
+<span id="cb134-4"><a href="tidsrækker-og-arima-premium.html#cb134-4"></a><span class="co"># getSymbols(&quot;GOOG&quot;,from = &quot;2017-01-01&quot;, to = Sys.Date(),getSymbols.warning4.0=FALSE)</span></span>
+<span id="cb134-5"><a href="tidsrækker-og-arima-premium.html#cb134-5"></a>agoog &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GOOG[,<span class="dv">6</span>])</span>
+<span id="cb134-6"><a href="tidsrækker-og-arima-premium.html#cb134-6"></a>fagoog &lt;-<span class="st"> </span><span class="kw">forecast</span>(agoog)</span>
+<span id="cb134-7"><a href="tidsrækker-og-arima-premium.html#cb134-7"></a><span class="kw">export</span>(<span class="kw">list</span>(GOOG,fagoog),<span class="st">&quot;FILER/google.xlsx&quot;</span>) <span class="co">#Skriver filen google.xlsx til arbejdsbiblioteket.</span></span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="tidsrækker-og-arima-premium.html#cb135-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;GS&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;GS&quot;</code></pre>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="tidsrækker-og-arima-premium.html#cb138-1"></a><span class="kw">plot</span>(GS[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="tidsrækker-og-arima-premium.html#cb137-1"></a><span class="kw">plot</span>(GS[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="tidsrækker-og-arima-premium.html#cb139-1"></a>ags &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GS[,<span class="dv">6</span>])</span>
-<span id="cb139-2"><a href="tidsrækker-og-arima-premium.html#cb139-2"></a>ags</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="tidsrækker-og-arima-premium.html#cb138-1"></a>ags &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(GS[,<span class="dv">6</span>])</span>
+<span id="cb138-2"><a href="tidsrækker-og-arima-premium.html#cb138-2"></a>ags</span></code></pre></div>
 <pre><code>## Series: GS[, 6] 
 ## ARIMA(0,1,2) 
 ## 
 ## Coefficients:
 ##           ma1     ma2
-##       -0.1020  0.1003
-## s.e.   0.0327  0.0350
+##       -0.1025  0.1001
+## s.e.   0.0326  0.0349
 ## 
-## sigma^2 estimated as 15.66:  log likelihood=-2544.83
-## AIC=5095.67   AICc=5095.69   BIC=5110.11</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="tidsrækker-og-arima-premium.html#cb141-1"></a>fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</span>
-<span id="cb141-2"><a href="tidsrækker-og-arima-premium.html#cb141-2"></a>fags</span></code></pre></div>
+## sigma^2 estimated as 15.38:  log likelihood=-2561.5
+## AIC=5129   AICc=5129.03   BIC=5143.47</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="tidsrækker-og-arima-premium.html#cb140-1"></a>fags &lt;-<span class="st"> </span><span class="kw">forecast</span>(ags)</span>
+<span id="cb140-2"><a href="tidsrækker-og-arima-premium.html#cb140-2"></a>fags</span></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 913       203.4492 198.3775 208.5208 195.6927 211.2056
-## 914       202.9865 196.1701 209.8029 192.5617 213.4113
-## 915       202.9865 194.4955 211.4775 190.0007 215.9723
-## 916       202.9865 193.1006 212.8723 187.8674 218.1056
-## 917       202.9865 191.8796 214.0934 186.0000 219.9730
-## 918       202.9865 190.7801 215.1929 184.3184 221.6545
-## 919       202.9865 189.7718 216.2012 182.7763 223.1966
-## 920       202.9865 188.8351 217.1379 181.3438 224.6291
-## 921       202.9865 187.9567 218.0163 180.0004 225.9726
-## 922       202.9865 187.1269 218.8461 178.7313 227.2417</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="tidsrækker-og-arima-premium.html#cb143-1"></a><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</span></code></pre></div>
+## 922       206.9894 201.9643 212.0145 199.3042 214.6746
+## 923       206.7718 200.0197 213.5238 196.4454 217.0982
+## 924       206.7718 198.3623 215.1812 193.9107 219.6329
+## 925       206.7718 196.9816 216.5619 191.7990 221.7445
+## 926       206.7718 195.7729 217.7707 189.9504 223.5931
+## 927       206.7718 194.6844 218.8591 188.2858 225.2578
+## 928       206.7718 193.6862 219.8574 186.7591 226.7844
+## 929       206.7718 192.7589 220.7847 185.3409 228.2026
+## 930       206.7718 191.8893 221.6543 184.0110 229.5326
+## 931       206.7718 191.0677 222.4758 182.7545 230.7891</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="tidsrækker-og-arima-premium.html#cb142-1"></a><span class="kw">plot</span>(fags,<span class="dt">main =</span> <span class="st">&quot;Goldman Sachs adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="672" /></p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="tidsrækker-og-arima-premium.html#cb144-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="tidsrækker-og-arima-premium.html#cb143-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;DANSKE.CO&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2017-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;DANSKE.CO&quot;</code></pre>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="tidsrækker-og-arima-premium.html#cb146-1"></a><span class="kw">plot</span>(DANSKE.CO[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="tidsrækker-og-arima-premium.html#cb145-1"></a><span class="kw">plot</span>(DANSKE.CO[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="tidsrækker-og-arima-premium.html#cb147-1"></a>addb &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(DANSKE.CO[,<span class="dv">6</span>])</span>
-<span id="cb147-2"><a href="tidsrækker-og-arima-premium.html#cb147-2"></a>addb</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="tidsrækker-og-arima-premium.html#cb146-1"></a>addb &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(DANSKE.CO[,<span class="dv">6</span>])</span>
+<span id="cb146-2"><a href="tidsrækker-og-arima-premium.html#cb146-2"></a>addb</span></code></pre></div>
 <pre><code>## Series: DANSKE.CO[, 6] 
 ## ARIMA(0,1,0) 
 ## 
-## sigma^2 estimated as 4.867:  log likelihood=-1989.54
-## AIC=3981.08   AICc=3981.08   BIC=3985.88</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="tidsrækker-og-arima-premium.html#cb149-1"></a>faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</span>
-<span id="cb149-2"><a href="tidsrækker-og-arima-premium.html#cb149-2"></a>faddb</span></code></pre></div>
-<pre><code>##     Point Forecast     Lo 80    Hi 80    Lo 95    Hi 95
-## 903          103.1 100.27262 105.9274 98.77590 107.4241
-## 904          103.1  99.10148 107.0985 96.98480 109.2152
-## 905          103.1  98.20284 107.9972 95.61044 110.5896
-## 906          103.1  97.44524 108.7548 94.45180 111.7482
-## 907          103.1  96.77779 109.4222 93.43102 112.7690
-## 908          103.1  96.17437 110.0256 92.50816 113.6918
-## 909          103.1  95.61946 110.5805 91.65951 114.5405
-## 910          103.1  95.10297 111.0970 90.86960 115.3304
-## 911          103.1  94.61787 111.5821 90.12770 116.0723
-## 912          103.1  94.15905 112.0409 89.42600 116.7740</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="tidsrækker-og-arima-premium.html#cb151-1"></a><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</span></code></pre></div>
+## sigma^2 estimated as 4.853:  log likelihood=-2008.13
+## AIC=4018.25   AICc=4018.26   BIC=4023.07</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="tidsrækker-og-arima-premium.html#cb148-1"></a>faddb &lt;-<span class="st"> </span><span class="kw">forecast</span>(addb)</span>
+<span id="cb148-2"><a href="tidsrækker-og-arima-premium.html#cb148-2"></a>faddb</span></code></pre></div>
+<pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 912          98.28 95.45667 101.1033 93.96210 102.5979
+## 913          98.28 94.28722 102.2728 92.17356 104.3864
+## 914          98.28 93.38986 103.1701 90.80117 105.7588
+## 915          98.28 92.63335 103.9266 89.64419 106.9158
+## 916          98.28 91.96685 104.5931 88.62488 107.9351
+## 917          98.28 91.36429 105.1957 87.70334 108.8567
+## 918          98.28 90.81018 105.7498 86.85590 109.7041
+## 919          98.28 90.29443 106.2656 86.06713 110.4929
+## 920          98.28 89.81003 106.7500 85.32629 111.2337
+## 921          98.28 89.35186 107.2081 84.62559 111.9344</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="tidsrækker-og-arima-premium.html#cb150-1"></a><span class="kw">plot</span>(faddb,<span class="dt">main =</span> <span class="st">&quot;Danske Bank adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-148-2.png" width="672" /></p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="tidsrækker-og-arima-premium.html#cb152-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="tidsrækker-og-arima-premium.html#cb151-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">from =</span> <span class="st">&quot;2000-01-01&quot;</span>, <span class="dt">to =</span> <span class="kw">Sys.Date</span>(),<span class="dt">getSymbols.warning4.0=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tidsrækker-og-arima-premium.html#cb154-1"></a><span class="kw">plot</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="tidsrækker-og-arima-premium.html#cb153-1"></a><span class="kw">plot</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>],<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tidsrækker-og-arima-premium.html#cb155-1"></a>aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])</span>
-<span id="cb155-2"><a href="tidsrækker-og-arima-premium.html#cb155-2"></a>aberkshire</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tidsrækker-og-arima-premium.html#cb154-1"></a>aberkshire &lt;-<span class="st"> </span><span class="kw">auto.arima</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>[,<span class="dv">6</span>])</span>
+<span id="cb154-2"><a href="tidsrækker-og-arima-premium.html#cb154-2"></a>aberkshire</span></code></pre></div>
 <pre><code>## Series: `BRK-A`[, 6] 
-## ARIMA(5,1,4) with drift 
+## ARIMA(5,1,5) with drift 
 ## 
 ## Coefficients:
-##           ar1     ar2      ar3      ar4      ar5     ma1      ma2     ma3     ma4    drift
-##       -0.4568  0.5423  -0.1844  -0.7280  -0.0625  0.3643  -0.5252  0.2408  0.5945  49.0372
-## s.e.   0.0983  0.0826   0.0678   0.0515   0.0214  0.0975   0.0830  0.0677  0.0535  26.4649
+##           ar1     ar2      ar3     ar4     ar5     ma1     ma2     ma3      ma4      ma5    drift
+##       -0.4729  0.1762  -0.1452  0.0406  0.4951  0.3734  -0.148  0.2037  -0.1423  -0.5144  52.2880
+## s.e.      NaN     NaN      NaN     NaN     NaN     NaN     NaN     NaN      NaN      NaN  25.4644
 ## 
-## sigma^2 estimated as 4635401:  log likelihood=-47172.46
-## AIC=94366.92   AICc=94366.98   BIC=94439.02</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tidsrækker-og-arima-premium.html#cb157-1"></a>faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</span>
-<span id="cb157-2"><a href="tidsrækker-og-arima-premium.html#cb157-2"></a>faberkshire</span></code></pre></div>
+## sigma^2 estimated as 4647975:  log likelihood=-47260.84
+## AIC=94545.68   AICc=94545.74   BIC=94624.35</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tidsrækker-og-arima-premium.html#cb156-1"></a>faberkshire &lt;-<span class="st"> </span><span class="kw">forecast</span>(aberkshire)</span>
+<span id="cb156-2"><a href="tidsrækker-og-arima-premium.html#cb156-2"></a>faberkshire</span></code></pre></div>
 <pre><code>##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 5190       311005.7 308246.5 313764.9 306785.9 315225.5
-## 5191       311079.9 307353.9 314806.0 305381.5 316778.4
-## 5192       311513.0 306930.4 316095.6 304504.5 318521.5
-## 5193       312350.2 307076.3 317624.0 304284.5 320415.8
-## 5194       312086.8 306290.9 317882.7 303222.7 320950.8
-## 5195       312570.7 306278.3 318863.1 302947.3 322194.1
-## 5196       311825.2 305151.1 318499.2 301618.1 322032.2
-## 5197       311932.9 304832.9 319032.8 301074.5 322791.3
-## 5198       311622.2 304141.9 319102.4 300182.1 323062.2
-## 5199       311716.8 303825.5 319608.1 299648.1 323785.5</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tidsrækker-og-arima-premium.html#cb159-1"></a><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</span></code></pre></div>
+## 5199       327294.7 324531.8 330057.6 323069.2 331520.2
+## 5200       327118.4 323400.4 330836.4 321432.3 332804.5
+## 5201       327228.5 322636.1 331820.9 320205.0 334252.0
+## 5202       327097.5 321764.8 332430.3 318941.8 335253.2
+## 5203       326696.8 320807.5 332586.2 317689.8 335703.8
+## 5204       326820.0 320419.2 333220.9 317030.8 336609.3
+## 5205       326674.7 319860.8 333488.7 316253.8 337095.7
+## 5206       326919.9 319643.5 334196.3 315791.6 338048.2
+## 5207       326726.8 319059.1 334394.4 315000.1 338453.4
+## 5208       326736.4 318689.8 334783.0 314430.2 339042.7</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tidsrækker-og-arima-premium.html#cb158-1"></a><span class="kw">plot</span>(faberkshire,<span class="dt">main =</span> <span class="st">&quot;Berkshire adj. close&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-149-2.png" width="672" /></p>
 </div>
 </div>
@@ -981,38 +981,38 @@ Modellen afhænger altså af 2 tidligere perioder (lags) og ikke en. Man betegne
 </div>
 <p><br></p>
 <p>I Quantmod pakken ligger også mulighed for at beregne fx. dagligt, ugentligt afkast, dette gør vi vha. funktionen “periodReturn”.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="tidsrækker-og-arima-premium.html#cb160-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tidsrækker-og-arima-premium.html#cb159-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="tidsrækker-og-arima-premium.html#cb162-1"></a>apple &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">AAPL</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)  <span class="co"># Årligt Afkast 2003 til i dag</span></span>
-<span id="cb162-2"><a href="tidsrækker-og-arima-premium.html#cb162-2"></a><span class="kw">plot</span>(apple, <span class="dt">main =</span> <span class="st">&quot;Apple årligt afkast siden 2007&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="tidsrækker-og-arima-premium.html#cb161-1"></a>apple &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">AAPL</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)  <span class="co"># Årligt Afkast 2003 til i dag</span></span>
+<span id="cb161-2"><a href="tidsrækker-og-arima-premium.html#cb161-2"></a><span class="kw">plot</span>(apple, <span class="dt">main =</span> <span class="st">&quot;Apple årligt afkast siden 2007&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="tidsrækker-og-arima-premium.html#cb163-1"></a><span class="kw">auto.arima</span>(apple)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="tidsrækker-og-arima-premium.html#cb162-1"></a><span class="kw">auto.arima</span>(apple)</span></code></pre></div>
 <pre><code>## Series: apple 
 ## ARIMA(1,0,0) with non-zero mean 
 ## 
 ## Coefficients:
 ##           ar1    mean
-##       -0.5610  0.3712
-## s.e.   0.2387  0.0778
+##       -0.5364  0.3788
+## s.e.   0.2460  0.0813
 ## 
-## sigma^2 estimated as 0.2262:  log likelihood=-8.57
-## AIC=23.14   AICc=25.54   BIC=25.06</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="tidsrækker-og-arima-premium.html#cb165-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</span></code></pre></div>
+## sigma^2 estimated as 0.2389:  log likelihood=-8.93
+## AIC=23.87   AICc=26.27   BIC=25.79</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="tidsrækker-og-arima-premium.html#cb164-1"></a><span class="kw">getSymbols</span>(<span class="st">&quot;BRK-A&quot;</span>,<span class="dt">src=</span><span class="st">&#39;yahoo&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;BRK-A&quot;</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="tidsrækker-og-arima-premium.html#cb167-1"></a>berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</span>
-<span id="cb167-2"><a href="tidsrækker-og-arima-premium.html#cb167-2"></a><span class="kw">plot</span>(berkshire, <span class="dt">main =</span> <span class="st">&quot;Berkshire årligt afkast siden 2007&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="tidsrækker-og-arima-premium.html#cb166-1"></a>berkshire &lt;-<span class="st"> </span><span class="kw">periodReturn</span>(<span class="st">`</span><span class="dt">BRK-A</span><span class="st">`</span>,<span class="dt">period=</span><span class="st">&#39;yearly&#39;</span>,<span class="dt">subset=</span><span class="st">&#39;2003::&#39;</span>)</span>
+<span id="cb166-2"><a href="tidsrækker-og-arima-premium.html#cb166-2"></a><span class="kw">plot</span>(berkshire, <span class="dt">main =</span> <span class="st">&quot;Berkshire årligt afkast siden 2007&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="tidsrækker-og-arima-premium.html#cb168-1"></a><span class="kw">auto.arima</span>(berkshire)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="tidsrækker-og-arima-premium.html#cb167-1"></a><span class="kw">auto.arima</span>(berkshire)</span></code></pre></div>
 <pre><code>## Series: berkshire 
 ## ARIMA(0,0,0) with non-zero mean 
 ## 
 ## Coefficients:
 ##         mean
-##       0.0932
-## s.e.  0.0482
+##       0.0968
+## s.e.  0.0474
 ## 
-## sigma^2 estimated as 0.03502:  log likelihood=4.12
-## AIC=-4.23   AICc=-3.14   BIC=-2.95</code></pre>
+## sigma^2 estimated as 0.0338:  log likelihood=4.36
+## AIC=-4.73   AICc=-3.64   BIC=-3.45</code></pre>
 </div>
 </div>
             </section>
