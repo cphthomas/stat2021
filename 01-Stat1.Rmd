@@ -1649,7 +1649,7 @@ Vi kan altså med 99% sikkerhed sige at det gennemsnitlige dagsafkast i <span cl
 <details> 
   <summary>Spørgsmål konfidensinterval og fejlmargin</summary>
   
-Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% eller 0.0005 og en standardafvigelse på 0.6% eller 0.0006. 
+Vi har en indsamlet data for dagsafkastet i procent for en aktie på 80 vilkårlige handelsdage. Aktien har et gennemsnitligt dagsafkast i procent på 0.05% eller 0.0005 og en standardafvigelse på 0.6% eller 0.006. 
 
 **1.** Hvad bliver 95% <span class="hl">`r tippy("konfidensintervallet", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[12,2],"</h4>"))`</span> for middelværdien i <span class="hl">`r tippy("populationen", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[14,2],"</h4>"))`</span>, som er alle handelsdage for aktien?  
 
