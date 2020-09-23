@@ -8362,9 +8362,9 @@ En ARIMA(1,0,0) model kan skrives som:
 
 $$\hat{Y_t}=c + \phi Y_{t-1}$$
 
-Vi kan forklare $\hat{Y_t}$ er værdien for tidsrækken på tidspunkt $t$, ud fra en konstant $c$ plus en faktor $\phi$, der ganges på værdien for tidsrækken på tidspunkt $t-1$. For at bestemme c skal vi kende tidsrækkens sande middelværdi $\mu$ og $\phi$, disse værdier kan R beregne for os. Vi kan så beregne konstanten $c=(1-\phi)\cdot \mu$. Det betyder så at vi kan estimere fremtidige værdier tidsrækken.
+Vi kan forklare $\hat{Y_t}$ er værdien for tidsrækken på tidspunkt $t$, ud fra en konstant $c$ plus en faktor $\phi$, der ganges på værdien for tidsrækken på tidspunkt $t-1$. For at bestemme c skal vi kende tidsrækkens sande middelværdi $\mu$ og $\phi$, disse værdier kan R beregne for os. Vi kan så beregne konstanten $c=(1-\phi)\cdot \mu$. Det betyder så at vi kan estimere fremtidige værdier for tidsrækken.
 
-Vi har nu et eksempel hvor den sande middelværdi for tidsrækken er $\mu=100$ og $\phi=0.5$ for en ARIMA(1,0,0) model. Så kan vi beregne $c=(1-\phi)\cdot \mu=(1-0.5)\cdot 100=50$ er middelværdien estimeret ved den gennemsnitlige kurs. Ligningen for modellen kan så skrives som:
+Vi har nu et eksempel hvor den sande middelværdi for tidsrækken er $\mu=100$ og $\phi=0.5$ for en ARIMA(1,0,0) model. Så kan vi beregne konstanten $c=(1-\phi)\cdot \mu=(1-0.5)\cdot 100=50$. Ligningen for modellen kan så skrives som:
 
 $$\hat{Y_t}=c + \phi Y_{t-1} \Leftrightarrow \hat{Y_t}=50 + 0.5 Y_{t-1}$$
 
