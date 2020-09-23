@@ -8449,12 +8449,12 @@ Hent ARIMA23.xlsx Excel filen <a href="FILER/ARIMA23.xlsx" download>her</a>. Imp
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/293713019' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 <br>
 
-Hvis en serie er ikke-stationær, er den simpleste model en random walk uden drift.
+Hvis en serie er ikke-stationær (en der ikke nærmer sig en bestemt middelværdi), er den simpleste model en random walk uden drift.
 
 $$\hat{Y_t}-Y_{t-1}=0\Leftrightarrow \hat{Y_t}=Y_{t-1}+0$$
 Dette betyder vi bedst kan forudsige Y ved værdien perioden før.  
 
-Hvis en serie er ikke-stationær, er en random walk med drift.  
+Hvis en serie er ikke-stationær, er det en random walk med drift.  
 
 $$\hat{Y_t}-Y_{t-1}=\mu\Leftrightarrow \hat{Y_t}=Y_{t-1}+\mu$$
 Dette betyder at Y stiger konstant med $\mu$ i hver periode. Drift betyder at tidsrækken stiger konstant.  
@@ -8493,7 +8493,7 @@ auto.arima(ARIMA3)
 
 Modellen ovenfor kan skrives som:
 $$\hat{Y_t}-Y_{t-1}=\mu\Leftrightarrow \hat{Y_t}-Y_{t-1}=7.9\Leftrightarrow \hat{Y_t}=Y_{t-1}+7.9$$
-Vi indsætter drift i stedet for $\mu$, tolningen er at modellen forudsiger at aktiekursen stiger med 7.9 fra periode til periode.
+Vi indsætter drift i stedet for $\mu$, tolkningen er at modellen forudsiger at aktiekursen stiger med 7.9 fra periode til periode.
 
 
 Hvis vi har en ren random walk model uden drift dvs. med $\mu=0$ ARIMA(0,1,0) for en aktiekurs , forventer vi at kursen til tid t vil være den samme som til tid t-1. Denne kan skrives som:
