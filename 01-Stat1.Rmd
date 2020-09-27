@@ -8758,7 +8758,7 @@ pacman::p_load(quantmod, forecast, rio)
 # getSymbols("GOOG",from = "2017-01-01", to = Sys.Date(),getSymbols.warning4.0=FALSE)
 agoog <- auto.arima(GOOG[,6])
 fagoog <- forecast(agoog)
-export(list(GOOG,fagoog),"FILER/google.xlsx") #Skriver filen google.xlsx til arbejdsbiblioteket.
+export(list(GOOG,fagoog),"google.xlsx") #Skriver filen google.xlsx til arbejdsbiblioteket.
 ```
 
 

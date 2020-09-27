@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2020-09-23" />
+<meta name="date" content="2020-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -525,27 +525,27 @@ Please Wait…
 <p>Vi får nu R til at danne klynger vha. af hclust (hierarcical cluster) kommandoen, denne benytter default en metode der hedder complete til at finde ens klynger, der findes mange andre metoder. For at benytte hclust skal R først beregne afstandene mellem bilerne dette gøres med dist kommandoen. Algoritmen beregner afstandene mellem de forskellige bilmodeller vha. af den euklidiske metrik. Biler med kort afstand kommer i klynger sammen, biler med lang afstand kommer i forskellige klynger.</p>
 <p>Nedenfor ses et udsnit af afstandende mellem hver af de 32 biler, det er en meget stor 32 <span class="math inline">\(\times\)</span> 32 matrice, derfor har vi benyttet head for kun at vise noget af matricen. Fx er afstanden mellem to forskellige biler som en Mazda RX4 og en Lincoln Continental 318.05 hvilket er en stor afstand i forhold til fx. Mazda RX4 og Mazda RX4 Wag på kun 0.62. Bemærk hvordan supersportsvognen Maserati Bora har store afstande til de fleste af de øvrige biler, Maseratien var en komfortabel, rummeligere og kraftigere og tungere sportsvogn end fx. Ferrari Dino.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="klyngeanalyse-premium.html#cb50-1"></a><span class="kw">head</span>(<span class="kw">as.matrix</span>(<span class="kw">dist</span>(mtcars)))</span></code></pre></div>
-<pre><code>##                     Mazda RX4 Mazda RX4 Wag Datsun 710 Hornet 4 Drive Hornet Sportabout   Valiant Duster 360 Merc 240D  Merc 230  Merc 280 Merc 280C Merc 450SE Merc 450SL Merc 450SLC
-## Mazda RX4           0.0000000     0.6153251   54.90861       98.11252          210.3374  65.47177  241.40765  50.15327  25.46831  15.36419  15.67247  135.43070  135.40144   135.47947
-## Mazda RX4 Wag       0.6153251     0.0000000   54.89152       98.09589          210.3359  65.43922  241.40887  50.11461  25.32845  15.29569  15.58377  135.42548  135.39604   135.47232
-## Datsun 710         54.9086059    54.8915169    0.00000      150.99352          265.0832 117.75470  294.47902  49.65848  33.18038  66.93635  67.02614  189.19549  189.16317   189.23454
-## Hornet 4 Drive     98.1125212    98.0958939  150.99352        0.00000          121.0298  33.55087  169.42996 121.27397 118.24331  91.42240  91.46129   72.49643   72.43135    72.57185
-## Hornet Sportabout 210.3374396   210.3358546  265.08316      121.02976            0.0000 152.12414   70.17673 241.50697 233.49240 199.33450 199.34066   84.38885   84.36840    84.43324
-## Valiant            65.4717710    65.4392224  117.75470       33.55087          152.1241   0.00000  194.60945  89.59111  85.00796  60.29098  60.26557   90.69703   90.67697    90.70930
-##                   Cadillac Fleetwood Lincoln Continental Chrysler Imperial  Fiat 128 Honda Civic Toyota Corolla Toyota Corona Dodge Challenger AMC Javelin Camaro Z28 Pontiac Firebird Fiat X1-9
-## Mazda RX4                   326.3396            318.0470         304.72034  93.26800   102.83076       100.6040      42.30752        163.11508   149.60472  233.22288        248.67803  92.50484
-## Mazda RX4 Wag               326.3355            318.0429         304.71692  93.25310   102.82387       100.5888      42.26592        163.11342   149.60145  233.22487        248.67620  92.49400
-## Datsun 710                  381.0926            372.8012         359.30149  40.99338    52.77046        47.6535      12.96547        217.77958   204.31889  286.00492        303.35839  39.88151
-## Hornet 4 Drive              234.4404            227.9726         218.15483 184.96897   191.55187       192.6714     138.53047         72.44039    61.36019  163.66326        156.22403 184.44712
-## Hornet Sportabout           116.2804            108.0624          97.20491 302.03772   310.03246       309.5582     252.33320         48.98389    61.42742   70.96653         40.00525 301.56695
-## Valiant                     266.6281            259.6304         248.77133 152.11533   158.96158       159.8303     105.28764        103.43107    91.04443  187.84638        188.52721 151.43794
-##                   Porsche 914-2 Lotus Europa Ford Pantera L Ferrari Dino Maserati Bora Volvo 142E
-## Mazda RX4              44.40337     65.73284       245.4247     66.76610      265.6454   39.18940
-## Mazda RX4 Wag          44.40736     65.73626       245.4294     66.77642      265.6491   39.16260
-## Datsun 710             13.13571     25.09486       297.2940     90.24155      309.7718   20.69394
-## Hornet 4 Drive        139.15795    163.23674       180.1140    130.55230      229.3419  137.03633
-## Hornet Sportabout     254.14526    272.35824        89.5934    215.06739      170.7094  248.00634
-## Valiant               106.05858    130.82482       203.0178    106.56948      242.4393  104.18637</code></pre>
+<pre><code>##                     Mazda RX4 Mazda RX4 Wag Datsun 710 Hornet 4 Drive Hornet Sportabout   Valiant Duster 360 Merc 240D  Merc 230  Merc 280 Merc 280C Merc 450SE
+## Mazda RX4           0.0000000     0.6153251   54.90861       98.11252          210.3374  65.47177  241.40765  50.15327  25.46831  15.36419  15.67247  135.43070
+## Mazda RX4 Wag       0.6153251     0.0000000   54.89152       98.09589          210.3359  65.43922  241.40887  50.11461  25.32845  15.29569  15.58377  135.42548
+## Datsun 710         54.9086059    54.8915169    0.00000      150.99352          265.0832 117.75470  294.47902  49.65848  33.18038  66.93635  67.02614  189.19549
+## Hornet 4 Drive     98.1125212    98.0958939  150.99352        0.00000          121.0298  33.55087  169.42996 121.27397 118.24331  91.42240  91.46129   72.49643
+## Hornet Sportabout 210.3374396   210.3358546  265.08316      121.02976            0.0000 152.12414   70.17673 241.50697 233.49240 199.33450 199.34066   84.38885
+## Valiant            65.4717710    65.4392224  117.75470       33.55087          152.1241   0.00000  194.60945  89.59111  85.00796  60.29098  60.26557   90.69703
+##                   Merc 450SL Merc 450SLC Cadillac Fleetwood Lincoln Continental Chrysler Imperial  Fiat 128 Honda Civic Toyota Corolla Toyota Corona Dodge Challenger
+## Mazda RX4          135.40144   135.47947           326.3396            318.0470         304.72034  93.26800   102.83076       100.6040      42.30752        163.11508
+## Mazda RX4 Wag      135.39604   135.47232           326.3355            318.0429         304.71692  93.25310   102.82387       100.5888      42.26592        163.11342
+## Datsun 710         189.16317   189.23454           381.0926            372.8012         359.30149  40.99338    52.77046        47.6535      12.96547        217.77958
+## Hornet 4 Drive      72.43135    72.57185           234.4404            227.9726         218.15483 184.96897   191.55187       192.6714     138.53047         72.44039
+## Hornet Sportabout   84.36840    84.43324           116.2804            108.0624          97.20491 302.03772   310.03246       309.5582     252.33320         48.98389
+## Valiant             90.67697    90.70930           266.6281            259.6304         248.77133 152.11533   158.96158       159.8303     105.28764        103.43107
+##                   AMC Javelin Camaro Z28 Pontiac Firebird Fiat X1-9 Porsche 914-2 Lotus Europa Ford Pantera L Ferrari Dino Maserati Bora Volvo 142E
+## Mazda RX4           149.60472  233.22288        248.67803  92.50484      44.40337     65.73284       245.4247     66.76610      265.6454   39.18940
+## Mazda RX4 Wag       149.60145  233.22487        248.67620  92.49400      44.40736     65.73626       245.4294     66.77642      265.6491   39.16260
+## Datsun 710          204.31889  286.00492        303.35839  39.88151      13.13571     25.09486       297.2940     90.24155      309.7718   20.69394
+## Hornet 4 Drive       61.36019  163.66326        156.22403 184.44712     139.15795    163.23674       180.1140    130.55230      229.3419  137.03633
+## Hornet Sportabout    61.42742   70.96653         40.00525 301.56695     254.14526    272.35824        89.5934    215.06739      170.7094  248.00634
+## Valiant              91.04443  187.84638        188.52721 151.43794     106.05858    130.82482       203.0178    106.56948      242.4393  104.18637</code></pre>
 <p>Vi gemmer hclust data i clusters variablen, vi så kan benytte til at tegne en oversigt over klyngerne.
 Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fineste inddeling, hvor samtlige biler er i deres egen klynge. Den blå linje med 3 skæringer i dendogrammet indikerer der er 3 klynger, den røde 4 klynger.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="klyngeanalyse-premium.html#cb52-1"></a>clusters &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(mtcars))</span>
@@ -556,14 +556,14 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <p>Hvis vi ønsker at undersøge en indeling med et bestemt antal klynger, kan vi bruge cutree i R, til at undersøge klyngerne i en skæring med fx. 4 klynger nærmere. Her ser vi som nævnt, Maserati Bora skiller sig ud ved at have sin egen klynge. Nummeret ved hver af de 32 biler angiver hvilken klynge bilen tilhører.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="klyngeanalyse-premium.html#cb53-1"></a>clusterCut &lt;-<span class="st"> </span><span class="kw">cutree</span>(clusters, <span class="dv">4</span>) <span class="co">#Opdeling i 4 klynger.</span></span>
 <span id="cb53-2"><a href="klyngeanalyse-premium.html#cb53-2"></a>clusterCut</span></code></pre></div>
-<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout             Valiant          Duster 360           Merc 240D            Merc 230            Merc 280 
-##                   1                   1                   1                   2                   3                   2                   3                   1                   1                   1 
-##           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
-##                   1                   2                   2                   2                   3                   3                   3                   1                   1                   1 
-##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   1                   2                   2                   3                   3                   1                   1                   1                   3                   1 
-##       Maserati Bora          Volvo 142E 
-##                   4                   1</code></pre>
+<pre><code>##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##                   1                   1                   1                   2                   3                   2                   3                   1 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##                   1                   1                   1                   2                   2                   2                   3                   3 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##                   3                   1                   1                   1                   1                   2                   2                   3 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##                   3                   1                   1                   1                   3                   1                   4                   1</code></pre>
 <p>Vi kan benytte subset kommandoen til at se på hvilke variable der er i hver klynge, herunder ser vi på klynge 3.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="klyngeanalyse-premium.html#cb55-1"></a><span class="kw">subset</span>(clusterCut,clusterCut<span class="op">==</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##   Hornet Sportabout          Duster 360  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial          Camaro Z28    Pontiac Firebird      Ford Pantera L 
@@ -628,27 +628,27 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <p>Vi kunne også have brugt kmeans metoden, her skal vi så angive hvor mange klynger, vi ønsker i analysen. Her benytter vi K-means og får 4 klynger med 7, 6, 9, 10 biler. I output fra R kan vi under Cluster means se gennemsnit, for de 4 klynger for alle 11 variable.</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="klyngeanalyse-premium.html#cb69-1"></a>mtcarsCluster4 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">4</span>)</span>
 <span id="cb69-2"><a href="klyngeanalyse-premium.html#cb69-2"></a>mtcarsCluster4</span></code></pre></div>
-<pre><code>## K-means clustering with 4 clusters of sizes 4, 7, 10, 11
+<pre><code>## K-means clustering with 4 clusters of sizes 11, 10, 4, 7
 ## 
 ## Cluster means:
 ##        mpg cyl     disp        hp     drat       wt     qsec        vs        am     gear     carb
-## 1 13.67500   8 443.0000 206.25000 3.060000 4.966000 17.56750 0.0000000 0.0000000 3.000000 3.500000
-## 2 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286 0.4285714 3.857143 3.428571
-## 3 15.67000   8 317.1400 210.40000 3.297000 3.612500 16.45400 0.0000000 0.2000000 3.400000 3.500000
-## 4 26.66364   4 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909 0.7272727 4.090909 1.545455
+## 1 26.66364   4 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909 0.7272727 4.090909 1.545455
+## 2 15.67000   8 317.1400 210.40000 3.297000 3.612500 16.45400 0.0000000 0.2000000 3.400000 3.500000
+## 3 13.67500   8 443.0000 206.25000 3.060000 4.966000 17.56750 0.0000000 0.0000000 3.000000 3.500000
+## 4 19.74286   6 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286 0.4285714 3.857143 3.428571
 ## 
 ## Clustering vector:
-##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout             Valiant          Duster 360           Merc 240D            Merc 230            Merc 280 
-##                   2                   2                   4                   2                   3                   2                   3                   4                   4                   2 
-##           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla 
-##                   2                   3                   3                   3                   1                   1                   1                   4                   4                   4 
-##       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino 
-##                   4                   3                   3                   3                   1                   4                   4                   4                   3                   2 
-##       Maserati Bora          Volvo 142E 
-##                   3                   4 
+##           Mazda RX4       Mazda RX4 Wag          Datsun 710      Hornet 4 Drive   Hornet Sportabout             Valiant          Duster 360           Merc 240D 
+##                   4                   4                   1                   4                   2                   4                   2                   1 
+##            Merc 230            Merc 280           Merc 280C          Merc 450SE          Merc 450SL         Merc 450SLC  Cadillac Fleetwood Lincoln Continental 
+##                   1                   4                   4                   2                   2                   2                   3                   3 
+##   Chrysler Imperial            Fiat 128         Honda Civic      Toyota Corolla       Toyota Corona    Dodge Challenger         AMC Javelin          Camaro Z28 
+##                   3                   1                   1                   1                   1                   2                   2                   2 
+##    Pontiac Firebird           Fiat X1-9       Porsche 914-2        Lotus Europa      Ford Pantera L        Ferrari Dino       Maserati Bora          Volvo 142E 
+##                   3                   1                   1                   1                   2                   4                   2                   1 
 ## 
 ## Within cluster sum of squares by cluster:
-## [1]  4665.041 13954.336 43649.519 11848.370
+## [1] 11848.370 43649.519  4665.041 13954.336
 ##  (between_SS / total_SS =  88.1 %)
 ## 
 ## Available components:
@@ -658,18 +658,18 @@ Vi kan nu plotte en grafisk oversigt over bilerne. I nederste linje er den fines
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="klyngeanalyse-premium.html#cb71-1"></a><span class="kw">table</span>(mtcarsCluster4<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</span></code></pre></div>
 <pre><code>##    
 ##      4  6  8
-##   1  0  0  4
-##   2  0  7  0
-##   3  0  0 10
-##   4 11  0  0</code></pre>
+##   1 11  0  0
+##   2  0  0 10
+##   3  0  0  4
+##   4  0  7  0</code></pre>
 <p>Nedenfor ser vi på en tabel inddeling med 3 klynger med de 32 biler, sorteret efter antallet af cylindre. Kører vi kmeans analysen igen, falder bilerne ikke nødvendigvis i samme klynger som tidligere, det skyldes algoritmen kan give forskellig optimale inddelinger.</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="klyngeanalyse-premium.html#cb73-1"></a>mtcarsCluster3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(mtcars, <span class="dv">3</span>)</span>
 <span id="cb73-2"><a href="klyngeanalyse-premium.html#cb73-2"></a><span class="kw">table</span>(mtcarsCluster3<span class="op">$</span>cluster, mtcars<span class="op">$</span>cyl)</span></code></pre></div>
 <pre><code>##    
 ##      4  6  8
-##   1 11  5  0
-##   2  0  0  9
-##   3  0  2  5</code></pre>
+##   1  0  0 14
+##   2 11  0  0
+##   3  0  7  0</code></pre>
 <p>Vi kan lave et klyngeplot der viser forskellene på de 32 biler, herunder ses plottet med 3 klynger. Bemærk vi skal hente pakken <strong>factoextra</strong>, der indeholder plotfunktionen fviz_cluster(). Vi har benyttet funktionen <strong>scale()</strong>, det er en rigtig god ide at benytte hvis, der er stor forskel på måleenhederne i en data.frame. Funktionen <strong>scale()</strong> bringer variablene i samme skale. Der er fx. stor forskel på enhederne i carb og disp, prøv at sammenligne nedenstående plot med et tilsvarende plot uden scale.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="klyngeanalyse-premium.html#cb75-1"></a>km3.res &lt;-<span class="st"> </span><span class="kw">kmeans</span>(<span class="kw">scale</span>(mtcars), <span class="dv">3</span>, <span class="dt">nstart =</span> <span class="dv">25</span>)</span>
 <span id="cb75-2"><a href="klyngeanalyse-premium.html#cb75-2"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(factoextra)</span>
@@ -748,9 +748,9 @@ Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres, der e
 <br>
 <details>
 <p><summary>Spørgsmål Forbes 100 US</summary></p>
-<p>Download filen om de 100 rigeste i USA <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære <span class="hl"><span id="htmlwidget-6e1fdffc233e6a12fcf8" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-6e1fdffc233e6a12fcf8">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>\n  <i>Hvilket kæledyr har du?<br>\n  {hund, kat, hund, kat, hund, marsvinkat,...}<br>\n  Hvilket parti vil du stemme på?<br>\n  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikale,... etc.}<br>\n  Hvad er din primære bankforbindelse?<br>\n  {Danske Bank, Nordea, Jyske Bank,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvalitative variable!<\/a><\/h4>","text":"kvalitative"},"evals":[],"jsHooks":[]}</script></span> variable er kodet om til <span class="hl"><span id="htmlwidget-602c3ad8d074a951c218" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-602c3ad8d074a951c218">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En Dummy variabel, er en variabel, der kun kan antage værdierne 0 og 1.<br><i>\nVi bruger dummy variable i lineær regression, når vi ønsker at have en kvalitativ variabel med i den kvantitative regressionsanalyse. Vi siger variablen er i basis når den er slukket dvs. lig med 0, variablen er tændt når den antager værdien 1.<br>\nEn kvalitativ binær variabel som køn, kan kodes til fx. <b>Dummy Mand<\/b>, så er den tændt dvs. 1, når respondenten er en mand, og i basis når det er en kvinde dvs. 0.<br>\nMan kan også kode variablen som <b>Dummy Kvinde<\/b>, med mand i basis, dvs. når variablen er slukket, er der tale om en mand.<br>\nKvalitative variable, der ikke er binære, som fx. ugedag, kan også kodes som som dummy variable. Når ugedag skal kodes som dummy variable, får man 6 dummyvariable. Man skal vælge en basis, fx. mandag, så får man dummyvariablene:<br>\n<b>Dummy Tirsdag<\/b>, <b>Dummy Onsdag<\/b>, <b>Dummy Torsdag<\/b>, <b>Dummy Fredag<\/b>, <b>Dummy Lørsdag<\/b> og <b>Dummy Søndag<\/b>.<br>\nNår de 6 dummy variable er slukket, er det så mandag, højst 1 dummy kan være tændt ad gangen.<br><br>\n<\/i>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#dummy-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om dummy variable!<\/a>\n<\/h4>","text":"dummy variable"},"evals":[],"jsHooks":[]}</script></span>.</p>
+<p>Download filen om de 100 rigeste i USA <a href="FILER/Forbes100.xlsx" download>her</a>. Filen er tilrettet, dvs. binære <span class="hl"><span id="htmlwidget-3157f0bfa71c6200d4e7" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-3157f0bfa71c6200d4e7">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En kvalitativ variabel, er typisk en ikke numerisk variabel, hvor vi ikke kan beregne gennemsnit, fraktiler osv., her giver det kun mening at beregne andele fx.<br>\n  <i>Hvilket kæledyr har du?<br>\n  {hund, kat, hund, kat, hund, marsvinkat,...}<br>\n  Hvilket parti vil du stemme på?<br>\n  {Socialdemokratiet, Konservative, Venstre, Venstre, Radikale,... etc.}<br>\n  Hvad er din primære bankforbindelse?<br>\n  {Danske Bank, Nordea, Jyske Bank,...}<\/i><br><br>\n  <a href=\"https://s.tepedu.dk/datast-og-data.html#kvantitative-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om kvalitative variable!<\/a><\/h4>","text":"kvalitative"},"evals":[],"jsHooks":[]}</script></span> variable er kodet om til <span class="hl"><span id="htmlwidget-0d34aecd04ab43cbcb8c" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-0d34aecd04ab43cbcb8c">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>En Dummy variabel, er en variabel, der kun kan antage værdierne 0 og 1.<br><i>\nVi bruger dummy variable i lineær regression, når vi ønsker at have en kvalitativ variabel med i den kvantitative regressionsanalyse. Vi siger variablen er i basis når den er slukket dvs. lig med 0, variablen er tændt når den antager værdien 1.<br>\nEn kvalitativ binær variabel som køn, kan kodes til fx. <b>Dummy Mand<\/b>, så er den tændt dvs. 1, når respondenten er en mand, og i basis når det er en kvinde dvs. 0.<br>\nMan kan også kode variablen som <b>Dummy Kvinde<\/b>, med mand i basis, dvs. når variablen er slukket, er der tale om en mand.<br>\nKvalitative variable, der ikke er binære, som fx. ugedag, kan også kodes som som dummy variable. Når ugedag skal kodes som dummy variable, får man 6 dummyvariable. Man skal vælge en basis, fx. mandag, så får man dummyvariablene:<br>\n<b>Dummy Tirsdag<\/b>, <b>Dummy Onsdag<\/b>, <b>Dummy Torsdag<\/b>, <b>Dummy Fredag<\/b>, <b>Dummy Lørsdag<\/b> og <b>Dummy Søndag<\/b>.<br>\nNår de 6 dummy variable er slukket, er det så mandag, højst 1 dummy kan være tændt ad gangen.<br><br>\n<\/i>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html#dummy-variable\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om dummy variable!<\/a>\n<\/h4>","text":"dummy variable"},"evals":[],"jsHooks":[]}</script></span>.</p>
 <p>Undersøg om der kan dannes klynger og hvorledes disse kan karakteriseres. Illustrer grafisk og kommenter på karakteristika for klyngerne.</p>
 <p>Bemærk det er godt at sætte navnene på de velhavende som rækkenavne i din data.frame, for at det er nemmere at få et overblik i klyngetræ diagrammet, dette kan du fx. gøre som nedenfor:</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="klyngeanalyse-premium.html#cb81-1"></a><span class="kw">row.names</span>(Forbes100) &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Forbes100[,<span class="dv">1</span>])</span>
