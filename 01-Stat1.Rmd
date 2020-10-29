@@ -6356,7 +6356,7 @@ Vi ser nu at der synes at være større sandsynlighed for dødsdom for sorte end
 <details>
   <summary>Spørgsmål utroskab og skolegang</summary>
 
-Herunder er angivet tro og utro personer delt på Uddannelsesniveau. Data stammer fra en kendt amerikansk undersøgelse om utroskab fra 1969. Man har interviewet 601 respondenter om religiøsitet, antal affærer uddannelsesniveau etc.
+Herunder er angivet tro og utro personer fordelt på højest gennemførte uddannelsesniveau. Data stammer fra en kendt amerikansk undersøgelse om utroskab fra 1969. Man har interviewet 601 respondenter om religiøsitet, antal affærer uddannelsesniveau etc.
 
 Uddannelseniveauet er stigende, hvor Grundskole er lavest og Phd højest. KVU betyder kortere videregående uddannelse.
 
@@ -6399,18 +6399,72 @@ kable(utros)%>%
 
 **12.** Når man er tro, hvad er da sandsynligheden for, at man har en Phd?  
 
+</details>
+<br>
+<details>
+
+  <summary>Svar utroskab og skolegang</summary>
+
+**1.** Hvad er sandsynligheden for at man er utro?  
+
+Der er 451 utro ud af 601 respondenter 451/601 = 75,04% 
+
+**2.** Hvad er sandsynligheden for man er tro?   
+
+Der er 150 utro ud af 601 respondenter 150/601 = 24,96%  
 
 
+**3.** Hvad er sandsynligheden for at man er utro eller tro?  
+
+Der er 601 utro eller tro ud af 601 respondenter 601/601 = 100%    
 
 
+**4.** Hvad er sandsynligheden for at man er utro og tro?  
+
+Der er 0 utro og tro ud af 601 respondenter 0/601 = 0%      
+
+**5.** Hvad er sandsynligheden for at man er utro, givet man har en Phd?  
 
 
+Vi ser kun på respondenter med en Phd, der er 60 utro ud af 80 Phd'ere 60/80 = 75%.  
+
+**6.** Hvad er sandsynligheden for at man har en Phd?  
+Der er 80 ud af 601 respondenter med en Phd, 80/601 = 13,31%  
 
 
+**7.** Hvad er sandsynligheden for at man har en Phd eller Kandidatgrad og er tro?  
 
+Vi ser på tro Phd'ere og kandidater der er 33 + 20 = 53, vi betinger ikke med noget så det er ud af alle respondenter. 53/601 = 8,82%  
+
+**8.** Hvad er sandsynligheden for at man har en Phd, når man er tro?  
+
+Vi betinger med tro, så vi ser kun på de 150 tro, ud af dem er 20 Phd'ere. 20/150 = 13,33%  
+
+**9.** Hvad er sandsynligheden for at man har en Phd eller Kandidatgrad, når man er tro?  
+
+Vi betinger med tro, så vi ser kun på de 150 tro, ud af dem er 53 Phd'ere eller kandidater. 53/150 = 35,33%    
+
+
+**10.** Hvad er sandsynligheden for at man har en Phd og Kandidatgrad, givet man er tro?  
+
+Dette er samme spørgsmål som spørgsmål 9. Vi betinger med tro, så vi ser kun på de 150 tro, ud af dem er 53 Phd'ere eller kandidater. 53/150 = 35,33%
+
+**11.** Når man er utro, hvad er da sandsynligheden for, at man har en Kandidatgrad?  
+
+Vi betinger med utro, så vi ser kun på de 451 utro, ud af dem er 79 kandidater. 79/451 = 17,52%
+
+**12.** Når man er tro, hvad er da sandsynligheden for, at man har en Phd?  
+
+Dette er samme spørgsmål som spørgsmål 8. Vi betinger med tro, så vi ser kun på de 150 tro, ud af dem er 20 kandidater. 20/150 = 13,33%
 
 
 </details>
+
+
+
+
+
+
 <br>
 <!-- <details>  -->
 <!--   <summary>Svar utroskab og skolegang</summary> -->

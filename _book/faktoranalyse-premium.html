@@ -24,7 +24,7 @@
 <meta name="author" content="Thomas Petersen" />
 
 
-<meta name="date" content="2020-09-27" />
+<meta name="date" content="2020-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -709,10 +709,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret p√• i hvor h√
 ## Call: KMO(r = personality)
 ## Overall MSA =  0.84
 ## MSA for each item = 
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi 
-##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79    0.86    0.75    0.87    0.89    0.87    0.84    0.85    0.86    0.87    0.81    0.86 
-## contrar sociabl    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##    0.83    0.90    0.89    0.83    0.87    0.78    0.87    0.81    0.73    0.90    0.89    0.78</code></pre>
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##    0.88    0.86    0.82    0.87    0.82    0.73    0.84    0.81    0.79    0.86    0.75    0.87    0.89    0.87 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##    0.84    0.85    0.86    0.87    0.81    0.86    0.83    0.90    0.89    0.83    0.87    0.78    0.87    0.81 
+## laidbck withdrw givinup easygon 
+##    0.73    0.90    0.89    0.78</code></pre>
 <p>Vi gennemf√∏rer klart analysen viser begge tests.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="faktoranalyse-premium.html#cb36-1"></a><span class="co">#cor(personality) korrelationsmatricen er udeladt af pladshensyn.</span></span>
 <span id="cb36-2"><a href="faktoranalyse-premium.html#cb36-2"></a><span class="kw">corrplot</span>(<span class="kw">cor</span>(personality), <span class="dt">order =</span> <span class="st">&quot;hclust&quot;</span>, <span class="dt">tl.col=</span><span class="st">&#39;black&#39;</span>, <span class="dt">tl.cex=</span>.<span class="dv">5</span>)</span></code></pre></div>
@@ -721,8 +723,9 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret p√• i hvor h√
 <p><img src="_main_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="faktoranalyse-premium.html#cb38-1"></a>evp &lt;-<span class="st"> </span><span class="kw">eigen</span>(<span class="kw">cor</span>(personality))</span>
 <span id="cb38-2"><a href="faktoranalyse-premium.html#cb38-2"></a>evp<span class="op">$</span>values</span></code></pre></div>
-<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636 0.8553802 0.7968460 0.7128793 0.6936229 0.6396893 0.6277046 0.5399600 0.5074253 0.4719721
-## [17] 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941 0.3696839 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
+<pre><code>##  [1] 7.2407068 4.5250901 3.1240573 2.3335890 1.8783611 1.1940636 0.9268636 0.8553802 0.7968460 0.7128793 0.6936229
+## [12] 0.6396893 0.6277046 0.5399600 0.5074253 0.4719721 0.4639916 0.4455816 0.4376430 0.4135706 0.3906941 0.3696839
+## [23] 0.3273829 0.3014077 0.2940833 0.2800131 0.2522101 0.2349649 0.2199461 0.2011492 0.1658493 0.1336176</code></pre>
 <p>Vi benytter her 7 faktorer:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="faktoranalyse-premium.html#cb40-1"></a>fapers7 &lt;-<span class="st"> </span><span class="kw">factanal</span>(personality,<span class="dv">7</span>)</span>
 <span id="cb40-2"><a href="faktoranalyse-premium.html#cb40-2"></a>fapers7</span></code></pre></div>
@@ -731,10 +734,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret p√• i hvor h√
 ## factanal(x = personality, factors = 7)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi 
-##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512   0.390   0.181   0.251   0.640   0.387   0.478   0.517   0.560   0.377   0.388   0.411 
-## contrar sociabl    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##   0.392   0.367   0.421   0.528   0.284   0.229   0.562   0.663   0.248   0.362   0.557   0.549 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##   0.529   0.377   0.491   0.416   0.347   0.576   0.273   0.416   0.512   0.390   0.181   0.251   0.640   0.387 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##   0.478   0.517   0.560   0.377   0.388   0.411   0.392   0.367   0.421   0.528   0.284   0.229   0.562   0.663 
+## laidbck withdrw givinup easygon 
+##   0.248   0.362   0.557   0.549 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7
@@ -787,10 +792,12 @@ Hent nu filen personality, hvor 240 Stanford studerende har svaret p√• i hvor h√
 ## factanal(x = personality, factors = 8)
 ## 
 ## Uniquenesses:
-## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy discipl   harsh persevr friendl worryin respnsi 
-##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533   0.417   0.170   0.257   0.649   0.364   0.490   0.468   0.497   0.333   0.347   0.420 
-## contrar sociabl    lazy coopera   quiet organiz criticl     lax laidbck withdrw givinup easygon 
-##   0.391   0.365   0.420   0.502   0.276   0.236   0.565   0.682   0.005   0.367   0.550   0.580 
+## distant talkatv carelss hardwrk anxious agreebl   tense    kind opposng relaxed disorgn outgoin approvn     shy 
+##   0.534   0.375   0.484   0.425   0.342   0.204   0.263   0.439   0.533   0.417   0.170   0.257   0.649   0.364 
+## discipl   harsh persevr friendl worryin respnsi contrar sociabl    lazy coopera   quiet organiz criticl     lax 
+##   0.490   0.468   0.497   0.333   0.347   0.420   0.391   0.365   0.420   0.502   0.276   0.236   0.565   0.682 
+## laidbck withdrw givinup easygon 
+##   0.005   0.367   0.550   0.580 
 ## 
 ## Loadings:
 ##         Factor1 Factor2 Factor3 Factor4 Factor5 Factor6 Factor7 Factor8
