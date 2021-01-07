@@ -8878,9 +8878,12 @@ auto.arima(berkshire)
 
 
 # Podcasts
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
+
+
 
 <a class="spreaker-player" href="https://www.spreaker.com/show/podcasttest" data-resource="episode_id=19329268" data-width="100%" data-height="350px" data-theme="light" data-playlist="show" data-playlist-continuous="true" data-autoplay="false" data-live-autoplay="false" data-chapters-image="true" data-episode-image-position="right" data-hide-logo="true" data-hide-likes="true" data-hide-comments="true" data-hide-sharing="true" data-hide-download="true" data-cover="https://d1bm3dmew779uf.cloudfront.net/cover/d5017152600a05ebfa8db1f83d96e1cb.jpg"> "Statistik podcasts" </a>
 
