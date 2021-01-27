@@ -14,12 +14,12 @@ pacman::p_load(Cairo,timeDate, DT,plotly,rio,exams,e1071,WriteXLS,readxl,maps,kn
 ```
 
 # Indledning 
-		
-```{r, echo=FALSE, results='asis',warning=FALSE,include=FALSE}
-cat(readLines('np.html'))
-source("indeks.R")
-```
-			
+
+<!-- ```{r, echo=FALSE, results='asis',warning=FALSE,include=FALSE} -->
+<!-- cat(readLines('np.html')) -->
+<!-- source("indeks.R") -->
+<!-- ``` -->
+
 
 <!-- ```{r} -->
 <!-- boble <- function(navn,nr){ -->
@@ -95,9 +95,9 @@ Denne online bog rettes og opdateres løbende med nye videoer opgaver og quizzes
 
 # Datasæt  og data
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -214,9 +214,9 @@ Kontinuerte variable er fx.
 
 # Deskriptiv statistik
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -853,9 +853,9 @@ Hvorfor kan en portefølje, der ikke er volatil (dvs. porteføljen har en lille 
 
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -1514,9 +1514,9 @@ legend("topright", legend=c("z-fordelingen","t-fordelingen df 5","t-fordelingen 
 # Konfidensintervaller
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -1798,9 +1798,9 @@ Vi kan ligeledes se på data for bankansatte betragt variablen gennemsnitligt an
 
 # Hypotesetests middelværdi  
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -2629,9 +2629,9 @@ Du kan hente løsningen til opgaven <a href="https://drive.google.com/uc?export=
 
 # 1 Andel
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -3345,9 +3345,9 @@ Vi konkluderer at 50% af bankens sikkerhedspersonale er minoriteter.
 # 2 andele
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -3863,9 +3863,9 @@ frameborder="0">
 
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -4247,9 +4247,9 @@ frameborder="0">
 
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -4409,9 +4409,9 @@ Fordi Alder beregnes direkte ud fra 2014 - produktionsår, derfor er Alder år a
 
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -5605,9 +5605,9 @@ Vi kan altså afvise at hældningen $\beta$ er nul, hvilket betyder DAX afkastet
 # <font color="red">Binomialfordelingen<sup> Premium </font></sup>
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -5799,9 +5799,9 @@ $$SD(X)=\sqrt[]{n\cdot p \cdot (1-p)}$$
 
 # <font color="red">Den hypergeometriske fordeling<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -5952,9 +5952,9 @@ Output fra Freestat bliver:
 # <font color="red">Poisson fordelingen<sup> Premium </font></sup>
 
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 Poisson fordelingen er en <span class="hl">`r tippy("diskret", size="large" ,interactive = TRUE, arrow = TRUE, tooltip = paste0("<h4>",indeks[3,2],"</h4>"))`</span> sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer i tid eller rum. Fx.
@@ -6053,9 +6053,9 @@ $$P(X\geq 1)=1-P(X=0)=1-0.1353=0.8647$$
 
 # <font color="red">Stikprøveteori<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -6177,9 +6177,9 @@ Herunder er en videoløsning til opgaven:
 
 # Sandsynligheder
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -6478,9 +6478,9 @@ Dette er samme spørgsmål som spørgsmål 8. Vi betinger med tro, så vi ser ku
 
 # Chi i anden tests
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('np.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('np.html')) -->
+<!-- ``` -->
 
 
 
@@ -7219,9 +7219,9 @@ data <- data.frame(Pris, Software, Æstetik, Brand, Venner, Familie)
 
 # <font color="red">ANOVA<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -7602,9 +7602,9 @@ Vi kan ud fra boxplots se at dokumentarfilm rates højt i modsætning til action
 
 # <font color="red">Cran R<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -7668,9 +7668,9 @@ Herunder er 3 begynder videotutorials forsøg at gøre det samme som i videoerne
 
 # <font color="red">Faktoranalyse<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -7991,9 +7991,9 @@ Gennemfør en faktor analyse på datasættet.
 
 # <font color="red">Klyngeanalyse<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
@@ -8275,9 +8275,9 @@ plot(clusters,cex=0.5,main = "US 100 Rigeste",xlab = "Klyngetræ",sub="US top 10
 
 # <font color="red">Tidsrækker og ARIMA<sup> Premium </font></sup>
 
-```{r, echo=FALSE, results='asis'}
-cat(readLines('npp.html'))
-```
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- cat(readLines('npp.html')) -->
+<!-- ``` -->
 
 
 
