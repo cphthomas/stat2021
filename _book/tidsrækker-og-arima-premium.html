@@ -502,8 +502,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Akaike Information Criterion (AIC) , og Bayesian Information Criterion (BIC) benyttes til at vælge ARIMA modellen med mindst AIC og BIC værdier. auto.arima finder den bedste model automatisk.</p>
 <p>Her er ligningen for aktiekursen, den bedste forudsigelse af den fremtidige kurs er den gennemsnitlige kurs der tidligere er observeret.</p>
 <p><span class="math display">\[\hat{Y_t}=19.90\]</span></p>
-<p>Variablen <span class="math inline">\(\hat{Y}_t\)</span>, kaldet Y hat t angiver vort <span class="hl"><span id="htmlwidget-8061d2cf4b66e7866d73" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-8061d2cf4b66e7866d73">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Estimat betyder gæt.<br>\nHvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>\nVi kan skrive vort estimat for &mu; er 179 cm.<\/h4>","text":"estimat"},"evals":[],"jsHooks":[]}</script></span> (gæt) på aktiekursen på tidspunkt <span class="math inline">\(t=1,2,3,...\)</span>. Der er således så lidt systematik i Data at her er tale om en ARIMA(0,0,0) model. Vi ser også at der står “ARIMA(0,0,0) with non-zero mean” i output fra R.</p>
+<p>Variablen <span class="math inline">\(\hat{Y}_t\)</span>, kaldet Y hat t angiver vort <span class="hl"><span id="htmlwidget-e05ca85f83fa4a24d428" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-e05ca85f83fa4a24d428">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Estimat betyder gæt.<br>\nHvis vi har en stikprøve, hvor vi har målt 100 mænds højde til gennemsnitligt 179 cm., er vores bedste gæt på middelhøjden i populationen 179 cm.<br>\nVi kan skrive vort estimat for &mu; er 179 cm.<\/h4>","text":"estimat"},"evals":[],"jsHooks":[]}</script></span> (gæt) på aktiekursen på tidspunkt <span class="math inline">\(t=1,2,3,...\)</span>. Der er således så lidt systematik i Data at her er tale om en ARIMA(0,0,0) model. Vi ser også at der står “ARIMA(0,0,0) with non-zero mean” i output fra R.</p>
 </div>
 <div id="arima100-eller-ar1-autoregression-premium" class="section level2">
 <h2><span class="header-section-number">22.2</span> <font color="red">ARIMA(1,0,0) eller AR(1) autoregression<sup> Premium </font></sup></h2>
@@ -633,12 +633,12 @@ Vi indsætter drift i stedet for <span class="math inline">\(\mu\)</span>, tolkn
 </iframe>
 </div>
 <p><br></p>
-<p>Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl <span class="hl"><span id="htmlwidget-ea6d5763ee556a8d4a1f" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-ea6d5763ee556a8d4a1f">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualer"},"evals":[],"jsHooks":[]}</script></span> til at forudsige kursen.</p>
+<p>Vi kan i stedet for at bruge tidligere aktiekurser til at forudsige aktiekursen i stedet benytte tidligere målefejl <span class="hl"><span id="htmlwidget-cec2cbcbd62155d9ca5c" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-cec2cbcbd62155d9ca5c">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualer"},"evals":[],"jsHooks":[]}</script></span> til at forudsige kursen.</p>
 <p>Modellen kan skrives som:</p>
 <p><span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\]</span>
-Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="math inline">\(\theta_1=0.5\)</span> kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen <span class="hl"><span id="htmlwidget-02de0bcc275d34df3cb0" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-02de0bcc275d34df3cb0">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualen"},"evals":[],"jsHooks":[]}</script></span> til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
+Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="math inline">\(\theta_1=0.5\)</span> kursen til tid t-1 var 120 forudsigelsen til tid t-1 var 100, så målefejlen <span class="hl"><span id="htmlwidget-982f12aa1f286a343bf0" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-982f12aa1f286a343bf0">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residualen"},"evals":[],"jsHooks":[]}</script></span> til tid t-1 er <span class="math inline">\(e_{t-1}\)</span> er faktisk kurs minus forudsagt kurs altså 120-100=20. Nu kan vi forudsige kursen til tid t som:
 <span class="math display">\[\hat{Y_t}=\mu+\theta_1 e_{t-1}\Leftrightarrow \hat{Y_t}=50+0.5\cdot20=60\]</span></p>
 <p>Hent ARIMA4.xlsx Excel filen <a href="FILER/ARIMA4.xlsx" download>her</a>. Importer ARIMA4.xlsx til R via menuen File - Import Dataset - Excel. Nu skal datasættet rettes til en tidsserie med ts() kommandoen.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tidsrækker-og-arima-premium.html#cb99-1"></a><span class="kw">ts.plot</span>(ARIMA4)</span></code></pre></div>
@@ -661,8 +661,8 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## End = 62 
 ## Frequency = 1 
 ##  [1] 113.64960  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756  99.01756</code></pre>
-<p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en <span class="hl"><span id="htmlwidget-bd1bb5b2e12fdef339fe" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-bd1bb5b2e12fdef339fe">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residual"},"evals":[],"jsHooks":[]}</script></span>)</p>
+<p>Hvorfor svarer den forudsagte værdi til mean i en ren ARIMA(0,0,1) eller MA(1) model? (Vink hvad er definitionen på en <span class="hl"><span id="htmlwidget-ec5f07f530e0aea6178d" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-ec5f07f530e0aea6178d">{"x":{"opts":{"size":"large","interactive":true,"arrow":true},"tooltip":"<h4>Residualen er forskellen mellem faktisk Y værdi og forudsagt Y værdi i den lineære regressionsanalyse.<br>\n<i>\nAntag fx man bruger X-variablen kvm. til at forudsige Y-variablen ejendomspriser.<br>\nEn ejendom er faktisk til salg for 4 mio, men den lineære regressionsmodel forudsiger at en 100 kvm ejendom skal koste 5 mio.\nDa bliver residualen faktisk - forudsagt = 4 - 5 = -1, prisen på ejendommen er altså 1 mio. under den ifølge modellen forventede pris.\n<\/i><br><br>\n<a href=\"https://s.tepedu.dk/line%C3%A6r-regressionsanalyse.html\" style=\"color:#30bbfc\" target=\"_blank\">Klik her for at lære mere om lineær regressionsanalyse!<\/a><\/h4>","text":"residual"},"evals":[],"jsHooks":[]}</script></span>)</p>
 </div>
 <div id="plots-med-forskellige-modeller-premium" class="section level2">
 <h2><span class="header-section-number">22.5</span> <font color="red">Plots med forskellige modeller<sup> Premium </font></sup></h2>
@@ -672,47 +672,47 @@ Hvis vi forestiller os <span class="math inline">\(\mu=50\)</span> <span class="
 ## 
 ## Coefficients:
 ##           ma1
-##       -0.6273
-## s.e.   0.1422
+##       -0.5146
+## s.e.   0.1369
 ## 
-## sigma^2 estimated as 133.4:  log likelihood=-193.02
-## AIC=390.05   AICc=390.3   BIC=393.87</code></pre>
+## sigma^2 estimated as 76.72:  log likelihood=-179.1
+## AIC=362.2   AICc=362.45   BIC=366.02</code></pre>
 <p>Kursen svinger omkring middelværdien.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-105-1.png" width="672" /></p>
 <pre><code>## Series: ap2 
-## ARIMA(0,1,1) 
+## ARIMA(1,1,1) with drift 
 ## 
 ## Coefficients:
-##          ma1
-##       0.7050
-## s.e.  0.1289
+##          ar1     ma1    drift
+##       0.5356  0.6162  -9.0754
+## s.e.  0.1544  0.1919   4.1323
 ## 
-## sigma^2 estimated as 89.12:  log likelihood=-183.04
-## AIC=370.07   AICc=370.33   BIC=373.9</code></pre>
+## sigma^2 estimated as 79.41:  log likelihood=-179.46
+## AIC=366.92   AICc=367.8   BIC=374.56</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <pre><code>## Series: ap3 
-## ARIMA(1,0,2) with non-zero mean 
+## ARIMA(0,0,1) with non-zero mean 
 ## 
 ## Coefficients:
-##           ar1     ma1      ma2      mean
-##       -0.0561  0.5422  -0.2365  100.7372
-## s.e.   0.2948  0.2891   0.2095    0.8648
+##          ma1     mean
+##       0.6928  99.3772
+## s.e.  0.0561   1.1800
 ## 
-## sigma^2 estimated as 99.83:  log likelihood=-742.49
-## AIC=1494.98   AICc=1495.29   BIC=1511.48</code></pre>
+## sigma^2 estimated as 98.57:  log likelihood=-742.19
+## AIC=1490.38   AICc=1490.5   BIC=1500.27</code></pre>
 <p>Vi kan også grafisk vise hvordan kursen vil udvikle sig med 80% og 95% konfidensbælter.</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="tidsrækker-og-arima-premium.html#cb107-1"></a><span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3))</span></code></pre></div>
 <pre><code>##     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
-## 201      106.67060 93.86601 119.4752 87.08767 126.2535
-## 202       98.65173 84.41452 112.8889 76.87780 120.4257
-## 203      100.85412 86.22189 115.4863 78.47606 123.2322
-## 204      100.73063 86.09717 115.3641 78.35069 123.1106
-## 205      100.73755 86.10409 115.3710 78.35761 123.1175
-## 206      100.73716 86.10371 115.3706 78.35722 123.1171
-## 207      100.73719 86.10373 115.3706 78.35724 123.1171
-## 208      100.73718 86.10373 115.3706 78.35724 123.1171
-## 209      100.73718 86.10373 115.3706 78.35724 123.1171
-## 210      100.73718 86.10373 115.3706 78.35724 123.1171</code></pre>
+## 201       98.51224 85.78857 111.2359 79.05307 117.9714
+## 202       99.37718 83.89862 114.8557 75.70477 123.0496
+## 203       99.37718 83.89862 114.8557 75.70477 123.0496
+## 204       99.37718 83.89862 114.8557 75.70477 123.0496
+## 205       99.37718 83.89862 114.8557 75.70477 123.0496
+## 206       99.37718 83.89862 114.8557 75.70477 123.0496
+## 207       99.37718 83.89862 114.8557 75.70477 123.0496
+## 208       99.37718 83.89862 114.8557 75.70477 123.0496
+## 209       99.37718 83.89862 114.8557 75.70477 123.0496
+## 210       99.37718 83.89862 114.8557 75.70477 123.0496</code></pre>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="tidsrækker-og-arima-premium.html#cb109-1"></a><span class="kw">plot</span>(<span class="kw">forecast</span>(<span class="kw">auto.arima</span>(ap3)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 </div>
