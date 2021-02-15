@@ -7,3 +7,6 @@ rsconnect
 placeholder.Rcheck/
 placeholder*.tar.gz
 placeholder*.tgz
+
+# Local Netlify folder
+.netlify
