@@ -771,8 +771,14 @@ gitbook.start({
     container.appendChild(b2);
   };
 
+  const loadSubscriptionContent = async (user) => {
+    const token = user ? await netlifyIdentity.currentUser().jwt(true) : false;
+    console.log(user);
+  };
+
   const handleUserStateChange = (user) => {
     updateUserInfo(user);
+    loadSubscriptionContent(user);
   };
 
   netlifyIdentity.on('init', handleUserStateChange);
